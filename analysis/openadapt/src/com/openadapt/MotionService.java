@@ -10,6 +10,7 @@ import java.util.*;
 public final class MotionService extends Service implements SensorEventListener {
     public static volatile boolean active;
     public static volatile String summary="Detenido";
+    public static volatile String batterySummary="Izquierda: sin conexión\nDerecha: sin conexión";
     public static volatile String diagnostic="Todavía no se han leído las zapatillas.";
     static MotionService instance;
     static final String RAW="com.nike.corerf.ACTION_RIPLEY_MESSAGE_AVAILABLE";
@@ -113,6 +114,7 @@ public final class MotionService extends Service implements SensorEventListener 
                 }
                 for(int s=0;s<2;s++) {
                     if(!bridge.connected(s)) {
+                        battery[s]=-1; batteryAt[s]=0; batteryQuery[s]=0;
                         if(motorSide==s&&motorStage!=0) abortMotor("Se perdió la conexión durante el movimiento");
                         continue;
                     }
@@ -133,10 +135,15 @@ public final class MotionService extends Service implements SensorEventListener 
             summary=bridge.pairName()+"\nIzquierda: "+friendly(bridge.state(0))+" · Derecha: "+friendly(bridge.state(1))
                 +"\n"+lastMotion+" · eventos: "+events+"\n"+(continuous?"Luces continuas activadas":"Luces por movimiento")
                 +(motorEnabled?" · motor experimental activo":"")+(lastError.isEmpty()?"":"\n"+lastError);
+            updateBatterySummary(now);
             diagnostic=snapshot();
             handler.postDelayed(this,2000);
         }
     };
+    void updateBatterySummary(long now) {
+        batterySummary="Izquierda: "+BatteryStatus.shoe(bridge.connected(0),battery[0],batteryAt[0],now)
+            +"\nDerecha: "+BatteryStatus.shoe(bridge.connected(1),battery[1],batteryAt[1],now);
+    }
     static String friendly(String state) {
         if(state.startsWith("CONNECTED_AND_AUTHENTICATED")) return "conectada";
         if(state.equals("SIN_PAR")) return "sin emparejar";
@@ -204,6 +211,7 @@ public final class MotionService extends Service implements SensorEventListener 
                 battery[side]=(int)percent; charger[side]=(int)charge;
                 temperature[side]=n.containsKey(3)?FirmwareCheck.fixedDouble(payload,3):Double.NaN; batteryAt[side]=now;
                 readings[side].put("battery",new JSONObject(FirmwareCheck.battery(payload)));
+                updateBatterySummary(now);
                 if((battery[side]<15||!Double.isFinite(temperature[side])||temperature[side]>40)&&motorSide==side&&motorStage!=0) abortMotor("Motor detenido por batería o temperatura");
             }
             if(op==19 && pendingImage[side]>=0 && now-imageAt[side]<4000) {
@@ -314,7 +322,7 @@ public final class MotionService extends Service implements SensorEventListener 
         if(sensors!=null) sensors.unregisterListener(this);
         if(wakeLock!=null&&wakeLock.isHeld()) wakeLock.release();
         try { if(bridge.requester!=null) bridge.request(2,Bridge.constant("v9.o2","b")); } catch(Exception ignored) {}
-        summary="Detenido"; instance=null;
+        summary="Detenido"; batterySummary="Izquierda: sin conexión\nDerecha: sin conexión"; instance=null;
         stopForeground(true); super.onDestroy();
     }
     @Override public IBinder onBind(Intent intent) { return null; }

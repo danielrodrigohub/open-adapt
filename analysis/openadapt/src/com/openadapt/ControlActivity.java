@@ -14,7 +14,7 @@ import java.util.*;
 
 public final class ControlActivity extends Activity {
     final Handler handler=new Handler(Looper.getMainLooper());
-    TextView state; Switch continuous,motor; Spinner mode,colors;
+    TextView state,batteries; Switch continuous,motor; Spinner mode,colors;
     boolean ready,pendingMotorDialog;
     final int[] palette={0x25c7ff,0xff4d5e,0x6aee9e,0xe6b7ff,0xffb347,0xffffff};
     @Override public void onCreate(Bundle saved) {
@@ -26,6 +26,8 @@ public final class ControlActivity extends Activity {
         label(root,"OPEN ADAPT",32,true);
         label(root,"Auto Max · versión experimental",16,false);
         state=label(root,"Preparando conexión…",15,false); state.setPadding(0,20,0,20);
+        label(root,"Batería de las zapatillas",23,true);
+        batteries=label(root,MotionService.batterySummary,18,false);
         button(root,"Controles Adapt / emparejar una vez",v->{
             try { startActivity(new Intent().setClassName(getPackageName(),"com.nike.adapt.SplashScreenActivity").putExtra("PARAM_SPLASH_SCREEN_SHOW",false)); }
             catch(Exception e) { notice("No se pudo abrir el control original."); }
@@ -123,6 +125,7 @@ public final class ControlActivity extends Activity {
     void notice(String text) { Toast.makeText(this,text,Toast.LENGTH_LONG).show(); }
     final Runnable refresh=new Runnable() { public void run() {
         if(!MotionService.summary.contentEquals(state.getText())) state.setText(MotionService.summary);
+        if(!MotionService.batterySummary.contentEquals(batteries.getText())) batteries.setText(MotionService.batterySummary);
         if(!pendingMotorDialog&&motor.isChecked()&&(MotionService.instance==null||!MotionService.instance.motorEnabled)) {
             ready=false; motor.setChecked(false); ready=true;
         }

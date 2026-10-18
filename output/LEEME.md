@@ -5,6 +5,7 @@ Versión modificada del APK Nike Adapt 1.29.3 para investigar el control local d
 ## Opciones implementadas
 
 - Panel local sin registro o inicio de sesión Nike.
+- Porcentaje de batería independiente para izquierda y derecha, actualizado aproximadamente cada 20 segundos mientras están conectadas. Si falta la lectura, se pierde la conexión o pasan más de 60 segundos sin respuesta, el panel lo indica sin mostrar un porcentaje como si fuera actual.
 - Guardado privado del par y sus claves obtenidas por el emparejamiento real. Reconexión automática al par seleccionado o al último usado; no elimina la autenticación del hardware ni los permisos de Android.
 - Supresión de la consulta remota de actualizaciones durante el acceso. Conserva comprobaciones de compatibilidad de comandos y recuperación de transferencias que ya estaban en curso.
 - Servicio con notificación para mantener la conexión y detectar giros del teléfono con la pantalla apagada. Lleva el teléfono vertical, fijo y con la pantalla hacia delante. El giro del teléfono no identifica cuál pie está pisando.

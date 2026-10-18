@@ -2,7 +2,15 @@
 
 Fecha: 18 de octubre de 2026. APK base Nike Adapt 1.29.3, Android mínimo 7.0 (API 24), destino API 33. Nuevo paquete com.openadapt.experimental; firma local distinta de Nike.
 
-## Comprobaciones aprobadas
+## Actualización v0.2.0: batería en porcentaje
+
+- Porcentaje de cada zapatilla en el panel principal, con consultas existentes cada 20 segundos aproximadamente.
+- 11 aserciones de presentación: 0 %, 100 %, datos ausentes, desconexión, reloj inválido y lectura desactualizada tras 60 segundos.
+- Reconstrucción, alineación y firma verificadas para el APK nuevo. Se mantiene la misma clave local para actualizar la instalación existente.
+- Emulador Android 17/API 37: actualización instalada sobre la app existente, apertura del panel, título de batería y estados izquierda/derecha sin conexión visibles, sin excepciones AndroidRuntime. Evidencia: battery-emulator-summary.json y pantalla-bateria.png.
+- Las pruebas anteriores de navegación y giros corresponden a v0.1.0 y su huella registrada en emulator-summary.json. La lectura real de batería requiere validar con zapatillas físicas.
+
+## Comprobaciones aprobadas en v0.1.0
 
 - Compilación de las clases nuevas, reconstrucción del APK, alineación y firma APK v2/v3 verificadas.
 - 43 aserciones del lector de protobuf/diagnóstico: campos, valores por defecto, formatos incorrectos y límites.
@@ -34,8 +42,8 @@ La pantalla antigua de perfil y algunos enlaces Nike pueden seguir requiriendo s
 - analysis/build_openadapt.py: recompilación con las herramientas guardadas en el espacio de trabajo y el SDK Android ya instalado.
 - analysis/patch_offline.py y analysis/patch_motion.py: cambios reproducibles. Los originales de los archivos modificados quedan en analysis/offline-originals y analysis/motion-originals.
 
-SHA-256 del APK entregado:
+SHA-256 del APK v0.2.0 entregado:
 
 ```
-43891dcd60ede6fa55d765f4a1fd831e1d0f89a01d28df1b67e46f73dcb1beb8
+3a09c441980fd16c757e7272a70017758ab6679859bbfa883f648aa354a34bd2
 ```

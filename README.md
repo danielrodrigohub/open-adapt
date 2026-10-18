@@ -4,7 +4,7 @@
 
 **Open Adapt** is an independent, experimental Android project exploring local control of Nike Adapt Auto Max shoes. It includes the modification sources, reverse-engineering findings, decoded application resources, build scripts, tests and an experimental APK.
 
-[Download the experimental APK](https://github.com/danielrodrigohub/open-adapt/releases/tag/v0.1.0-experimental) · [Guía de instalación en español](output/LEEME.md) · [Validation report](output/VALIDACION.md)
+[Download the experimental APK](https://github.com/danielrodrigohub/open-adapt/releases/tag/v0.2.0-experimental) · [Guía de instalación en español](output/LEEME.md) · [Validation report](output/VALIDACION.md)
 
 ## Support the project
 
@@ -21,6 +21,7 @@ This is an experimental build. Installation, local onboarding, screen-off motion
 | Local access | The new control panel works without Nike registration or login. Some legacy profile screens and Nike links may still depend on Nike services. |
 | Automatic reconnection | Reuses genuinely paired devices and their locally stored keys. A first physical pairing and Android permissions are still required. |
 | Update checks | The remote mandatory update check is removed from the local control path. Actual command compatibility checks remain. |
+| Shoe battery | Displays separate left/right percentages from authenticated shoe readings, refreshed about every 20 seconds. Shows connection, waiting and stale-reading states instead of a guessed percentage. |
 | Continuous lighting | Renews a 60-second solid-color animation every 45 seconds while connected. Custom animations require compatible shoe firmware; the declared minimum is 2.1.7. Hardware battery and thermal cutoffs remain active. |
 | Screen-off turns | A foreground service detects turns using the phone's gyroscope. A phone turn does not identify which foot is striking the ground. |
 | Foot-strike events | Receivers exist, but the distributed APK's streaming activation code was stripped. This mode only responds if the shoes are already emitting those events. Activation is not implemented. |
@@ -29,7 +30,7 @@ This is an experimental build. Installation, local onboarding, screen-off motion
 
 ## Install and try it
 
-1. Download `OpenAdapt-1.29.3-experimental.apk` from [Releases](https://github.com/danielrodrigohub/open-adapt/releases/tag/v0.1.0-experimental).
+1. Download `OpenAdapt-1.29.3-experimental.apk` from [Releases](https://github.com/danielrodrigohub/open-adapt/releases/tag/v0.2.0-experimental).
 2. Install it on Android 7.0 or newer. Its package is `com.openadapt.experimental`, so it can coexist with the original Nike Adapt app.
 3. Grant Nearby Devices permissions. On older Android versions, location permission and an enabled location service may also be required.
 4. Open **Controles Adapt / emparejar una vez** and complete real physical pairing. The new app cannot read the original app's private pairing keys.
@@ -81,6 +82,7 @@ python3 scripts/run_tests.py
 
 ## Validation and next steps
 
+- 11 battery-display assertions cover 0–100%, missing readings, disconnected shoes and stale data.
 - 43 diagnostic-parser assertions and 32 motor-condition/rate-limit assertions passed, alongside turn-detection scenarios.
 - Emulator checks covered coexistence with Nike Adapt, the local pairing welcome screen, a simulated turn with the screen locked, and service/wake-lock cleanup after stopping.
 - Physical Bluetooth, LEDs, motor response, phone-specific background restrictions and shoe sensor streaming remain to be validated.

@@ -1,6 +1,7 @@
 {
   "FirmwareCheckTest": "FirmwareCheckTest: 43 assertions passed",
   "MotorCycleTest": "MotorCycleTest: 32 assertions passed",
-  "TurnDetectorTest": "TurnDetector: stationary noise, left/right, cooldown, sensor gaps passed",
-  "apk_sha256": "43891dcd60ede6fa55d765f4a1fd831e1d0f89a01d28df1b67e46f73dcb1beb8"
+  "BatteryStatusTest": "BatteryStatusTest: 11 assertions passed",
+  "apk_sha256": "3a09c441980fd16c757e7272a70017758ab6679859bbfa883f648aa354a34bd2",
+  "TurnDetectorTest": "TurnDetector: stationary noise, left/right, cooldown, sensor gaps passed"
 }
