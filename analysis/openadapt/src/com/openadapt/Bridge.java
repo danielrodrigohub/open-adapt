@@ -9,6 +9,27 @@ import java.util.concurrent.ConcurrentHashMap;
 public final class Bridge {
     static final Map<String,Object> cores = new ConcurrentHashMap<>();
     Object pair, requester;
+    private static final Set<Object> cancelledAnimations=ConcurrentHashMap.newKeySet();
+    final Animation[] animations=new Animation[2];
+    static final class Animation {
+        final long generation;final Object identifier,repository;final java.util.concurrent.atomic.AtomicBoolean done=new java.util.concurrent.atomic.AtomicBoolean();
+        Object listener;
+        Animation(long g,Object id,Object repo){generation=g;identifier=id;repository=repo;}
+    }
+    // Hooks cover queued commands and the race between cancelling and starting the transfer.
+    public static boolean skipCancelledAnimation(Object command){
+        if(command==null||!(command.getClass().getName().equals("ya.j")||command.getClass().getName().equals("ya.z")))return false;
+        try{
+            if(!cancelledAnimations.contains(call(command,"n")))return false;
+            call(field(command,"h"),"complete",Boolean.TRUE);return true;
+        }catch(Exception e){throw new IllegalStateException("Unable to check animation cancellation",e);}
+    }
+    public static void requireActiveAnimation(Object command){
+        if(command!=null&&(command.getClass().getName().equals("ya.j")||command.getClass().getName().equals("ya.z"))){
+            try{if(cancelledAnimations.contains(call(command,"n")))throw new java.util.concurrent.CancellationException("OpenAdapt animation cancelled");}
+            catch(java.util.concurrent.CancellationException e){throw e;}catch(Exception e){throw new IllegalStateException(e);}
+        }
+    }
     String[] ids = new String[2];
     public static void registerCore(Object core) {
         try { cores.put((String)field(core,"h"),core); } catch (Exception ignored) {}
@@ -101,14 +122,60 @@ public final class Bridge {
         Object msg=make("hc.m0",(byte)opcode,constant("hc.m0$a","REQUEST"),payload);
         call(field(core,"k"),"i",msg);
     }
-    void animation(int side,int rgb,boolean continuous,Callback error) throws Exception {
-        Object fail=callback(error);
-        List<Object> frames=new ArrayList<>();
-        frames.add(frame(continuous?60000:350,rgb));
-        if(!continuous) frames.add(frame(150,0));
-        // Firmware 2.1.7+ capability checks and device protections remain in the original ADK.
-        Object animation=make("ba.h",471,0,frames,0,true,false);
-        request(side,make("v9.x0",animation,fail,fail));
+    void animation(final int side,int rgb,boolean continuous,long generation,Callback result) throws Exception {
+        if(!bind()||!connected(side))throw new IllegalStateException("Zapatilla sin conexión autenticada");
+        if(animations[side]!=null)throw new IllegalStateException("An animation is still pending");
+        Object identifier=make("v9.a",UUID.randomUUID());
+        Object commandRequester=make("v9.l",pair,identifier);
+        Object controller=call(commandRequester,"c");
+        Object repository=call(controller,side==0?"A0":"B0");
+        final Animation active=new Animation(generation,identifier,repository);animations[side]=active;
+        active.listener=Proxy.newProxyInstance(Bridge.class.getClassLoader(),new Class[]{cls("v9.p0")},(proxy,method,args)->{
+            String name=method.getName();
+            if(name.equals("hashCode"))return System.identityHashCode(proxy);
+            if(name.equals("equals"))return proxy==args[0];
+            if(name.equals("toString"))return "OpenAdaptAnimationListener";
+            if((name.equals("a")||name.equals("b"))&&args!=null&&args.length==1){
+                Object value=args[0];String type=value.getClass().getName();
+                if((type.equals("v9.a1")||type.equals("v9.y0"))&&identifier.equals(call(value,"a"))&&active.done.compareAndSet(false,true))result.accept(value);
+            }
+            return null;
+        });
+        try{
+            call(repository,"B",active.listener);
+            Object fail=callback(error->{if(active.done.compareAndSet(false,true))result.accept(error);});
+            List<Object> frames=new ArrayList<>();
+            frames.add(frame(continuous?60000:350,rgb));if(!continuous)frames.add(frame(150,0));
+            Object animation=make("ba.h",471,0,frames,0,true,false);
+            // The original ADK and CoreRF firmware, authentication and thermal checks remain.
+            call(commandRequester,"e",constant("w9.u1",side==0?"LEFT":"RIGHT"),make("v9.x0",animation,fail,fail));
+        }catch(Exception e){finishAnimation(side,generation);throw e;}
+    }
+    void finishAnimation(int side,long generation)throws Exception{
+        Animation active=animations[side];if(active==null||active.generation!=generation)return;
+        if(active.listener!=null)call(active.repository,"h",active.listener);
+        active.done.set(true);animations[side]=null;
+    }
+    void cancelAnimation(int side,long generation)throws Exception{
+        Animation active=animations[side];if(active==null||active.generation!=generation)return;
+        cancelledAnimations.add(active.identifier);active.done.set(true);
+        try{
+            Object command=field(active.repository,"w");
+            if(command!=null&&active.identifier.equals(call(command,"n"))&&command.getClass().getName().equals("ya.j")){
+                Object handle=field(active.repository,"c");if(handle!=null)call(handle,"a");
+            }
+        }finally{finishAnimation(side,generation);}
+        if(connected(side))request(side,make("v9.d1",callback(v->{}),callback(v->{})));
+    }
+    static String animationError(Object value){
+        try{
+            if(value.getClass().getName().equals("v9.p"))return "Firmware "+field(value,"k")+"; requiere "+field(value,"l");
+            Throwable cause=value.getClass().getName().equals("v9.y0")?(Throwable)call(value,"d"):(value instanceof Throwable?(Throwable)value:(Throwable)call(value,"d"));
+            while(cause.getCause()!=null)cause=cause.getCause();
+            String message=cause.getMessage();
+            if(cause.getClass().getName().equals("kc.a"))return "Firmware no compatible: "+message;
+            return "Error de animación: "+cause.getClass().getSimpleName()+(message==null?"":": "+message.substring(0,Math.min(160,message.length())));
+        }catch(Exception e){return "No se pudo completar la animación: "+value.getClass().getSimpleName();}
     }
     Object frame(int ms,int rgb) throws Exception {
         Object color=make("ba.b",make("ba.g0",(rgb>>16)&255),make("ba.x",(rgb>>8)&255),make("ba.o",rgb&255));

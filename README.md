@@ -14,11 +14,11 @@ An independent project exploring a second life for Nike Adapt Auto Max.
 
 I own a pair of Adapt. Without the app, I lost access to the connected features I bought them for. Open Adapt began with a simple wish: to use my shoes again.
 
-<a href="https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.4.0.apk"><img src="docs/assets/download.svg" width="230" height="52" alt="Download the experimental Android APK" /></a>
+<a href="https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.4.1.apk"><img src="docs/assets/download.svg" width="230" height="52" alt="Download the experimental Android APK" /></a>
 <a href="output/LEEME.md"><img src="docs/assets/guide.svg" width="210" height="52" alt="Read the Spanish installation guide" /></a>
 <a href="https://www.paypal.com/donate/?hosted_button_id=TKRBGQY4PJLP6"><img src="docs/assets/donate.svg" width="230" height="52" alt="Support Open Adapt via PayPal" /></a>
 
-**Android 7.0+** &nbsp; / &nbsp; **v0.4.0 experimental** &nbsp; / &nbsp; **Local control**
+**Android 7.0+** &nbsp; / &nbsp; **v0.4.1 experimental** &nbsp; / &nbsp; **Local control**
 
 [Website · English](https://danielrodrigohub.github.io/open-adapt/) · [Sitio · Español](https://danielrodrigohub.github.io/open-adapt/es/)
 
@@ -43,7 +43,7 @@ I own a pair of Adapt. Without the app, I lost access to the connected features 
 | ⬇️ **GitHub app updates** | Checks public releases on launch (at most once per six hours) or manually. Downloads and verifies the APK in the app, with a trusted project-website fallback; Android confirms installation. Replaces the same signed package, preserving local settings and stored pairing data. See the [update guide](docs/UPDATES.md). |
 | 📡 **Nike update checks** | The remote mandatory update check is removed from the local control path. Actual command compatibility checks remain. |
 | 🔋 **Battery percentages** | Displays separate left/right percentages from authenticated shoe readings, refreshed about every 20 seconds. Shows connection, waiting and stale-reading states instead of a guessed percentage. |
-| 💡 **Continuous lights** | Renews a 60-second solid-color animation every 45 seconds while connected. Selecting a color now sends a light preview to both shoes. Per-shoe feedback distinguishes pending, accepted, rejected and disconnected states; color tests never trigger lace movement. Custom animations require compatible shoe firmware; the declared minimum is 2.1.7. Hardware battery and thermal cutoffs remain active. |
+| 💡 **Continuous lights** | Renews a 60-second solid-color animation every 45 seconds while connected. Selecting a color sends a light preview to both shoes. Uploads are serialized per shoe; further changes keep only the latest distinct color. Controller success/error results are correlated to each request. Per-shoe feedback distinguishes pending, accepted, rejected and disconnected states; color tests never trigger lace movement. Custom animations require compatible shoe firmware; the original controller’s firmware checks remain active. Hardware battery and thermal cutoffs remain active. |
 | 🌙 **Screen-off turns** | A foreground service detects turns using the phone's gyroscope. A phone turn does not identify which foot is striking the ground. |
 | 👟 **Foot-strike events** | Receivers exist, but the distributed APK's streaming activation code was stripped. This mode only responds if the shoes are already emitting those events. Activation is not implemented. |
 | ⚙️ **Lace movement** | Experimental and off by default. Loosens 1% and returns to the initial position only after confirmation. Limited to five cycles per minute and at least ten seconds between cycles. Physical behavior and audible sound are unverified. |
@@ -72,7 +72,7 @@ A fresh native dashboard with reference-inspired artwork, separate battery cards
 
 ## 🚀 Get moving
 
-1. [Download OpenAdapt v0.4.0 for Android](https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.4.0.apk). The same signed APK and verification metadata are also listed in [Releases](https://github.com/danielrodrigohub/open-adapt/releases/tag/v0.4.0-experimental).
+1. [Download OpenAdapt v0.4.1 for Android](https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.4.1.apk). The same signed APK and verification metadata are also listed in [Releases](https://github.com/danielrodrigohub/open-adapt/releases/tag/v0.4.1-experimental).
 2. Install it on Android 7.0 or newer. Its package is `com.openadapt.experimental`, so it can coexist with the original Nike Adapt app.
 3. Grant Nearby Devices permissions. On older Android versions, location permission and an enabled location service may also be required.
 4. Open **Conectar / emparejar mi par** on the Home tab and complete real physical pairing. The new app cannot read the original app's private pairing keys.

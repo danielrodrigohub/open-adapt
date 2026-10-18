@@ -285,6 +285,7 @@
 # virtual methods
 .method public final A(Lnc/d;)Lhc/a;
     .locals 11
+    invoke-static/range {p1 .. p1}, Lcom/openadapt/Bridge;->requireActiveAnimation(Ljava/lang/Object;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -5029,6 +5030,7 @@
 
 .method public final d(Lnc/a;)V
     .locals 4
+    invoke-static/range {p1 .. p1}, Lcom/openadapt/Bridge;->requireActiveAnimation(Ljava/lang/Object;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

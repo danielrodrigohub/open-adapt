@@ -37,6 +37,33 @@ def background(text):
 edit_method(decoded/'smali/hc/l.smali','public constructor <init>(Ljava/lang/String;)V',register)
 edit_method(decoded/'smali/com/nike/adapt/PeripheralConnectionManager.smali','public final onStop(Landroidx/lifecycle/q;)V',background)
 
+# Cancel only OpenAdapt animation UUIDs. Other ADK commands retain their original path.
+def cancel_queue(text):
+    if 'Lcom/openadapt/Bridge;->skipCancelledAnimation' in text:return text
+    return text.replace('    .locals 9','''    .locals 9
+    invoke-static {p1}, Lcom/openadapt/Bridge;->skipCancelledAnimation(Ljava/lang/Object;)Z
+    move-result v0
+    if-eqz v0, :openadapt_queue_active
+    return-void
+    :openadapt_queue_active''',1)
+def cancel_execute(text):
+    if 'Lcom/openadapt/Bridge;->skipCancelledAnimation' in text:return text
+    return text.replace('    .locals 11','''    .locals 11
+    iget-object v0, p0, Lya/a0;->i:Lya/h0;
+    invoke-static {v0}, Lcom/openadapt/Bridge;->skipCancelledAnimation(Ljava/lang/Object;)Z
+    move-result v0
+    if-eqz v0, :openadapt_execute_active
+    sget-object v0, Lfd/o;->a:Lfd/o;
+    return-object v0
+    :openadapt_execute_active''',1)
+def cancel_core(text):
+    if 'Lcom/openadapt/Bridge;->requireActiveAnimation' in text:return text
+    return re.sub(r'(    \.locals [0-9]+\n)',r'\1    invoke-static/range {p1 .. p1}, Lcom/openadapt/Bridge;->requireActiveAnimation(Ljava/lang/Object;)V\n',text,count=1)
+edit_method(decoded/'smali/ya/d.smali','public static final Y(Lya/d;Lya/h0;)V',cancel_queue)
+edit_method(decoded/'smali/ya/a0.smali','public final invoke()Ljava/lang/Object;',cancel_execute)
+edit_method(decoded/'smali/hc/l.smali','public final A(Lnc/d;)Lhc/a;',cancel_core)
+edit_method(decoded/'smali/hc/l.smali','public final d(Lnc/a;)V',cancel_core)
+
 android='http://schemas.android.com/apk/res/android'
 ET.register_namespace('android',android)
 A='{'+android+'}'

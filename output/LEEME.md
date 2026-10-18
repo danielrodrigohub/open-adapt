@@ -1,6 +1,6 @@
 # Open Adapt experimental
 
-Descarga pública actual: https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.4.0.apk
+Descarga pública actual: https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.4.1.apk
 
 
 Versión modificada del APK Nike Adapt 1.29.3 para investigar el control local de unas Nike Adapt Auto Max. Se instala con el paquete `com.openadapt.experimental` y firma local propia, junto a la app original. No desinstales la original para probar esta versión.
@@ -28,7 +28,7 @@ Más detalles y publicación de nuevas versiones: [guía de actualizaciones](../
 - Guardado privado del par y sus claves obtenidas por el emparejamiento real. Reconexión automática al par seleccionado o al último usado; no elimina la autenticación del hardware ni los permisos de Android.
 - Supresión de la consulta remota de actualizaciones durante el acceso. Conserva comprobaciones de compatibilidad de comandos y recuperación de transferencias que ya estaban en curso.
 - Servicio con notificación para mantener la conexión y detectar giros del teléfono con la pantalla apagada. Lleva el teléfono vertical, fijo y con la pantalla hacia delante. El giro del teléfono no identifica cuál pie está pisando.
-- Colores y pruebas independientes izquierda/derecha. El modo continuo mantiene un color fijo, con una animación de 60 segundos renovada cada 45 segundos mientras hay conexión; al desactivarlo se usan los destellos por movimiento. Requiere soporte de animaciones personalizadas del firmware, mínimo declarado 2.1.7. No anula cortes por batería o temperatura.
+- Colores y pruebas independientes izquierda/derecha. El modo continuo mantiene un color fijo, con una animación de 60 segundos renovada cada 45 segundos mientras hay conexión; al desactivarlo se usan los destellos por movimiento. Requiere soporte de animaciones personalizadas del firmware, conservando las comprobaciones de versión del controlador original. No anula cortes por batería o temperatura.
 - Movimiento experimental del motor: afloja 1 % y vuelve al ajuste inicial únicamente si se confirma el pequeño recorrido. Desactivado al abrir; máximo cinco ciclos por minuto y uno cada diez segundos. Requiere posición y batería recientes, temperatura válida y estar fuera del cargador. Una respuesta inválida, fallo o pérdida de conexión cancela el ciclo. La parada depende de que llegue el comando Bluetooth. No garantiza un sonido audible.
 - Lectura de versiones y estados de las seis ranuras de firmware de cada zapatilla, con exportación de diagnóstico JSON. No escribe firmware. Los checksums son valores declarados por el dispositivo; no equivalen a una verificación criptográfica independiente.
 
@@ -80,6 +80,14 @@ Estas instrucciones describen el flujo conservado en el APK; todavía hace falta
 
 ## Si no aparece una actualización
 
-Abre **Sistema → Buscar actualizaciones** para comprobarla manualmente; la búsqueda automática se limita a una cada seis horas. Una publicación no se ofrece hasta que su APK y metadatos terminan de subir. Si ya tienes v0.4.0, no se ofrecerá la misma versión otra vez. Si falla la consulta, revisa el mensaje que aparece en esa sección.
+Abre **Sistema → Buscar actualizaciones** para comprobarla manualmente; la búsqueda automática se limita a una cada seis horas. Una publicación no se ofrece hasta que su APK y metadatos terminan de subir. Si ya tienes v0.4.1, no se ofrecerá la misma versión otra vez. Si falla la consulta, revisa el mensaje que aparece en esa sección.
 
-Descarga directa verificada de v0.4.0: https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.4.0.apk . Instálala encima de la app actual. No desinstales para actualizar.
+Descarga directa de v0.4.1: https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.4.1.apk . Instálala encima de la app actual. No desinstales para actualizar.
+
+## Corrección de luces v0.4.1
+
+En Luces, el estado de izquierda y derecha aparece ahora arriba, antes de los colores. La app espera a que termine cada carga antes de enviar el último color distinto seleccionado. Los errores del controlador se muestran por lado y se incluyen en el diagnóstico.
+
+Después de actualizar encima de tu instalación actual, selecciona **Solo control manual** en Movimiento, aplica y prueba un color en Luces. Espera la respuesta por lado; no hace falta cambiar de color repetidamente. Si las luces siguen apagadas, copia ambos mensajes de estado o exporta **Sistema → Guardar diagnóstico…**. Esto permite distinguir autenticación, transferencia, firmware y aceptación del inicio.
+
+La condición de cancelación entre cargas se confirmó en el código del APK. Su relación con el fallo de estas zapatillas todavía necesita validación física.

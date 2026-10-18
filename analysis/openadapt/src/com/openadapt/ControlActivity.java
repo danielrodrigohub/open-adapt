@@ -128,7 +128,8 @@ public final class ControlActivity extends Activity {
         label(note,"Elige luces, color y movimiento desde las pestañas. Inicia el control antes de bloquear la pantalla; puedes detenerlo desde la notificación.",14,false,MUTED);
     }
     void buildLights() {
-        LinearLayout root=pages[1]; section(root,"Dale luz.","Un color para ambas. Un destello en cada prueba."); space(root,20);
+        LinearLayout root=pages[1]; section(root,"Dale luz.","Un color para ambas. Un destello en cada prueba."); space(root,10);
+        lightStatus=label(root,"Conecta tu par para probar las luces.",14,true,ACCENT);space(root,12);
         LinearLayout c=card(root,Color.WHITE); label(c,"ELIGE TU COLOR",11,true,MUTED).setLetterSpacing(.1f); space(c,14);
         LinearLayout choices=row();
         for(int i=0;i<6;i++) {
@@ -141,12 +142,12 @@ public final class ControlActivity extends Activity {
         space(root,14); LinearLayout steady=card(root,Color.WHITE); continuous=toggle(steady,"Luces continuas");
         label(steady,"Mantén un color fijo mientras el control esté activo y el par conectado.",14,false,MUTED);
         label(steady,"Se renuevan cada 45 segundos. La protección por batería y temperatura del calzado sigue activa.",12,false,MUTED);
-        space(root,12);lightStatus=label(root,"Conecta tu par para probar las luces.",13,true,MUTED);
+        space(root,12);
         space(root,20); section(root,"Prueba tu par","Pruebas de luz independientes; no mueven los cordones.");
         LinearLayout tests=row(); Button left=styledButton("Probar izquierda",false,v->applyLightTest("LIGHT_LEFT")); Button right=styledButton("Probar derecha",false,v->applyLightTest("LIGHT_RIGHT"));
         LinearLayout.LayoutParams l=new LinearLayout.LayoutParams(0,dp(56),1); l.rightMargin=dp(5); tests.addView(left,l); LinearLayout.LayoutParams r=new LinearLayout.LayoutParams(0,dp(56),1); r.leftMargin=dp(5); tests.addView(right,r); root.addView(tests);
         space(root,10); button(root,"Reactivar luces",false,v->new AlertDialog.Builder(this).setTitle("¿Revisaste el calzado?").setMessage("Comprueba batería y temperatura antes de reactivar las luces.").setPositiveButton("Reactivar",(d,w)->command("RESET_LIGHTS")).setNegativeButton("Cancelar",null).show());
-        label(root,"Las animaciones requieren firmware compatible; el mínimo declarado es 2.1.7. La respuesta real de tus zapatillas sigue pendiente de validación.",12,false,MUTED);
+        label(root,"Cada zapatilla carga una animación a la vez. Espera la confirmación; si hay un error, aparecerá arriba. Se conserva la comprobación de firmware del controlador original.",12,false,MUTED);
     }
     void buildMotion() {
         LinearLayout root=pages[2]; section(root,"Sigue el ritmo.","Elige qué activa los efectos de tu par."); space(root,20);

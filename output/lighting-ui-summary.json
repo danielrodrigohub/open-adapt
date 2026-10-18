@@ -1,0 +1,10 @@
+{
+  "version": "0.4.1",
+  "apk_sha256": "1461efefe4053470d8a7e3139c4f0acde1ce0f51333d877482c848c191a6900b",
+  "status_visible_above_color_controls": true,
+  "status_bounds": "[53,457][1027,551]",
+  "select_color_and_apply_report_disconnected_honestly": true,
+  "stop_stops_foreground_service": true,
+  "android_runtime_exceptions": false,
+  "physical_shoes_tested": false
+}

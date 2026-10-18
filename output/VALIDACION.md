@@ -2,6 +2,16 @@
 
 Fecha: 18 de octubre de 2026. APK base Nike Adapt 1.29.3, Android mínimo 7.0 (API 24), destino API 33. Nuevo paquete com.openadapt.experimental; firma local distinta de Nike.
 
+## Corrección v0.4.1: carga y diagnóstico de luces
+
+- 79 aserciones de LightDispatch: una carga por lado, independencia entre lados, último color distinto, supresión de duplicados, generaciones, fallo, bloqueo, cancelación, plazo y rechazo de callbacks tardíos.
+- 14 comprobaciones en Android con las clases del APK real: identificación de cancelación, liberación del consumidor de cola, exclusión de entrada/ejecución, guardas CoreRF de carga/inicio, causa de firmware anidada, cancelación de la carga propia y conservación de otra solicitud. Solo identificadores de prueba, sin conexión Bluetooth solicitada.
+- El listener real v9.p0 recibe AnimationStartResult / AnimationStartError con UUID por solicitud; no se desactiva ninguna condición de autenticación o firmware del ADK.
+- Se conservan las comprobaciones anteriores de batería, ajuste, diagnóstico y actualizador.
+- Prueba visual en el emulador: estado por lado visible al inicio de Luces, selección de color y Aplicar informan honestamente que no hay conexión, Detener cierra el servicio y no se registran excepciones AndroidRuntime. Evidencia: lighting-ui-summary.json y captura interfaz-luces.png.
+- La hipótesis física sigue abierta: se confirmó una cancelación entre cargas en el software, pero no se observó el tráfico del teléfono ni las zapatillas del usuario.
+- Informe detallado: analysis/lighting-findings-v041.md. Evidencia de clase empaquetada: output/lighting-runtime-summary.json.
+
 ## Actualización v0.4.0: ajuste, aviso de batería y correcciones de luces/conexión
 
 - 95 aserciones del controlador manual: selección por lado, secuencia de ambas, límites, respuestas tardías o inválidas, fallos de lectura/movimiento, parada y pérdida de condiciones.
@@ -61,10 +71,10 @@ La pantalla antigua de perfil y algunos enlaces Nike pueden seguir requiriendo s
 - analysis/build_openadapt.py: recompilación con las herramientas guardadas en el espacio de trabajo y el SDK Android ya instalado.
 - analysis/patch_offline.py y analysis/patch_motion.py: cambios reproducibles. Los originales de los archivos modificados quedan en analysis/offline-originals y analysis/motion-originals.
 
-SHA-256 del APK v0.4.0 entregado:
+SHA-256 del APK v0.4.1 entregado:
 
 ```
-315dbfbb9d7976f1d042c9988780b46a5979269aab126aa9d7627f9ad950a7f0
+1461efefe4053470d8a7e3139c4f0acde1ce0f51333d877482c848c191a6900b
 ```
 
 ## Alcance de la prueba del actualizador

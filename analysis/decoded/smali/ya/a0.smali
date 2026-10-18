@@ -57,6 +57,13 @@
 # virtual methods
 .method public final invoke()Ljava/lang/Object;
     .locals 11
+    iget-object v0, p0, Lya/a0;->i:Lya/h0;
+    invoke-static {v0}, Lcom/openadapt/Bridge;->skipCancelledAnimation(Ljava/lang/Object;)Z
+    move-result v0
+    if-eqz v0, :openadapt_execute_active
+    sget-object v0, Lfd/o;->a:Lfd/o;
+    return-object v0
+    :openadapt_execute_active
 
     .line 1
     iget-object v0, p0, Lya/a0;->h:Lya/d;

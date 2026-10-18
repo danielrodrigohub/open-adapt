@@ -1,0 +1,7 @@
+{
+  "apk_sha256": "1461efefe4053470d8a7e3139c4f0acde1ce0f51333d877482c848c191a6900b",
+  "version": "0.4.1",
+  "result": "INSTRUMENTATION_RESULT: result=PASS: 14 real-APK reflection, cancellation and error-unwrapping checks; no hardware connection.\nINSTRUMENTATION_CODE: -1",
+  "physical_shoes_tested": false,
+  "scope": "Packaged ADK classes and cancellation hooks using owned emulator fixtures; no Bluetooth connection requested"
+}

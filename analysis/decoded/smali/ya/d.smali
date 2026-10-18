@@ -317,6 +317,11 @@
 
 .method public static final Y(Lya/d;Lya/h0;)V
     .locals 9
+    invoke-static {p1}, Lcom/openadapt/Bridge;->skipCancelledAnimation(Ljava/lang/Object;)Z
+    move-result v0
+    if-eqz v0, :openadapt_queue_active
+    return-void
+    :openadapt_queue_active
 
     .line 1
     invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;

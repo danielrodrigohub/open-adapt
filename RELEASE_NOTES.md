@@ -1,18 +1,18 @@
-# Nike Adapt Max Revive again — experimental v0.4.0
+# Nike Adapt Max Revive again — experimental v0.4.1
 
 > Why nike discontinued this?...
 
-Download for Android: https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.4.0.apk
+Android download: https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.4.1.apk
 
-- New interactive **Ajuste** tab: choose both shoes or one side, preview a relative change of 1–5 points, view confirmed positions, tighten/loosen and stop.
-- Below **15%**, show which shoe is blocked and prevent lace movement. Battery and temperature readings must be recent; firmware protections remain active.
-- **Fix:** choosing a color or applying light options sends an actual preview command to both connected shoes, even with continuous mode off. Light tests do not trigger the lace motor.
-- Show per-shoe light delivery status, including missing connection, firmware rejection, timeout and accepted start. A transient connection failure no longer becomes a persistent battery/thermal lock.
-- **Connect** immediately checks and reconnects a saved pair within OpenAdapt. First-time physical pairing returns after both shoes authenticate and the original controller is foreground.
-- Preserve package, signing identity, pairing data and preferences when installing over the existing app.
+This patch addresses overlapping custom-light uploads: the original ADK cancels an existing upload when another begins, so repeated motion or color changes could prevent the animation from reaching its start command.
 
-Validated with JVM tests, signed APK verification and an Android emulator. Physical LED, motor, first pairing and reconnection behavior still require testing with real Auto Max shoes. An accepted command is not proof of visible illumination.
+- Keep one upload active per shoe. While uploading, retain only the latest distinct color instead of cancelling the in-flight upload.
+- Register the original controller’s result listener with a unique request identifier, exposing transfer and firmware failures that the initial request callbacks did not report.
+- Put per-shoe light status at the top of the Lights screen. A transmitted command is never presented as visible illumination.
+- Stop/timeout marks the animation identifier cancelled; queued commands and later starts check that identifier. Cancel the active owned upload when its handle is available.
+- Do not replay queued colors after failure, stop or timeout. Keep firmware, battery, thermal and real authentication checks.
+- Preserve the same package and signing identity for an in-place update.
 
-Full firmware backup/cloning and activation of shoe foot-strike streaming remain unavailable. The illuminated Swoosh in project artwork is conceptual.
+The software conditions and cancellation guards have automated and owned-emulator checks. The cause of the reported physical-shoe failure is not yet confirmed: this patch fixes a demonstrated software interference condition but still needs a real-shoe test. Complete interruption of an already-running transfer is not guaranteed in every timing window; cancelled animation starts are guarded separately.
 
 Support: [Donate via PayPal](https://www.paypal.com/donate/?hosted_button_id=TKRBGQY4PJLP6).
