@@ -65,3 +65,21 @@ El servicio sigue el mecanismo de conexión en segundo plano descrito por [Andro
 - Instala encima de la versión anterior; no desinstales ni borres almacenamiento si quieres conservar las claves locales.
 
 Las correcciones se han revisado en código y emulador. El funcionamiento físico de las luces y el motor debe comprobarse con las zapatillas reales.
+
+## Si reinstalaste la app o necesitas emparejar desde cero
+
+Desinstalar o borrar almacenamiento elimina las claves locales. Estar vinculado en los ajustes Bluetooth de Android no sustituye el emparejamiento dentro de OpenAdapt.
+
+1. Activa Bluetooth y permite **Dispositivos cercanos** en los permisos de OpenAdapt. En Android antiguo, autoriza también la ubicación si se solicita.
+2. Enciende ambas zapatillas con sus botones. Evita una conexión simultánea desde la app original u otro teléfono.
+3. En OpenAdapt, abre **Inicio → Conectar / emparejar mi par**. Sin un par guardado se abre la configuración original de emparejamiento.
+4. Sigue sus instrucciones: acerca el teléfono a los botones/luces de una zapatilla, acepta **Emparejar y conectar** si Android lo pide y confirma con el botón de la zapatilla cuando se indique. Repite con la otra. El texto original indica que cada conexión puede tardar un minuto.
+5. Una vez completada la configuración y autenticados ambos lados, OpenAdapt intenta regresar al panel. Comprueba el estado de ambos lados y sus lecturas.
+
+Estas instrucciones describen el flujo conservado en el APK; todavía hace falta validación completa con Auto Max físicas. Si no se abre el emparejamiento o se queda detenido, anota la pantalla y el mensaje exactos. No restablezcas el firmware para resolver un problema de descarga o de permisos.
+
+## Si no aparece una actualización
+
+Abre **Sistema → Buscar actualizaciones** para comprobarla manualmente; la búsqueda automática se limita a una cada seis horas. Una publicación no se ofrece hasta que su APK y metadatos terminan de subir. Si ya tienes v0.4.0, no se ofrecerá la misma versión otra vez. Si falla la consulta, revisa el mensaje que aparece en esa sección.
+
+Descarga directa verificada de v0.4.0: https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.4.0.apk . Instálala encima de la app actual. No desinstales para actualizar.

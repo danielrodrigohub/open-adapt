@@ -1,61 +1,26 @@
 {
-  "checked_at": "2026-10-18",
+  "checked_at": "2026-10-18T21:58:15.039636+00:00",
   "hosting": "GitHub Pages",
-  "public_http_checks": [
-    {
-      "url": "https://danielrodrigohub.github.io/open-adapt/",
-      "status": 200,
-      "content_type": "text/html; charset=utf-8"
-    },
-    {
-      "url": "https://danielrodrigohub.github.io/open-adapt/es/",
-      "status": 200,
-      "content_type": "text/html; charset=utf-8"
-    },
-    {
-      "url": "https://danielrodrigohub.github.io/open-adapt/assets/revive-banner.png",
-      "status": 200,
-      "content_type": "image/png"
-    },
-    {
-      "url": "https://danielrodrigohub.github.io/open-adapt/assets/favicon.svg",
-      "status": 200,
-      "content_type": "image/svg+xml"
-    },
-    {
-      "url": "https://danielrodrigohub.github.io/open-adapt/assets/style.css",
-      "status": 200,
-      "content_type": "text/css; charset=utf-8"
-    },
-    {
-      "url": "https://danielrodrigohub.github.io/open-adapt/sitemap.xml",
-      "status": 200,
-      "content_type": "application/xml"
-    },
-    {
-      "url": "https://danielrodrigohub.github.io/open-adapt/robots.txt",
-      "status": 200,
-      "content_type": "text/plain; charset=utf-8"
-    }
-  ],
-  "local_html_checks_passed": true,
-  "languages": [
-    "en",
-    "es"
-  ],
-  "physical_shoes_tested": false,
   "current_page_checks": [
     {
       "url": "https://danielrodrigohub.github.io/open-adapt/",
       "status": 200,
-      "current_download": "0.3.1"
+      "current_download": "0.4.0"
     },
     {
       "url": "https://danielrodrigohub.github.io/open-adapt/es/",
       "status": 200,
-      "current_download": "0.3.1"
+      "current_download": "0.4.0"
     }
   ],
-  "public_apk_url": "https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.3.1.apk",
-  "apk_range_request_status": 206
+  "public_apk_url": "https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.4.0.apk",
+  "apk_http_status": 200,
+  "downloaded_size": 73504416,
+  "downloaded_sha256": "315dbfbb9d7976f1d042c9988780b46a5979269aab126aa9d7627f9ad950a7f0",
+  "matches_signed_release_metadata": true,
+  "languages": [
+    "en",
+    "es"
+  ],
+  "physical_shoes_tested": false
 }

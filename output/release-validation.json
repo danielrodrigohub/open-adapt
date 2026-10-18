@@ -1,12 +1,16 @@
 {
-  "release": "https://github.com/danielrodrigohub/open-adapt/releases/tag/v0.3.1-experimental",
+  "release": "https://github.com/danielrodrigohub/open-adapt/releases/tag/v0.4.0-experimental",
   "draft": false,
   "prerelease": true,
-  "published_at": "2026-10-18T20:17:04Z",
-  "apk_url": "https://github.com/danielrodrigohub/open-adapt/releases/download/v0.3.1-experimental/OpenAdapt-1.29.3-experimental.apk",
-  "apk_sha256": "f3253cb137f66de862f49cd3d80286ba66aa2cce0c074953ace0f20c8655ce4f",
+  "published_at": "2026-10-18T21:57:27Z",
+  "source_commit": "6bec2d33977ee99eae6c795d0451d262f49bc11a",
+  "apk_url": "https://github.com/danielrodrigohub/open-adapt/releases/download/v0.4.0-experimental/OpenAdapt-1.29.3-experimental.apk",
+  "apk_sha256": "315dbfbb9d7976f1d042c9988780b46a5979269aab126aa9d7627f9ad950a7f0",
   "github_asset_digest_matches": true,
-  "size": 73479840,
-  "public_mirror": "https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.3.1.apk",
-  "public_mirror_range_status": 206
+  "size": 73504416,
+  "github_asset_http_status": 206,
+  "public_mirror": "https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.4.0.apk",
+  "public_mirror_sha256_verified": true,
+  "public_updater_metadata_matches": true,
+  "physical_shoes_tested": false
 }
