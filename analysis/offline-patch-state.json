@@ -1,0 +1,52 @@
+[
+  {
+    "path": "smali/o7/a0.smali",
+    "sha256_after": "7a1fae487fee2e1fee4dce422ef1df6bc9f2c656a1a106b800012be4054191fc",
+    "modified_this_run": false
+  },
+  {
+    "path": "smali/com/nike/adapt/ui/LoginActivity$a.smali",
+    "sha256_after": "a05321eda917fe5ebabffa3931930b2ddee0c5219d1673303d8f8fc2057e2b56",
+    "modified_this_run": false
+  },
+  {
+    "path": "smali/i9/e0.smali",
+    "sha256_after": "6d3b889c9a3aac0219ff311583e17e35498a23014bf2c7963d64352c0cb9096c",
+    "modified_this_run": false
+  },
+  {
+    "path": "smali/db/b.smali",
+    "sha256_after": "7b706dfef0e1acef717ff74a34c6703e69c729698943e6e2de9c010cf74baca3",
+    "modified_this_run": false
+  },
+  {
+    "path": "smali/ab/b.smali",
+    "sha256_after": "7b8810a6f0435a4070e0148b0ca5e358ed87ce18aa066cf5275826f38b0909a5",
+    "modified_this_run": false
+  },
+  {
+    "path": "smali/com/nike/adapt/adk/DeviceController.smali",
+    "sha256_after": "c3ef544eb856ee5c1702e4830357233a290fe1d372ff18c08464b9f69ac537fd",
+    "modified_this_run": false
+  },
+  {
+    "path": "smali/w7/c.smali",
+    "sha256_after": "f67ff8dacd858e108c22c69f250a815d6035ac5e6494066c496904f51b5f9112",
+    "modified_this_run": false
+  },
+  {
+    "path": "smali/dc/a.smali",
+    "sha256_after": "384d998eafd421917a37e6e223a4f159f37cdfc01f226d1c7e62693bc3d7f514",
+    "modified_this_run": false
+  },
+  {
+    "path": "smali/wa/a.smali",
+    "sha256_after": "cc080e1c865588d7335becf7af13dbe27f97082fa19742961811e2d4b7f6faff",
+    "modified_this_run": false
+  },
+  {
+    "path": "smali/xa/b.smali",
+    "sha256_after": "c946a33d260734b8059b8f03e141623f5fc7cbe4f995c4620cd6938f52463839",
+    "modified_this_run": false
+  }
+]

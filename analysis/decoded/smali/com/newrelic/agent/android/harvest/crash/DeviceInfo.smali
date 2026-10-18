@@ -1,0 +1,541 @@
+.class public Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;
+.super Lcom/newrelic/agent/android/harvest/type/HarvestableObject;
+.source "DeviceInfo.java"
+
+
+# instance fields
+.field private OSBuild:Ljava/lang/String;
+
+.field private OSVersion:Ljava/lang/String;
+
+.field private architecture:Ljava/lang/String;
+
+.field private deviceName:Ljava/lang/String;
+
+.field private deviceUuid:Ljava/lang/String;
+
+.field private diskAvailable:[J
+
+.field private memoryUsage:J
+
+.field private modelNumber:Ljava/lang/String;
+
+.field private networkStatus:Ljava/lang/String;
+
+.field private orientation:I
+
+.field private runTime:Ljava/lang/String;
+
+.field private screenResolution:Ljava/lang/String;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Lcom/newrelic/agent/android/harvest/type/HarvestableObject;-><init>()V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lcom/newrelic/agent/android/harvest/DeviceInformation;Lcom/newrelic/agent/android/harvest/EnvironmentInformation;)V
+    .locals 2
+
+    .line 2
+    invoke-direct {p0}, Lcom/newrelic/agent/android/harvest/type/HarvestableObject;-><init>()V
+
+    .line 3
+    invoke-virtual {p2}, Lcom/newrelic/agent/android/harvest/EnvironmentInformation;->getMemoryUsage()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->memoryUsage:J
+
+    .line 4
+    invoke-virtual {p2}, Lcom/newrelic/agent/android/harvest/EnvironmentInformation;->getOrientation()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->orientation:I
+
+    .line 5
+    invoke-virtual {p2}, Lcom/newrelic/agent/android/harvest/EnvironmentInformation;->getNetworkStatus()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->networkStatus:Ljava/lang/String;
+
+    .line 6
+    invoke-virtual {p2}, Lcom/newrelic/agent/android/harvest/EnvironmentInformation;->getDiskAvailable()[J
+
+    move-result-object p2
+
+    iput-object p2, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->diskAvailable:[J
+
+    .line 7
+    invoke-virtual {p1}, Lcom/newrelic/agent/android/harvest/DeviceInformation;->getOsVersion()Ljava/lang/String;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->OSVersion:Ljava/lang/String;
+
+    .line 8
+    invoke-virtual {p1}, Lcom/newrelic/agent/android/harvest/DeviceInformation;->getManufacturer()Ljava/lang/String;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->deviceName:Ljava/lang/String;
+
+    .line 9
+    invoke-virtual {p1}, Lcom/newrelic/agent/android/harvest/DeviceInformation;->getOsBuild()Ljava/lang/String;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->OSBuild:Ljava/lang/String;
+
+    .line 10
+    invoke-virtual {p1}, Lcom/newrelic/agent/android/harvest/DeviceInformation;->getArchitecture()Ljava/lang/String;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->architecture:Ljava/lang/String;
+
+    .line 11
+    invoke-virtual {p1}, Lcom/newrelic/agent/android/harvest/DeviceInformation;->getModel()Ljava/lang/String;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->modelNumber:Ljava/lang/String;
+
+    .line 12
+    invoke-virtual {p1}, Lcom/newrelic/agent/android/harvest/DeviceInformation;->getSize()Ljava/lang/String;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->screenResolution:Ljava/lang/String;
+
+    .line 13
+    invoke-virtual {p1}, Lcom/newrelic/agent/android/harvest/DeviceInformation;->getDeviceId()Ljava/lang/String;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->deviceUuid:Ljava/lang/String;
+
+    .line 14
+    invoke-virtual {p1}, Lcom/newrelic/agent/android/harvest/DeviceInformation;->getRunTime()Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->runTime:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method private getDiskAvailableAsJson()Lcom/newrelic/com/google/gson/JsonArray;
+    .locals 6
+
+    .line 1
+    new-instance v0, Lcom/newrelic/com/google/gson/JsonArray;
+
+    invoke-direct {v0}, Lcom/newrelic/com/google/gson/JsonArray;-><init>()V
+
+    .line 2
+    iget-object v1, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->diskAvailable:[J
+
+    array-length v2, v1
+
+    const/4 v3, 0x0
+
+    :goto_0
+    if-ge v3, v2, :cond_0
+
+    aget-wide v4, v1, v3
+
+    .line 3
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/newrelic/agent/android/util/SafeJsonPrimitive;->factory(Ljava/lang/Number;)Lcom/newrelic/com/google/gson/JsonPrimitive;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v4}, Lcom/newrelic/com/google/gson/JsonArray;->add(Lcom/newrelic/com/google/gson/JsonElement;)V
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-object v0
+.end method
+
+.method private static longArrayFromJsonArray(Lcom/newrelic/com/google/gson/JsonArray;)[J
+    .locals 6
+
+    .line 1
+    invoke-virtual {p0}, Lcom/newrelic/com/google/gson/JsonArray;->size()I
+
+    move-result v0
+
+    new-array v0, v0, [J
+
+    .line 2
+    invoke-virtual {p0}, Lcom/newrelic/com/google/gson/JsonArray;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    const/4 v1, 0x0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/newrelic/com/google/gson/JsonElement;
+
+    add-int/lit8 v3, v1, 0x1
+
+    .line 3
+    invoke-virtual {v2}, Lcom/newrelic/com/google/gson/JsonElement;->getAsLong()J
+
+    move-result-wide v4
+
+    aput-wide v4, v0, v1
+
+    move v1, v3
+
+    goto :goto_0
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public static newFromJson(Lcom/newrelic/com/google/gson/JsonObject;)Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;
+    .locals 3
+
+    .line 1
+    new-instance v0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;
+
+    invoke-direct {v0}, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;-><init>()V
+
+    const-string v1, "memoryUsage"
+
+    .line 2
+    invoke-virtual {p0, v1}, Lcom/newrelic/com/google/gson/JsonObject;->get(Ljava/lang/String;)Lcom/newrelic/com/google/gson/JsonElement;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/newrelic/com/google/gson/JsonElement;->getAsLong()J
+
+    move-result-wide v1
+
+    iput-wide v1, v0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->memoryUsage:J
+
+    const-string v1, "orientation"
+
+    .line 3
+    invoke-virtual {p0, v1}, Lcom/newrelic/com/google/gson/JsonObject;->get(Ljava/lang/String;)Lcom/newrelic/com/google/gson/JsonElement;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/newrelic/com/google/gson/JsonElement;->getAsInt()I
+
+    move-result v1
+
+    iput v1, v0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->orientation:I
+
+    const-string v1, "networkStatus"
+
+    .line 4
+    invoke-virtual {p0, v1}, Lcom/newrelic/com/google/gson/JsonObject;->get(Ljava/lang/String;)Lcom/newrelic/com/google/gson/JsonElement;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/newrelic/com/google/gson/JsonElement;->getAsString()Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->networkStatus:Ljava/lang/String;
+
+    const-string v1, "diskAvailable"
+
+    .line 5
+    invoke-virtual {p0, v1}, Lcom/newrelic/com/google/gson/JsonObject;->get(Ljava/lang/String;)Lcom/newrelic/com/google/gson/JsonElement;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/newrelic/com/google/gson/JsonElement;->getAsJsonArray()Lcom/newrelic/com/google/gson/JsonArray;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->longArrayFromJsonArray(Lcom/newrelic/com/google/gson/JsonArray;)[J
+
+    move-result-object v1
+
+    iput-object v1, v0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->diskAvailable:[J
+
+    const-string v1, "osVersion"
+
+    .line 6
+    invoke-virtual {p0, v1}, Lcom/newrelic/com/google/gson/JsonObject;->get(Ljava/lang/String;)Lcom/newrelic/com/google/gson/JsonElement;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/newrelic/com/google/gson/JsonElement;->getAsString()Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->OSVersion:Ljava/lang/String;
+
+    const-string v1, "deviceName"
+
+    .line 7
+    invoke-virtual {p0, v1}, Lcom/newrelic/com/google/gson/JsonObject;->get(Ljava/lang/String;)Lcom/newrelic/com/google/gson/JsonElement;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/newrelic/com/google/gson/JsonElement;->getAsString()Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->deviceName:Ljava/lang/String;
+
+    const-string v1, "osBuild"
+
+    .line 8
+    invoke-virtual {p0, v1}, Lcom/newrelic/com/google/gson/JsonObject;->get(Ljava/lang/String;)Lcom/newrelic/com/google/gson/JsonElement;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/newrelic/com/google/gson/JsonElement;->getAsString()Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->OSBuild:Ljava/lang/String;
+
+    const-string v1, "architecture"
+
+    .line 9
+    invoke-virtual {p0, v1}, Lcom/newrelic/com/google/gson/JsonObject;->get(Ljava/lang/String;)Lcom/newrelic/com/google/gson/JsonElement;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/newrelic/com/google/gson/JsonElement;->getAsString()Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->architecture:Ljava/lang/String;
+
+    const-string v1, "runTime"
+
+    .line 10
+    invoke-virtual {p0, v1}, Lcom/newrelic/com/google/gson/JsonObject;->get(Ljava/lang/String;)Lcom/newrelic/com/google/gson/JsonElement;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/newrelic/com/google/gson/JsonElement;->getAsString()Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->runTime:Ljava/lang/String;
+
+    const-string v1, "modelNumber"
+
+    .line 11
+    invoke-virtual {p0, v1}, Lcom/newrelic/com/google/gson/JsonObject;->get(Ljava/lang/String;)Lcom/newrelic/com/google/gson/JsonElement;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/newrelic/com/google/gson/JsonElement;->getAsString()Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->modelNumber:Ljava/lang/String;
+
+    const-string v1, "screenResolution"
+
+    .line 12
+    invoke-virtual {p0, v1}, Lcom/newrelic/com/google/gson/JsonObject;->get(Ljava/lang/String;)Lcom/newrelic/com/google/gson/JsonElement;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/newrelic/com/google/gson/JsonElement;->getAsString()Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->screenResolution:Ljava/lang/String;
+
+    const-string v1, "deviceUuid"
+
+    .line 13
+    invoke-virtual {p0, v1}, Lcom/newrelic/com/google/gson/JsonObject;->get(Ljava/lang/String;)Lcom/newrelic/com/google/gson/JsonElement;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lcom/newrelic/com/google/gson/JsonElement;->getAsString()Ljava/lang/String;
+
+    move-result-object p0
+
+    iput-object p0, v0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->deviceUuid:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public asJsonObject()Lcom/newrelic/com/google/gson/JsonObject;
+    .locals 3
+
+    .line 1
+    new-instance v0, Lcom/newrelic/com/google/gson/JsonObject;
+
+    invoke-direct {v0}, Lcom/newrelic/com/google/gson/JsonObject;-><init>()V
+
+    .line 2
+    iget-wide v1, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->memoryUsage:J
+
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/newrelic/agent/android/util/SafeJsonPrimitive;->factory(Ljava/lang/Number;)Lcom/newrelic/com/google/gson/JsonPrimitive;
+
+    move-result-object v1
+
+    const-string v2, "memoryUsage"
+
+    invoke-virtual {v0, v2, v1}, Lcom/newrelic/com/google/gson/JsonObject;->add(Ljava/lang/String;Lcom/newrelic/com/google/gson/JsonElement;)V
+
+    .line 3
+    iget v1, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->orientation:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/newrelic/agent/android/util/SafeJsonPrimitive;->factory(Ljava/lang/Number;)Lcom/newrelic/com/google/gson/JsonPrimitive;
+
+    move-result-object v1
+
+    const-string v2, "orientation"
+
+    invoke-virtual {v0, v2, v1}, Lcom/newrelic/com/google/gson/JsonObject;->add(Ljava/lang/String;Lcom/newrelic/com/google/gson/JsonElement;)V
+
+    .line 4
+    iget-object v1, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->networkStatus:Ljava/lang/String;
+
+    invoke-static {v1}, Lcom/newrelic/agent/android/util/SafeJsonPrimitive;->factory(Ljava/lang/String;)Lcom/newrelic/com/google/gson/JsonPrimitive;
+
+    move-result-object v1
+
+    const-string v2, "networkStatus"
+
+    invoke-virtual {v0, v2, v1}, Lcom/newrelic/com/google/gson/JsonObject;->add(Ljava/lang/String;Lcom/newrelic/com/google/gson/JsonElement;)V
+
+    .line 5
+    invoke-direct {p0}, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->getDiskAvailableAsJson()Lcom/newrelic/com/google/gson/JsonArray;
+
+    move-result-object v1
+
+    const-string v2, "diskAvailable"
+
+    invoke-virtual {v0, v2, v1}, Lcom/newrelic/com/google/gson/JsonObject;->add(Ljava/lang/String;Lcom/newrelic/com/google/gson/JsonElement;)V
+
+    .line 6
+    iget-object v1, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->OSVersion:Ljava/lang/String;
+
+    invoke-static {v1}, Lcom/newrelic/agent/android/util/SafeJsonPrimitive;->factory(Ljava/lang/String;)Lcom/newrelic/com/google/gson/JsonPrimitive;
+
+    move-result-object v1
+
+    const-string v2, "osVersion"
+
+    invoke-virtual {v0, v2, v1}, Lcom/newrelic/com/google/gson/JsonObject;->add(Ljava/lang/String;Lcom/newrelic/com/google/gson/JsonElement;)V
+
+    .line 7
+    iget-object v1, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->deviceName:Ljava/lang/String;
+
+    invoke-static {v1}, Lcom/newrelic/agent/android/util/SafeJsonPrimitive;->factory(Ljava/lang/String;)Lcom/newrelic/com/google/gson/JsonPrimitive;
+
+    move-result-object v1
+
+    const-string v2, "deviceName"
+
+    invoke-virtual {v0, v2, v1}, Lcom/newrelic/com/google/gson/JsonObject;->add(Ljava/lang/String;Lcom/newrelic/com/google/gson/JsonElement;)V
+
+    .line 8
+    iget-object v1, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->OSBuild:Ljava/lang/String;
+
+    invoke-static {v1}, Lcom/newrelic/agent/android/util/SafeJsonPrimitive;->factory(Ljava/lang/String;)Lcom/newrelic/com/google/gson/JsonPrimitive;
+
+    move-result-object v1
+
+    const-string v2, "osBuild"
+
+    invoke-virtual {v0, v2, v1}, Lcom/newrelic/com/google/gson/JsonObject;->add(Ljava/lang/String;Lcom/newrelic/com/google/gson/JsonElement;)V
+
+    .line 9
+    iget-object v1, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->architecture:Ljava/lang/String;
+
+    invoke-static {v1}, Lcom/newrelic/agent/android/util/SafeJsonPrimitive;->factory(Ljava/lang/String;)Lcom/newrelic/com/google/gson/JsonPrimitive;
+
+    move-result-object v1
+
+    const-string v2, "architecture"
+
+    invoke-virtual {v0, v2, v1}, Lcom/newrelic/com/google/gson/JsonObject;->add(Ljava/lang/String;Lcom/newrelic/com/google/gson/JsonElement;)V
+
+    .line 10
+    iget-object v1, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->runTime:Ljava/lang/String;
+
+    invoke-static {v1}, Lcom/newrelic/agent/android/util/SafeJsonPrimitive;->factory(Ljava/lang/String;)Lcom/newrelic/com/google/gson/JsonPrimitive;
+
+    move-result-object v1
+
+    const-string v2, "runTime"
+
+    invoke-virtual {v0, v2, v1}, Lcom/newrelic/com/google/gson/JsonObject;->add(Ljava/lang/String;Lcom/newrelic/com/google/gson/JsonElement;)V
+
+    .line 11
+    iget-object v1, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->modelNumber:Ljava/lang/String;
+
+    invoke-static {v1}, Lcom/newrelic/agent/android/util/SafeJsonPrimitive;->factory(Ljava/lang/String;)Lcom/newrelic/com/google/gson/JsonPrimitive;
+
+    move-result-object v1
+
+    const-string v2, "modelNumber"
+
+    invoke-virtual {v0, v2, v1}, Lcom/newrelic/com/google/gson/JsonObject;->add(Ljava/lang/String;Lcom/newrelic/com/google/gson/JsonElement;)V
+
+    .line 12
+    iget-object v1, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->screenResolution:Ljava/lang/String;
+
+    invoke-static {v1}, Lcom/newrelic/agent/android/util/SafeJsonPrimitive;->factory(Ljava/lang/String;)Lcom/newrelic/com/google/gson/JsonPrimitive;
+
+    move-result-object v1
+
+    const-string v2, "screenResolution"
+
+    invoke-virtual {v0, v2, v1}, Lcom/newrelic/com/google/gson/JsonObject;->add(Ljava/lang/String;Lcom/newrelic/com/google/gson/JsonElement;)V
+
+    .line 13
+    iget-object v1, p0, Lcom/newrelic/agent/android/harvest/crash/DeviceInfo;->deviceUuid:Ljava/lang/String;
+
+    invoke-static {v1}, Lcom/newrelic/agent/android/util/SafeJsonPrimitive;->factory(Ljava/lang/String;)Lcom/newrelic/com/google/gson/JsonPrimitive;
+
+    move-result-object v1
+
+    const-string v2, "deviceUuid"
+
+    invoke-virtual {v0, v2, v1}, Lcom/newrelic/com/google/gson/JsonObject;->add(Ljava/lang/String;Lcom/newrelic/com/google/gson/JsonElement;)V
+
+    return-object v0
+.end method

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@id/gesture_intro_modal_parent" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/constraint" android:layout_width="match_parent" android:layout_height="match_parent">
+        <com.google.android.exoplayer2.ui.PlayerView android:id="@id/gesture_into_modal_video" android:visibility="visible" android:layout_width="match_parent" android:layout_height="match_parent" android:forceHasOverlappingRendering="true" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:resize_mode="fill" app:use_controller="false">
+            <FrameLayout android:background="@color/text_color_black" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.7">
+                <com.airbnb.lottie.LottieAnimationView android:layout_gravity="center_horizontal" android:layout_width="96.0dp" android:layout_height="96.0dp" android:layout_marginTop="195.0dp" android:scaleType="fitCenter" app:layout_constraintBottom_toTopOf="@id/half_vertical_guideline" app:lottie_enableMergePathsForKitKatAndAbove="true" app:lottie_fileName="gesture_check_mark.json" app:lottie_imageAssetsFolder="assets/" />
+            </FrameLayout>
+        </com.google.android.exoplayer2.ui.PlayerView>
+        <androidx.constraintlayout.widget.Guideline android:orientation="horizontal" android:id="@id/half_vertical_guideline" android:layout_width="wrap_content" android:layout_height="match_parent" app:layout_constraintGuide_percent="0.51" />
+        <FrameLayout android:id="@id/gesture_intro_modal_content" android:scrollbars="vertical" android:layout_width="match_parent" android:layout_height="230.0dp" app:layout_constraintBottom_toTopOf="@id/gesture_intro_cta" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent">
+            <LinearLayout android:orientation="vertical" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="24.0dp" android:layout_marginEnd="24.0dp">
+                <TextView android:textColor="@color/white" android:id="@id/gesture_intro_label" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dp" android:text="@string/adapt_unlace_gesture_preHeader_modal_label" style="@style/BigfootH4" />
+                <TextView android:textColor="@color/white" android:id="@id/gesture_intro_heading" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dp" android:text="@string/adapt_unlace_gesture_intro_modal_header" style="@style/BigfootH1" />
+                <TextView android:textColor="@color/white" android:id="@id/gesture_intro_sub_copy" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dp" android:text="@string/adapt_unlace_gesture_intro_modal_body" style="@style/BigfootBody" />
+            </LinearLayout>
+        </FrameLayout>
+        <include android:id="@id/gesture_intro_cta" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="24.0dp" android:layout_marginEnd="24.0dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" layout="@layout/item_messaging_cta_constraint" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.nike.adapt.ui.helper.BottomSheet android:id="@id/gesture_intro_bottom_sheet" android:background="@drawable/dialog_bottom_sheet" android:layout_width="match_parent" android:layout_height="wrap_content" app:behavior_hideable="false" app:behavior_peekHeight="0.0dp" app:hasSecondaryButton="false" app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior" style="@style/BottomSheetDialogTheme" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

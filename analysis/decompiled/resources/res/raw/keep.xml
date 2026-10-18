@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="
+    @array/tightenQueries,
+    @array/loosenQueries,
+    @array/laceToQueries,
+    @array/unlaceQueries,
+    @array/batteryQueries,
+    @array/changeLightsQueries,
+    @array/tightenQueries,"
+ />

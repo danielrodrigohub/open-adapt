@@ -1,0 +1,37 @@
+# Open Adapt experimental
+
+Versión modificada del APK Nike Adapt 1.29.3 para investigar el control local de unas Nike Adapt Auto Max. Se instala con el paquete `com.openadapt.experimental` y firma local propia, junto a la app original. No desinstales la original para probar esta versión.
+
+## Opciones implementadas
+
+- Panel local sin registro o inicio de sesión Nike.
+- Guardado privado del par y sus claves obtenidas por el emparejamiento real. Reconexión automática al par seleccionado o al último usado; no elimina la autenticación del hardware ni los permisos de Android.
+- Supresión de la consulta remota de actualizaciones durante el acceso. Conserva comprobaciones de compatibilidad de comandos y recuperación de transferencias que ya estaban en curso.
+- Servicio con notificación para mantener la conexión y detectar giros del teléfono con la pantalla apagada. Lleva el teléfono vertical, fijo y con la pantalla hacia delante. El giro del teléfono no identifica cuál pie está pisando.
+- Colores y pruebas independientes izquierda/derecha. El modo continuo mantiene un color fijo, con una animación de 60 segundos renovada cada 45 segundos mientras hay conexión; al desactivarlo se usan los destellos por movimiento. Requiere soporte de animaciones personalizadas del firmware, mínimo declarado 2.1.7. No anula cortes por batería o temperatura.
+- Movimiento experimental del motor: afloja 1 % y vuelve al ajuste inicial únicamente si se confirma el pequeño recorrido. Desactivado al abrir; máximo cinco ciclos por minuto y uno cada diez segundos. Requiere posición y batería recientes, temperatura válida y estar fuera del cargador. Una respuesta inválida, fallo o pérdida de conexión cancela el ciclo. La parada depende de que llegue el comando Bluetooth. No garantiza un sonido audible.
+- Lectura de versiones y estados de las seis ranuras de firmware de cada zapatilla, con exportación de diagnóstico JSON. No escribe firmware. Los checksums son valores declarados por el dispositivo; no equivalen a una verificación criptográfica independiente.
+
+## Funciones que siguen pendientes
+
+- **Pisadas reales por zapatilla:** el APK contiene receptores de esos datos, pero su método de activación fue eliminado del código distribuido. El selector de pisadas solo responde si el calzado ya envía los eventos. No se sustituye por alternancia inventada. Hace falta confirmar soporte del firmware y completar/validar la activación con el par físico.
+- **Respaldo binario del firmware:** no se encontró una ruta de lectura completa confirmada. El archivo exportado es un diagnóstico, no una imagen restaurable.
+- **Conexión sin primer emparejamiento:** las zapatillas requieren claves y autenticación propias. La versión modificada necesita obtenerlas por un emparejamiento real; no puede leer el almacenamiento privado de la app original.
+
+## Primera prueba
+
+1. Copia e instala `OpenAdapt-1.29.3-experimental.apk` en tu Android. La app original permanece instalada.
+2. Abre Open Adapt y concede los permisos de dispositivos cercanos. En Android antiguo puede requerir ubicación.
+3. Entra en **Controles Adapt / emparejar una vez** y completa el emparejamiento físico. Evita que la app original mantenga una conexión simultánea al mismo par.
+4. Vuelve al panel mediante el icono de Open Adapt o su notificación, deja desactivado el motor y prueba primero cada luz y el modo continuo.
+5. Activa **Giros del teléfono**, inicia el control y comprueba el comportamiento con la pantalla bloqueada.
+6. Lee el firmware y guarda el diagnóstico. La lectura de todas las ranuras puede tardar unos treinta segundos.
+7. La prueba del motor requiere validación presencial; empieza con el calzado quieto y fuera de los pies. **Detener todo** también está disponible en la notificación.
+
+## Evidencia y validación
+
+Los detalles de compilación y pruebas están en `VALIDACION.md`. Ninguna prueba local sustituye el ensayo de Bluetooth, sensores, luces y motor en tus zapatillas. Los servicios de registro y descarga de Nike no se han usado para declarar funciones operativas.
+
+Fuentes locales: `analysis/offline-findings.md`, `analysis/findings-firmware-motion.md`, fuentes nuevas en `analysis/openadapt/src/com/openadapt/`, scripts `analysis/patch_offline.py`, `analysis/patch_motion.py` y `analysis/build_openadapt.py`.
+
+El servicio sigue el mecanismo de conexión en segundo plano descrito por [Android Developers](https://developer.android.com/develop/connectivity/bluetooth/ble/background) y mantiene la CPU activa durante la sesión con un bloqueo parcial acotado y renovable. El sistema o la configuración de batería del fabricante aún pueden finalizar una sesión.

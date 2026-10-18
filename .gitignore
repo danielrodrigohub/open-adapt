@@ -1,0 +1,32 @@
+# Private signing material must never be published.
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.key
+*.pem
+keypass.txt
+.env
+.env.*
+!.env.example
+
+# Downloaded tools, credentials, local caches and build intermediates.
+/analysis/tools/
+/analysis/openadapt/build/
+/analysis/openadapt/review-classes/
+/analysis/openadapt/test-classes/
+/analysis/decoded/build/
+/analysis/decoded/dist/
+**/__pycache__/
+*.pyc
+.DS_Store
+*.log
+
+# APK downloads are attached to GitHub Releases rather than source history.
+*.apk
+*.apk.idsig
+*.aab
+
+# Emulator dumps and machine-specific runtime state.
+/output/emulator-smoke.json
+/output/ui-*.xml

@@ -1,0 +1,374 @@
+syntax = "proto3";
+option java_package = "com.nike.corerf";
+option java_outer_classname = "sessions";
+
+// Sessions
+message SessionIDMsg
+{
+    uint32 sessionID = 1;
+}
+
+message SessionEndedEvent
+{
+    enum SessionEndReason
+    {
+        MEMORY_FULL = 0;
+        LOW_BATTERY = 1;
+    }
+
+    SessionIDMsg sessionIDMsg = 1;
+    SessionEndReason reason = 2;
+}
+
+message SessionIDList
+{
+    repeated uint32 sessionIDs = 1;
+}
+
+message SessionInfo
+{
+    enum SessionState
+    {
+        SESSION_INVALID = 0;
+        SESSION_ENDED = 1;
+        SESSION_ACTIVE = 2;
+        SESSION_PAUSED = 3;
+    }
+
+    SessionIDMsg sessionIDMsg = 1;
+    uint64 timestamp = 2;
+    uint32 size = 3;
+    uint32 crc = 4;
+    SessionState state = 5;
+}
+
+message EnabledConfigurations
+{
+    enum ConfigurationType
+    {
+        TYPE_NOT_ENABLED = 0;
+        TYPE_RAW_DATA_STORAGE = 1;
+        TYPE_RAW_DATA_STREAM = 2;
+        TYPE_STEP_METRICS_STORAGE = 3;
+        TYPE_STEP_METRICS_STREAM = 4;
+        TYPE_STEP_METRICS_AGGREGATE_STREAM = 5;
+        TYPE_ACTIVITY_CLASSIFIER_STORAGE = 6;
+        TYPE_ACTIVITY_CLASSIFIER_STREAM = 7;
+        TYPE_RAW_CAPSENSE_STORAGE = 8;
+        TYPE_RAW_CAPSENSE_STREAM = 9;
+        TYPE_BATTERY_TEMP_STORAGE = 10;
+        TYPE_BATTERY_TEMP_STREAM = 11;
+        TYPE_GESTURE_RAW_DATA_FIFO_STORAGE = 12;
+    }
+
+    enum ConfigurationParameter
+    {
+        RATE_NOT_APPLICABLE = 0;
+        RATE_25_HZ = 1;
+        RATE_1_HZ = 2;
+        RATE_0_2_HZ = 3;
+        RATE_0_3_HZ = 4;
+        RATE_0_5_HZ = 5;
+    }
+
+    ConfigurationType type = 1;
+    ConfigurationParameter parameter = 2;
+}
+
+message EnabledConfigurationGroup
+{
+    repeated EnabledConfigurations configuration = 1;
+}
+
+enum StepClassification
+{
+    // Idle is the lack of steps, thus no entry in the classification
+    UNKNOWN = 0;
+    WALK = 1;
+    JOG  = 2;
+    RUN  = 3;
+    SPRINT = 4;
+}
+
+message ActivityClassificationState
+{
+    // Activity classifier state, based on configuration
+    enum ActivityClassification
+    {
+        UNKNOWN = 0;
+        IDLE = 1;
+        WALK = 2;
+        JOG  = 3;
+        RUN  = 4;
+        SPRINT = 5;
+    }
+
+    ActivityClassification activity = 1;
+    uint64 timestamp = 2;
+}
+
+message SessionDataMetrics
+{
+    enum FootStrikeClassification
+    {
+        UNKNOWN = 0;
+        TOE = 1;
+        MID = 2;
+        HEEL = 3;
+    }
+
+    uint32 timestampOffsetMs = 1;
+    FootStrikeClassification footStrikeType = 2;
+    int32 impact = 3;
+    int32 impulse = 4;
+    uint32 contactTime = 5;
+    uint32 swingTime = 6;
+    uint32 stepSpeed = 7;
+    uint32 stepLength = 8;
+    StepClassification currentStepClassification = 9;
+    uint32 loadingRate = 10;
+}
+
+message AutoAdaptConfiguration
+{
+    // Fit based on a servo percentage
+    uint32 idleFit = 1;
+    uint32 walkFit = 2;
+    uint32 jogFit = 3;
+    uint32 runFit = 4;
+    uint32 sprintFit = 5;
+
+    // Latency specified in milliseconds
+    uint32 idleStateLatency = 6;
+    uint32 walkStateLatency = 7;
+    uint32 jogStateLatency = 8;
+    uint32 runStateLatency = 9;
+    uint32 sprintStateLatency = 10;
+
+    // Specified in centimeters/second
+    uint32 walkThreshold = 11;
+    uint32 jogThreshold = 12;
+    uint32 runThreshold = 13;
+    uint32 sprintThreshold = 14;
+}
+
+message FitAutoAdaptEnabled
+{
+    // Enabled = 1, disabled = 0
+    uint32 autoAdaptEnabled = 1;
+    uint64 timestamp = 2;
+}
+
+message StepClassificationState
+{
+    StepClassification currentStepClassificationState = 1;
+}
+
+message SessionDataAggregate
+{
+    uint32 timestampOffsetMs = 1;
+    uint32 sessionStepCount = 2;
+    uint32 intermediateCadenceSpm = 3;
+}
+
+// only used internally for testing
+message MemsSampleRate
+{
+    enum MemsRate
+    {
+        RATE_25_HZ = 0;
+        RATE_50_HZ = 1;
+        RATE_100_HZ = 2;
+        RATE_200_HZ = 3;
+    }
+
+    MemsRate rate = 1;
+}
+
+message CapSenseSampleRate
+{
+    enum CapSenseRate
+    {
+        RATE_25_HZ = 0;
+        RATE_50_HZ = 1;
+        RATE_100_HZ = 2;
+        RATE_200_HZ = 3;
+    }
+
+    CapSenseRate rate = 1;
+}
+
+message MemsData
+{
+    int32 x = 1;
+    int32 y = 2;
+    int32 z = 3;
+}
+
+message GyroAccelData
+{
+    MemsData accelData = 1;
+    MemsData gyroData = 2;
+}
+
+message SessionDataMemsRaw
+{
+    uint32 timestampOffsetMs = 1;
+    uint32 sampleFrequencyHz = 2;
+    bytes data = 3;
+}
+
+message SessionDataMems
+{
+    uint32 timestampOffsetMs = 1;
+    uint32 sampleFrequencyHz = 2;
+    repeated GyroAccelData data = 3;
+}
+
+message SessionDataGestureRaw
+{
+    uint32 timestampOffsetMs = 1;
+    bytes data = 2;
+}
+
+message SessionDataGesture
+{
+    uint32 timestampOffsetMs = 1;
+    repeated MemsData data = 2;
+}
+
+message CapSenseData
+{
+    uint32 signalValue = 1;
+    uint32 referenceValue = 2;
+    uint32 ccValue = 3;
+}
+
+message SessionDataCapSense
+{
+    uint32 timestampOffsetMs = 1;
+    uint32 sampleFrequencyHz = 2;
+    repeated CapSenseData data = 3;
+}
+
+message SessionDataCapSenseRaw
+{
+    uint32 timestampOffsetMs = 1;
+    uint32 sampleFrequencyHz = 2;
+    bytes data = 3;
+}
+
+message SessionDataBatteryTemp
+{
+    uint32 timestampOffsetMs = 1;
+    double batteryTemp = 2;
+}
+
+message SessionDataCapSenseStreaming
+{
+    uint32 timestampOffsetMs = 1;
+    CapSenseData data = 2;
+}
+
+message SessionStartPacket
+{
+    uint32 version = 1;
+    SessionIDMsg sessionIDMsg = 2;
+    uint64 startTimeEpochMs = 3;
+}
+
+message SessionStopPacket
+{
+    uint32 endTimeOffsetMs = 1;
+}
+
+message SessionDataMemsStreaming
+{
+    uint32 timestampOffsetMs = 1;
+    GyroAccelData gyroAccelData = 2;
+}
+
+message SessionDataRaw
+{
+    SessionStartPacket header = 1;
+    repeated SessionDataMemsRaw mems = 2;
+    repeated SessionDataMetrics metric = 3;
+    repeated SessionDataAggregate stepAggregate = 4;
+    SessionStopPacket footer = 5;
+    repeated ActivityClassificationState activityClassification = 6;
+    repeated SessionDataCapSenseRaw cs = 7;
+    repeated SessionDataBatteryTemp batteryTemp = 8;
+    repeated SessionDataGestureRaw gesture = 9;
+}
+
+message SessionData
+{
+    SessionStartPacket header = 1;
+    repeated SessionDataMems mems = 2;
+    repeated SessionDataMetrics metric = 3;
+    repeated SessionDataAggregate stepAggregate = 4;
+    SessionStopPacket footer = 5;
+    repeated ActivityClassificationState activityClassification = 6;
+    repeated SessionDataCapSense cs = 7;
+    repeated SessionDataBatteryTemp batteryTemp = 8;
+    repeated SessionDataGesture gesture = 9;
+}
+
+message SysConfigAlgoVersion
+{
+    uint32 major_version = 1;
+    uint32 minor_version = 2;
+    uint32 revision      = 3;
+}
+
+message GestureConfiguration
+{
+    enum GestureClassification
+    {
+        CLASSIFICATION_UNKNOWN = 0;
+        CLASSIFICATION_NONE = 1;
+        CLASSIFICATION_DOUBLETAP = 2;
+        CLASSIFICATION_DOUBLETAP_TRAINING = 3;
+    }
+
+    enum GestureAction
+    {
+        ACTION_UNKNOWN = 0;
+        ACTION_NONE = 1;
+        ACTION_UNLACE = 2;
+    }
+
+    GestureClassification classification = 1;
+    GestureAction action = 2;
+}
+
+message EnabledGestureConfigurationGroup
+{
+    repeated GestureConfiguration configuration = 1;
+}
+
+message MessageResponse
+{
+    enum responseContext
+    {
+        UNKNOWN = 0;
+        CRITICAL_BATTERY = 1;
+        ACTIVE_SESSION = 2;
+        CONFIG_SET = 3;
+    }
+
+    responseContext response = 1;
+}
+
+message GestureNotification
+{
+    uint64 timestamp = 1;
+    bool value = 2;
+    GestureConfiguration config = 3;
+}
+
+message GestureStatistics
+{
+    uint32 totalDoubleTapClassifications = 1;
+    uint32 doubleTapFalsePositives = 2;
+}

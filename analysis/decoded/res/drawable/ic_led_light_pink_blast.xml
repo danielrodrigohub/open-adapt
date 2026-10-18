@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="24.0dp" android:width="24.0dp" android:viewportWidth="53.0" android:viewportHeight="53.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:name="ic_1" android:scaleX="1.0" android:scaleY="1.0">
+        <path android:name="ring2" android:fillColor="#f2f2f2" android:pathData="M26.5,26.5m24,-0a24,24 0,1 1,-48 -0a24,24 0,1 1,48 -0" android:strokeColor="#00000000" android:strokeWidth="1.0" android:fillAlpha="0.21" android:fillType="evenOdd" />
+        <path android:fillColor="#ffb8e3" android:pathData="M26.5,26.5m19,-0a19,19 0,1 1,-38 -0a19,19 0,1 1,38 -0" android:strokeColor="#00000000" android:strokeWidth="1.0" android:fillType="nonZero" />
+        <path android:name="ring1" android:fillColor="#00000000" android:pathData="M26.5,26.5m25,-0a25,25 0,1 1,-50 -0a25,25 0,1 1,50 -0" android:strokeColor="#ffffff" android:strokeWidth="3.0" android:strokeAlpha="0.0" android:fillType="evenOdd" />
+    </group>
+</vector>

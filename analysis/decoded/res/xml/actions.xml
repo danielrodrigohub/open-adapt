@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<actions>
+    <action intentName="AdaptTighten" queryPatterns="@array/tightenQueries">
+        <parameter name="side">
+            <entity-set-reference entitySetId="SideEntitySet" />
+        </parameter>
+        <parameter name="shoe">
+            <entity-set-reference entitySetId="ShoeEntitySet" />
+        </parameter>
+        <fulfillment fulfillmentMode="actions.fulfillment.DEEPLINK" urlTemplate="nikeadapt://x-callback-url/lacing/tighten{?side}">
+            <parameter-mapping intentParameter="side" urlParameter="side" />
+        </fulfillment>
+    </action>
+    <action intentName="AdaptLoosen" queryPatterns="@array/loosenQueries">
+        <parameter name="side">
+            <entity-set-reference entitySetId="SideEntitySet" />
+        </parameter>
+        <parameter name="shoe">
+            <entity-set-reference entitySetId="ShoeEntitySet" />
+        </parameter>
+        <fulfillment fulfillmentMode="actions.fulfillment.DEEPLINK" urlTemplate="nikeadapt://x-callback-url/lacing/loosen{?side}">
+            <parameter-mapping intentParameter="side" urlParameter="side" />
+        </fulfillment>
+    </action>
+    <action intentName="AdaptLaceTo" queryPatterns="@array/laceToQueries">
+        <parameter name="side">
+            <entity-set-reference entitySetId="SideEntitySet" />
+        </parameter>
+        <parameter name="shoe">
+            <entity-set-reference entitySetId="ShoeEntitySet" />
+        </parameter>
+        <parameter name="percent" type="https://schema.org/Number" />
+        <fulfillment fulfillmentMode="actions.fulfillment.DEEPLINK" urlTemplate="nikeadapt://x-callback-url/lacing/laceTo{?percent,side}">
+            <parameter-mapping intentParameter="percent" urlParameter="percent" />
+            <parameter-mapping intentParameter="side" urlParameter="side" />
+        </fulfillment>
+    </action>
+    <action intentName="AdaptUnlace" queryPatterns="@array/unlaceQueries">
+        <parameter name="unlace">
+            <entity-set-reference entitySetId="UnlaceEntitySet" />
+        </parameter>
+        <parameter name="side">
+            <entity-set-reference entitySetId="SideEntitySet" />
+        </parameter>
+        <parameter name="shoe">
+            <entity-set-reference entitySetId="ShoeEntitySet" />
+        </parameter>
+        <fulfillment fulfillmentMode="actions.fulfillment.DEEPLINK" urlTemplate="nikeadapt://x-callback-url/lacing/unlace{?side}">
+            <parameter-mapping intentParameter="side" urlParameter="side" />
+        </fulfillment>
+    </action>
+    <entity-set entitySetId="UnlaceEntitySet">
+        <entity alternateName="@array/alternateUnlaces" identifier="laces" name="unlace" />
+    </entity-set>
+    <action intentName="AdaptBattery" queryPatterns="@array/batteryQueries">
+        <parameter name="side">
+            <entity-set-reference entitySetId="SideEntitySet" />
+        </parameter>
+        <parameter name="shoe">
+            <entity-set-reference entitySetId="ShoeEntitySet" />
+        </parameter>
+        <fulfillment fulfillmentMode="actions.fulfillment.DEEPLINK" urlTemplate="nikeadapt://x-callback-url/battery" />
+    </action>
+    <action intentName="AdaptChangeLights" queryPatterns="@array/changeLightsQueries">
+        <parameter name="color" type="https://schema.org/Text" />
+        <fulfillment fulfillmentMode="actions.fulfillment.DEEPLINK" urlTemplate="nikeadapt://x-callback-url/lacing/change-lights{?color}">
+            <parameter-mapping intentParameter="color" urlParameter="color" />
+        </fulfillment>
+    </action>
+    <entity-set entitySetId="SideEntitySet">
+        <entity identifier="left" name="left" />
+        <entity identifier="right" name="right" />
+        <entity identifier="both" name="both" />
+    </entity-set>
+    <entity-set entitySetId="ShoeEntitySet">
+        <entity alternateName="shoes" identifier="shoe" name="shoe" />
+        <entity alternateName="feet" identifier="foot" name="foot" />
+        <entity alternateName="nikes" identifier="nike" name="nike" />
+    </entity-set>
+</actions>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/messaging_center_container" android:paddingTop="16.0dp" android:paddingBottom="0.0dp" android:clipChildren="false" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingStart="16.0dp" android:paddingEnd="16.0dp" android:elevation="8.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/item_messaging_headline" />
+    <Space android:layout_width="match_parent" android:layout_height="40.0dp" />
+    <FrameLayout android:id="@id/item_messaging_center_container" android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="1.0" />
+    <Space android:layout_width="match_parent" android:layout_height="40.0dp" />
+    <include layout="@layout/item_messaging_cta" />
+</LinearLayout>

@@ -1,0 +1,146 @@
+.class public final Lza/a$g;
+.super Lrd/o;
+.source "AdaptKitCoreRF.kt"
+
+# interfaces
+.implements Lqd/l;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lza/a;->L(Lnc/c;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lrd/o;",
+        "Lqd/l<",
+        "Landroid/os/Bundle;",
+        "Lfd/o;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field public final synthetic h:Lnc/c;
+
+
+# direct methods
+.method public constructor <init>(Lnc/c;)V
+    .locals 0
+
+    iput-object p1, p0, Lza/a$g;->h:Lnc/c;
+
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lrd/o;-><init>(I)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
+
+    .line 1
+    check-cast p1, Landroid/os/Bundle;
+
+    if-eqz p1, :cond_5
+
+    .line 2
+    iget-object v0, p0, Lza/a$g;->h:Lnc/c;
+
+    const-string v1, "param_result_outgoing_key"
+
+    .line 3
+    invoke-virtual {p1, v1}, Landroid/os/BaseBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_1
+
+    .line 4
+    invoke-static {v1}, Lyd/o;->b0(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v2, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 v2, 0x1
+
+    :goto_1
+    if-eqz v2, :cond_2
+
+    const/4 v1, 0x0
+
+    goto :goto_2
+
+    .line 5
+    :cond_2
+    new-instance v2, Lorg/json/JSONObject;
+
+    invoke-direct {v2, v1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+
+    const-string v1, "success"
+
+    .line 6
+    invoke-virtual {v2, v1}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;)Z
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    :goto_2
+    const-string v2, "extra_error_outgoing_key"
+
+    .line 7
+    invoke-virtual {p1, v2}, Landroid/os/BaseBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    if-eqz v1, :cond_3
+
+    .line 8
+    invoke-interface {v0, v1}, Llc/b;->j(Ljava/lang/Object;)V
+
+    goto :goto_3
+
+    .line 9
+    :cond_3
+    new-instance v1, Ljava/lang/Exception;
+
+    if-nez p1, :cond_4
+
+    const-string p1, "No message response came"
+
+    :cond_4
+    invoke-direct {v1, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+
+    .line 10
+    invoke-interface {v0, v1}, Llc/b;->k(Ljava/lang/Throwable;)V
+
+    .line 11
+    :cond_5
+    :goto_3
+    sget-object p1, Lfd/o;->a:Lfd/o;
+
+    return-object p1
+.end method

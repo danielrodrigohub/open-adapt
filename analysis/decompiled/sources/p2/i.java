@@ -1,0 +1,9 @@
+package p2;
+
+/* JADX INFO: compiled from: PreferredColorSpace.java */
+/* JADX INFO: loaded from: classes.dex */
+public enum i {
+    /* JADX INFO: Fake field, exist only in values array */
+    SRGB,
+    DISPLAY_P3
+}

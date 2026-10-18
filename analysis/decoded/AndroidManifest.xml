@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='utf-8'?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="33" android:compileSdkVersionCodename="13" package="com.openadapt.experimental" platformBuildVersionCode="33" platformBuildVersionName="13">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:maxSdkVersion="30" android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:maxSdkVersion="30" android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:maxSdkVersion="30" android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:maxSdkVersion="30" android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <queries>
+        <package android:name="com.nike.plusgps" />
+        <package android:name="com.nike.ntc" />
+        <intent>
+            <action android:name="android.intent.action.DIAL" />
+        </intent>
+        <intent>
+            <action android:name="android.support.customtabs.action.CustomTabsService" />
+        </intent>
+    </queries>
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="true" />
+    <uses-feature android:name="android.hardware.location" android:required="true" />
+    <uses-feature android:name="android.software.webview" android:required="true" />
+    <uses-feature android:name="android.software.input_methods" android:required="true" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="com.openadapt.experimental.permission.ACCESS_ADAPT_KIT" />
+    <permission android:name="com.openadapt.experimental.permission.ACCESS_ADAPT_KIT" android:protectionLevel="signature" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" android:usesPermissionFlags="neverForLocation" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <application android:allowBackup="false" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:dataExtractionRules="@xml/data_extraction_rules" android:extractNativeLibs="false" android:fullBackupContent="false" android:icon="@mipmap/ic_launcher" android:label="Open Adapt · experimental" android:largeHeap="true" android:name="com.nike.adapt.BigfootApplication" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <receiver android:enabled="true" android:exported="false" android:name="com.nike.adapt.receiver.BatteryAlarmReceiver" />
+        <receiver android:enabled="true" android:exported="false" android:name="com.nike.adapt.receiver.TurnOffLightsReceiver" />
+        <receiver android:enabled="true" android:exported="false" android:name="com.nike.adapt.receiver.BatteryStateReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.nike.adapt.receiver.BatteryDismissedReceiver" />
+        <meta-data android:name="com.google.android.actions" android:resource="@xml/actions" />
+        <activity android:exported="true" android:launchMode="singleInstance" android:name="com.nike.adapt.SplashScreenActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/BlackBackgroundTheme">
+            </activity>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/ic_jordan_launcher" android:label="@string/bigfoot_app_name" android:name="com.nike.adapt.JordanLauncherAlias" android:roundIcon="@mipmap/ic_jordan_launcher_round" android:targetActivity="com.nike.adapt.SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity android:exported="true" android:launchMode="singleInstance" android:name="com.nike.adapt.ui.DeepLinkRoutingActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.google.android.gms.actions.SEARCH_ACTION" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:host="x-callback-url" android:scheme="nikeadapt" />
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:name="com.nike.adapt.ui.shoecontroller.ShoeControllerActivity" android:screenOrientation="portrait" android:theme="@style/BlackBackgroundTheme" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.battery.BatteryStateActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.settings.SettingsActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.modes.ModeSelectionActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.LoginActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.AdaptUniteLoginActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.messaging.MessagingCenterActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.onboarding.BigfootOnBoardingActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.lighting.lightpacks.LightPacksActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.lighting.LightingActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.settings.FirmwareUpdateActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.modes.ModeAdditionActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.modes.ModeRenameActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.requirements.AdaptRequirementsActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.settings.SettingsSupportActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.settings.SettingsAboutActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.settings.SettingsRegulatoryActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.settings.SettingsRegulatoryFccDetailsActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.settings.SettingsPrivacyActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.settings.SupportTipsActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.settings.SupportDeleteAccountActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.settings.SettingsWebViewActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.settings.SettingsVersionInfoActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.settings.ShoeProfileActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.settings.ColorWayActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.AdaptRestartActivity" android:process=":adapt_restart" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.myshoes.MyShoesActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.myshoes.SelectShoesActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.modes.ModeEditActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.settings.SettingsAcknowledgementActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.settings.SettingsVoiceActivity" android:screenOrientation="portrait" />
+        <activity android:name="com.nike.adapt.ui.PairingActivity" android:screenOrientation="portrait" />
+        <activity android:name="com.nike.adapt.ui.FindYourFitActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.dataoptin.DataOptInActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.GoogleVoicePromptActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.lighting.LightingEffectsActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.myshoes.autolace.AutoLaceActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.util.AdjustLacingActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.settings.SettingsNotificationsActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.gestures.GesturesActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.settings.SettingsPartnersActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.settings.AppIconsActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.gestures.GesturesTutorialActivity" android:screenOrientation="portrait" />
+        <activity android:exported="false" android:name="com.nike.adapt.ui.gestures.GestureIntroModalActivity" android:screenOrientation="portrait" />
+        <service android:exported="false" android:name="com.nike.adapt.service.AdaptAuthenticationService" />
+        <service android:exported="false" android:name="com.nike.adapt.service.FirmwareUpdateService" />
+        <activity android:exported="true" android:name="com.nike.authcomponent.oidc.internal.appauth.source.RedirectUriReceiverActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:host="oidc" android:path="/authorize_code/v1" android:scheme="nikeadapt" />
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:launchMode="singleTask" android:name="com.nike.authcomponent.oidc.internal.appauth.source.AuthorizationManagementActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <service android:exported="false" android:name="com.nike.authcomponent.oidc.internal.store.OIDCAuthenticationService" android:enabled="false">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator" />
+            </intent-filter>
+            <meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@xml/authenticator" />
+        </service>
+        <meta-data android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule" android:value="GlideModule" />
+        <uses-library android:name="androidx.window.extensions" android:required="false" />
+        <uses-library android:name="androidx.window.sidecar" android:required="false" />
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:name="androidx.work.impl.background.systemalarm.SystemAlarmService" />
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_job_service_default" android:exported="true" android:name="androidx.work.impl.background.systemjob.SystemJobService" android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_foreground_service_default" android:exported="false" android:name="androidx.work.impl.foreground.SystemForegroundService" />
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="false" android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver" />
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_OKAY" />
+                <action android:name="android.intent.action.BATTERY_LOW" />
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver">
+            <intent-filter>
+                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="true" android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver" android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
+            </intent-filter>
+        </receiver>
+        <service android:directBootAware="true" android:exported="false" android:name="androidx.room.MultiInstanceInvalidationService" />
+    <activity android:name="com.openadapt.ControlActivity" android:exported="true" android:theme="@android:style/Theme.Material.Light.NoActionBar" android:launchMode="singleTask" android:taskAffinity="com.openadapt.experimental.controls"><intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter></activity><service android:name="com.openadapt.MotionService" android:exported="false" android:foregroundServiceType="connectedDevice" android:stopWithTask="false" /></application>
+<uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" /></manifest>

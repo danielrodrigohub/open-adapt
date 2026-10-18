@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/item_messaging_headline">
+    <LinearLayout
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="#fff"
+            android:id="@+id/messaging_headline_title"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            style="@style/BigfootH1"/>
+    </LinearLayout>
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"/>
+    <TextView
+        android:textColor="#fff"
+        android:id="@+id/messaging_headline_message_1"
+        android:visibility="visible"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/helvetica_neue_regular"
+        style="@style/BigfootBody"/>
+    <LinearLayout
+        android:id="@+id/messaging_headline_message_2_frame"
+        android:paddingTop="26dp"
+        android:visibility="gone"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="#fff"
+            android:id="@+id/messaging_headline_message_2"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/helvetica_neue_regular"
+            style="@style/BigfootBody"/>
+    </LinearLayout>
+</merge>

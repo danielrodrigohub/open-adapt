@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:id="@id/item_messaging_cta"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Button android:textAppearance="@style/BigfootButtonTextAppearance" android:textStyle="bold" android:textColor="@android:color/black" android:gravity="center" android:id="@id/messaging_cta_primary" android:background="@drawable/background_white_pill_button" android:padding="16.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:minWidth="180.0dp" android:minHeight="50.0dp" android:textAllCaps="false" android:elevation="0.0dp" android:stateListAnimator="@null" app:lineHeight="0.0dp" style="?android:borderlessButtonStyle" />
+    <Space android:layout_width="0.0dp" android:layout_height="10.0dp" />
+    <com.nike.adapt.ui.view.SecondaryButton android:textAppearance="@style/BigfootButtonTextAppearance" android:textColor="@android:color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/messaging_cta_secondary" android:background="@drawable/text_selector_pill_button" android:padding="16.0dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" app:lineHeight="0.0dp" style="?android:borderlessButtonStyle" />
+</merge>

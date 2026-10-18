@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector android:drawable="@drawable/ic_led_light_vivid_purple"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <target android:name="ic_1" android:animation="@anim/translate" />
+    <target android:name="ring1" android:animation="@anim/change_alpha" />
+    <target android:name="ring2" android:animation="@anim/change_alpha_platter" />
+</animated-vector>

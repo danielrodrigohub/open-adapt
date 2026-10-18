@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="alternateUnlaces">
+        <item>release</item>
+        <item>undo</item>
+        <item>unfasten</item>
+        <item>unstrap</item>
+        <item>untie</item>
+    </string-array>
+    <string-array name="batteryQueries">
+        <item>Battery level of $shoe</item>
+        <item>Battery level of my $shoe</item>
+        <item>Battery level</item>
+        <item>Battery life remaining</item>
+        <item>Battery status of $shoe</item>
+        <item>Battery status of $side $shoe</item>
+        <item>Battery status of my $shoe</item>
+        <item>Battery status of my $side $shoe</item>
+        <item>Battery status</item>
+        <item>Charge in my $side $shoe</item>
+        <item>Charging level of $shoe</item>
+        <item>Charging level of my $shoe</item>
+        <item>Charging level of the $shoe</item>
+        <item>Check batteries life</item>
+        <item>Check batteries</item>
+        <item>Check battery level of $shoe</item>
+        <item>Check battery level of my $shoe</item>
+        <item>Check battery life</item>
+        <item>Check battery</item>
+        <item>Check my batteries life</item>
+        <item>Check my batteries</item>
+        <item>Check my battery life</item>
+        <item>Check my battery</item>
+        <item>Display batteries life</item>
+        <item>Display batteries</item>
+        <item>Display battery life</item>
+        <item>Display battery</item>
+        <item>Display my batteries life</item>
+        <item>Display my batteries</item>
+        <item>Display my battery life</item>
+        <item>Display my battery</item>
+        <item>How much battery have I got left</item>
+        <item>How much battery is left</item>
+        <item>How much power left on $shoe</item>
+        <item>How much power left on $side $shoe</item>
+        <item>How much power left on my $shoe</item>
+        <item>How much power left on my $side $shoe</item>
+        <item>How much power remaining in $shoe</item>
+        <item>How much power remaining in my $shoe</item>
+        <item>"Shoes' battery status"</item>
+        <item>"Shoe's battery status"</item>
+        <item>Shoes battery status</item>
+        <item>Show batteries life</item>
+        <item>Show batteries</item>
+        <item>Show battery life</item>
+        <item>Show battery</item>
+        <item>Show my batteries life</item>
+        <item>Show my batteries</item>
+        <item>Show my battery life</item>
+        <item>Show my battery</item>
+        <item>"Status of my shoes' battery"</item>
+        <item>"Status of my shoe's battery"</item>
+        <item>Status of my shoes battery</item>
+        <item>"Tell me my shoes' battery status"</item>
+        <item>"Tell me my shoe's battery status"</item>
+        <item>Tell me my shoes battery status</item>
+        <item>Tell me the battery level of my $shoe</item>
+        <item>Tell me the battery level</item>
+        <item>Tell me the battery status</item>
+        <item>View batteries life</item>
+        <item>View batteries</item>
+        <item>View battery life</item>
+        <item>View battery</item>
+        <item>View my batteries life</item>
+        <item>View my batteries</item>
+        <item>View my battery life</item>
+        <item>View my battery</item>
+        <item>"What is my shoes' battery status"</item>
+        <item>"What is my shoe's battery status"</item>
+        <item>What is my shoes battery status</item>
+        <item>What is the battery level of my $shoe</item>
+        <item>What is the battery level</item>
+        <item>What is the battery life of my $shoe</item>
+        <item>What is the battery life</item>
+        <item>What is the battery status of my $shoe</item>
+        <item>What is the battery status</item>
+        <item>"What's my shoes' battery status"</item>
+        <item>"What's my shoe's battery status"</item>
+        <item>"What's my shoes battery status"</item>
+        <item>"What's the battery level of my $shoe"</item>
+        <item>"What's the battery level"</item>
+        <item>"What's the battery life of my $shoe"</item>
+        <item>"What's the battery life"</item>
+        <item>"What's the battery status of my $shoe"</item>
+        <item>"What's the battery status"</item>
+        <item>"What is my $side shoe's battery status"</item>
+        <item>"What is my $side shoes' battery status"</item>
+        <item>What is my $side shoes battery status</item>
+        <item>What is the battery level of my $side $shoe</item>
+        <item>What is the battery life of my $side $shoe</item>
+        <item>What is the battery status of my $side $shoe</item>
+        <item>"What's my $side shoe's battery status"</item>
+        <item>"What's my $side shoes' battery status"</item>
+        <item>"What's my $side shoes battery status"</item>
+        <item>"What's the battery level of my $side $shoe"</item>
+        <item>"What's the battery life of my $side $shoe"</item>
+        <item>"What's the battery status of my $side $shoe"</item>
+    </string-array>
+    <string-array name="changeLightsQueries">
+        <item>Change light</item>
+        <item>Change lights</item>
+        <item>Change my light</item>
+        <item>Change my lights</item>
+        <item>Change light to $color</item>
+        <item>Change lights to $color</item>
+        <item>Change my light to $color</item>
+        <item>Change my lights to $color</item>
+        <item>Adjust light</item>
+        <item>Adjust lights</item>
+        <item>Adjust my light</item>
+        <item>Adjust my lights</item>
+        <item>Adjust light to $color</item>
+        <item>Adjust lights to $color</item>
+        <item>Adjust my light to $color</item>
+        <item>Adjust my lights to $color</item>
+        <item>Change my shoe light</item>
+        <item>Change my shoe lights</item>
+        <item>Change my shoe light to $color</item>
+        <item>Change my shoe lights to $color</item>
+        <item>Adjust my shoe light</item>
+        <item>Adjust my shoe lights</item>
+        <item>Adjust my shoe light to $color</item>
+        <item>Adjust my shoe lights to $color</item>
+        <item>Change color</item>
+        <item>Change colors</item>
+        <item>Change my color</item>
+        <item>Change my colors</item>
+        <item>Change color to $color</item>
+        <item>Change colors to $color</item>
+        <item>Change my color to $color</item>
+        <item>Change my colors to $color</item>
+        <item>Adjust color</item>
+        <item>Adjust colors</item>
+        <item>Adjust my color</item>
+        <item>Adjust my colors</item>
+        <item>Adjust color to $color</item>
+        <item>Adjust colors to $color</item>
+        <item>Adjust my color to $color</item>
+        <item>Adjust my colors to $color</item>
+        <item>Change my shoe color</item>
+        <item>Change my shoe colors</item>
+        <item>Change my shoe color to $color</item>
+        <item>Change my shoe colors to $color</item>
+        <item>Adjust my shoe color</item>
+        <item>Adjust my shoe colors</item>
+        <item>Adjust my shoe color to $color</item>
+        <item>Adjust my shoe colors to $color</item>
+    </string-array>
+    <string-array name="exo_controls_playback_speeds">
+        <item>0.25x</item>
+        <item>0.5x</item>
+        <item>0.75x</item>
+        <item>Normal</item>
+        <item>1.25x</item>
+        <item>1.5x</item>
+        <item>2x</item>
+    </string-array>
+    <string-array name="laceToQueries">
+        <item>adjust $side lace to $percent %</item>
+        <item>adjust both laces to $percent %</item>
+        <item>adjust laces to $percent %</item>
+        <item>adjust laces to $percent %</item>
+        <item>adjust my $side lace to $percent %</item>
+        <item>adjust my laces to $percent %</item>
+        <item>change $side lace to $percent %</item>
+        <item>change both laces to $percent %</item>
+        <item>change laces to $percent %</item>
+        <item>change laces to $percent %</item>
+        <item>change my $side lace to $percent %</item>
+        <item>change my laces to $percent %</item>
+        <item>change the lacing for both $shoe at $percent %</item>
+        <item>change the lacing for both $shoe to $percent %</item>
+        <item>lace $percent %</item>
+        <item>lace $shoe $percent %</item>
+        <item>lace $shoe to $percent %</item>
+        <item>lace $shoe up to $percent %</item>
+        <item>lace both $shoe $percent %</item>
+        <item>lace both $shoe to $percent %</item>
+        <item>lace both $shoe up to $percent %</item>
+        <item>lace my $shoe $percent %</item>
+        <item>lace my $shoe to $percent %</item>
+        <item>lace my $shoe up to $percent %</item>
+        <item>lace to $percent %</item>
+        <item>lace up to $percent %</item>
+        <item>lace the $side $shoe $percent %</item>
+        <item>lace the $side $shoe at $percent %</item>
+        <item>lace the $side $shoe to $percent %</item>
+        <item>put both laces at $percent %</item>
+        <item>put both laces to $percent %</item>
+        <item>put laces at $percent % on both $shoe</item>
+        <item>put laces at $percent %</item>
+        <item>put laces to $percent % on both $shoe</item>
+        <item>put laces to $percent %</item>
+        <item>put my $side lace at $percent %</item>
+        <item>put my $side lace to $percent %</item>
+        <item>put my laces at $percent %</item>
+        <item>put my laces to $percent %</item>
+        <item>put $shoe on $percent %</item>
+        <item>put both $shoe on $percent %</item>
+        <item>put my $shoe on $percent %</item>
+        <item>put the lacing $side at $percent %</item>
+        <item>put the lacing $side on $percent %</item>
+        <item>put the lacing $side to $percent %</item>
+        <item>set $side lace percentage to $percent %</item>
+        <item>set $side lace to $percent %</item>
+        <item>set both laces to $percent %</item>
+        <item>set lace percentage to $percent %</item>
+        <item>set lace to $percent %</item>
+        <item>set laces to $percent %</item>
+        <item>set my laces to $percent %</item>
+        <item>set the $side $shoe to $percent %</item>
+        <item>tie both laces to $percent %</item>
+        <item>tie laces to $percent %</item>
+        <item>tie my laces to $percent %</item>
+    </string-array>
+    <string-array name="loosenQueries">
+        <item>$shoe are too tight</item>
+        <item>$shoe is too tight</item>
+        <item>$side $shoe is too tight</item>
+        <item>My $shoe is too tight</item>
+        <item>My $side $shoe is too tight</item>
+        <item>Loosen $shoe</item>
+        <item>Loosen $side $shoe</item>
+        <item>Loosen my $shoe</item>
+        <item>Loosen my $side $shoe</item>
+        <item>Loosen the $shoe</item>
+        <item>Loosen the $side $shoe</item>
+        <item>Loosen</item>
+        <item>$shoe looser</item>
+        <item>$side $shoe looser</item>
+        <item>Make my $shoe looser</item>
+        <item>Make my $side $shoe looser</item>
+        <item>My $shoe looser</item>
+        <item>My $side $shoe looser</item>
+        <item>Untighten $shoe</item>
+        <item>Untighten $side $shoe</item>
+        <item>Untighten my $shoe</item>
+        <item>Untighten my $side $shoe</item>
+        <item>Untighten the $shoe</item>
+        <item>Untighten the $side $shoe</item>
+        <item>Untighten</item>
+    </string-array>
+    <string-array name="tightenQueries">
+        <item>$shoe is too loose</item>
+        <item>$side $shoe is too loose</item>
+        <item>$side $shoe is too loose</item>
+        <item>My $side $shoe is too loose</item>
+        <item>$shoe tighter</item>
+        <item>$side $shoe tighter</item>
+        <item>My $shoe tighter</item>
+        <item>My $side $shoe tighter</item>
+        <item>Make my $shoe tighter</item>
+        <item>Make my $side $shoe tighter</item>
+        <item>Retighten $shoe</item>
+        <item>Retighten $side $shoe</item>
+        <item>Retighten my $shoe</item>
+        <item>Retighten my $side $shoe</item>
+        <item>Retighten my $side foot</item>
+        <item>Retighten the $side $shoe</item>
+        <item>Retighten the $side foot</item>
+        <item>Retighten</item>
+        <item>$shoe are not tight enough</item>
+        <item>"$shoe aren't tight enough"</item>
+        <item>$side $shoe is not tight enough</item>
+        <item>"$side $shoe isn't tight enough"</item>
+        <item>Tighten $shoe</item>
+        <item>Tighten $side $shoe</item>
+        <item>Tighten my $shoe</item>
+        <item>Tighten my $side $shoe</item>
+        <item>Tighten my $side foot</item>
+        <item>Tighten the $side $shoe</item>
+        <item>Tighten the $side $shoe</item>
+        <item>Tighten</item>
+    </string-array>
+    <string-array name="unlaceQueries">
+        <item>$shoe unlace</item>
+        <item>$side $shoe unlace</item>
+        <item>Get me out of both my $shoe</item>
+        <item>Get me out of both of my $shoe</item>
+        <item>Get me out of my $shoe</item>
+        <item>Get me out of my $side $shoe</item>
+        <item>Get me out of the $shoe</item>
+        <item>Get me out of the $side $shoe</item>
+        <item>Get out of both my $shoe</item>
+        <item>Get out of both of my $shoe</item>
+        <item>Get out of my $shoe</item>
+        <item>Get out of my $side $shoe</item>
+        <item>Get out of the $shoe</item>
+        <item>Get out of the $side $shoe</item>
+        <item>Both my $shoe unlaced</item>
+        <item>Both my $side $shoe unlaced</item>
+        <item>Both of my $shoe unlaced</item>
+        <item>Both of my $side $shoe unlaced</item>
+        <item>My $shoe unlaced</item>
+        <item>My $side $shoe unlaced</item>
+        <item>Open $shoe</item>
+        <item>Open $side $shoe</item>
+        <item>Open both my $shoe</item>
+        <item>Open both of my $shoe</item>
+        <item>Open my $shoe</item>
+        <item>Open my $side $shoe</item>
+        <item>Open the $shoe</item>
+        <item>Open the $side $shoe</item>
+        <item>Open</item>
+        <item>Take both my $shoe off</item>
+        <item>Take both my $side $shoe off</item>
+        <item>Take both of my $shoe off</item>
+        <item>Take both of my $side $shoe off</item>
+        <item>Take my $shoe off</item>
+        <item>Take my $side $shoe off</item>
+        <item>Take off $shoe</item>
+        <item>Take off $side $shoe</item>
+        <item>Take off both my $shoe</item>
+        <item>Take off both of my $shoe</item>
+        <item>Take off my $shoe</item>
+        <item>Take off my $side $shoe</item>
+        <item>Take off the $shoe</item>
+        <item>Take off the $side $shoe</item>
+        <item>Take the $shoe off</item>
+        <item>Take the $side $shoe off</item>
+        <item>$unlace $shoe</item>
+        <item>$unlace $side $shoe</item>
+        <item>$unlace both my $shoe</item>
+        <item>$unlace both of my $shoe</item>
+        <item>$unlace my $shoe</item>
+        <item>$unlace my $side $shoe</item>
+        <item>$unlace the $shoe</item>
+        <item>$unlace the $side $shoe</item>
+        <item>$unlace the laces of $shoe</item>
+        <item>$unlace the laces of $side $shoe</item>
+        <item>$unlace the laces of both $shoe</item>
+        <item>$unlace the laces of both my $shoe</item>
+        <item>$unlace the laces of both of my $shoe</item>
+        <item>$unlace the laces of my $shoe</item>
+        <item>$unlace the laces of my $side $shoe</item>
+        <item>$unlace</item>
+    </string-array>
+</resources>

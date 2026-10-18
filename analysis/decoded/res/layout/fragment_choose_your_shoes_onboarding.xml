@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/choose_your_shoes_container" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/choose_your_shoes_confirmation" layout="@layout/view_choose_your_shoes_confirmation" />
+    <include android:id="@id/choose_your_shoes_selection" layout="@layout/view_choose_your_shoes_selection" />
+</FrameLayout>

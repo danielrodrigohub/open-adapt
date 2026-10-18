@@ -1,0 +1,14 @@
+{
+  "android_release": "17",
+  "control_visible": true,
+  "coexists_with_original": true,
+  "open_original_controls": true,
+  "stop_button_tapped": true,
+  "motion_wake_lock_released_after_stop": true,
+  "apk_sha256": "43891dcd60ede6fa55d765f4a1fd831e1d0f89a01d28df1b67e46f73dcb1beb8",
+  "motion_service_active_screen_locked": true,
+  "simulated_turn_detected_screen_locked": true,
+  "motion_service_stopped": true,
+  "android_runtime_exceptions_recorded": false,
+  "physical_shoes_tested": false
+}

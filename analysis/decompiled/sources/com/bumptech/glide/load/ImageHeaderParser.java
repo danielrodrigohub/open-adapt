@@ -1,0 +1,70 @@
+package com.bumptech.glide.load;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.ByteBuffer;
+
+/* JADX INFO: loaded from: classes.dex */
+public interface ImageHeaderParser {
+
+    public enum ImageType {
+        GIF(true),
+        JPEG(false),
+        RAW(false),
+        PNG_A(true),
+        PNG(false),
+        WEBP_A(true),
+        WEBP(false),
+        ANIMATED_WEBP(true),
+        AVIF(true),
+        UNKNOWN(false);
+
+
+        /* JADX INFO: renamed from: h, reason: collision with root package name */
+        public final boolean f4491h;
+
+        ImageType(boolean z10) {
+            this.f4491h = z10;
+        }
+
+        public boolean hasAlpha() {
+            return this.f4491h;
+        }
+
+        public boolean isWebp() {
+            int i10 = a.f4492a[ordinal()];
+            return i10 == 1 || i10 == 2 || i10 == 3;
+        }
+    }
+
+    public static /* synthetic */ class a {
+
+        /* JADX INFO: renamed from: a, reason: collision with root package name */
+        public static final /* synthetic */ int[] f4492a;
+
+        static {
+            int[] iArr = new int[ImageType.values().length];
+            f4492a = iArr;
+            try {
+                iArr[ImageType.WEBP.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                f4492a[ImageType.WEBP_A.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                f4492a[ImageType.ANIMATED_WEBP.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+        }
+    }
+
+    ImageType a(ByteBuffer byteBuffer) throws IOException;
+
+    int b(InputStream inputStream, s2.b bVar) throws IOException;
+
+    int c(ByteBuffer byteBuffer, s2.b bVar) throws IOException;
+
+    ImageType d(InputStream inputStream) throws IOException;
+}

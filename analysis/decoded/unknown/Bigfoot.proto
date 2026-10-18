@@ -1,0 +1,1033 @@
+syntax = "proto3";
+option java_package = "com.nike.corerf.adaptive";
+option java_outer_classname = "messages";
+
+//
+// @file Bigfoot.proto
+//
+
+// These are just here for reference, they live in the coreRF header file shared between all clients.
+/*
+enum BigfootCommands
+{
+    // Request sent by client for bigfoot to engage servo
+    SERVO_MOVE
+
+    // Request sent by client for bigfoot to store current position as preset
+    SERVO_PRESET_SET
+
+    // Request sent by client for bigfoot to respond with servo position for a preset
+    SERVO_PRESET_GET
+
+    // Request sent by client for bigfoot to move to position
+    SERVO_POSITION_SET
+
+    // Request sent by client for bigfoot to respond with current servo position
+    SERVO_POSITION_GET
+
+    // Event sent by bigfoot at the end of a servo move to indicate current servo status
+    SERVO_MOVE_COMPLETE_EVENT
+
+    // Event sent by client to bigfoot to start the identify LED animation.  Sent via Identify BLE service rather than Bigfoot BLE service
+    IDENTIFY
+
+    // Request sent by client to set the RTC to a specific time
+    RTC_TIME_SET
+
+    // Request sent by client to retrieve the current RTC time
+    RTC_TIME_GET
+
+    // Request sent by client to retrieve a serial number from the device
+    SERIAL_NUMBER_GET
+
+    // Request sent by client for bigfoot to perform a factory reset
+    FACTORY_RESET
+
+    // Request sent by client for bigfoot to perform a firmware restart
+    SOFT_RESET
+
+    // Request sent by client for bigfoot to enter battery latch state
+    BATTERY_LATCH
+
+    // Request sent by client to retrieve bigfoot's battery charger state
+    BATTERY_CHARGER_STATE_GET
+
+    // Request sent by client to toggle bigfoot's foot presence sensor to activate autolacing feature
+    TOGGLE_FPS
+
+    // Request sent by client to force bigfoot to end its BLE connection to client (Needed for iOS)
+    BLE_DISCONNECT
+
+    // Request sent by client for bigfoot to return a list of user usage statistics
+    USER_STATS_GET
+
+    // Request sent by client to start the authentication key generation process.  Only used during imprinting process
+    START_AUTH_KEY_GENERATION
+
+    // Request sent by client to exchange public keys during authentication key generation process
+    EXCHANGE_PUBLIC_KEY
+
+    // Request sent by client to start authentication process.  Used after initial BLE connection
+    START_AUTHENTICATION
+
+    // Request sent by client to complete authentication process.
+    AUTHENTICATION_CHALLENGE
+
+    // Run the self test and wait for response
+    SELF_TEST
+
+    // Get system stats
+    SYSTEM_STATS_GET
+
+    // Set base color and brightness
+    SET_LED_BASE
+
+    // Send and receive ASCII text for Serial CLI commands
+    ASCII_COMMAND
+
+}
+*/
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+// SERVO MESSAGES
+
+// Used by SERVO_MOVE (REQUEST)
+message ServoMove
+{
+    enum ServoCommand
+    {
+        SERVO_HOME                  = 0;
+        SERVO_SHORT_SEGMENT_TIGHTEN = 1;
+        SERVO_LONG_SEGMENT_TIGHTEN  = 2;
+        SERVO_SHORT_SEGMENT_LOOSEN  = 3;
+        SERVO_LONG_SEGMENT_LOOSEN   = 4;
+        SERVO_MAX_TIGHTEN           = 5;
+        SERVO_MAX_LOOSEN            = 6;
+        SERVO_AUTOLACE              = 7;
+        SERVO_STOP                  = 8;
+        SERVO_HUG                   = 9;
+    }
+
+    ServoCommand command = 1;
+}
+
+// Used by SERVO_POSITION_GET (ACK) SERVO_POSITION_SET (REQUEST) SERVO_PRESET_GET (ACK) and SERVO_PRESET_SET (ACK)
+message ServoPosition
+{
+    //[0, 100] indicating how tight the laces are from fully loose [0] to fully tightened [100]
+    uint32 positionPercentage = 1;
+}
+
+// Output by SERVO_STATUS_EVENT (EVENT)
+message ServoStatusEvent
+{
+    enum MoveStatus
+    {
+        SERVO_STATUS_OK             = 0; // move result status indicating no faults
+        SERVO_STATUS_OC             = 1; // move result status indicating over current fault
+        SERVO_STATUS_ENC_STALL      = 2; // move result status indicating stall fault
+        SERVO_STATUS_EXT_SHUTDOWN   = 3; // move result status indicating external shutdown from motor protection hardware
+        SERVO_STATUS_STOPPED        = 4; // move result status indicating move stopped by user/command
+        SERVO_STATUS_POLARITY_ERROR = 5; // move result status indicating motor polarity error
+        SERVO_STATUS_OVERSPEED      = 6; // move result status indicating encoder overspeed error
+    }
+
+    MoveStatus status = 1;
+    //[0, 100] indicating how tight the laces are from fully loose [0] to fully tightened [100]
+    uint32 positionPercentage = 2;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+// DEVICE SETTINGS
+
+// Used by RTC_TIME_GET (ACK) and RTC_TIME_SET (REQUEST)
+message RTCPayload
+{
+    uint32 dow              = 1;
+    uint32 month            = 2;
+    uint32 day              = 3;
+    uint32 year             = 4;
+    uint32 hour             = 5;
+    uint32 minute           = 6;
+    uint32 second           = 7;
+}
+
+// Used by RTC_TIME_GET_UTC (ACK) and RTC_TIME_SET_UTC (REQUEST)
+message RTCPayloadUTC
+{
+    uint64 timestampMillis  = 1;
+}
+
+// Used by BATTERY_CHARGER_STATE_GET (ACK)
+message BatteryChargerState
+{
+    enum ChargerState
+    {
+        ON_CHARGER  = 0;
+        OFF_CHARGER = 1;
+        ON_CHARGING = 2;
+        CHARGING_ERROR = 3;
+    }
+
+    enum BatteryState
+    {
+        BATTERY_LOW = 0;
+        BATTERY_MID = 1;
+        BATTERY_HIGH = 2;
+        BATTERY_CRITICAL = 3;
+        BATTERY_FULL = 4;
+    }
+
+    ChargerState status = 1;
+    uint32 batteryVoltage = 2;
+    double batteryTemp   = 3;
+    uint32 batteryPercent = 4;
+    BatteryState batteryState = 5;
+
+}
+
+// Used by SERIAL_NUMBER_GET (REQUEST, ACK)
+message GetSerialNumber
+{
+    enum Module
+    {
+        SHOE   = 0;
+        ENGINE = 1;
+        PCA    = 2;
+    }
+
+    Module id           = 1;
+    string serialNumber = 2;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+//  AUTHENTICATION
+//  Auth key generation and authentication processes are detailed in
+//  CoreRF/docs/AuthenticationSpecification.md
+
+
+//  Used by START_AUTHENTICATION (ACK)
+//  Response message sent by device to phone during imprinting process to generate a secret auth key
+message StartAuthenticationKeyGeneration
+{
+    enum ModPGroup
+    {
+        //First Oakley Group (id: 1) defined in RFC2409 - 96 bytes
+        ONE = 0;
+        //Second Oakley Group (id: 2) defined in RFC2409 - 128 bytes
+        TWO = 1;
+        //1536-bit group (id: 5) defined in RFC3526 - 192 bytes
+        FIVE = 2;
+        //2048-bit group (id: 14) defined in RFC3526 - 256 bytes
+        FOURTEEN = 3;
+        //3072-bit group (id: 15) defined in RFC3526 - 384 bytes
+        FIFTEEN = 4;
+        //4096-bit group (id: 16) defined in RFC3526 - 512 bytes
+        SIXTEEN = 5;
+        //6144-bit group (id: 17) defined in RFC3526 - 768 bytes
+        SEVENTEEN = 6;
+        //8192-bit group (id: 18) defined in RFC3526 - 1024 bytes
+        EIGHTEEN = 7;
+    }
+    ModPGroup modpGroupNumber = 1;
+}
+
+// Used by EXCHANGE_PUBLIC_KEY (REQUEST) and EXCHANGE_PUBLIC_KEY (ACK)
+//  Message sent by phone to device during auth key generation process and
+//  response message sent by device to phone during auth key generation process detailed in
+message ExchangePublicKey
+{
+    bytes publicKey = 1;
+}
+
+// Used by START_AUTHENTICATION (REQUEST)
+//  Message sent by phone to authenticate with device and access protected services and commands.
+message StartAuthenticationRequest
+{
+    //Nonce is 16 bytes
+    bytes phoneNonce = 1;
+}
+
+// Used by START_AUTHENTICATION (ACK)
+//  Response message sent by device to phone during the authentication process
+message StartAuthenticationACK
+{
+    //Nonces are 16 bytes
+    bytes encryptedPhoneNonce = 1;
+    bytes deviceNonce = 2;
+}
+
+// Used by AUTHENTICATION_CHALLENGE (REQUEST)
+//  Sent by phone to device in second phase of authentication process
+message AuthenicationChallenge
+{
+    //Nonce is 16 bytes
+    bytes encryptedDeviceNonce = 1;
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+//  DEBUG
+//  Messages to help debug and test the firmware
+//
+
+// Used by SELF_TEST (REQUEST)
+message SelfTestRequest
+{
+    enum Module
+    {
+        SYSCLK  = 0;
+        GPIO    = 1;
+        DMA     = 2;
+        USART1  = 3;
+        USART3  = 4;
+        TIM3    = 5;
+        TIM5    = 6;
+        ADC     = 7;
+        I2C1    = 8;
+        SPI1    = 9;
+        SPI2    = 10;
+        SPI3    = 11;
+    }
+
+    Module id   = 1;
+}
+
+// Used by SELF_TEST (ACK)
+message SelfTestAck
+{
+    uint32 status        = 1;
+    uint32 version       = 2;
+    uint32 isCritical    = 3;
+    string name          = 4;
+}
+
+//  System Statistics
+
+// Used by SYSTEM_STATS_GET (ACK)
+message SystemStatsAck
+{
+    BatteryStats             batteryStats  = 1;
+    WakeupStats              wakeupStats   = 2;
+    StateStats               stateStats    = 3;
+    ServoStats               servoStats    = 4;
+    CurrentHistogramStats    currentStats  = 5;
+    BleStats                 bleStats      = 6;
+    GestureStats             gestureStats  = 7;
+}
+
+// Used by SYSTEM_STATS_GET (ACK)
+message BleStats
+{
+    uint32 time_connected_sec                   = 1;
+    uint32 time_connected_to_current_device_sec = 2;
+}
+
+// Used by SELF_TEST_TEST_DRIVERS (ACK)
+message SelfTestTestDriver
+{
+    bool status = 1;
+}
+
+// Used by SYSTEM_STATS_GET (ACK)
+message BatteryStats
+{
+    uint32 time_on_charger_sec      = 1;
+    uint32 time_charging_sec        = 2;
+    uint32 lifetime_sec             = 3;
+    uint32 charge_ct                = 4;
+    uint32 on_charger_ct            = 5;
+    uint32 time_sleeping_sec        = 6;
+    uint32 battery_lacing_percent   = 7;
+    uint32 battery_idle_percent     = 8;
+    uint32 battery_sleep_percent    = 9;
+    uint32 battery_latched_percent  = 10;
+}
+
+// Used by SYSTEM_STATS_GET (ACK)
+message CurrentHistogramStats
+{
+    uint32 histo_0 = 1;
+    uint32 histo_1 = 2;
+    uint32 histo_2 = 3;
+    uint32 histo_3 = 4;
+    uint32 histo_4 = 5;
+    uint32 histo_5 = 6;
+    uint32 histo_6 = 7;
+    uint32 histo_7 = 8;
+    uint32 histo_8 = 9;
+    uint32 histo_9 = 10;
+    uint32 max_current_count = 11;
+}
+
+// Used by SYSTEM_STATS_GET (ACK)
+message WakeupStats
+{
+    uint32 button_wakeup_ct     = 1;
+    uint32 charger_wakeup_ct    = 2;
+    uint32 capsense_wakeup_ct   = 3;
+    uint32 fuel_gauge_wakeup_ct = 4;
+    uint32 ble_wakeup_ct        = 5;
+}
+
+// Used by SYSTEM_STATS_GET (ACK)
+message StateStats
+{
+    uint32 lacing_ct   = 1;
+    uint32 idle_ct     = 2;
+    uint32 sleep_ct    = 3;
+    uint32 latched_ct  = 4;
+}
+
+// Used by SYSTEM_STATS_GET (ACK)
+message ServoStats
+{
+    uint32 idle_time_sec            = 1;
+    uint32 laced_time_sec           = 2;
+    uint32 homing_routine_ct        = 3;
+    uint32 BLE_manual_tighten_ct    = 4;
+    uint32 BLE_manual_loosen_ct     = 5;
+    uint32 button_manual_tighten_ct = 6;
+    uint32 button_manual_loosen_ct  = 7;
+    uint32 autolace_tighten_ct      = 8;
+    uint32 autolace_loosen_ct       = 9;
+    uint32 BLE_servo_fault_ct       = 10;
+    uint32 button_servo_fault_ct    = 11;
+    uint32 max_tighten_ct           = 12;
+    uint32 preset_change_ct         = 13;
+    uint32 tighten_spool_deg        = 14;
+    uint32 loosen_spool_deg         = 15;
+    uint32 over_current_event_ct    = 16;
+}
+
+// Used by SYSTEM_STATS_GET (ACK)
+message GestureStats
+{
+    uint32 totalDoubleTapClassifications = 1;
+    uint32 doubleTapFalsePositives = 2;
+}
+
+// Used by ASCII_COMMAND (EVENT)
+message AsciiCommand
+{
+    string text = 1;
+}
+
+// Used by BATTERY_GET_LEVEL (EVENT)
+message BatteryLevel
+{
+    uint32 vhigh    = 1;
+    uint32 vlow     = 2;
+    uint32 vmin     = 3;
+}
+
+// Used by STORAGE_RESET_DATA
+message StorageReset
+{
+    uint32 data_id = 1;
+}
+
+// Used by STORAGE_GET_SELFTEST_STATS
+message StorageSelfTestStats
+{
+    uint32 index = 1;
+}
+
+// Used by STORAGE_GET_SELFTEST_STATS
+message StorageSelfTestStatsAck
+{
+    uint32 pass_ct          = 1;
+    uint32 fail_ct          = 2;
+    uint32 error_bitfield   = 3;
+}
+
+// Used by SYS_CONFIG_GET_MFG_DATE
+message SysConfigMfgDate
+{
+    uint32 year     = 1;
+    uint32 month    = 2;
+    uint32 day      = 3;
+}
+
+// Used by SYS_CONFIG_GET_IMP_DATE
+message SysConfigImpDate
+{
+    uint32 year     = 1;
+    uint32 month    = 2;
+    uint32 day      = 3;
+}
+
+// Used by SYS_CONFIG_GET_RL
+message SysConfigRl
+{
+    uint32 rl_designator = 1;
+}
+
+// Used by SYS_CONFIG_LED_INTENSITY
+message SysConfigLEDIntensity
+{
+    uint32 red_mcd      = 1;
+    uint32 green_mcd    = 2;
+    uint32 blue_mcd     = 3;
+}
+
+// Used by SYS_CONFIG_GET_BLE_FW_VERSION
+message SysConfigBLEFWVersion
+{
+    uint32 major_version = 1;
+    uint32 minor_version = 2;
+    uint32 revision      = 3;
+}
+
+// Used by SYS_CONFIG_GET_MCU_FW_VERSION
+message SysConfigMCUFWVersion
+{
+    uint32 major_version = 1;
+    uint32 minor_version = 2;
+    uint32 revision      = 3;
+    uint32 hw_version    = 4;
+}
+
+// Used by SYS_CONFIG_GET_CAPSENSE_FW_VERSION
+message SysConfigCapsenseFWVersion
+{
+    uint32 major_version = 1;
+    uint32 minor_version = 2;
+    uint32 revision      = 3;
+}
+
+// Used by SERVO_SET_MAX_SEGS
+message ServoMaxSegs
+{
+    uint32 num_segs = 1;
+}
+
+// Used by SERVO_SET_SEG_DIST
+message ServoSegDist
+{
+    uint32 seg_distance = 1;
+}
+
+// Used by SERVO_GET_PARAMS
+message ServoParams
+{
+    uint32 current_state        = 1;
+    uint32 move_status          = 2;
+    uint32 current_seg          = 3;
+    uint32 current_position_cnt = 4;
+    bool is_home_found          = 5;
+    bool is_homing_disabled     = 6;
+    bool is_at_max              = 7;
+    bool is_at_performance      = 8;
+    bool is_at_preset           = 9;
+    bool is_at_comfort          = 10;
+    bool is_at_home             = 11;
+    uint32 preset_position      = 12;
+}
+
+// Used by ANIMATION_EXECUTE
+message AnimationExecute
+{
+    uint32 animation_id = 1;
+}
+
+// Used by ANIMATION_SET_COLOR and ANIMATION_GET_COLOR
+message AnimationColor
+{
+    uint32 color_id     = 1;
+    uint32 red_output   = 2;
+    uint32 green_output = 3;
+    uint32 blue_output  = 4;
+}
+
+// Used by ANIMATION_SET_PULSE_CYCLE
+message AnimationPulseCycle
+{
+    uint32 pulse_cycle_id   = 1;
+    uint32 prequel_ms       = 2;
+    uint32 enter_time_ms    = 3;
+    uint32 on_time_ms       = 4;
+    uint32 exit_time_ms     = 5;
+    uint32 off_time_ms      = 6;
+    uint32 sequel_ms        = 7;
+}
+
+// Used by ANIMATION_SET_ANIMATION
+message AnimationSetAnimation
+{
+    uint32 animation_id     = 1;
+    uint32 color_id         = 2;
+    uint32 pulse_cycle_id   = 3;
+    uint32 rgb_led          = 4;
+    uint32 num_cycles       = 5;
+    bool interruptable      = 6;
+}
+
+// Used by ANIMATION_SET_BRIGHTNESS
+message AnimationSetBrightness
+{
+    enum AnimationBrightness
+    {
+        BRIGHTNESS_0 = 0;           // all animations off
+        BRIGHTNESS_1 = 1;
+        BRIGHTNESS_2 = 2;
+        BRIGHTNESS_3 = 3;
+        BRIGHTNESS_4 = 4;
+    }
+    AnimationBrightness brightness_level     = 1;
+}
+
+// Used by USER_ANIMATION_SET_ANIMATION (REQUEST)
+message UserAnimationSetAnimation
+{
+    uint32 animation_id     = 1;    //Id specified by app
+
+    uint32 red_output   = 2;        //Color settings
+    uint32 green_output = 3;
+    uint32 blue_output  = 4;
+
+    uint32 prequel_ms       = 5;    //Pulse cycle settings
+    uint32 enter_time_ms    = 6;
+    uint32 on_time_ms       = 7;
+    uint32 exit_time_ms     = 8;
+    uint32 off_time_ms      = 9;
+    uint32 sequel_ms        = 10;
+}
+
+// Used by USER_ANIMATION_GET_ANIMATION (ACK and EVENT)
+message UserAnimationGetAnimation
+{
+    uint32 animation_id     = 1;    //Id specified by app
+    uint32 time_remaining_sec = 2; //how much time the animation will remain running in seconds
+
+    enum UserAnimationState
+    {
+        USER_ANIMATION_STATE_RUNNING        = 0;    //Animation is currently running
+        USER_ANIMATION_STATE_STOPPED        = 1;    //Animation is not currently running, hasn't been started or was cancelled
+        USER_ANIMATION_STATE_QUEUED         = 2;    //Animation is queued to run after current system animation finishes
+        USER_ANIMATION_STATE_INTERRUPTED    = 3;    //Animation is interrupted by a running system animation, it will run after the system animation completes if there is time remaining
+    }
+    UserAnimationState state = 3; //Current run state of the animation
+
+    enum UserAnimationEndStatus
+    {
+        USER_ANIMATION_END_STATUS_NOT_SET           = 0;    //Status already read or animation never started
+        USER_ANIMATION_END_STATUS_TIMEOUT           = 1;    //Animation completed
+        USER_ANIMATION_END_STATUS_CANCELED          = 2;    //Animation cancelled by app request
+        USER_ANIMATION_END_STATUS_BATTERY_OVERTEMP  = 3;    //battery overtemp forced the cancellation
+        USER_ANIMATION_END_STATUS_CRITICAL_BATTERY  = 4;    //critical battery level forced the cancellation
+    }
+    UserAnimationEndStatus end_status = 4; //If the animation is finished, this shows the reason why
+}
+
+// Used by USER_ANIMATION_START_ANIMATION   (REQUEST)
+message UserAnimationStart
+{
+    uint32 timeout = 1; //how much time the animation will run in seconds
+}
+
+//
+// Animation 2.x Definitions (bigfoot & trillium)
+//
+message AnimationLine
+{
+    message LEDS
+    {
+        message RGBS
+        {
+            uint32 red = 1;     // range valid from [0 - 255]
+            uint32 green = 2;   // range valid from [0 - 255]
+            uint32 blue = 3;    // range valid from [0 - 255]
+        }
+
+        RGBS led1 = 1;
+        RGBS led2 = 2;
+        RGBS led3 = 3;
+    }
+
+    LEDS leds = 1;
+    uint32 frameDurationMs = 2; // range valid from [0 - 65535]
+}
+
+message AnimationMap
+{
+    repeated AnimationLine rgbArray = 1;
+}
+
+message UserAnimationMap
+{
+    uint32 type = 1;            // range valid from [0 - 65535] Note: 0 = bigfoot
+    uint32 id = 2;              // range valid from [0 - 65535]
+    bool interruptable = 3;
+    bool resumable = 4;         // animation will resume after a system animation interrupts
+    uint32 repeatCount = 5;     // range valid from [0 - 65535] Sets the number of repeat plays (use 0 if only 1 animation play is desired)
+    uint32 repeatDelayMs = 6;   // range valid from [0 - 65535]
+    uint32 cycleLengthMs = 7;
+    AnimationMap data = 8;      // frames of led data (total document size must be below 4KB)
+}
+
+// Used by USER_ANIMATION_GET_ANIMATION for Lighting 2.0
+message CustomAnimationGetAnimation
+{
+    enum CustomAnimationState
+    {
+        CUSTOM_ANIMATION_STATE_RUNNING        = 0;    //Animation is currently running
+        CUSTOM_ANIMATION_STATE_STOPPED        = 1;    //Animation is not currently running, hasn't been started or was cancelled
+        CUSTOM_ANIMATION_STATE_QUEUED         = 2;    //Animation is queued to run after current system animation finishes
+        CUSTOM_ANIMATION_STATE_INTERRUPTED    = 3;    //Animation is interrupted by a running system animation, it will run after the system animation completes if there is time remaining
+    }
+    enum CustomAnimationEndStatus
+    {
+        CUSTOM_ANIMATION_END_STATUS_NOT_SET           = 0;    //Status already read or animation never started
+        CUSTOM_ANIMATION_END_STATUS_TIMEOUT           = 1;    //Animation completed
+        CUSTOM_ANIMATION_END_STATUS_CANCELED          = 2;    //Animation cancelled by app request
+        CUSTOM_ANIMATION_END_STATUS_BATTERY_OVERTEMP  = 3;    //battery overtemp forced the cancellation
+        CUSTOM_ANIMATION_END_STATUS_CRITICAL_BATTERY  = 4;    //critical battery level forced the cancellation
+    }
+    uint32 id = 1;                          // range valid from [0 - 65535]
+    uint32 timeRemainingMs = 2;
+    CustomAnimationState state = 3;
+    CustomAnimationEndStatus endStatus = 4;
+}
+
+// Used by FIRMWARE_UPLOAD
+message FirmwareUpload
+{
+    uint32 image_id             = 1;
+    bool wait_for_completion    = 2;
+}
+
+// Used by FIRMWARE_GET_IMAGE_STATS
+message FirmwareUploadImageStatsRequest
+{
+    uint32 image_id = 1;
+}
+message FirmwareUploadImageStatsAck
+{
+    enum Status
+    {
+        FW_IMG_NOT_INITIALIZED = 0;           // image is in unknown state - not initialized
+        FW_IMG_BLANK           = 1;           // image storage area is erased
+        FW_IMG_PARTIAL         = 2;           // image is partially downloaded
+        FW_IMG_REJECTED        = 3;           // user has declined updating to this image
+        FW_IMG_READY           = 4;           // image is ready to be uploaded to target device
+        FW_IMG_CURRENT         = 5;           // image has been uploaded to target device
+        FW_IMG_BAD_CHKSUM      = 6;           // image fails checksum verification
+        FW_IMG_UPLOADING       = 7;           // image upload has been initiated
+        FW_IMG_NON_FUNC        = 8;           // image has failed to run after upload is complete
+    }
+
+    uint32 major_version        = 1;
+    uint32 minor_version        = 2;
+    uint32 revision             = 3;
+    uint32 day                  = 4;
+    uint32 month                = 5;
+    uint32 year                 = 6;
+    Status status               = 7;
+    uint32 image_size           = 8;
+    uint32 downloaded_image_size = 9;
+    uint32 image_checksum       = 10;
+    uint32 image_data_checksum  = 11;
+}
+
+// Used by FIRMWARE_GET_UPGRADE_STATUS
+message FirmwareUpgradeStatus
+{
+    enum Status
+    {
+        FW_UPGRADE_SUCCESS = 0;
+        FW_UPGRADE_FAIL = 1;
+        FW_UPGRADE_READY = 2;
+        FW_UPGRADE_IN_PROGRESS = 3;
+        FW_UPGRADE_FAIL_LOW_BATTERY = 4;
+    }
+    Status status = 1;
+}
+
+// Used by SELF_TEST_GET_HARDFAULT_LOG
+message SelfTestHardFaultLog
+{
+    uint32 version_major    = 1;
+    uint32 version_minor    = 2;
+    uint32 version_rev      = 3;
+    uint32 SHCSR_reg        = 4;
+    uint32 HFSR_reg         = 5;
+    uint32 CFSR_reg         = 6;
+    uint32 MMFAR_reg        = 7;
+    uint32 BFAR_reg         = 8;
+    uint32 stacked_r0       = 9;
+    uint32 stacked_r1       = 10;
+    uint32 stacked_r2       = 11;
+    uint32 stacked_r3       = 12;
+    uint32 stacked_r12      = 13;
+    uint32 stacked_psr      = 14;
+    uint32 stacked_lr       = 15;
+    uint32 stacked_pc       = 16;
+}
+
+message MservoCurrentHistogram
+{
+    uint32 bin_0_1  = 1;
+    uint32 bin_1_2  = 2;
+    uint32 bin_2_3  = 3;
+    uint32 bin_3_4  = 4;
+    uint32 bin_4_5  = 5;
+    uint32 bin_5_6  = 6;
+    uint32 bin_6_7  = 7;
+    uint32 bin_7_8  = 8;
+    uint32 bin_8_9  = 9;
+    uint32 bin_9_10 = 10;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+//  LED
+//  Messages to change LEDs
+//
+
+//Used by SET_LED_BASE (REQUEST)
+message SetLEDBase
+{
+    enum Brightness
+    {
+        OFF     = 0;
+        LOW     = 1;
+        MEDIUM  = 2;
+        HIGH    = 3;
+        HIGHEST = 4;
+    }
+
+    uint32 red              = 1;
+    uint32 green            = 2;
+    uint32 blue             = 3;
+    Brightness brightness   = 4;
+}
+
+//Used by GET_DEVICE_LOGS
+message LogCount
+{
+    uint32 numLogs = 1;
+}
+//Used by GET_DEVICE_LOGS
+message LogTransferParams
+{
+    uint32 numLogs = 1;
+}
+enum LFT_fileID
+{
+    MCU_IMAGE_GOLD = 0;
+    MCU_IMAGE_UPDATE = 1;
+    BLE_IMAGE_GOLD = 2;
+    BLE_IMAGE_UPDATE = 3;
+    CS_IMAGE_GOLD = 4;
+    CS_IMAGE_UPDATE = 5;
+    LOG_DATA = 6;
+}
+
+//Used by LFT_PULL
+message LFTPullRequest
+{
+    LFT_fileID fileId = 1;
+    uint32 byteOffset = 2;
+    uint32 size = 3;
+}
+//Used by LFT_PULL when sent as response
+message LFTPullResponse
+{
+    message Date
+    {
+        uint32 day = 1;
+        uint32 month = 2;
+        uint32 year = 3;
+    }
+
+    message Version
+    {
+        uint32 major = 1;
+        uint32 minor = 2;
+        uint32 revision = 3;
+    }
+
+    Date date = 1;
+    Version version = 2;
+    uint32 size = 3;
+    uint32 crc = 4;
+    string name = 5;
+    LFT_fileID id = 6;
+    LFT_fileID type = 7;
+}
+//Used by LFT_TRANSMIT_SEGMENT
+message LFTSegment
+{
+    bool lastSegment = 1;
+    uint32 size = 2;
+    uint32 crc = 3;
+    uint32 segmentNumber = 4;
+    bytes payload = 5;
+}
+//Used by LFT_RETRANSMIT_SEGMENT
+message LFTRetransmit
+{
+    uint32 sequenceNumber = 1;
+}
+//Used by LFT_STOP_TRANSFER
+message LFTStopTransfer
+{
+    enum Reason
+    {
+        SUCCESS = 0;
+        UNKNOWN = 1;
+        FILE_ERROR = 2;
+        TIMEOUT = 3;
+        DATA_CHANGED = 4;
+        POWERING_DOWN = 5;
+    }
+
+    Reason reason = 1;
+}
+
+message GetLogEntries
+{
+    uint32 numRecords = 1;
+}
+
+message LogData
+{
+    enum LogType
+    {
+        ACCEL = 0;
+        GYRO = 1;
+    }
+
+    uint64 timestamp = 1;
+    LogType logType = 2;
+    int32 x = 3;
+    int32 y = 4;
+    int32 z = 5;
+}
+
+// returned from firmware with the number of log entries
+message NumberLogEntries
+{
+    uint32 numLogEntries = 1;
+}
+
+//Used by SYS_CONFIG_GET_MFG_PRODUCT_ID, SYS_CONFIG_SET_MFG_PRODUCT_ID
+message MfgProductId
+{
+    bytes productID = 1;
+}
+
+//Used by BATTERY_GET_HEALTH_METRICS
+message BatteryHealthMetrics
+{
+    int32 start_voltage_mv  = 1;
+    int32 end_voltage_mv    = 2;
+    int32 voltage_delta_mv  = 3;
+    uint32 elapsed_time_sec = 4;
+    bool threshold_exceeded = 5;
+    uint32 test_id          = 6;
+}
+
+//Used by SESSION_GET_STORAGE_SIZE
+message SessionStorageAllocation
+{
+    uint32 totalSize = 1;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+// FPS MESSAGES
+
+// Used by TOGGLE_FPS (REQUEST)
+message ToggleFPS
+{
+    bool turnFpsOn = 1;
+}
+
+// Used by SYS_CONFIG_GET_FPS_AUTOLACE_TARGET, SYS_CONFIG_SET_FPS_AUTOLACE_TARGET
+message SysConfigFPSAutolaceTarget
+{
+    uint32 autolace_target = 1;
+}
+
+// Used by ENABLE_FPS
+message EnableFPS
+{
+    bool is_enabled = 1;
+}
+
+message FPSCapsenseValue
+{
+    uint32 value = 1;
+}
+
+message FPSCapsenseErrorStatus
+{
+    enum FPSStatus
+    {
+        FPS_ARMED_0 = 0;
+        FPS_WAITING_FOR_STAND_1 = 1;
+        FPS_UNLACED_2 = 2;
+        FPS_IN_SPORT_3 = 3;
+        FPS_WAITING_FOR_RESET_4 = 4;
+        FPS_STATE_CT = 5;
+    }
+
+    FPSStatus status = 1;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+// AFPS MESSAGES
+
+// the afps shoe state
+enum AfpsShoeState
+{
+    SHOE_STATE_UNKNOWN = 0;
+    SHOE_STATE_OFF = 1;
+    SHOE_STATE_ON = 2;
+}
+
+// the afps state
+message AfpsState
+{
+    AfpsShoeState state = 1;
+}
+
+// sample rate of the afps signal
+message AfpsSampleRate
+{
+    enum SampleRate
+    {
+        RATE_25_HZ = 0;
+        RATE_50_HZ = 1;
+        RATE_100_HZ = 2;
+        RATE_200_HZ = 3;
+    }
+
+    SampleRate rate = 1;
+}
+
+// afps state change notification
+message AfpsNotification
+{
+    uint64 timestamp = 1;
+    AfpsState state = 2;
+}
+
+// afps filter configuration
+message AfpsFilterConfiguration
+{
+    // filter thresholds
+    uint32 shoe_off_threshold = 1;
+    uint32 low_threshold = 2;
+    uint32 high_threshold = 3;
+
+    // filter optimization parameters
+    float residual_threshold = 4;
+    float variance_threshold = 5;
+    float adapt_variance = 6;
+    double adapt_offset = 7;
+
+    // decimal bits used in filter math
+    uint32 quantization = 8;
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/parent_frame"
+    android:background="@color/white"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@+id/pairing_video"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:forceHasOverlappingRendering="true"
+        app:resize_mode="fill"
+        app:use_controller="false"/>
+    <LinearLayout
+        android:layout_gravity="top"
+        android:orientation="vertical"
+        android:id="@+id/headline_frame"
+        android:padding="16dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/item_messaging_headline"/>
+    </LinearLayout>
+</FrameLayout>

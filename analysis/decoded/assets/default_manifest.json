@@ -1,0 +1,1868 @@
+{
+  "configuration": {
+    "version": "e0db70af962d40ba9c302b6334669d85",
+    "settings": {
+      "colorway_v1": {
+        "asset_base_url": "https://static.nike.com/a/images/",
+        "colorways": [
+          {
+            "identifier": "AdaptBB-001",
+            "shoe_identifier": "001",
+            "shoe_name": "Nike Adapt BB",
+            "color_name": "Black/White/Pure Platinum",
+            "style_code": [
+              "AO2582-001"
+            ],
+            "shoe_lighting_color": {
+              "red": 0,
+              "green": 60,
+              "blue": 255,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "heroblue",
+            "assets_angled": {
+              "2x": "w_628,h_330/7a42866c-df6f-4449-8882-b3493e801a09/bb_001_angle@2x.png",
+              "3x": "w_942,h_495/7a42866c-df6f-4449-8882-b3493e801a09/bb_001_angle@3x.png",
+              "mdpi": "w_314,h_165/7a42866c-df6f-4449-8882-b3493e801a09/bb_001_angle.webp",
+              "hdpi": "w_471,h_248/7a42866c-df6f-4449-8882-b3493e801a09/bb_001_angle.webp",
+              "xhdpi": "w_628,h_330/7a42866c-df6f-4449-8882-b3493e801a09/bb_001_angle.webp",
+              "xxhdpi": "w_942,h_495/7a42866c-df6f-4449-8882-b3493e801a09/bb_001_angle.webp",
+              "xxxhdpi": "w_1125,h_591/7a42866c-df6f-4449-8882-b3493e801a09/bb_001_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/8495ef17-9e52-4518-ba69-ab5d701ca87a/bb_001_profile@2x.png",
+              "3x": "w_942,h_495/8495ef17-9e52-4518-ba69-ab5d701ca87a/bb_001_profile@3x.png",
+              "mdpi": "w_314,h_165/8495ef17-9e52-4518-ba69-ab5d701ca87a/bb_001_profile.webp",
+              "hdpi": "w_471,h_248/8495ef17-9e52-4518-ba69-ab5d701ca87a/bb_001_profile.webp",
+              "xhdpi": "w_628,h_330/8495ef17-9e52-4518-ba69-ab5d701ca87a/bb_001_profile.webp",
+              "xxhdpi": "w_942,h_495/8495ef17-9e52-4518-ba69-ab5d701ca87a/bb_001_profile.webp",
+              "xxxhdpi": "w_1125,h_591/8495ef17-9e52-4518-ba69-ab5d701ca87a/bb_001_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "AdaptBB-002",
+            "shoe_identifier": "001",
+            "shoe_name": "Nike Adapt BB",
+            "color_name": "Dark Grey/Multi-Color",
+            "style_code": [
+              "AO2582-004"
+            ],
+            "shoe_lighting_color": {
+              "red": 0,
+              "green": 60,
+              "blue": 255,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "heroblue",
+            "assets_angled": {
+              "2x": "w_628,h_330/4938178a-147b-46e2-8a0e-340f91e05bba/bb_002_angle@2x.png",
+              "3x": "w_942,h_495/4938178a-147b-46e2-8a0e-340f91e05bba/bb_002_angle@3x.png",
+              "mdpi": "w_314,h_165/4938178a-147b-46e2-8a0e-340f91e05bba/bb_002_angle.webp",
+              "hdpi": "w_471,h_248/4938178a-147b-46e2-8a0e-340f91e05bba/bb_002_angle.webp",
+              "xhdpi": "w_628,h_330/4938178a-147b-46e2-8a0e-340f91e05bba/bb_002_angle.webp",
+              "xxhdpi": "w_942,h_495/4938178a-147b-46e2-8a0e-340f91e05bba/bb_002_angle.webp",
+              "xxxhdpi": "w_1125,h_591/4938178a-147b-46e2-8a0e-340f91e05bba/bb_002_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/28d16aee-deb3-46eb-a948-16e30be032a6/bb_002_profile@2x.png",
+              "3x": "w_942,h_495/28d16aee-deb3-46eb-a948-16e30be032a6/bb_002_profile@3x.png",
+              "mdpi": "w_314,h_165/28d16aee-deb3-46eb-a948-16e30be032a6/bb_002_profile.webp",
+              "hdpi": "w_471,h_248/28d16aee-deb3-46eb-a948-16e30be032a6/bb_002_profile.webp",
+              "xhdpi": "w_628,h_330/28d16aee-deb3-46eb-a948-16e30be032a6/bb_002_profile.webp",
+              "xxhdpi": "w_942,h_495/28d16aee-deb3-46eb-a948-16e30be032a6/bb_002_profile.webp",
+              "xxxhdpi": "w_1125,h_591/28d16aee-deb3-46eb-a948-16e30be032a6/bb_002_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "AdaptBB-003",
+            "shoe_identifier": "001",
+            "shoe_name": "Nike Adapt BB",
+            "color_name": "Wolf Grey/Multi-Color",
+            "style_code": [
+              "AO2582-002"
+            ],
+            "shoe_lighting_color": {
+              "red": 0,
+              "green": 60,
+              "blue": 255,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "heroblue",
+            "assets_angled": {
+              "2x": "w_628,h_330/b6c403c9-634b-4c12-a4d5-7c3b73a40633/bb_003_angle@2x.png",
+              "3x": "w_942,h_495/b6c403c9-634b-4c12-a4d5-7c3b73a40633/bb_003_angle@3x.png",
+              "mdpi": "w_314,h_165/b6c403c9-634b-4c12-a4d5-7c3b73a40633/bb_003_angle.webp",
+              "hdpi": "w_471,h_248/b6c403c9-634b-4c12-a4d5-7c3b73a40633/bb_003_angle.webp",
+              "xhdpi": "w_628,h_330/b6c403c9-634b-4c12-a4d5-7c3b73a40633/bb_003_angle.webp",
+              "xxhdpi": "w_942,h_495/b6c403c9-634b-4c12-a4d5-7c3b73a40633/bb_003_angle.webp",
+              "xxxhdpi": "w_1125,h_591/b6c403c9-634b-4c12-a4d5-7c3b73a40633/bb_003_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/8a2db302-58d5-4882-a702-3551825c530c/bb_003_profile@2x.png",
+              "3x": "w_942,h_495/8a2db302-58d5-4882-a702-3551825c530c/bb_003_profile@3x.png",
+              "mdpi": "w_314,h_165/8a2db302-58d5-4882-a702-3551825c530c/bb_003_profile.webp",
+              "hdpi": "w_471,h_248/8a2db302-58d5-4882-a702-3551825c530c/bb_003_profile.webp",
+              "xhdpi": "w_628,h_330/8a2db302-58d5-4882-a702-3551825c530c/bb_003_profile.webp",
+              "xxhdpi": "w_942,h_495/8a2db302-58d5-4882-a702-3551825c530c/bb_003_profile.webp",
+              "xxxhdpi": "w_1125,h_591/8a2db302-58d5-4882-a702-3551825c530c/bb_003_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "AdaptBB-004",
+            "shoe_identifier": "001",
+            "shoe_name": "Nike Adapt BB",
+            "color_name": "Multi-Color/Multi-Color",
+            "style_code": [
+              "AO2582-900"
+            ],
+            "shoe_lighting_color": {
+              "red": 0,
+              "green": 60,
+              "blue": 255,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "heroblue",
+            "assets_angled": {
+              "2x": "w_628,h_330/c4bea620-eb16-4f38-a0d9-c228e467bace/bb_004_angle@2x.png",
+              "3x": "w_942,h_495/c4bea620-eb16-4f38-a0d9-c228e467bace/bb_004_angle@3x.png",
+              "mdpi": "w_314,h_165/c4bea620-eb16-4f38-a0d9-c228e467bace/bb_004_angle.webp",
+              "hdpi": "w_471,h_248/c4bea620-eb16-4f38-a0d9-c228e467bace/bb_004_angle.webp",
+              "xhdpi": "w_628,h_330/c4bea620-eb16-4f38-a0d9-c228e467bace/bb_004_angle.webp",
+              "xxhdpi": "w_942,h_495/c4bea620-eb16-4f38-a0d9-c228e467bace/bb_004_angle.webp",
+              "xxxhdpi": "w_1125,h_591/c4bea620-eb16-4f38-a0d9-c228e467bace/bb_004_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/f178b7d4-1b17-4d4c-8ec2-3eb3f6057275/bb_004_profile@2x.png",
+              "3x": "w_942,h_495/f178b7d4-1b17-4d4c-8ec2-3eb3f6057275/bb_004_profile@3x.png",
+              "mdpi": "w_314,h_165/f178b7d4-1b17-4d4c-8ec2-3eb3f6057275/bb_004_profile.webp",
+              "hdpi": "w_471,h_248/f178b7d4-1b17-4d4c-8ec2-3eb3f6057275/bb_004_profile.webp",
+              "xhdpi": "w_628,h_330/f178b7d4-1b17-4d4c-8ec2-3eb3f6057275/bb_004_profile.webp",
+              "xxhdpi": "w_942,h_495/f178b7d4-1b17-4d4c-8ec2-3eb3f6057275/bb_004_profile.webp",
+              "xxxhdpi": "w_1125,h_591/f178b7d4-1b17-4d4c-8ec2-3eb3f6057275/bb_004_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "AdaptHuarache-001",
+            "shoe_identifier": "002",
+            "shoe_name": "Nike Adapt Huarache",
+            "color_name": "White/Bright Crimson/Lemon Venom/Black",
+            "style_code": [
+              "BV6397-110",
+              "CT4142-110",
+              "CT4401-110",
+              "CT4089-110",
+              "CT4092-110"
+            ],
+            "shoe_lighting_color": {
+              "red": 255,
+              "green": 255,
+              "blue": 255,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "white",
+            "assets_angled": {
+              "2x": "w_628,h_330/bc3ae8df-e667-402b-9d44-b7baee588e28/huarache_001_angle@2x.png",
+              "3x": "w_942,h_495/bc3ae8df-e667-402b-9d44-b7baee588e28/huarache_001_angle@3x.png",
+              "mdpi": "w_314,h_165/bc3ae8df-e667-402b-9d44-b7baee588e28/huarache_001_angle.webp",
+              "hdpi": "w_471,h_248/bc3ae8df-e667-402b-9d44-b7baee588e28/huarache_001_angle.webp",
+              "xhdpi": "w_628,h_330/bc3ae8df-e667-402b-9d44-b7baee588e28/huarache_001_angle.webp",
+              "xxhdpi": "w_942,h_495/bc3ae8df-e667-402b-9d44-b7baee588e28/huarache_001_angle.webp",
+              "xxxhdpi": "w_1125,h_591/bc3ae8df-e667-402b-9d44-b7baee588e28/huarache_001_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/1e4ab3c9-9c32-48a4-99c3-498b7ab55a3b/huarache_001_profile@2x.png",
+              "3x": "w_942,h_495/1e4ab3c9-9c32-48a4-99c3-498b7ab55a3b/huarache_001_profile@3x.png",
+              "mdpi": "w_314,h_165/1e4ab3c9-9c32-48a4-99c3-498b7ab55a3b/huarache_001_profile.webp",
+              "hdpi": "w_471,h_248/1e4ab3c9-9c32-48a4-99c3-498b7ab55a3b/huarache_001_profile.webp",
+              "xhdpi": "w_628,h_330/1e4ab3c9-9c32-48a4-99c3-498b7ab55a3b/huarache_001_profile.webp",
+              "xxhdpi": "w_942,h_495/1e4ab3c9-9c32-48a4-99c3-498b7ab55a3b/huarache_001_profile.webp",
+              "xxxhdpi": "w_1125,h_591/1e4ab3c9-9c32-48a4-99c3-498b7ab55a3b/huarache_001_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "AdaptHuarache-002",
+            "shoe_identifier": "002",
+            "shoe_name": "Nike Adapt Huarache",
+            "color_name": "Bicycle Yellow/Opti Yellow/Speed Yellow/Black",
+            "style_code": [
+              "BV6397-710",
+              "CT4142-710",
+              "CT4401-710",
+              "CT4089-710",
+              "CT4092-710"
+            ],
+            "shoe_lighting_color": {
+              "red": 255,
+              "green": 255,
+              "blue": 0,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "optiyellow",
+            "assets_angled": {
+              "2x": "w_628,h_330/cc223446-3d1b-4ac7-96d7-12f6cea13b7a/huarache_002_angle@2x.png",
+              "3x": "w_942,h_495/cc223446-3d1b-4ac7-96d7-12f6cea13b7a/huarache_002_angle@3x.png",
+              "mdpi": "w_314,h_165/cc223446-3d1b-4ac7-96d7-12f6cea13b7a/huarache_002_angle.webp",
+              "hdpi": "w_471,h_248/cc223446-3d1b-4ac7-96d7-12f6cea13b7a/huarache_002_angle.webp",
+              "xhdpi": "w_628,h_330/cc223446-3d1b-4ac7-96d7-12f6cea13b7a/huarache_002_angle.webp",
+              "xxhdpi": "w_942,h_495/cc223446-3d1b-4ac7-96d7-12f6cea13b7a/huarache_002_angle.webp",
+              "xxxhdpi": "w_1125,h_591/cc223446-3d1b-4ac7-96d7-12f6cea13b7a/huarache_002_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/7a81cb38-3ce6-4085-a39a-0a0b0d02aebd/huarache_002_profile@2x.png",
+              "3x": "w_942,h_495/7a81cb38-3ce6-4085-a39a-0a0b0d02aebd/huarache_002_profile@3x.png",
+              "mdpi": "w_314,h_165/7a81cb38-3ce6-4085-a39a-0a0b0d02aebd/huarache_002_profile.webp",
+              "hdpi": "w_471,h_248/7a81cb38-3ce6-4085-a39a-0a0b0d02aebd/huarache_002_profile.webp",
+              "xhdpi": "w_628,h_330/7a81cb38-3ce6-4085-a39a-0a0b0d02aebd/huarache_002_profile.webp",
+              "xxhdpi": "w_942,h_495/7a81cb38-3ce6-4085-a39a-0a0b0d02aebd/huarache_002_profile.webp",
+              "xxxhdpi": "w_1125,h_591/7a81cb38-3ce6-4085-a39a-0a0b0d02aebd/huarache_002_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "AdaptHuarache-003",
+            "shoe_identifier": "002",
+            "shoe_name": "Nike Adapt Huarache",
+            "color_name": "Hyper Jade/Spirit Teal/Blue Force/Total Orange",
+            "style_code": [
+              "BV6397-300",
+              "CT4142-300",
+              "CT4401-300",
+              "CT4089-300",
+              "CT4092-300"
+            ],
+            "shoe_lighting_color": {
+              "red": 0,
+              "green": 255,
+              "blue": 255,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "auroragreen",
+            "assets_angled": {
+              "2x": "w_628,h_330/18ba7093-7ac6-428f-a869-a9616f7f7b03/huarache_003_angle@2x.png",
+              "3x": "w_942,h_495/18ba7093-7ac6-428f-a869-a9616f7f7b03/huarache_003_angle@3x.png",
+              "mdpi": "w_314,h_165/18ba7093-7ac6-428f-a869-a9616f7f7b03/huarache_003_angle.webp",
+              "hdpi": "w_471,h_248/18ba7093-7ac6-428f-a869-a9616f7f7b03/huarache_003_angle.webp",
+              "xhdpi": "w_628,h_330/18ba7093-7ac6-428f-a869-a9616f7f7b03/huarache_003_angle.webp",
+              "xxhdpi": "w_942,h_495/18ba7093-7ac6-428f-a869-a9616f7f7b03/huarache_003_angle.webp",
+              "xxxhdpi": "w_1125,h_591/18ba7093-7ac6-428f-a869-a9616f7f7b03/huarache_003_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/d521455f-d851-4df2-9493-30c2f37bb157/huarache_003_profile@2x.png",
+              "3x": "w_942,h_495/d521455f-d851-4df2-9493-30c2f37bb157/huarache_003_profile@3x.png",
+              "mdpi": "w_314,h_165/d521455f-d851-4df2-9493-30c2f37bb157/huarache_003_profile.webp",
+              "hdpi": "w_471,h_248/d521455f-d851-4df2-9493-30c2f37bb157/huarache_003_profile.webp",
+              "xhdpi": "w_628,h_330/d521455f-d851-4df2-9493-30c2f37bb157/huarache_003_profile.webp",
+              "xxhdpi": "w_942,h_495/d521455f-d851-4df2-9493-30c2f37bb157/huarache_003_profile.webp",
+              "xxxhdpi": "w_1125,h_591/d521455f-d851-4df2-9493-30c2f37bb157/huarache_003_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "AdaptHuarache-004",
+            "shoe_identifier": "002",
+            "shoe_name": "Nike Adapt Huarache",
+            "color_name": "Black/Orange Peel/Canyon Gold/Racer Blue",
+            "style_code": [
+              "BV6397-002",
+              "CT4142-001",
+              "CT4401-001",
+              "CT4089-001",
+              "CT4092-001"
+            ],
+            "shoe_lighting_color": {
+              "red": 0,
+              "green": 0,
+              "blue": 255,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "racerblue",
+            "assets_angled": {
+              "2x": "w_628,h_330/15095977-e806-486b-9ff1-d37e1dfcdd73/huarache_004_angle@2x.png",
+              "3x": "w_942,h_495/15095977-e806-486b-9ff1-d37e1dfcdd73/huarache_004_angle@3x.png",
+              "mdpi": "w_314,h_165/15095977-e806-486b-9ff1-d37e1dfcdd73/huarache_004_angle.webp",
+              "hdpi": "w_471,h_248/15095977-e806-486b-9ff1-d37e1dfcdd73/huarache_004_angle.webp",
+              "xhdpi": "w_628,h_330/15095977-e806-486b-9ff1-d37e1dfcdd73/huarache_004_angle.webp",
+              "xxhdpi": "w_942,h_495/15095977-e806-486b-9ff1-d37e1dfcdd73/huarache_004_angle.webp",
+              "xxxhdpi": "w_1125,h_591/15095977-e806-486b-9ff1-d37e1dfcdd73/huarache_004_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/1b8d6ae4-04ce-4aa4-9f20-3fcc9b3422a6/huarache_004_profile@2x.png",
+              "3x": "w_942,h_495/1b8d6ae4-04ce-4aa4-9f20-3fcc9b3422a6/huarache_004_profile@3x.png",
+              "mdpi": "w_314,h_165/1b8d6ae4-04ce-4aa4-9f20-3fcc9b3422a6/huarache_004_profile.webp",
+              "hdpi": "w_471,h_248/1b8d6ae4-04ce-4aa4-9f20-3fcc9b3422a6/huarache_004_profile.webp",
+              "xhdpi": "w_628,h_330/1b8d6ae4-04ce-4aa4-9f20-3fcc9b3422a6/huarache_004_profile.webp",
+              "xxhdpi": "w_942,h_495/1b8d6ae4-04ce-4aa4-9f20-3fcc9b3422a6/huarache_004_profile.webp",
+              "xxxhdpi": "w_1125,h_591/1b8d6ae4-04ce-4aa4-9f20-3fcc9b3422a6/huarache_004_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "AdaptBB2-001",
+            "shoe_identifier": "005",
+            "shoe_name": "Nike Adapt BB2",
+            "color_name": "Black/Multi-Color/Black",
+            "style_code": [
+              "BQ5397-001",
+              "CV2443-001",
+              "CV2442-001",
+              "CV2444-001",
+              "CV2441-001",
+              "CV2440-001"
+            ],
+            "shoe_lighting_color": {
+              "red": 255,
+              "green": 16,
+              "blue": 3,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "brightcrimson",
+            "assets_angled": {
+              "2x": "w_628,h_330/6614aa63-c018-412b-816b-8be852cbc13e/bb2_001_angle@2x.png",
+              "3x": "w_942,h_495/6614aa63-c018-412b-816b-8be852cbc13e/bb2_001_angle@3x.png",
+              "mdpi": "w_314,h_165/6614aa63-c018-412b-816b-8be852cbc13e/bb2_001_angle.webp",
+              "hdpi": "w_471,h_248/6614aa63-c018-412b-816b-8be852cbc13e/bb2_001_angle.webp",
+              "xhdpi": "w_628,h_330/6614aa63-c018-412b-816b-8be852cbc13e/bb2_001_angle.webp",
+              "xxhdpi": "w_942,h_495/6614aa63-c018-412b-816b-8be852cbc13e/bb2_001_angle.webp",
+              "xxxhdpi": "w_1125,h_591/6614aa63-c018-412b-816b-8be852cbc13e/bb2_001_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/898d2680-73e1-4d3b-a101-7a0c8ca80227/bb2_001_profile@2x.png",
+              "3x": "w_942,h_495/898d2680-73e1-4d3b-a101-7a0c8ca80227/bb2_001_profile@3x.png",
+              "mdpi": "w_314,h_165/898d2680-73e1-4d3b-a101-7a0c8ca80227/bb2_001_profile.webp",
+              "hdpi": "w_471,h_248/898d2680-73e1-4d3b-a101-7a0c8ca80227/bb2_001_profile.webp",
+              "xhdpi": "w_628,h_330/898d2680-73e1-4d3b-a101-7a0c8ca80227/bb2_001_profile.webp",
+              "xxhdpi": "w_942,h_495/898d2680-73e1-4d3b-a101-7a0c8ca80227/bb2_001_profile.webp",
+              "xxxhdpi": "w_1125,h_591/898d2680-73e1-4d3b-a101-7a0c8ca80227/bb2_001_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "AdaptBB2-002",
+            "shoe_identifier": "005",
+            "shoe_name": "Nike Adapt BB2",
+            "color_name": "Multi-Color/University Red/Multi-Color",
+            "style_code": [
+              "BQ5397-900"
+            ],
+            "shoe_lighting_color": {
+              "red": 240,
+              "green": 0,
+              "blue": 8,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "redorbit",
+            "assets_angled": {
+              "2x": "w_628,h_330/fc788f35-304f-46d8-ba74-68408e8c8533/bb2_002_angle@2x.png",
+              "3x": "w_942,h_495/fc788f35-304f-46d8-ba74-68408e8c8533/bb2_002_angle@3x.png",
+              "mdpi": "w_314,h_165/fc788f35-304f-46d8-ba74-68408e8c8533/bb2_002_angle.webp",
+              "hdpi": "w_471,h_248/fc788f35-304f-46d8-ba74-68408e8c8533/bb2_002_angle.webp",
+              "xhdpi": "w_628,h_330/fc788f35-304f-46d8-ba74-68408e8c8533/bb2_002_angle.webp",
+              "xxhdpi": "w_942,h_495/fc788f35-304f-46d8-ba74-68408e8c8533/bb2_002_angle.webp",
+              "xxxhdpi": "w_1125,h_591/fc788f35-304f-46d8-ba74-68408e8c8533/bb2_002_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/47c6b9ff-a6be-44db-96cf-0de64cfe6b4b/bb2_002_profile@2x.png",
+              "3x": "w_942,h_495/47c6b9ff-a6be-44db-96cf-0de64cfe6b4b/bb2_002_profile@3x.png",
+              "mdpi": "w_314,h_165/47c6b9ff-a6be-44db-96cf-0de64cfe6b4b/bb2_002_profile.webp",
+              "hdpi": "w_471,h_248/47c6b9ff-a6be-44db-96cf-0de64cfe6b4b/bb2_002_profile.webp",
+              "xhdpi": "w_628,h_330/47c6b9ff-a6be-44db-96cf-0de64cfe6b4b/bb2_002_profile.webp",
+              "xxhdpi": "w_942,h_495/47c6b9ff-a6be-44db-96cf-0de64cfe6b4b/bb2_002_profile.webp",
+              "xxxhdpi": "w_1125,h_591/47c6b9ff-a6be-44db-96cf-0de64cfe6b4b/bb2_002_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "AdaptBB2-003",
+            "shoe_identifier": "005",
+            "shoe_name": "Nike Adapt BB2",
+            "color_name": "White/White/Bright Crimson",
+            "style_code": [
+              "BQ5397-100",
+              "CV2443-100",
+              "CV2442-100",
+              "CV2444-100",
+              "CV2441-100",
+              "CV2440-100"
+            ],
+            "shoe_lighting_color": {
+              "red": 120,
+              "green": 240,
+              "blue": 0,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "electricgreen",
+            "assets_angled": {
+              "2x": "w_628,h_330/f4b4562a-6802-424b-a4da-9288d3053799/bb2_003_angle@2x.png",
+              "3x": "w_942,h_495/f4b4562a-6802-424b-a4da-9288d3053799/bb2_003_angle@3x.png",
+              "mdpi": "w_314,h_165/f4b4562a-6802-424b-a4da-9288d3053799/bb2_003_angle.webp",
+              "hdpi": "w_471,h_248/f4b4562a-6802-424b-a4da-9288d3053799/bb2_003_angle.webp",
+              "xhdpi": "w_628,h_330/f4b4562a-6802-424b-a4da-9288d3053799/bb2_003_angle.webp",
+              "xxhdpi": "w_942,h_495/f4b4562a-6802-424b-a4da-9288d3053799/bb2_003_angle.webp",
+              "xxxhdpi": "w_1125,h_591/f4b4562a-6802-424b-a4da-9288d3053799/bb2_003_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/ec899548-1aa3-47af-b8a0-4fe5e1855efa/bb2_003_profile@2x.png",
+              "3x": "w_942,h_495/ec899548-1aa3-47af-b8a0-4fe5e1855efa/bb2_003_profile@3x.png",
+              "mdpi": "w_314,h_165/ec899548-1aa3-47af-b8a0-4fe5e1855efa/bb2_003_profile.webp",
+              "hdpi": "w_471,h_248/ec899548-1aa3-47af-b8a0-4fe5e1855efa/bb2_003_profile.webp",
+              "xhdpi": "w_628,h_330/ec899548-1aa3-47af-b8a0-4fe5e1855efa/bb2_003_profile.webp",
+              "xxhdpi": "w_942,h_495/ec899548-1aa3-47af-b8a0-4fe5e1855efa/bb2_003_profile.webp",
+              "xxxhdpi": "w_1125,h_591/ec899548-1aa3-47af-b8a0-4fe5e1855efa/bb2_003_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "AdaptBB2-004",
+            "shoe_identifier": "005",
+            "shoe_name": "Nike Adapt BB2",
+            "color_name": "White/Wolf Grey/Bright Crimson/Black",
+            "style_code": [
+              "BQ5397-101",
+              "CV2443-101",
+              "CV2442-101",
+              "CV2444-101",
+              "CV2441-101",
+              "CV2440-101"
+            ],
+            "shoe_lighting_color": {
+              "red": 0,
+              "green": 255,
+              "blue": 255,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "auroragreen",
+            "assets_angled": {
+              "2x": "w_628,h_330/40da37d5-d463-4635-b2c1-e8a14c1c8cdf/bb2_004_angle@2x.png",
+              "3x": "w_942,h_495/40da37d5-d463-4635-b2c1-e8a14c1c8cdf/bb2_004_angle@3x.png",
+              "mdpi": "w_314,h_165/40da37d5-d463-4635-b2c1-e8a14c1c8cdf/bb2_004_angle.webp",
+              "hdpi": "w_471,h_248/40da37d5-d463-4635-b2c1-e8a14c1c8cdf/bb2_004_angle.webp",
+              "xhdpi": "w_628,h_330/40da37d5-d463-4635-b2c1-e8a14c1c8cdf/bb2_004_angle.webp",
+              "xxhdpi": "w_942,h_495/40da37d5-d463-4635-b2c1-e8a14c1c8cdf/bb2_004_angle.webp",
+              "xxxhdpi": "w_1125,h_591/40da37d5-d463-4635-b2c1-e8a14c1c8cdf/bb2_004_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/37851e39-a1c3-486a-90ef-44ab596aa8cd/bb2_004_profile@2x.png",
+              "3x": "w_942,h_495/37851e39-a1c3-486a-90ef-44ab596aa8cd/bb2_004_profile@3x.png",
+              "mdpi": "w_314,h_165/37851e39-a1c3-486a-90ef-44ab596aa8cd/bb2_004_profile.webp",
+              "hdpi": "w_471,h_248/37851e39-a1c3-486a-90ef-44ab596aa8cd/bb2_004_profile.webp",
+              "xhdpi": "w_628,h_330/37851e39-a1c3-486a-90ef-44ab596aa8cd/bb2_004_profile.webp",
+              "xxhdpi": "w_942,h_495/37851e39-a1c3-486a-90ef-44ab596aa8cd/bb2_004_profile.webp",
+              "xxxhdpi": "w_1125,h_591/37851e39-a1c3-486a-90ef-44ab596aa8cd/bb2_004_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "AdaptBB2-005",
+            "shoe_identifier": "005",
+            "shoe_name": "Nike Adapt BB2",
+            "color_name": "Blue Void/Green Strike/Laser Crimson",
+            "style_code": [
+              "BQ5397-401",
+              "CV2442-401",
+              "CV2444-401"
+            ],
+            "shoe_lighting_color": {
+              "red": 20,
+              "green": 240,
+              "blue": 0,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "greenspark",
+            "assets_angled": {
+              "2x": "w_628,h_330/588ea4e9-58c3-45ff-9958-320d83b97894/bb2_005_angle@2x.png",
+              "3x": "w_942,h_495/588ea4e9-58c3-45ff-9958-320d83b97894/bb2_005_angle@3x.png",
+              "mdpi": "w_314,h_165/588ea4e9-58c3-45ff-9958-320d83b97894/bb2_005_angle.webp",
+              "hdpi": "w_471,h_248/588ea4e9-58c3-45ff-9958-320d83b97894/bb2_005_angle.webp",
+              "xhdpi": "w_628,h_330/588ea4e9-58c3-45ff-9958-320d83b97894/bb2_005_angle.webp",
+              "xxhdpi": "w_942,h_495/588ea4e9-58c3-45ff-9958-320d83b97894/bb2_005_angle.webp",
+              "xxxhdpi": "w_1125,h_591/588ea4e9-58c3-45ff-9958-320d83b97894/bb2_005_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/87d6c41d-75c4-4e72-8f12-e6dfc095a87b/bb2_005_profile@2x.png",
+              "3x": "w_942,h_495/87d6c41d-75c4-4e72-8f12-e6dfc095a87b/bb2_005_profile@3x.png",
+              "mdpi": "w_314,h_165/87d6c41d-75c4-4e72-8f12-e6dfc095a87b/bb2_005_profile.webp",
+              "hdpi": "w_471,h_248/87d6c41d-75c4-4e72-8f12-e6dfc095a87b/bb2_005_profile.webp",
+              "xhdpi": "w_628,h_330/87d6c41d-75c4-4e72-8f12-e6dfc095a87b/bb2_005_profile.webp",
+              "xxhdpi": "w_942,h_495/87d6c41d-75c4-4e72-8f12-e6dfc095a87b/bb2_005_profile.webp",
+              "xxxhdpi": "w_1125,h_591/87d6c41d-75c4-4e72-8f12-e6dfc095a87b/bb2_005_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "AdaptBB2-006",
+            "shoe_identifier": "005",
+            "shoe_name": "Nike Adapt BB2",
+            "color_name": "Astronomy Blue/Spruce Aura/Royal Pulse",
+            "style_code": [
+              "BQ5397-400",
+              "CV2443-400",
+              "CV2442-400",
+              "CV2444-400",
+              "CV2441-400",
+              "CV2440-400"
+            ],
+            "shoe_lighting_color": {
+              "red": 255,
+              "green": 10,
+              "blue": 80,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "pinkblast",
+            "assets_angled": {
+              "2x": "w_628,h_330/574d7031-15d5-42eb-bcd8-6157431e3710/bb2_006_angle@2x.png",
+              "3x": "w_942,h_495/574d7031-15d5-42eb-bcd8-6157431e3710/bb2_006_angle@3x.png",
+              "mdpi": "w_314,h_165/574d7031-15d5-42eb-bcd8-6157431e3710/bb2_006_angle.webp",
+              "hdpi": "w_471,h_248/574d7031-15d5-42eb-bcd8-6157431e3710/bb2_006_angle.webp",
+              "xhdpi": "w_628,h_330/574d7031-15d5-42eb-bcd8-6157431e3710/bb2_006_angle.webp",
+              "xxhdpi": "w_942,h_495/574d7031-15d5-42eb-bcd8-6157431e3710/bb2_006_angle.webp",
+              "xxxhdpi": "w_1125,h_591/574d7031-15d5-42eb-bcd8-6157431e3710/bb2_006_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/d7689763-dfe3-4462-bf60-bb5bf858c780/bb2_006_profile@2x.png",
+              "3x": "w_942,h_495/d7689763-dfe3-4462-bf60-bb5bf858c780/bb2_006_profile@3x.png",
+              "mdpi": "w_314,h_165/d7689763-dfe3-4462-bf60-bb5bf858c780/bb2_006_profile.webp",
+              "hdpi": "w_471,h_248/d7689763-dfe3-4462-bf60-bb5bf858c780/bb2_006_profile.webp",
+              "xhdpi": "w_628,h_330/d7689763-dfe3-4462-bf60-bb5bf858c780/bb2_006_profile.webp",
+              "xxhdpi": "w_942,h_495/d7689763-dfe3-4462-bf60-bb5bf858c780/bb2_006_profile.webp",
+              "xxxhdpi": "w_1125,h_591/d7689763-dfe3-4462-bf60-bb5bf858c780/bb2_006_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "AdaptBB2-007",
+            "shoe_identifier": "005",
+            "shoe_name": "Nike Adapt BB2",
+            "color_name": "Lemon Venom/Barely Volt/Black",
+            "style_code": [
+              "BQ5397-700",
+              "CV2443-700",
+              "CV2442-700",
+              "CV2444-700",
+              "CV2441-700",
+              "CV2440-700"
+            ],
+            "shoe_lighting_color": {
+              "red": 0,
+              "green": 60,
+              "blue": 255,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "heroblue",
+            "assets_angled": {
+              "2x": "w_628,h_330/5a3bdb7c-6493-481c-8b0a-2d3c677be88f/bb2_007_angle@2x.png",
+              "3x": "w_942,h_495/5a3bdb7c-6493-481c-8b0a-2d3c677be88f/bb2_007_angle@3x.png",
+              "mdpi": "w_314,h_165/5a3bdb7c-6493-481c-8b0a-2d3c677be88f/bb2_007_angle.webp",
+              "hdpi": "w_471,h_248/5a3bdb7c-6493-481c-8b0a-2d3c677be88f/bb2_007_angle.webp",
+              "xhdpi": "w_628,h_330/5a3bdb7c-6493-481c-8b0a-2d3c677be88f/bb2_007_angle.webp",
+              "xxhdpi": "w_942,h_495/5a3bdb7c-6493-481c-8b0a-2d3c677be88f/bb2_007_angle.webp",
+              "xxxhdpi": "w_1125,h_591/5a3bdb7c-6493-481c-8b0a-2d3c677be88f/bb2_007_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/9fa466b6-b4e3-4f8c-8d8b-b3329c083ed4/bb2_007_profile@2x.png",
+              "3x": "w_942,h_495/9fa466b6-b4e3-4f8c-8d8b-b3329c083ed4/bb2_007_profile@3x.png",
+              "mdpi": "w_314,h_165/9fa466b6-b4e3-4f8c-8d8b-b3329c083ed4/bb2_007_profile.webp",
+              "hdpi": "w_471,h_248/9fa466b6-b4e3-4f8c-8d8b-b3329c083ed4/bb2_007_profile.webp",
+              "xhdpi": "w_628,h_330/9fa466b6-b4e3-4f8c-8d8b-b3329c083ed4/bb2_007_profile.webp",
+              "xxhdpi": "w_942,h_495/9fa466b6-b4e3-4f8c-8d8b-b3329c083ed4/bb2_007_profile.webp",
+              "xxxhdpi": "w_1125,h_591/9fa466b6-b4e3-4f8c-8d8b-b3329c083ed4/bb2_007_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "AdaptBB2-008",
+            "shoe_identifier": "005",
+            "shoe_name": "Nike Adapt BB2",
+            "color_name": "Black/White",
+            "style_code": [
+              "BQ5397-002",
+              "CV2443-002",
+              "CV2442-002",
+              "CV2444-002",
+              "CV2441-002",
+              "CV2440-002"
+            ],
+            "shoe_lighting_color": {
+              "red": 255,
+              "green": 255,
+              "blue": 0,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "optiyellow",
+            "assets_angled": {
+              "2x": "w_628,h_330/51c8eb6d-3e34-443a-81a5-8da2e88fafef/bb2_008_angle@2x.png",
+              "3x": "w_942,h_495/51c8eb6d-3e34-443a-81a5-8da2e88fafef/bb2_008_angle@3x.png",
+              "mdpi": "w_314,h_165/51c8eb6d-3e34-443a-81a5-8da2e88fafef/bb2_008_angle.webp",
+              "hdpi": "w_471,h_248/51c8eb6d-3e34-443a-81a5-8da2e88fafef/bb2_008_angle.webp",
+              "xhdpi": "w_628,h_330/51c8eb6d-3e34-443a-81a5-8da2e88fafef/bb2_008_angle.webp",
+              "xxhdpi": "w_942,h_495/51c8eb6d-3e34-443a-81a5-8da2e88fafef/bb2_008_angle.webp",
+              "xxxhdpi": "w_1125,h_591/51c8eb6d-3e34-443a-81a5-8da2e88fafef/bb2_008_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/6b530c2e-9f6d-4ea6-9323-1d5f05556e55/bb2_008_profile@2x.png",
+              "3x": "w_942,h_495/6b530c2e-9f6d-4ea6-9323-1d5f05556e55/bb2_008_profile@3x.png",
+              "mdpi": "w_314,h_165/6b530c2e-9f6d-4ea6-9323-1d5f05556e55/bb2_008_profile.webp",
+              "hdpi": "w_471,h_248/6b530c2e-9f6d-4ea6-9323-1d5f05556e55/bb2_008_profile.webp",
+              "xhdpi": "w_628,h_330/6b530c2e-9f6d-4ea6-9323-1d5f05556e55/bb2_008_profile.webp",
+              "xxhdpi": "w_942,h_495/6b530c2e-9f6d-4ea6-9323-1d5f05556e55/bb2_008_profile.webp",
+              "xxxhdpi": "w_1125,h_591/6b530c2e-9f6d-4ea6-9323-1d5f05556e55/bb2_008_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "AdaptBB2-009",
+            "shoe_identifier": "005",
+            "shoe_name": "Nike Adapt BB2",
+            "color_name": "Wolf Grey/White",
+            "style_code": [
+              "BQ5397-003",
+              "CV2443-003",
+              "CV2442-003",
+              "CV2444-003",
+              "CV2441-003",
+              "CV2440-003"
+            ],
+            "shoe_lighting_color": {
+              "red": 20,
+              "green": 240,
+              "blue": 0,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "greenspark",
+            "assets_angled": {
+              "2x": "w_628,h_330/a76d676b-7dc0-46bf-86ff-b94a25942795/bb2_009_angle@2x.png",
+              "3x": "w_942,h_495/a76d676b-7dc0-46bf-86ff-b94a25942795/bb2_009_angle@3x.png",
+              "mdpi": "w_314,h_165/a76d676b-7dc0-46bf-86ff-b94a25942795/bb2_009_angle.webp",
+              "hdpi": "w_471,h_248/a76d676b-7dc0-46bf-86ff-b94a25942795/bb2_009_angle.webp",
+              "xhdpi": "w_628,h_330/a76d676b-7dc0-46bf-86ff-b94a25942795/bb2_009_angle.webp",
+              "xxhdpi": "w_942,h_495/a76d676b-7dc0-46bf-86ff-b94a25942795/bb2_009_angle.webp",
+              "xxxhdpi": "w_1125,h_591/a76d676b-7dc0-46bf-86ff-b94a25942795/bb2_009_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/14605cd3-42a9-4338-9b67-d09825c389b4/bb2_009_profile@2x.png",
+              "3x": "w_942,h_495/14605cd3-42a9-4338-9b67-d09825c389b4/bb2_009_profile@3x.png",
+              "mdpi": "w_314,h_165/14605cd3-42a9-4338-9b67-d09825c389b4/bb2_009_profile.webp",
+              "hdpi": "w_471,h_248/14605cd3-42a9-4338-9b67-d09825c389b4/bb2_009_profile.webp",
+              "xhdpi": "w_628,h_330/14605cd3-42a9-4338-9b67-d09825c389b4/bb2_009_profile.webp",
+              "xxhdpi": "w_942,h_495/14605cd3-42a9-4338-9b67-d09825c389b4/bb2_009_profile.webp",
+              "xxxhdpi": "w_1125,h_591/14605cd3-42a9-4338-9b67-d09825c389b4/bb2_009_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "AdaptAutoMax-001",
+            "shoe_identifier": "004",
+            "shoe_name": "Nike Adapt AutoMax",
+            "color_name": "Grey Fog/Particle Grey/Laser Orange/White",
+            "style_code": [
+              "CW7304-001",
+              "CW7307-001"
+            ],
+            "shoe_lighting_color": {
+              "red": 0,
+              "green": 255,
+              "blue": 255,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "auroragreen",
+            "assets_angled": {
+              "2x": "w_628,h_330/428ab367-502a-44b3-bb86-68bdd77f5985/automax_001_angle@2x.png",
+              "3x": "w_942,h_495/428ab367-502a-44b3-bb86-68bdd77f5985/automax_001_angle@3x.png",
+              "mdpi": "w_314,h_165/428ab367-502a-44b3-bb86-68bdd77f5985/automax_001_angle.webp",
+              "hdpi": "w_471,h_248/428ab367-502a-44b3-bb86-68bdd77f5985/automax_001_angle.webp",
+              "xhdpi": "w_628,h_330/428ab367-502a-44b3-bb86-68bdd77f5985/automax_001_angle.webp",
+              "xxhdpi": "w_942,h_495/428ab367-502a-44b3-bb86-68bdd77f5985/automax_001_angle.webp",
+              "xxxhdpi": "w_1125,h_591/428ab367-502a-44b3-bb86-68bdd77f5985/automax_001_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/2abf49c6-4246-4d2f-9acd-7688807a3fb6/automax_001_profile@2x.png",
+              "3x": "w_942,h_495/2abf49c6-4246-4d2f-9acd-7688807a3fb6/automax_001_profile@3x.png",
+              "mdpi": "w_314,h_165/2abf49c6-4246-4d2f-9acd-7688807a3fb6/automax_001_profile.webp",
+              "hdpi": "w_471,h_248/2abf49c6-4246-4d2f-9acd-7688807a3fb6/automax_001_profile.webp",
+              "xhdpi": "w_628,h_330/2abf49c6-4246-4d2f-9acd-7688807a3fb6/automax_001_profile.webp",
+              "xxhdpi": "w_942,h_495/2abf49c6-4246-4d2f-9acd-7688807a3fb6/automax_001_profile.webp",
+              "xxxhdpi": "w_1125,h_591/2abf49c6-4246-4d2f-9acd-7688807a3fb6/automax_001_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "AdaptAutoMax-002",
+            "shoe_identifier": "004",
+            "shoe_name": "Nike Adapt AutoMax",
+            "color_name": "Pure Platinum/Bright Crimson/Black/Particle Grey",
+            "style_code": [
+              "CI5018-002",
+              "CW7382-002",
+              "CZ0232-002",
+              "CW7271-002",
+              "CW7274-002",
+              "CW7272-002"
+            ],
+            "shoe_lighting_color": {
+              "red": 255,
+              "green": 255,
+              "blue": 0,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "optiyellow",
+            "assets_angled": {
+              "2x": "w_628,h_330/52ffd55f-8684-453f-ba51-b5e3db62226c/automax_002_angle@2x.png",
+              "3x": "w_942,h_495/52ffd55f-8684-453f-ba51-b5e3db62226c/automax_002_angle@3x.png",
+              "mdpi": "w_314,h_165/52ffd55f-8684-453f-ba51-b5e3db62226c/automax_002_angle.webp",
+              "hdpi": "w_471,h_248/52ffd55f-8684-453f-ba51-b5e3db62226c/automax_002_angle.webp",
+              "xhdpi": "w_628,h_330/52ffd55f-8684-453f-ba51-b5e3db62226c/automax_002_angle.webp",
+              "xxhdpi": "w_942,h_495/52ffd55f-8684-453f-ba51-b5e3db62226c/automax_002_angle.webp",
+              "xxxhdpi": "w_1125,h_591/52ffd55f-8684-453f-ba51-b5e3db62226c/automax_002_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/54436c83-b361-4e16-8d98-c5bcbe88f560/automax_002_profile@2x.png",
+              "3x": "w_942,h_495/54436c83-b361-4e16-8d98-c5bcbe88f560/automax_002_profile@3x.png",
+              "mdpi": "w_314,h_165/54436c83-b361-4e16-8d98-c5bcbe88f560/automax_002_profile.webp",
+              "hdpi": "w_471,h_248/54436c83-b361-4e16-8d98-c5bcbe88f560/automax_002_profile.webp",
+              "xhdpi": "w_628,h_330/54436c83-b361-4e16-8d98-c5bcbe88f560/automax_002_profile.webp",
+              "xxhdpi": "w_942,h_495/54436c83-b361-4e16-8d98-c5bcbe88f560/automax_002_profile.webp",
+              "xxxhdpi": "w_1125,h_591/54436c83-b361-4e16-8d98-c5bcbe88f560/automax_002_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "AdaptAutoMax-003",
+            "shoe_identifier": "004",
+            "shoe_name": "Nike Adapt AutoMax",
+            "color_name": "Anthracite/Radiant Emerald/Speed Yellow/Black",
+            "style_code": [
+              "CI5018-001",
+              "CW7382-001",
+              "CZ0232-001",
+              "CW7271-001",
+              "CW7274-011",
+              "CW7272-001"
+            ],
+            "shoe_lighting_color": {
+              "red": 0,
+              "green": 255,
+              "blue": 255,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "auroragreen",
+            "assets_angled": {
+              "2x": "w_628,h_330/897ac7ba-d960-400d-b5d5-eb8b4f309ac5/automax_003_angle@2x.png",
+              "3x": "w_942,h_495/897ac7ba-d960-400d-b5d5-eb8b4f309ac5/automax_003_angle@3x.png",
+              "mdpi": "w_314,h_165/897ac7ba-d960-400d-b5d5-eb8b4f309ac5/automax_003_angle.webp",
+              "hdpi": "w_471,h_248/897ac7ba-d960-400d-b5d5-eb8b4f309ac5/automax_003_angle.webp",
+              "xhdpi": "w_628,h_330/897ac7ba-d960-400d-b5d5-eb8b4f309ac5/automax_003_angle.webp",
+              "xxhdpi": "w_942,h_495/897ac7ba-d960-400d-b5d5-eb8b4f309ac5/automax_003_angle.webp",
+              "xxxhdpi": "w_1125,h_591/897ac7ba-d960-400d-b5d5-eb8b4f309ac5/automax_003_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/3ce6d671-3fbf-4c40-bf97-3e3d1bf47f6e/automax_003_profile@2x.png",
+              "3x": "w_942,h_495/3ce6d671-3fbf-4c40-bf97-3e3d1bf47f6e/automax_003_profile@3x.png",
+              "mdpi": "w_314,h_165/3ce6d671-3fbf-4c40-bf97-3e3d1bf47f6e/automax_003_profile.webp",
+              "hdpi": "w_471,h_248/3ce6d671-3fbf-4c40-bf97-3e3d1bf47f6e/automax_003_profile.webp",
+              "xhdpi": "w_628,h_330/3ce6d671-3fbf-4c40-bf97-3e3d1bf47f6e/automax_003_profile.webp",
+              "xxhdpi": "w_942,h_495/3ce6d671-3fbf-4c40-bf97-3e3d1bf47f6e/automax_003_profile.webp",
+              "xxxhdpi": "w_1125,h_591/3ce6d671-3fbf-4c40-bf97-3e3d1bf47f6e/automax_003_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "AdaptAutoMax-004",
+            "shoe_identifier": "004",
+            "shoe_name": "Nike Adapt AutoMax",
+            "color_name": "Black/Fireberry/Electric Green/Black",
+            "style_code": [
+              "CZ6804-001",
+              "CT1283-001",
+              "CZ6803-001",
+              "CZ6802-001",
+              "CZ6805-001"
+            ],
+            "shoe_lighting_color": {
+              "red": 240,
+              "green": 0,
+              "blue": 8,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "redorbit",
+            "assets_angled": {
+              "2x": "w_628,h_330/9d208f3e-3872-477b-9b7a-15f4d2f43159/automax_004_angle@2x.png",
+              "3x": "w_942,h_495/9d208f3e-3872-477b-9b7a-15f4d2f43159/automax_004_angle@3x.png",
+              "mdpi": "w_314,h_165/9d208f3e-3872-477b-9b7a-15f4d2f43159/automax_004_angle.webp",
+              "hdpi": "w_471,h_248/9d208f3e-3872-477b-9b7a-15f4d2f43159/automax_004_angle.webp",
+              "xhdpi": "w_628,h_330/9d208f3e-3872-477b-9b7a-15f4d2f43159/automax_004_angle.webp",
+              "xxhdpi": "w_942,h_495/9d208f3e-3872-477b-9b7a-15f4d2f43159/automax_004_angle.webp",
+              "xxxhdpi": "w_1125,h_591/9d208f3e-3872-477b-9b7a-15f4d2f43159/automax_004_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/bf353e55-ec4a-4eb2-8784-d465ec28343d/automax_004_profile@2x.png",
+              "3x": "w_942,h_495/bf353e55-ec4a-4eb2-8784-d465ec28343d/automax_004_profile@3x.png",
+              "mdpi": "w_314,h_165/bf353e55-ec4a-4eb2-8784-d465ec28343d/automax_004_profile.webp",
+              "hdpi": "w_471,h_248/bf353e55-ec4a-4eb2-8784-d465ec28343d/automax_004_profile.webp",
+              "xhdpi": "w_628,h_330/bf353e55-ec4a-4eb2-8784-d465ec28343d/automax_004_profile.webp",
+              "xxhdpi": "w_942,h_495/bf353e55-ec4a-4eb2-8784-d465ec28343d/automax_004_profile.webp",
+              "xxxhdpi": "w_1125,h_591/bf353e55-ec4a-4eb2-8784-d465ec28343d/automax_004_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "AdaptAutoMax-005",
+            "shoe_identifier": "004",
+            "shoe_name": "Nike Adapt AutoMax",
+            "color_name": "Jetstream/Radiant Emerald/Chrome Yellow/White",
+            "style_code": [
+              "CZ6799-001",
+              "CT1683-001",
+              "CZ6800-001",
+              "CZ6797-001",
+              "CZ6798-001"
+            ],
+            "shoe_lighting_color": {
+              "red": 255,
+              "green": 255,
+              "blue": 0,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "optiyellow",
+            "assets_angled": {
+              "2x": "w_628,h_330/655d9242-8420-4624-8a7c-3443cc43896f/automax_005_angle@2x.png",
+              "3x": "w_942,h_495/655d9242-8420-4624-8a7c-3443cc43896f/automax_005_angle@3x.png",
+              "mdpi": "w_314,h_165/655d9242-8420-4624-8a7c-3443cc43896f/automax_005_angle.webp",
+              "hdpi": "w_471,h_248/655d9242-8420-4624-8a7c-3443cc43896f/automax_005_angle.webp",
+              "xhdpi": "w_628,h_330/655d9242-8420-4624-8a7c-3443cc43896f/automax_005_angle.webp",
+              "xxhdpi": "w_942,h_495/655d9242-8420-4624-8a7c-3443cc43896f/automax_005_angle.webp",
+              "xxxhdpi": "w_1125,h_591/655d9242-8420-4624-8a7c-3443cc43896f/automax_005_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/7d5a4e77-8268-40e0-935b-f8506e70c692/automax_005_profile@2x.png",
+              "3x": "w_942,h_495/7d5a4e77-8268-40e0-935b-f8506e70c692/automax_005_profile@3x.png",
+              "mdpi": "w_314,h_165/7d5a4e77-8268-40e0-935b-f8506e70c692/automax_005_profile.webp",
+              "hdpi": "w_471,h_248/7d5a4e77-8268-40e0-935b-f8506e70c692/automax_005_profile.webp",
+              "xhdpi": "w_628,h_330/7d5a4e77-8268-40e0-935b-f8506e70c692/automax_005_profile.webp",
+              "xxhdpi": "w_942,h_495/7d5a4e77-8268-40e0-935b-f8506e70c692/automax_005_profile.webp",
+              "xxxhdpi": "w_1125,h_591/7d5a4e77-8268-40e0-935b-f8506e70c692/automax_005_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "AdaptAutoMax-006",
+            "shoe_identifier": "004",
+            "shoe_name": "Nike Adapt AutoMax",
+            "color_name": "Black/Black/White/Black",
+            "style_code": [
+              "CZ6799-002",
+              "CT1683-002",
+              "CZ6800-002",
+              "CZ6797-002",
+              "CZ6798-002"
+            ],
+            "shoe_lighting_color": {
+              "red": 0,
+              "green": 255,
+              "blue": 255,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "auroragreen",
+            "assets_angled": {
+              "2x": "w_628,h_330/54f81b9f-e2cb-45ae-9eb6-cb3a8800b607/automax_006_angle@2x.png",
+              "3x": "w_942,h_495/54f81b9f-e2cb-45ae-9eb6-cb3a8800b607/automax_006_angle@3x.png",
+              "mdpi": "w_314,h_165/54f81b9f-e2cb-45ae-9eb6-cb3a8800b607/automax_006_angle.webp",
+              "hdpi": "w_471,h_248/54f81b9f-e2cb-45ae-9eb6-cb3a8800b607/automax_006_angle.webp",
+              "xhdpi": "w_628,h_330/54f81b9f-e2cb-45ae-9eb6-cb3a8800b607/automax_006_angle.webp",
+              "xxhdpi": "w_942,h_495/54f81b9f-e2cb-45ae-9eb6-cb3a8800b607/automax_006_angle.webp",
+              "xxxhdpi": "w_1125,h_591/54f81b9f-e2cb-45ae-9eb6-cb3a8800b607/automax_006_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/4297cc5e-2931-476c-af24-d134c3b9540b/automax_006_profile@2x.png",
+              "3x": "w_942,h_495/4297cc5e-2931-476c-af24-d134c3b9540b/automax_006_profile@3x.png",
+              "mdpi": "w_314,h_165/4297cc5e-2931-476c-af24-d134c3b9540b/automax_006_profile.webp",
+              "hdpi": "w_471,h_248/4297cc5e-2931-476c-af24-d134c3b9540b/automax_006_profile.webp",
+              "xhdpi": "w_628,h_330/4297cc5e-2931-476c-af24-d134c3b9540b/automax_006_profile.webp",
+              "xxhdpi": "w_942,h_495/4297cc5e-2931-476c-af24-d134c3b9540b/automax_006_profile.webp",
+              "xxxhdpi": "w_1125,h_591/4297cc5e-2931-476c-af24-d134c3b9540b/automax_006_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "RunBeta-001",
+            "shoe_identifier": "003",
+            "shoe_name": "Run Beta",
+            "color_name": "Pure Platinum/White",
+            "style_code": [
+              "DB4699-001",
+              "CD0211-001"
+            ],
+            "shoe_lighting_color": {
+              "red": 0,
+              "green": 255,
+              "blue": 255,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "auroragreen",
+            "assets_angled": {
+              "2x": "w_628,h_330/263bb588-d787-429a-98a4-b348aa5fa483/runbeta_001_angle@2x.png",
+              "3x": "w_942,h_495/263bb588-d787-429a-98a4-b348aa5fa483/runbeta_001_angle@3x.png",
+              "mdpi": "w_314,h_165/263bb588-d787-429a-98a4-b348aa5fa483/runbeta_001_angle.webp",
+              "hdpi": "w_471,h_248/263bb588-d787-429a-98a4-b348aa5fa483/runbeta_001_angle.webp",
+              "xhdpi": "w_628,h_330/263bb588-d787-429a-98a4-b348aa5fa483/runbeta_001_angle.webp",
+              "xxhdpi": "w_942,h_495/263bb588-d787-429a-98a4-b348aa5fa483/runbeta_001_angle.webp",
+              "xxxhdpi": "w_1125,h_591/263bb588-d787-429a-98a4-b348aa5fa483/runbeta_001_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/0964815e-f78c-4d8a-9187-b61e673799aa/runbeta_001_profile@2x.png",
+              "3x": "w_942,h_495/0964815e-f78c-4d8a-9187-b61e673799aa/runbeta_001_profile@3x.png",
+              "mdpi": "w_314,h_165/0964815e-f78c-4d8a-9187-b61e673799aa/runbeta_001_profile.webp",
+              "hdpi": "w_471,h_248/0964815e-f78c-4d8a-9187-b61e673799aa/runbeta_001_profile.webp",
+              "xhdpi": "w_628,h_330/0964815e-f78c-4d8a-9187-b61e673799aa/runbeta_001_profile.webp",
+              "xxhdpi": "w_942,h_495/0964815e-f78c-4d8a-9187-b61e673799aa/runbeta_001_profile.webp",
+              "xxxhdpi": "w_1125,h_591/0964815e-f78c-4d8a-9187-b61e673799aa/runbeta_001_profile.webp"
+            },
+            "colorway_version": 1
+          },
+          {
+            "identifier": "JordanXI-001",
+            "shoe_identifier": "006",
+            "shoe_name": "Air Jordan XI Adapt",
+            "color_name": "White/Multi-Color",
+            "style_code": [
+              "DA7990-100",
+              "DD3522-100",
+              "DD3523-100"
+            ],
+            "shoe_lighting_color": {
+              "red": 255,
+              "green": 16,
+              "blue": 3,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "brightcrimson",
+            "assets_angled": {
+              "2x": "w_628,h_330/ca94eef2-18f5-40bf-bb85-773f22f61a8b/jordan_001_angle@2x.png",
+              "3x": "w_942,h_495/ca94eef2-18f5-40bf-bb85-773f22f61a8b/jordan_001_angle@3x.png",
+              "mdpi": "w_314,h_165/ca94eef2-18f5-40bf-bb85-773f22f61a8b/jordan_001_angle.webp",
+              "hdpi": "w_471,h_248/ca94eef2-18f5-40bf-bb85-773f22f61a8b/jordan_001_angle.webp",
+              "xhdpi": "w_628,h_330/ca94eef2-18f5-40bf-bb85-773f22f61a8b/jordan_001_angle.webp",
+              "xxhdpi": "w_942,h_495/ca94eef2-18f5-40bf-bb85-773f22f61a8b/jordan_001_angle.webp",
+              "xxxhdpi": "w_1125,h_591/ca94eef2-18f5-40bf-bb85-773f22f61a8b/jordan_001_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/f3a55069-19b8-47bb-846f-b65acffd1ff4/jordan_001_profile@2x.png",
+              "3x": "w_942,h_495/f3a55069-19b8-47bb-846f-b65acffd1ff4/jordan_001_profile@3x.png",
+              "mdpi": "w_314,h_165/f3a55069-19b8-47bb-846f-b65acffd1ff4/jordan_001_profile.webp",
+              "hdpi": "w_471,h_248/f3a55069-19b8-47bb-846f-b65acffd1ff4/jordan_001_profile.webp",
+              "xhdpi": "w_628,h_330/f3a55069-19b8-47bb-846f-b65acffd1ff4/jordan_001_profile.webp",
+              "xxhdpi": "w_942,h_495/f3a55069-19b8-47bb-846f-b65acffd1ff4/jordan_001_profile.webp",
+              "xxxhdpi": "w_1125,h_591/f3a55069-19b8-47bb-846f-b65acffd1ff4/jordan_001_profile.webp"
+            },
+            "colorway_version": 2
+          },
+          {
+            "identifier": "JordanXI-002",
+            "shoe_identifier": "007",
+            "shoe_name": "Air Jordan XI Adapt",
+            "color_name": "Photon Dust/Multi-Color",
+            "style_code": [
+              "DO6365-001"
+            ],
+            "shoe_lighting_color": {
+              "red": 0,
+              "green": 60,
+              "blue": 255,
+              "brightness": 255
+            },
+            "shoe_lighting_color_key": "heroblue",
+            "assets_angled": {
+              "2x": "w_628,h_330/da898b45-52a4-4657-a897-51099e630e1f/jordan_002_angle@2x.png",
+              "3x": "w_942,h_495/da898b45-52a4-4657-a897-51099e630e1f/jordan_002_angle@3x.png",
+              "mdpi": "w_314,h_165/da898b45-52a4-4657-a897-51099e630e1f/jordan_002_angle.webp",
+              "hdpi": "w_471,h_248/da898b45-52a4-4657-a897-51099e630e1f/jordan_002_angle.webp",
+              "xhdpi": "w_628,h_330/da898b45-52a4-4657-a897-51099e630e1f/jordan_002_angle.webp",
+              "xxhdpi": "w_942,h_495/da898b45-52a4-4657-a897-51099e630e1f/jordan_002_angle.webp",
+              "xxxhdpi": "w_1125,h_591/da898b45-52a4-4657-a897-51099e630e1f/jordan_002_angle.webp"
+            },
+            "assets_profile": {
+              "2x": "w_628,h_330/520a85e8-c8c9-4b4f-8cfb-0fad7b07f7ee/jordan_002_profile@2x.png",
+              "3x": "w_942,h_495/520a85e8-c8c9-4b4f-8cfb-0fad7b07f7ee/jordan_002_profile@3x.png",
+              "mdpi": "w_314,h_165/520a85e8-c8c9-4b4f-8cfb-0fad7b07f7ee/jordan_002_profile.webp",
+              "hdpi": "w_471,h_248/520a85e8-c8c9-4b4f-8cfb-0fad7b07f7ee/jordan_002_profile.webp",
+              "xhdpi": "w_628,h_330/520a85e8-c8c9-4b4f-8cfb-0fad7b07f7ee/jordan_002_profile.webp",
+              "xxhdpi": "w_942,h_495/520a85e8-c8c9-4b4f-8cfb-0fad7b07f7ee/jordan_002_profile.webp",
+              "xxxhdpi": "w_1125,h_591/520a85e8-c8c9-4b4f-8cfb-0fad7b07f7ee/jordan_002_profile.webp"
+            },
+            "colorway_version": 2
+          }
+        ],
+        "models": [
+          {
+            "shoe_identifier": "001",
+            "shoe_name": "Nike Adapt BB",
+            "model_version": 1
+          },
+          {
+            "shoe_identifier": "002",
+            "shoe_name": "Nike Adapt Huarache",
+            "model_version": 1
+          },
+          {
+            "shoe_identifier": "003",
+            "shoe_name": "Run Beta",
+            "model_version": 1
+          },
+          {
+            "shoe_identifier": "004",
+            "shoe_name": "Nike Adapt AutoMax",
+            "model_version": 1,
+            "background_gradient_images": {
+              "auroragreen": {
+                "2x": "w_750,h_1624/76ff3ece-4849-4738-9220-0664fc90912b/auroragreen_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/76ff3ece-4849-4738-9220-0664fc90912b/auroragreen_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/76ff3ece-4849-4738-9220-0664fc90912b/auroragreen_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/76ff3ece-4849-4738-9220-0664fc90912b/auroragreen_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/76ff3ece-4849-4738-9220-0664fc90912b/auroragreen_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/76ff3ece-4849-4738-9220-0664fc90912b/auroragreen_automax_gradient.jpg"
+              },
+              "heroblue": {
+                "2x": "w_750,h_1624/be8a4464-f438-439f-8131-bdb1886ca166/heroblue_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/be8a4464-f438-439f-8131-bdb1886ca166/heroblue_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/be8a4464-f438-439f-8131-bdb1886ca166/heroblue_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/be8a4464-f438-439f-8131-bdb1886ca166/heroblue_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/be8a4464-f438-439f-8131-bdb1886ca166/heroblue_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/be8a4464-f438-439f-8131-bdb1886ca166/heroblue_automax_gradient.jpg"
+              },
+              "racerblue": {
+                "2x": "w_750,h_1624/c4acd6f1-06c9-49fb-9bdd-e1de0ce19a47/racerblue_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/c4acd6f1-06c9-49fb-9bdd-e1de0ce19a47/racerblue_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/c4acd6f1-06c9-49fb-9bdd-e1de0ce19a47/racerblue_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/c4acd6f1-06c9-49fb-9bdd-e1de0ce19a47/racerblue_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/c4acd6f1-06c9-49fb-9bdd-e1de0ce19a47/racerblue_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/c4acd6f1-06c9-49fb-9bdd-e1de0ce19a47/racerblue_automax_gradient.jpg"
+              },
+              "vividpurple": {
+                "2x": "w_750,h_1624/9391818e-996d-4ccd-b4cf-b8fda8ca552a/vividpurple_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/9391818e-996d-4ccd-b4cf-b8fda8ca552a/vividpurple_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/9391818e-996d-4ccd-b4cf-b8fda8ca552a/vividpurple_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/9391818e-996d-4ccd-b4cf-b8fda8ca552a/vividpurple_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/9391818e-996d-4ccd-b4cf-b8fda8ca552a/vividpurple_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/9391818e-996d-4ccd-b4cf-b8fda8ca552a/vividpurple_automax_gradient.jpg"
+              },
+              "pinkblast": {
+                "2x": "w_750,h_1624/6935c533-f0ff-4fd5-be00-217e54c8f730/pinkblast_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/6935c533-f0ff-4fd5-be00-217e54c8f730/pinkblast_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/6935c533-f0ff-4fd5-be00-217e54c8f730/pinkblast_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/6935c533-f0ff-4fd5-be00-217e54c8f730/pinkblast_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/6935c533-f0ff-4fd5-be00-217e54c8f730/pinkblast_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/6935c533-f0ff-4fd5-be00-217e54c8f730/pinkblast_automax_gradient.jpg"
+              },
+              "redorbit": {
+                "2x": "w_750,h_1624/248d1cb4-f5ea-4370-96d2-e6827b6c7188/redorbit_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/248d1cb4-f5ea-4370-96d2-e6827b6c7188/redorbit_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/248d1cb4-f5ea-4370-96d2-e6827b6c7188/redorbit_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/248d1cb4-f5ea-4370-96d2-e6827b6c7188/redorbit_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/248d1cb4-f5ea-4370-96d2-e6827b6c7188/redorbit_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/248d1cb4-f5ea-4370-96d2-e6827b6c7188/redorbit_automax_gradient.jpg"
+              },
+              "brightcrimson": {
+                "2x": "w_750,h_1624/d1137853-fb77-498f-9a10-952c5c0d624b/brightcrimson_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/d1137853-fb77-498f-9a10-952c5c0d624b/brightcrimson_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/d1137853-fb77-498f-9a10-952c5c0d624b/brightcrimson_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/d1137853-fb77-498f-9a10-952c5c0d624b/brightcrimson_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/d1137853-fb77-498f-9a10-952c5c0d624b/brightcrimson_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/d1137853-fb77-498f-9a10-952c5c0d624b/brightcrimson_automax_gradient.jpg"
+              },
+              "totalorange": {
+                "2x": "w_750,h_1624/4011edbc-44be-4b02-83c4-8f55d89c1c61/totalorange_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/4011edbc-44be-4b02-83c4-8f55d89c1c61/totalorange_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/4011edbc-44be-4b02-83c4-8f55d89c1c61/totalorange_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/4011edbc-44be-4b02-83c4-8f55d89c1c61/totalorange_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/4011edbc-44be-4b02-83c4-8f55d89c1c61/totalorange_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/4011edbc-44be-4b02-83c4-8f55d89c1c61/totalorange_automax_gradient.jpg"
+              },
+              "optiyellow": {
+                "2x": "w_750,h_1624/c18084de-011b-4229-bef0-df25482266e7/optiyellow_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/c18084de-011b-4229-bef0-df25482266e7/optiyellow_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/c18084de-011b-4229-bef0-df25482266e7/optiyellow_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/c18084de-011b-4229-bef0-df25482266e7/optiyellow_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/c18084de-011b-4229-bef0-df25482266e7/optiyellow_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/c18084de-011b-4229-bef0-df25482266e7/optiyellow_automax_gradient.jpg"
+              },
+              "electricgreen": {
+                "2x": "w_750,h_1624/c018d0bb-49cb-4cbf-a4dc-81e8f8bf7e98/electricgreen_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/c018d0bb-49cb-4cbf-a4dc-81e8f8bf7e98/electricgreen_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/c018d0bb-49cb-4cbf-a4dc-81e8f8bf7e98/electricgreen_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/c018d0bb-49cb-4cbf-a4dc-81e8f8bf7e98/electricgreen_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/c018d0bb-49cb-4cbf-a4dc-81e8f8bf7e98/electricgreen_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/c018d0bb-49cb-4cbf-a4dc-81e8f8bf7e98/electricgreen_automax_gradient.jpg"
+              },
+              "greenspark": {
+                "2x": "w_750,h_1624/239d41f2-19ff-4663-9765-694cc1ed761a/greenspark_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/239d41f2-19ff-4663-9765-694cc1ed761a/greenspark_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/239d41f2-19ff-4663-9765-694cc1ed761a/greenspark_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/239d41f2-19ff-4663-9765-694cc1ed761a/greenspark_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/239d41f2-19ff-4663-9765-694cc1ed761a/greenspark_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/239d41f2-19ff-4663-9765-694cc1ed761a/greenspark_automax_gradient.jpg"
+              },
+              "white": {
+                "2x": "w_750,h_1624/32347e0b-afe0-4483-adac-0cafaf9c4a6d/white_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/32347e0b-afe0-4483-adac-0cafaf9c4a6d/white_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/32347e0b-afe0-4483-adac-0cafaf9c4a6d/white_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/32347e0b-afe0-4483-adac-0cafaf9c4a6d/white_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/32347e0b-afe0-4483-adac-0cafaf9c4a6d/white_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/32347e0b-afe0-4483-adac-0cafaf9c4a6d/white_automax_gradient.jpg"
+              },
+              "lightsoff": {
+                "2x": "w_750,h_1624/b121015a-a782-450e-8db9-be4f4bf3a44b/lightsoff_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/b121015a-a782-450e-8db9-be4f4bf3a44b/lightsoff_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/b121015a-a782-450e-8db9-be4f4bf3a44b/lightsoff_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/b121015a-a782-450e-8db9-be4f4bf3a44b/lightsoff_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/b121015a-a782-450e-8db9-be4f4bf3a44b/lightsoff_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/b121015a-a782-450e-8db9-be4f4bf3a44b/lightsoff_automax_gradient.jpg"
+              },
+              "racerblue_optiyellow": {
+                "2x": "w_750,h_1624/838a4af8-1782-4b8b-810a-1ceef414d47b/racerblue_optiyellow_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/838a4af8-1782-4b8b-810a-1ceef414d47b/racerblue_optiyellow_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/838a4af8-1782-4b8b-810a-1ceef414d47b/racerblue_optiyellow_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/838a4af8-1782-4b8b-810a-1ceef414d47b/racerblue_optiyellow_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/838a4af8-1782-4b8b-810a-1ceef414d47b/racerblue_optiyellow_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/838a4af8-1782-4b8b-810a-1ceef414d47b/racerblue_optiyellow_automax_gradient.jpg"
+              },
+              "racerblue_electricgreen": {
+                "2x": "w_750,h_1624/a988f316-6b05-493c-ae17-c820072b422a/racerblue_electricgreen_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/a988f316-6b05-493c-ae17-c820072b422a/racerblue_electricgreen_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/a988f316-6b05-493c-ae17-c820072b422a/racerblue_electricgreen_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/a988f316-6b05-493c-ae17-c820072b422a/racerblue_electricgreen_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/a988f316-6b05-493c-ae17-c820072b422a/racerblue_electricgreen_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/a988f316-6b05-493c-ae17-c820072b422a/racerblue_electricgreen_automax_gradient.jpg"
+              },
+              "racerblue_auroragreen": {
+                "2x": "w_750,h_1624/2132b42d-415f-489c-92bd-6c9f758b0173/racerblue_auroragreen_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/2132b42d-415f-489c-92bd-6c9f758b0173/racerblue_auroragreen_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/2132b42d-415f-489c-92bd-6c9f758b0173/racerblue_auroragreen_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/2132b42d-415f-489c-92bd-6c9f758b0173/racerblue_auroragreen_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/2132b42d-415f-489c-92bd-6c9f758b0173/racerblue_auroragreen_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/2132b42d-415f-489c-92bd-6c9f758b0173/racerblue_auroragreen_automax_gradient.jpg"
+              },
+              "vividpurple_optiyellow": {
+                "2x": "w_750,h_1624/ea292c30-4d17-44de-9c15-cf7e3e12ec15/vividpurple_optiyellow_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/ea292c30-4d17-44de-9c15-cf7e3e12ec15/vividpurple_optiyellow_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/ea292c30-4d17-44de-9c15-cf7e3e12ec15/vividpurple_optiyellow_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/ea292c30-4d17-44de-9c15-cf7e3e12ec15/vividpurple_optiyellow_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/ea292c30-4d17-44de-9c15-cf7e3e12ec15/vividpurple_optiyellow_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/ea292c30-4d17-44de-9c15-cf7e3e12ec15/vividpurple_optiyellow_automax_gradient.jpg"
+              },
+              "vividpurple_white": {
+                "2x": "w_750,h_1624/39a6b1ba-1794-43b3-86fc-a6981f93a630/vividpurple_white_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/39a6b1ba-1794-43b3-86fc-a6981f93a630/vividpurple_white_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/39a6b1ba-1794-43b3-86fc-a6981f93a630/vividpurple_white_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/39a6b1ba-1794-43b3-86fc-a6981f93a630/vividpurple_white_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/39a6b1ba-1794-43b3-86fc-a6981f93a630/vividpurple_white_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/39a6b1ba-1794-43b3-86fc-a6981f93a630/vividpurple_white_automax_gradient.jpg"
+              },
+              "vividpurple_auroragreen": {
+                "2x": "w_750,h_1624/11fa7d46-5d89-4de0-a888-7a871c382160/vividpurple_auroragreen_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/11fa7d46-5d89-4de0-a888-7a871c382160/vividpurple_auroragreen_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/11fa7d46-5d89-4de0-a888-7a871c382160/vividpurple_auroragreen_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/11fa7d46-5d89-4de0-a888-7a871c382160/vividpurple_auroragreen_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/11fa7d46-5d89-4de0-a888-7a871c382160/vividpurple_auroragreen_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/11fa7d46-5d89-4de0-a888-7a871c382160/vividpurple_auroragreen_automax_gradient.jpg"
+              },
+              "redorbit_racerblue": {
+                "2x": "w_750,h_1624/988afbf7-6bd0-4510-82a0-2e4fdbd909ec/redorbit_racerblue_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/988afbf7-6bd0-4510-82a0-2e4fdbd909ec/redorbit_racerblue_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/988afbf7-6bd0-4510-82a0-2e4fdbd909ec/redorbit_racerblue_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/988afbf7-6bd0-4510-82a0-2e4fdbd909ec/redorbit_racerblue_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/988afbf7-6bd0-4510-82a0-2e4fdbd909ec/redorbit_racerblue_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/988afbf7-6bd0-4510-82a0-2e4fdbd909ec/redorbit_racerblue_automax_gradient.jpg"
+              },
+              "redorbit_optiyellow": {
+                "2x": "w_750,h_1624/9d8ab6fe-789e-45a2-9e29-2b7a2db07f35/redorbit_optiyellow_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/9d8ab6fe-789e-45a2-9e29-2b7a2db07f35/redorbit_optiyellow_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/9d8ab6fe-789e-45a2-9e29-2b7a2db07f35/redorbit_optiyellow_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/9d8ab6fe-789e-45a2-9e29-2b7a2db07f35/redorbit_optiyellow_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/9d8ab6fe-789e-45a2-9e29-2b7a2db07f35/redorbit_optiyellow_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/9d8ab6fe-789e-45a2-9e29-2b7a2db07f35/redorbit_optiyellow_automax_gradient.jpg"
+              },
+              "redorbit_white": {
+                "2x": "w_750,h_1624/bdc18434-7a4f-4b26-9fdf-63380ed08696/redorbit_white_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/bdc18434-7a4f-4b26-9fdf-63380ed08696/redorbit_white_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/bdc18434-7a4f-4b26-9fdf-63380ed08696/redorbit_white_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/bdc18434-7a4f-4b26-9fdf-63380ed08696/redorbit_white_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/bdc18434-7a4f-4b26-9fdf-63380ed08696/redorbit_white_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/bdc18434-7a4f-4b26-9fdf-63380ed08696/redorbit_white_automax_gradient.jpg"
+              },
+              "greenspark_optiyellow": {
+                "2x": "w_750,h_1624/263e30cd-e68a-4449-b091-5db64aaf4663/greenspark_optiyellow_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/263e30cd-e68a-4449-b091-5db64aaf4663/greenspark_optiyellow_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/263e30cd-e68a-4449-b091-5db64aaf4663/greenspark_optiyellow_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/263e30cd-e68a-4449-b091-5db64aaf4663/greenspark_optiyellow_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/263e30cd-e68a-4449-b091-5db64aaf4663/greenspark_optiyellow_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/263e30cd-e68a-4449-b091-5db64aaf4663/greenspark_optiyellow_automax_gradient.jpg"
+              },
+              "greenspark_white": {
+                "2x": "w_750,h_1624/84f11c4f-698a-405f-813f-dcb7ce900508/greenspark_white_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/84f11c4f-698a-405f-813f-dcb7ce900508/greenspark_white_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/84f11c4f-698a-405f-813f-dcb7ce900508/greenspark_white_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/84f11c4f-698a-405f-813f-dcb7ce900508/greenspark_white_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/84f11c4f-698a-405f-813f-dcb7ce900508/greenspark_white_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/84f11c4f-698a-405f-813f-dcb7ce900508/greenspark_white_automax_gradient.jpg"
+              },
+              "heroblue_pinkblast": {
+                "2x": "w_750,h_1624/08d239f5-a041-4ff8-9fbd-96bd214e2e2a/heroblue_pinkblast_automax_gradient@2x.png",
+                "3x": "w_1125,h_2436/08d239f5-a041-4ff8-9fbd-96bd214e2e2a/heroblue_pinkblast_automax_gradient@3x.png",
+                "hdpi": "w_657,h_1305/08d239f5-a041-4ff8-9fbd-96bd214e2e2a/heroblue_pinkblast_automax_gradient.jpg",
+                "xhdpi": "w_876,h_1740/08d239f5-a041-4ff8-9fbd-96bd214e2e2a/heroblue_pinkblast_automax_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/08d239f5-a041-4ff8-9fbd-96bd214e2e2a/heroblue_pinkblast_automax_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/08d239f5-a041-4ff8-9fbd-96bd214e2e2a/heroblue_pinkblast_automax_gradient.jpg"
+              }
+            }
+          },
+          {
+            "shoe_identifier": "005",
+            "shoe_name": "Nike Adapt BB2",
+            "model_version": 1,
+            "background_gradient_images": {
+              "auroragreen": {
+                "2x": "w_750,h_1624/e8370fc5-8f92-445a-912f-03958e747d8c/auroragreen_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/e8370fc5-8f92-445a-912f-03958e747d8c/auroragreen_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/e8370fc5-8f92-445a-912f-03958e747d8c/auroragreen_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/e8370fc5-8f92-445a-912f-03958e747d8c/auroragreen_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/e8370fc5-8f92-445a-912f-03958e747d8c/auroragreen_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/e8370fc5-8f92-445a-912f-03958e747d8c/auroragreen_bb2_gradient.jpg"
+              },
+              "heroblue": {
+                "2x": "w_750,h_1624/362213d4-5e5a-49a7-a925-391cb84a1dfd/heroblue_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/362213d4-5e5a-49a7-a925-391cb84a1dfd/heroblue_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/362213d4-5e5a-49a7-a925-391cb84a1dfd/heroblue_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/362213d4-5e5a-49a7-a925-391cb84a1dfd/heroblue_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/362213d4-5e5a-49a7-a925-391cb84a1dfd/heroblue_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/362213d4-5e5a-49a7-a925-391cb84a1dfd/heroblue_bb2_gradient.jpg"
+              },
+              "racerblue": {
+                "2x": "w_750,h_1624/1b49f907-0f5a-4a9a-bdb1-8e5b413617b9/racerblue_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/1b49f907-0f5a-4a9a-bdb1-8e5b413617b9/racerblue_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/1b49f907-0f5a-4a9a-bdb1-8e5b413617b9/racerblue_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/1b49f907-0f5a-4a9a-bdb1-8e5b413617b9/racerblue_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/1b49f907-0f5a-4a9a-bdb1-8e5b413617b9/racerblue_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/1b49f907-0f5a-4a9a-bdb1-8e5b413617b9/racerblue_bb2_gradient.jpg"
+              },
+              "vividpurple": {
+                "2x": "w_750,h_1624/d55e38df-d658-465d-a675-8430b5c3a0dd/vividpurple_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/d55e38df-d658-465d-a675-8430b5c3a0dd/vividpurple_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/d55e38df-d658-465d-a675-8430b5c3a0dd/vividpurple_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/d55e38df-d658-465d-a675-8430b5c3a0dd/vividpurple_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/d55e38df-d658-465d-a675-8430b5c3a0dd/vividpurple_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/d55e38df-d658-465d-a675-8430b5c3a0dd/vividpurple_bb2_gradient.jpg"
+              },
+              "pinkblast": {
+                "2x": "w_750,h_1624/b3517fab-8a49-4dee-9481-4c7e970678b1/pinkblast_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/b3517fab-8a49-4dee-9481-4c7e970678b1/pinkblast_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/b3517fab-8a49-4dee-9481-4c7e970678b1/pinkblast_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/b3517fab-8a49-4dee-9481-4c7e970678b1/pinkblast_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/b3517fab-8a49-4dee-9481-4c7e970678b1/pinkblast_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/b3517fab-8a49-4dee-9481-4c7e970678b1/pinkblast_bb2_gradient.jpg"
+              },
+              "redorbit": {
+                "2x": "w_750,h_1624/a11e46f9-0f8f-40d7-9bd9-887546a98d64/redorbit_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/a11e46f9-0f8f-40d7-9bd9-887546a98d64/redorbit_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/a11e46f9-0f8f-40d7-9bd9-887546a98d64/redorbit_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/a11e46f9-0f8f-40d7-9bd9-887546a98d64/redorbit_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/a11e46f9-0f8f-40d7-9bd9-887546a98d64/redorbit_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/a11e46f9-0f8f-40d7-9bd9-887546a98d64/redorbit_bb2_gradient.jpg"
+              },
+              "brightcrimson": {
+                "2x": "w_750,h_1624/f7e2ef96-57a8-45b0-8d31-662ff74bcae7/brightcrimson_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/f7e2ef96-57a8-45b0-8d31-662ff74bcae7/brightcrimson_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/f7e2ef96-57a8-45b0-8d31-662ff74bcae7/brightcrimson_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/f7e2ef96-57a8-45b0-8d31-662ff74bcae7/brightcrimson_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/f7e2ef96-57a8-45b0-8d31-662ff74bcae7/brightcrimson_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/f7e2ef96-57a8-45b0-8d31-662ff74bcae7/brightcrimson_bb2_gradient.jpg"
+              },
+              "totalorange": {
+                "2x": "w_750,h_1624/2dd0529b-9ec3-45c0-b612-dca86977a76b/totalorange_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/2dd0529b-9ec3-45c0-b612-dca86977a76b/totalorange_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/2dd0529b-9ec3-45c0-b612-dca86977a76b/totalorange_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/2dd0529b-9ec3-45c0-b612-dca86977a76b/totalorange_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/2dd0529b-9ec3-45c0-b612-dca86977a76b/totalorange_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/2dd0529b-9ec3-45c0-b612-dca86977a76b/totalorange_bb2_gradient.jpg"
+              },
+              "optiyellow": {
+                "2x": "w_750,h_1624/d154c94a-b6c4-4dcc-9c3f-382120a2d3bd/optiyellow_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/d154c94a-b6c4-4dcc-9c3f-382120a2d3bd/optiyellow_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/d154c94a-b6c4-4dcc-9c3f-382120a2d3bd/optiyellow_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/d154c94a-b6c4-4dcc-9c3f-382120a2d3bd/optiyellow_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/d154c94a-b6c4-4dcc-9c3f-382120a2d3bd/optiyellow_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/d154c94a-b6c4-4dcc-9c3f-382120a2d3bd/optiyellow_bb2_gradient.jpg"
+              },
+              "electricgreen": {
+                "2x": "w_750,h_1624/63dd9066-e65c-4b63-bf9e-bac43ce99fc5/electricgreen_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/63dd9066-e65c-4b63-bf9e-bac43ce99fc5/electricgreen_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/63dd9066-e65c-4b63-bf9e-bac43ce99fc5/electricgreen_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/63dd9066-e65c-4b63-bf9e-bac43ce99fc5/electricgreen_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/63dd9066-e65c-4b63-bf9e-bac43ce99fc5/electricgreen_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/63dd9066-e65c-4b63-bf9e-bac43ce99fc5/electricgreen_bb2_gradient.jpg"
+              },
+              "greenspark": {
+                "2x": "w_750,h_1624/7e1c7d55-e815-49fa-87cf-e5140c6c873a/greenspark_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/7e1c7d55-e815-49fa-87cf-e5140c6c873a/greenspark_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/7e1c7d55-e815-49fa-87cf-e5140c6c873a/greenspark_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/7e1c7d55-e815-49fa-87cf-e5140c6c873a/greenspark_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/7e1c7d55-e815-49fa-87cf-e5140c6c873a/greenspark_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/7e1c7d55-e815-49fa-87cf-e5140c6c873a/greenspark_bb2_gradient.jpg"
+              },
+              "white": {
+                "2x": "w_750,h_1624/c8359430-4c5d-4f3d-a59e-9b7499831288/white_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/c8359430-4c5d-4f3d-a59e-9b7499831288/white_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/c8359430-4c5d-4f3d-a59e-9b7499831288/white_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/c8359430-4c5d-4f3d-a59e-9b7499831288/white_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/c8359430-4c5d-4f3d-a59e-9b7499831288/white_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/c8359430-4c5d-4f3d-a59e-9b7499831288/white_bb2_gradient.jpg"
+              },
+              "lightsoff": {
+                "2x": "w_750,h_1624/d1ca1276-5723-4ee1-8d0a-d3baf551e860/lightsoff_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/d1ca1276-5723-4ee1-8d0a-d3baf551e860/lightsoff_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/d1ca1276-5723-4ee1-8d0a-d3baf551e860/lightsoff_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/d1ca1276-5723-4ee1-8d0a-d3baf551e860/lightsoff_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/d1ca1276-5723-4ee1-8d0a-d3baf551e860/lightsoff_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/d1ca1276-5723-4ee1-8d0a-d3baf551e860/lightsoff_bb2_gradient.jpg"
+              },
+              "racerblue_optiyellow": {
+                "2x": "w_750,h_1624/e1d14ad5-e96e-4a85-9620-ff09d795366e/racerblue_optiyellow_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/e1d14ad5-e96e-4a85-9620-ff09d795366e/racerblue_optiyellow_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/e1d14ad5-e96e-4a85-9620-ff09d795366e/racerblue_optiyellow_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/e1d14ad5-e96e-4a85-9620-ff09d795366e/racerblue_optiyellow_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/e1d14ad5-e96e-4a85-9620-ff09d795366e/racerblue_optiyellow_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/e1d14ad5-e96e-4a85-9620-ff09d795366e/racerblue_optiyellow_bb2_gradient.jpg"
+              },
+              "racerblue_electricgreen": {
+                "2x": "w_750,h_1624/1d18facd-5352-4bef-ad9f-db0729b447d5/racerblue_electricgreen_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/1d18facd-5352-4bef-ad9f-db0729b447d5/racerblue_electricgreen_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/1d18facd-5352-4bef-ad9f-db0729b447d5/racerblue_electricgreen_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/1d18facd-5352-4bef-ad9f-db0729b447d5/racerblue_electricgreen_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/1d18facd-5352-4bef-ad9f-db0729b447d5/racerblue_electricgreen_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/1d18facd-5352-4bef-ad9f-db0729b447d5/racerblue_electricgreen_bb2_gradient.jpg"
+              },
+              "racerblue_auroragreen": {
+                "2x": "w_750,h_1624/07d359ce-4309-4fd1-b863-97b2148004ca/racerblue_auroragreen_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/07d359ce-4309-4fd1-b863-97b2148004ca/racerblue_auroragreen_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/07d359ce-4309-4fd1-b863-97b2148004ca/racerblue_auroragreen_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/07d359ce-4309-4fd1-b863-97b2148004ca/racerblue_auroragreen_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/07d359ce-4309-4fd1-b863-97b2148004ca/racerblue_auroragreen_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/07d359ce-4309-4fd1-b863-97b2148004ca/racerblue_auroragreen_bb2_gradient.jpg"
+              },
+              "vividpurple_optiyellow": {
+                "2x": "w_750,h_1624/3bc2286c-b51f-4f53-8073-57a575c6f15b/vividpurple_optiyellow_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/3bc2286c-b51f-4f53-8073-57a575c6f15b/vividpurple_optiyellow_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/3bc2286c-b51f-4f53-8073-57a575c6f15b/vividpurple_optiyellow_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/3bc2286c-b51f-4f53-8073-57a575c6f15b/vividpurple_optiyellow_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/3bc2286c-b51f-4f53-8073-57a575c6f15b/vividpurple_optiyellow_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/3bc2286c-b51f-4f53-8073-57a575c6f15b/vividpurple_optiyellow_bb2_gradient.jpg"
+              },
+              "vividpurple_white": {
+                "2x": "w_750,h_1624/fb41fc23-3985-49d9-b3a4-793641205e97/vividpurple_white_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/fb41fc23-3985-49d9-b3a4-793641205e97/vividpurple_white_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/fb41fc23-3985-49d9-b3a4-793641205e97/vividpurple_white_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/fb41fc23-3985-49d9-b3a4-793641205e97/vividpurple_white_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/fb41fc23-3985-49d9-b3a4-793641205e97/vividpurple_white_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/fb41fc23-3985-49d9-b3a4-793641205e97/vividpurple_white_bb2_gradient.jpg"
+              },
+              "vividpurple_auroragreen": {
+                "2x": "w_750,h_1624/dc28f7d7-6212-46ef-a5ef-8b01ff50ccd6/vividpurple_auroragreen_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/dc28f7d7-6212-46ef-a5ef-8b01ff50ccd6/vividpurple_auroragreen_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/dc28f7d7-6212-46ef-a5ef-8b01ff50ccd6/vividpurple_auroragreen_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/dc28f7d7-6212-46ef-a5ef-8b01ff50ccd6/vividpurple_auroragreen_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/dc28f7d7-6212-46ef-a5ef-8b01ff50ccd6/vividpurple_auroragreen_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/dc28f7d7-6212-46ef-a5ef-8b01ff50ccd6/vividpurple_auroragreen_bb2_gradient.jpg"
+              },
+              "redorbit_racerblue": {
+                "2x": "w_750,h_1624/a3dd7e07-73a4-4a5e-945a-fe3044c8750c/redorbit_racerblue_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/a3dd7e07-73a4-4a5e-945a-fe3044c8750c/redorbit_racerblue_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/a3dd7e07-73a4-4a5e-945a-fe3044c8750c/redorbit_racerblue_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/a3dd7e07-73a4-4a5e-945a-fe3044c8750c/redorbit_racerblue_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/a3dd7e07-73a4-4a5e-945a-fe3044c8750c/redorbit_racerblue_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/a3dd7e07-73a4-4a5e-945a-fe3044c8750c/redorbit_racerblue_bb2_gradient.jpg"
+              },
+              "redorbit_optiyellow": {
+                "2x": "w_750,h_1624/3e6db418-6cca-4318-9de2-8dec5e542653/redorbit_optiyellow_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/3e6db418-6cca-4318-9de2-8dec5e542653/redorbit_optiyellow_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/3e6db418-6cca-4318-9de2-8dec5e542653/redorbit_optiyellow_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/3e6db418-6cca-4318-9de2-8dec5e542653/redorbit_optiyellow_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/3e6db418-6cca-4318-9de2-8dec5e542653/redorbit_optiyellow_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/3e6db418-6cca-4318-9de2-8dec5e542653/redorbit_optiyellow_bb2_gradient.jpg"
+              },
+              "redorbit_white": {
+                "2x": "w_750,h_1624/62c39ce9-844b-411b-a7d7-57ccc4473fd9/redorbit_white_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/62c39ce9-844b-411b-a7d7-57ccc4473fd9/redorbit_white_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/62c39ce9-844b-411b-a7d7-57ccc4473fd9/redorbit_white_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/62c39ce9-844b-411b-a7d7-57ccc4473fd9/redorbit_white_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/62c39ce9-844b-411b-a7d7-57ccc4473fd9/redorbit_white_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/62c39ce9-844b-411b-a7d7-57ccc4473fd9/redorbit_white_bb2_gradient.jpg"
+              },
+              "greenspark_optiyellow": {
+                "2x": "w_750,h_1624/ea67a0e6-5047-4669-b847-9c998a1fb48e/greenspark_optiyellow_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/ea67a0e6-5047-4669-b847-9c998a1fb48e/greenspark_optiyellow_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/ea67a0e6-5047-4669-b847-9c998a1fb48e/greenspark_optiyellow_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/ea67a0e6-5047-4669-b847-9c998a1fb48e/greenspark_optiyellow_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/ea67a0e6-5047-4669-b847-9c998a1fb48e/greenspark_optiyellow_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/ea67a0e6-5047-4669-b847-9c998a1fb48e/greenspark_optiyellow_bb2_gradient.jpg"
+              },
+              "greenspark_white": {
+                "2x": "w_750,h_1624/69669f48-bf68-4602-8ffd-5aba82f3ead9/greenspark_white_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/69669f48-bf68-4602-8ffd-5aba82f3ead9/greenspark_white_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/69669f48-bf68-4602-8ffd-5aba82f3ead9/greenspark_white_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/69669f48-bf68-4602-8ffd-5aba82f3ead9/greenspark_white_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/69669f48-bf68-4602-8ffd-5aba82f3ead9/greenspark_white_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/69669f48-bf68-4602-8ffd-5aba82f3ead9/greenspark_white_bb2_gradient.jpg"
+              },
+              "heroblue_pinkblast": {
+                "2x": "w_750,h_1624/fb23b56c-3e26-4db2-8ef7-9e0454e55b9e/heroblue_pinkblast_bb2_gradient@2x.png",
+                "3x": "w_1125,h_2436/fb23b56c-3e26-4db2-8ef7-9e0454e55b9e/heroblue_pinkblast_bb2_gradient@3x.png",
+                "hdpi": "w_657,h_1305/fb23b56c-3e26-4db2-8ef7-9e0454e55b9e/heroblue_pinkblast_bb2_gradient.jpg",
+                "xhdpi": "w_876,h_1740/fb23b56c-3e26-4db2-8ef7-9e0454e55b9e/heroblue_pinkblast_bb2_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/fb23b56c-3e26-4db2-8ef7-9e0454e55b9e/heroblue_pinkblast_bb2_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/fb23b56c-3e26-4db2-8ef7-9e0454e55b9e/heroblue_pinkblast_bb2_gradient.jpg"
+              }
+            }
+          },
+          {
+            "shoe_identifier": "006",
+            "shoe_name": "Air Jordan XI Adapt",
+            "model_version": 1,
+            "background_gradient_images": {
+              "auroragreen": {
+                "2x": "w_750,h_1624/5b1896b8-c795-48ea-ad41-4177f3977eeb/auroragreen_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/5b1896b8-c795-48ea-ad41-4177f3977eeb/auroragreen_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/5b1896b8-c795-48ea-ad41-4177f3977eeb/auroragreen_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/5b1896b8-c795-48ea-ad41-4177f3977eeb/auroragreen_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/5b1896b8-c795-48ea-ad41-4177f3977eeb/auroragreen_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/5b1896b8-c795-48ea-ad41-4177f3977eeb/auroragreen_jordan_gradient.jpg"
+              },
+              "heroblue": {
+                "2x": "w_750,h_1624/f44e2506-79d2-446b-bcb3-b77fa5974d7f/heroblue_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/f44e2506-79d2-446b-bcb3-b77fa5974d7f/heroblue_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/f44e2506-79d2-446b-bcb3-b77fa5974d7f/heroblue_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/f44e2506-79d2-446b-bcb3-b77fa5974d7f/heroblue_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/f44e2506-79d2-446b-bcb3-b77fa5974d7f/heroblue_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/f44e2506-79d2-446b-bcb3-b77fa5974d7f/heroblue_jordan_gradient.jpg"
+              },
+              "racerblue": {
+                "2x": "w_750,h_1624/2df724cd-ee4c-4918-b893-449d76282867/racerblue_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/2df724cd-ee4c-4918-b893-449d76282867/racerblue_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/2df724cd-ee4c-4918-b893-449d76282867/racerblue_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/2df724cd-ee4c-4918-b893-449d76282867/racerblue_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/2df724cd-ee4c-4918-b893-449d76282867/racerblue_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/2df724cd-ee4c-4918-b893-449d76282867/racerblue_jordan_gradient.jpg"
+              },
+              "vividpurple": {
+                "2x": "w_750,h_1624/b2d51a34-0088-49d3-8391-5b37fc4801ee/vividpurple_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/b2d51a34-0088-49d3-8391-5b37fc4801ee/vividpurple_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/b2d51a34-0088-49d3-8391-5b37fc4801ee/vividpurple_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/b2d51a34-0088-49d3-8391-5b37fc4801ee/vividpurple_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/b2d51a34-0088-49d3-8391-5b37fc4801ee/vividpurple_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/b2d51a34-0088-49d3-8391-5b37fc4801ee/vividpurple_jordan_gradient.jpg"
+              },
+              "pinkblast": {
+                "2x": "w_750,h_1624/006d10c3-3c20-42ff-bb7e-3086734483dd/pinkblast_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/006d10c3-3c20-42ff-bb7e-3086734483dd/pinkblast_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/006d10c3-3c20-42ff-bb7e-3086734483dd/pinkblast_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/006d10c3-3c20-42ff-bb7e-3086734483dd/pinkblast_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/006d10c3-3c20-42ff-bb7e-3086734483dd/pinkblast_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/006d10c3-3c20-42ff-bb7e-3086734483dd/pinkblast_jordan_gradient.jpg"
+              },
+              "redorbit": {
+                "2x": "w_750,h_1624/96ab63af-487c-44f4-abd1-57ec39fbf5ee/redorbit_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/96ab63af-487c-44f4-abd1-57ec39fbf5ee/redorbit_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/96ab63af-487c-44f4-abd1-57ec39fbf5ee/redorbit_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/96ab63af-487c-44f4-abd1-57ec39fbf5ee/redorbit_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/96ab63af-487c-44f4-abd1-57ec39fbf5ee/redorbit_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/96ab63af-487c-44f4-abd1-57ec39fbf5ee/redorbit_jordan_gradient.jpg"
+              },
+              "brightcrimson": {
+                "2x": "w_750,h_1624/9cc90ae7-17b9-41a2-bbcd-8368fee1bc51/brightcrimson_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/9cc90ae7-17b9-41a2-bbcd-8368fee1bc51/brightcrimson_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/9cc90ae7-17b9-41a2-bbcd-8368fee1bc51/brightcrimson_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/9cc90ae7-17b9-41a2-bbcd-8368fee1bc51/brightcrimson_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/9cc90ae7-17b9-41a2-bbcd-8368fee1bc51/brightcrimson_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/9cc90ae7-17b9-41a2-bbcd-8368fee1bc51/brightcrimson_jordan_gradient.jpg"
+              },
+              "totalorange": {
+                "2x": "w_750,h_1624/06eb616b-abbb-41e5-8a82-0fe03b3e73f0/totalorange_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/06eb616b-abbb-41e5-8a82-0fe03b3e73f0/totalorange_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/06eb616b-abbb-41e5-8a82-0fe03b3e73f0/totalorange_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/06eb616b-abbb-41e5-8a82-0fe03b3e73f0/totalorange_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/06eb616b-abbb-41e5-8a82-0fe03b3e73f0/totalorange_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/06eb616b-abbb-41e5-8a82-0fe03b3e73f0/totalorange_jordan_gradient.jpg"
+              },
+              "optiyellow": {
+                "2x": "w_750,h_1624/a0541ae8-a063-40db-8f1a-ceae805a34d1/optiyellow_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/a0541ae8-a063-40db-8f1a-ceae805a34d1/optiyellow_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/a0541ae8-a063-40db-8f1a-ceae805a34d1/optiyellow_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/a0541ae8-a063-40db-8f1a-ceae805a34d1/optiyellow_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/a0541ae8-a063-40db-8f1a-ceae805a34d1/optiyellow_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/a0541ae8-a063-40db-8f1a-ceae805a34d1/optiyellow_jordan_gradient.jpg"
+              },
+              "electricgreen": {
+                "2x": "w_750,h_1624/2daa1210-4b63-47e2-b0d0-00c048a11219/electricgreen_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/2daa1210-4b63-47e2-b0d0-00c048a11219/electricgreen_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/2daa1210-4b63-47e2-b0d0-00c048a11219/electricgreen_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/2daa1210-4b63-47e2-b0d0-00c048a11219/electricgreen_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/2daa1210-4b63-47e2-b0d0-00c048a11219/electricgreen_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/2daa1210-4b63-47e2-b0d0-00c048a11219/electricgreen_jordan_gradient.jpg"
+              },
+              "greenspark": {
+                "2x": "w_750,h_1624/7ea4095d-824b-4272-942d-96b12056da2d/greenspark_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/7ea4095d-824b-4272-942d-96b12056da2d/greenspark_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/7ea4095d-824b-4272-942d-96b12056da2d/greenspark_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/7ea4095d-824b-4272-942d-96b12056da2d/greenspark_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/7ea4095d-824b-4272-942d-96b12056da2d/greenspark_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/7ea4095d-824b-4272-942d-96b12056da2d/greenspark_jordan_gradient.jpg"
+              },
+              "white": {
+                "2x": "w_750,h_1624/2fba5557-1a11-48d7-b914-3eb172d2e7a7/white_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/2fba5557-1a11-48d7-b914-3eb172d2e7a7/white_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/2fba5557-1a11-48d7-b914-3eb172d2e7a7/white_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/2fba5557-1a11-48d7-b914-3eb172d2e7a7/white_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/2fba5557-1a11-48d7-b914-3eb172d2e7a7/white_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/2fba5557-1a11-48d7-b914-3eb172d2e7a7/white_jordan_gradient.jpg"
+              },
+              "lightsoff": {
+                "2x": "w_750,h_1624/ea207640-674f-4d15-baa4-81c615b702b6/lightsoff_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/ea207640-674f-4d15-baa4-81c615b702b6/lightsoff_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/ea207640-674f-4d15-baa4-81c615b702b6/lightsoff_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/ea207640-674f-4d15-baa4-81c615b702b6/lightsoff_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/ea207640-674f-4d15-baa4-81c615b702b6/lightsoff_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/ea207640-674f-4d15-baa4-81c615b702b6/lightsoff_jordan_gradient.jpg"
+              },
+              "racerblue_optiyellow": {
+                "2x": "w_750,h_1624/8adf626a-d028-4b4e-9246-caf9adbbddd4/racerblue_optiyellow_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/8adf626a-d028-4b4e-9246-caf9adbbddd4/racerblue_optiyellow_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/8adf626a-d028-4b4e-9246-caf9adbbddd4/racerblue_optiyellow_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/8adf626a-d028-4b4e-9246-caf9adbbddd4/racerblue_optiyellow_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/8adf626a-d028-4b4e-9246-caf9adbbddd4/racerblue_optiyellow_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/8adf626a-d028-4b4e-9246-caf9adbbddd4/racerblue_optiyellow_jordan_gradient.jpg"
+              },
+              "racerblue_electricgreen": {
+                "2x": "w_750,h_1624/0d69779a-28ac-458a-9dbf-387ed62ae677/racerblue_electricgreen_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/0d69779a-28ac-458a-9dbf-387ed62ae677/racerblue_electricgreen_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/0d69779a-28ac-458a-9dbf-387ed62ae677/racerblue_electricgreen_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/0d69779a-28ac-458a-9dbf-387ed62ae677/racerblue_electricgreen_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/0d69779a-28ac-458a-9dbf-387ed62ae677/racerblue_electricgreen_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/0d69779a-28ac-458a-9dbf-387ed62ae677/racerblue_electricgreen_jordan_gradient.jpg"
+              },
+              "racerblue_auroragreen": {
+                "2x": "w_750,h_1624/6e82f6b2-df93-46a3-b7bf-e52d69eabdcb/racerblue_auroragreen_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/6e82f6b2-df93-46a3-b7bf-e52d69eabdcb/racerblue_auroragreen_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/6e82f6b2-df93-46a3-b7bf-e52d69eabdcb/racerblue_auroragreen_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/6e82f6b2-df93-46a3-b7bf-e52d69eabdcb/racerblue_auroragreen_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/6e82f6b2-df93-46a3-b7bf-e52d69eabdcb/racerblue_auroragreen_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/6e82f6b2-df93-46a3-b7bf-e52d69eabdcb/racerblue_auroragreen_jordan_gradient.jpg"
+              },
+              "vividpurple_optiyellow": {
+                "2x": "w_750,h_1624/cc757ff1-5ea7-4df3-ab10-3494521dc1ef/vividpurple_optiyellow_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/cc757ff1-5ea7-4df3-ab10-3494521dc1ef/vividpurple_optiyellow_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/cc757ff1-5ea7-4df3-ab10-3494521dc1ef/vividpurple_optiyellow_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/cc757ff1-5ea7-4df3-ab10-3494521dc1ef/vividpurple_optiyellow_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/cc757ff1-5ea7-4df3-ab10-3494521dc1ef/vividpurple_optiyellow_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/cc757ff1-5ea7-4df3-ab10-3494521dc1ef/vividpurple_optiyellow_jordan_gradient.jpg"
+              },
+              "vividpurple_white": {
+                "2x": "w_750,h_1624/e25c6444-07ef-40d1-9d48-eeea6107af48/vividpurple_white_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/e25c6444-07ef-40d1-9d48-eeea6107af48/vividpurple_white_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/e25c6444-07ef-40d1-9d48-eeea6107af48/vividpurple_white_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/e25c6444-07ef-40d1-9d48-eeea6107af48/vividpurple_white_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/e25c6444-07ef-40d1-9d48-eeea6107af48/vividpurple_white_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/e25c6444-07ef-40d1-9d48-eeea6107af48/vividpurple_white_jordan_gradient.jpg"
+              },
+              "vividpurple_auroragreen": {
+                "2x": "w_750,h_1624/3cd76890-4cf2-4e4b-af2d-562efb542571/vividpurple_auroragreen_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/3cd76890-4cf2-4e4b-af2d-562efb542571/vividpurple_auroragreen_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/3cd76890-4cf2-4e4b-af2d-562efb542571/vividpurple_auroragreen_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/3cd76890-4cf2-4e4b-af2d-562efb542571/vividpurple_auroragreen_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/3cd76890-4cf2-4e4b-af2d-562efb542571/vividpurple_auroragreen_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/3cd76890-4cf2-4e4b-af2d-562efb542571/vividpurple_auroragreen_jordan_gradient.jpg"
+              },
+              "redorbit_racerblue": {
+                "2x": "w_750,h_1624/cd374104-27a6-46c0-b171-16f2b02cd349/redorbit_racerblue_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/cd374104-27a6-46c0-b171-16f2b02cd349/redorbit_racerblue_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/cd374104-27a6-46c0-b171-16f2b02cd349/redorbit_racerblue_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/cd374104-27a6-46c0-b171-16f2b02cd349/redorbit_racerblue_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/cd374104-27a6-46c0-b171-16f2b02cd349/redorbit_racerblue_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/cd374104-27a6-46c0-b171-16f2b02cd349/redorbit_racerblue_jordan_gradient.jpg"
+              },
+              "redorbit_optiyellow": {
+                "2x": "w_750,h_1624/75af4f34-7003-451b-9f10-b82e9c16c551/redorbit_optiyellow_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/75af4f34-7003-451b-9f10-b82e9c16c551/redorbit_optiyellow_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/75af4f34-7003-451b-9f10-b82e9c16c551/redorbit_optiyellow_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/75af4f34-7003-451b-9f10-b82e9c16c551/redorbit_optiyellow_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/75af4f34-7003-451b-9f10-b82e9c16c551/redorbit_optiyellow_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/75af4f34-7003-451b-9f10-b82e9c16c551/redorbit_optiyellow_jordan_gradient.jpg"
+              },
+              "redorbit_white": {
+                "2x": "w_750,h_1624/e63f5f10-2b6a-40b4-8052-568d314ed053/redorbit_white_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/e63f5f10-2b6a-40b4-8052-568d314ed053/redorbit_white_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/e63f5f10-2b6a-40b4-8052-568d314ed053/redorbit_white_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/e63f5f10-2b6a-40b4-8052-568d314ed053/redorbit_white_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/e63f5f10-2b6a-40b4-8052-568d314ed053/redorbit_white_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/e63f5f10-2b6a-40b4-8052-568d314ed053/redorbit_white_jordan_gradient.jpg"
+              },
+              "greenspark_optiyellow": {
+                "2x": "w_750,h_1624/6531596a-05b1-40d4-9548-223b585a1f22/greenspark_optiyellow_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/6531596a-05b1-40d4-9548-223b585a1f22/greenspark_optiyellow_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/6531596a-05b1-40d4-9548-223b585a1f22/greenspark_optiyellow_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/6531596a-05b1-40d4-9548-223b585a1f22/greenspark_optiyellow_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/6531596a-05b1-40d4-9548-223b585a1f22/greenspark_optiyellow_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/6531596a-05b1-40d4-9548-223b585a1f22/greenspark_optiyellow_jordan_gradient.jpg"
+              },
+              "greenspark_white": {
+                "2x": "w_750,h_1624/9e2da0cb-e694-4c50-a7dd-1d89cf64a5b4/greenspark_white_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/9e2da0cb-e694-4c50-a7dd-1d89cf64a5b4/greenspark_white_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/9e2da0cb-e694-4c50-a7dd-1d89cf64a5b4/greenspark_white_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/9e2da0cb-e694-4c50-a7dd-1d89cf64a5b4/greenspark_white_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/9e2da0cb-e694-4c50-a7dd-1d89cf64a5b4/greenspark_white_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/9e2da0cb-e694-4c50-a7dd-1d89cf64a5b4/greenspark_white_jordan_gradient.jpg"
+              },
+              "heroblue_pinkblast": {
+                "2x": "w_750,h_1624/ce6d9792-13c5-4d0c-85c4-3ed02b74b7b0/heroblue_pinkblast_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/ce6d9792-13c5-4d0c-85c4-3ed02b74b7b0/heroblue_pinkblast_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/ce6d9792-13c5-4d0c-85c4-3ed02b74b7b0/heroblue_pinkblast_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/ce6d9792-13c5-4d0c-85c4-3ed02b74b7b0/heroblue_pinkblast_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/ce6d9792-13c5-4d0c-85c4-3ed02b74b7b0/heroblue_pinkblast_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/ce6d9792-13c5-4d0c-85c4-3ed02b74b7b0/heroblue_pinkblast_jordan_gradient.jpg"
+              }
+            }
+          },
+          {
+            "shoe_identifier": "007",
+            "shoe_name": "Air Jordan XI Adapt",
+            "model_version": 1,
+            "background_gradient_images": {
+              "auroragreen": {
+                "2x": "w_750,h_1624/5b1896b8-c795-48ea-ad41-4177f3977eeb/auroragreen_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/5b1896b8-c795-48ea-ad41-4177f3977eeb/auroragreen_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/5b1896b8-c795-48ea-ad41-4177f3977eeb/auroragreen_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/5b1896b8-c795-48ea-ad41-4177f3977eeb/auroragreen_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/5b1896b8-c795-48ea-ad41-4177f3977eeb/auroragreen_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/5b1896b8-c795-48ea-ad41-4177f3977eeb/auroragreen_jordan_gradient.jpg"
+              },
+              "heroblue": {
+                "2x": "w_750,h_1624/f44e2506-79d2-446b-bcb3-b77fa5974d7f/heroblue_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/f44e2506-79d2-446b-bcb3-b77fa5974d7f/heroblue_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/f44e2506-79d2-446b-bcb3-b77fa5974d7f/heroblue_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/f44e2506-79d2-446b-bcb3-b77fa5974d7f/heroblue_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/f44e2506-79d2-446b-bcb3-b77fa5974d7f/heroblue_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/f44e2506-79d2-446b-bcb3-b77fa5974d7f/heroblue_jordan_gradient.jpg"
+              },
+              "racerblue": {
+                "2x": "w_750,h_1624/2df724cd-ee4c-4918-b893-449d76282867/racerblue_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/2df724cd-ee4c-4918-b893-449d76282867/racerblue_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/2df724cd-ee4c-4918-b893-449d76282867/racerblue_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/2df724cd-ee4c-4918-b893-449d76282867/racerblue_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/2df724cd-ee4c-4918-b893-449d76282867/racerblue_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/2df724cd-ee4c-4918-b893-449d76282867/racerblue_jordan_gradient.jpg"
+              },
+              "vividpurple": {
+                "2x": "w_750,h_1624/b2d51a34-0088-49d3-8391-5b37fc4801ee/vividpurple_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/b2d51a34-0088-49d3-8391-5b37fc4801ee/vividpurple_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/b2d51a34-0088-49d3-8391-5b37fc4801ee/vividpurple_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/b2d51a34-0088-49d3-8391-5b37fc4801ee/vividpurple_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/b2d51a34-0088-49d3-8391-5b37fc4801ee/vividpurple_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/b2d51a34-0088-49d3-8391-5b37fc4801ee/vividpurple_jordan_gradient.jpg"
+              },
+              "pinkblast": {
+                "2x": "w_750,h_1624/006d10c3-3c20-42ff-bb7e-3086734483dd/pinkblast_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/006d10c3-3c20-42ff-bb7e-3086734483dd/pinkblast_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/006d10c3-3c20-42ff-bb7e-3086734483dd/pinkblast_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/006d10c3-3c20-42ff-bb7e-3086734483dd/pinkblast_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/006d10c3-3c20-42ff-bb7e-3086734483dd/pinkblast_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/006d10c3-3c20-42ff-bb7e-3086734483dd/pinkblast_jordan_gradient.jpg"
+              },
+              "redorbit": {
+                "2x": "w_750,h_1624/96ab63af-487c-44f4-abd1-57ec39fbf5ee/redorbit_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/96ab63af-487c-44f4-abd1-57ec39fbf5ee/redorbit_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/96ab63af-487c-44f4-abd1-57ec39fbf5ee/redorbit_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/96ab63af-487c-44f4-abd1-57ec39fbf5ee/redorbit_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/96ab63af-487c-44f4-abd1-57ec39fbf5ee/redorbit_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/96ab63af-487c-44f4-abd1-57ec39fbf5ee/redorbit_jordan_gradient.jpg"
+              },
+              "brightcrimson": {
+                "2x": "w_750,h_1624/9cc90ae7-17b9-41a2-bbcd-8368fee1bc51/brightcrimson_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/9cc90ae7-17b9-41a2-bbcd-8368fee1bc51/brightcrimson_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/9cc90ae7-17b9-41a2-bbcd-8368fee1bc51/brightcrimson_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/9cc90ae7-17b9-41a2-bbcd-8368fee1bc51/brightcrimson_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/9cc90ae7-17b9-41a2-bbcd-8368fee1bc51/brightcrimson_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/9cc90ae7-17b9-41a2-bbcd-8368fee1bc51/brightcrimson_jordan_gradient.jpg"
+              },
+              "totalorange": {
+                "2x": "w_750,h_1624/06eb616b-abbb-41e5-8a82-0fe03b3e73f0/totalorange_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/06eb616b-abbb-41e5-8a82-0fe03b3e73f0/totalorange_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/06eb616b-abbb-41e5-8a82-0fe03b3e73f0/totalorange_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/06eb616b-abbb-41e5-8a82-0fe03b3e73f0/totalorange_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/06eb616b-abbb-41e5-8a82-0fe03b3e73f0/totalorange_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/06eb616b-abbb-41e5-8a82-0fe03b3e73f0/totalorange_jordan_gradient.jpg"
+              },
+              "optiyellow": {
+                "2x": "w_750,h_1624/a0541ae8-a063-40db-8f1a-ceae805a34d1/optiyellow_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/a0541ae8-a063-40db-8f1a-ceae805a34d1/optiyellow_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/a0541ae8-a063-40db-8f1a-ceae805a34d1/optiyellow_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/a0541ae8-a063-40db-8f1a-ceae805a34d1/optiyellow_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/a0541ae8-a063-40db-8f1a-ceae805a34d1/optiyellow_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/a0541ae8-a063-40db-8f1a-ceae805a34d1/optiyellow_jordan_gradient.jpg"
+              },
+              "electricgreen": {
+                "2x": "w_750,h_1624/2daa1210-4b63-47e2-b0d0-00c048a11219/electricgreen_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/2daa1210-4b63-47e2-b0d0-00c048a11219/electricgreen_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/2daa1210-4b63-47e2-b0d0-00c048a11219/electricgreen_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/2daa1210-4b63-47e2-b0d0-00c048a11219/electricgreen_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/2daa1210-4b63-47e2-b0d0-00c048a11219/electricgreen_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/2daa1210-4b63-47e2-b0d0-00c048a11219/electricgreen_jordan_gradient.jpg"
+              },
+              "greenspark": {
+                "2x": "w_750,h_1624/7ea4095d-824b-4272-942d-96b12056da2d/greenspark_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/7ea4095d-824b-4272-942d-96b12056da2d/greenspark_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/7ea4095d-824b-4272-942d-96b12056da2d/greenspark_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/7ea4095d-824b-4272-942d-96b12056da2d/greenspark_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/7ea4095d-824b-4272-942d-96b12056da2d/greenspark_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/7ea4095d-824b-4272-942d-96b12056da2d/greenspark_jordan_gradient.jpg"
+              },
+              "white": {
+                "2x": "w_750,h_1624/2fba5557-1a11-48d7-b914-3eb172d2e7a7/white_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/2fba5557-1a11-48d7-b914-3eb172d2e7a7/white_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/2fba5557-1a11-48d7-b914-3eb172d2e7a7/white_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/2fba5557-1a11-48d7-b914-3eb172d2e7a7/white_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/2fba5557-1a11-48d7-b914-3eb172d2e7a7/white_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/2fba5557-1a11-48d7-b914-3eb172d2e7a7/white_jordan_gradient.jpg"
+              },
+              "lightsoff": {
+                "2x": "w_750,h_1624/ea207640-674f-4d15-baa4-81c615b702b6/lightsoff_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/ea207640-674f-4d15-baa4-81c615b702b6/lightsoff_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/ea207640-674f-4d15-baa4-81c615b702b6/lightsoff_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/ea207640-674f-4d15-baa4-81c615b702b6/lightsoff_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/ea207640-674f-4d15-baa4-81c615b702b6/lightsoff_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/ea207640-674f-4d15-baa4-81c615b702b6/lightsoff_jordan_gradient.jpg"
+              },
+              "racerblue_optiyellow": {
+                "2x": "w_750,h_1624/8adf626a-d028-4b4e-9246-caf9adbbddd4/racerblue_optiyellow_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/8adf626a-d028-4b4e-9246-caf9adbbddd4/racerblue_optiyellow_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/8adf626a-d028-4b4e-9246-caf9adbbddd4/racerblue_optiyellow_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/8adf626a-d028-4b4e-9246-caf9adbbddd4/racerblue_optiyellow_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/8adf626a-d028-4b4e-9246-caf9adbbddd4/racerblue_optiyellow_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/8adf626a-d028-4b4e-9246-caf9adbbddd4/racerblue_optiyellow_jordan_gradient.jpg"
+              },
+              "racerblue_electricgreen": {
+                "2x": "w_750,h_1624/0d69779a-28ac-458a-9dbf-387ed62ae677/racerblue_electricgreen_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/0d69779a-28ac-458a-9dbf-387ed62ae677/racerblue_electricgreen_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/0d69779a-28ac-458a-9dbf-387ed62ae677/racerblue_electricgreen_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/0d69779a-28ac-458a-9dbf-387ed62ae677/racerblue_electricgreen_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/0d69779a-28ac-458a-9dbf-387ed62ae677/racerblue_electricgreen_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/0d69779a-28ac-458a-9dbf-387ed62ae677/racerblue_electricgreen_jordan_gradient.jpg"
+              },
+              "racerblue_auroragreen": {
+                "2x": "w_750,h_1624/6e82f6b2-df93-46a3-b7bf-e52d69eabdcb/racerblue_auroragreen_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/6e82f6b2-df93-46a3-b7bf-e52d69eabdcb/racerblue_auroragreen_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/6e82f6b2-df93-46a3-b7bf-e52d69eabdcb/racerblue_auroragreen_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/6e82f6b2-df93-46a3-b7bf-e52d69eabdcb/racerblue_auroragreen_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/6e82f6b2-df93-46a3-b7bf-e52d69eabdcb/racerblue_auroragreen_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/6e82f6b2-df93-46a3-b7bf-e52d69eabdcb/racerblue_auroragreen_jordan_gradient.jpg"
+              },
+              "vividpurple_optiyellow": {
+                "2x": "w_750,h_1624/cc757ff1-5ea7-4df3-ab10-3494521dc1ef/vividpurple_optiyellow_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/cc757ff1-5ea7-4df3-ab10-3494521dc1ef/vividpurple_optiyellow_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/cc757ff1-5ea7-4df3-ab10-3494521dc1ef/vividpurple_optiyellow_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/cc757ff1-5ea7-4df3-ab10-3494521dc1ef/vividpurple_optiyellow_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/cc757ff1-5ea7-4df3-ab10-3494521dc1ef/vividpurple_optiyellow_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/cc757ff1-5ea7-4df3-ab10-3494521dc1ef/vividpurple_optiyellow_jordan_gradient.jpg"
+              },
+              "vividpurple_white": {
+                "2x": "w_750,h_1624/e25c6444-07ef-40d1-9d48-eeea6107af48/vividpurple_white_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/e25c6444-07ef-40d1-9d48-eeea6107af48/vividpurple_white_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/e25c6444-07ef-40d1-9d48-eeea6107af48/vividpurple_white_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/e25c6444-07ef-40d1-9d48-eeea6107af48/vividpurple_white_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/e25c6444-07ef-40d1-9d48-eeea6107af48/vividpurple_white_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/e25c6444-07ef-40d1-9d48-eeea6107af48/vividpurple_white_jordan_gradient.jpg"
+              },
+              "vividpurple_auroragreen": {
+                "2x": "w_750,h_1624/3cd76890-4cf2-4e4b-af2d-562efb542571/vividpurple_auroragreen_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/3cd76890-4cf2-4e4b-af2d-562efb542571/vividpurple_auroragreen_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/3cd76890-4cf2-4e4b-af2d-562efb542571/vividpurple_auroragreen_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/3cd76890-4cf2-4e4b-af2d-562efb542571/vividpurple_auroragreen_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/3cd76890-4cf2-4e4b-af2d-562efb542571/vividpurple_auroragreen_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/3cd76890-4cf2-4e4b-af2d-562efb542571/vividpurple_auroragreen_jordan_gradient.jpg"
+              },
+              "redorbit_racerblue": {
+                "2x": "w_750,h_1624/cd374104-27a6-46c0-b171-16f2b02cd349/redorbit_racerblue_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/cd374104-27a6-46c0-b171-16f2b02cd349/redorbit_racerblue_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/cd374104-27a6-46c0-b171-16f2b02cd349/redorbit_racerblue_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/cd374104-27a6-46c0-b171-16f2b02cd349/redorbit_racerblue_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/cd374104-27a6-46c0-b171-16f2b02cd349/redorbit_racerblue_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/cd374104-27a6-46c0-b171-16f2b02cd349/redorbit_racerblue_jordan_gradient.jpg"
+              },
+              "redorbit_optiyellow": {
+                "2x": "w_750,h_1624/75af4f34-7003-451b-9f10-b82e9c16c551/redorbit_optiyellow_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/75af4f34-7003-451b-9f10-b82e9c16c551/redorbit_optiyellow_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/75af4f34-7003-451b-9f10-b82e9c16c551/redorbit_optiyellow_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/75af4f34-7003-451b-9f10-b82e9c16c551/redorbit_optiyellow_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/75af4f34-7003-451b-9f10-b82e9c16c551/redorbit_optiyellow_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/75af4f34-7003-451b-9f10-b82e9c16c551/redorbit_optiyellow_jordan_gradient.jpg"
+              },
+              "redorbit_white": {
+                "2x": "w_750,h_1624/e63f5f10-2b6a-40b4-8052-568d314ed053/redorbit_white_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/e63f5f10-2b6a-40b4-8052-568d314ed053/redorbit_white_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/e63f5f10-2b6a-40b4-8052-568d314ed053/redorbit_white_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/e63f5f10-2b6a-40b4-8052-568d314ed053/redorbit_white_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/e63f5f10-2b6a-40b4-8052-568d314ed053/redorbit_white_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/e63f5f10-2b6a-40b4-8052-568d314ed053/redorbit_white_jordan_gradient.jpg"
+              },
+              "greenspark_optiyellow": {
+                "2x": "w_750,h_1624/6531596a-05b1-40d4-9548-223b585a1f22/greenspark_optiyellow_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/6531596a-05b1-40d4-9548-223b585a1f22/greenspark_optiyellow_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/6531596a-05b1-40d4-9548-223b585a1f22/greenspark_optiyellow_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/6531596a-05b1-40d4-9548-223b585a1f22/greenspark_optiyellow_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/6531596a-05b1-40d4-9548-223b585a1f22/greenspark_optiyellow_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/6531596a-05b1-40d4-9548-223b585a1f22/greenspark_optiyellow_jordan_gradient.jpg"
+              },
+              "greenspark_white": {
+                "2x": "w_750,h_1624/9e2da0cb-e694-4c50-a7dd-1d89cf64a5b4/greenspark_white_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/9e2da0cb-e694-4c50-a7dd-1d89cf64a5b4/greenspark_white_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/9e2da0cb-e694-4c50-a7dd-1d89cf64a5b4/greenspark_white_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/9e2da0cb-e694-4c50-a7dd-1d89cf64a5b4/greenspark_white_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/9e2da0cb-e694-4c50-a7dd-1d89cf64a5b4/greenspark_white_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/9e2da0cb-e694-4c50-a7dd-1d89cf64a5b4/greenspark_white_jordan_gradient.jpg"
+              },
+              "heroblue_pinkblast": {
+                "2x": "w_750,h_1624/ce6d9792-13c5-4d0c-85c4-3ed02b74b7b0/heroblue_pinkblast_jordan_gradient@2x.png",
+                "3x": "w_1125,h_2436/ce6d9792-13c5-4d0c-85c4-3ed02b74b7b0/heroblue_pinkblast_jordan_gradient@3x.png",
+                "hdpi": "w_657,h_1305/ce6d9792-13c5-4d0c-85c4-3ed02b74b7b0/heroblue_pinkblast_jordan_gradient.jpg",
+                "xhdpi": "w_876,h_1740/ce6d9792-13c5-4d0c-85c4-3ed02b74b7b0/heroblue_pinkblast_jordan_gradient.jpg",
+                "xxhdpi": "w_1314,h_2610/ce6d9792-13c5-4d0c-85c4-3ed02b74b7b0/heroblue_pinkblast_jordan_gradient.jpg",
+                "xxxhdpi": "w_1314,h_3480/ce6d9792-13c5-4d0c-85c4-3ed02b74b7b0/heroblue_pinkblast_jordan_gradient.jpg"
+              }
+            }
+          }
+        ]
+      },
+      "cn_forced_upgrade_description_text_cn": "您将只能以访客身份访问，但仍可查阅“手动调整球鞋说明”。",
+      "cn_forced_upgrade_app_store_aos_url": "https://www.nike.com/adapt",
+      "cn_forced_upgrade_body_text_en": "Adapt App has been updated. Click the button below for the latest version.",
+      "cn_forced_upgrade_new_terms_text_en": "Learn more",
+      "cn_forced_upgrade_to_app_version": "1.29",
+      "cn_forced_upgrade_primary_button_text_en": "Update Adapt App",
+      "cn_forced_upgrade_terms_url_en": "https://agreementservice.svs.nike.com.cn/rest/agreement?agreementType=appAttributes&uxId=com.nike.cnadaptdecommission&country=CN&language=en&requestType=redirect",
+      "cn_forced_upgrade_present_dialog": false,
+      "cn_forced_upgrade_app_store_ios_url": "https://apps.apple.com/us/app/nike-adapt/id1449855096",
+      "cn_forced_upgrade_terms_text_cn": "您将只能以访客身份访问，但仍可查阅“手动调整球鞋说明”。了解更多",
+      "cn_forced_upgrade_description_text_en": "You can access Adapt App in Guest Mode only, but you still have access to “Instructions for Manual Shoe Adjustment”.",
+      "cn_forced_upgrade_new_terms_text_cn": "了解更多",
+      "cn_forced_upgrade_terms_text_en": "You can access Adapt App in Guest Mode only, but you still have access to “Instructions for Manual Shoe Adjustment”. Learn more",
+      "cn_forced_upgrade_body_text_cn": "Adapt App现已更新，请点击下方按钮获取最新版本以继续使用。",
+      "cn_forced_upgrade_primary_button_text_cn": "立即更新",
+      "cn_forced_upgrade_terms_url_cn": "https://agreementservice.svs.nike.com.cn/rest/agreement?agreementType=appAttributes&uxId=com.nike.cnadaptdecommission&country=CN&language=zh&requestType=redirect"
+    }
+  },
+  "files": [
+    {
+      "name": "com.nike.adapt.appconfig.test,[star],[star],droid.json",
+      "version": "app_default"
+    }
+  ]
+}

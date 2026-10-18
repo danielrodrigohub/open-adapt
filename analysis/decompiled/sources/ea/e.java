@@ -1,0 +1,174 @@
+package ea;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Objects;
+import java.util.UUID;
+
+/* JADX INFO: compiled from: AdaptKitDeviceMode.kt */
+/* JADX INFO: loaded from: classes.dex */
+public final class e implements Parcelable {
+    public static final Parcelable.Creator<e> CREATOR = new a();
+
+    /* JADX INFO: renamed from: h, reason: collision with root package name */
+    public final String f6627h;
+
+    /* JADX INFO: renamed from: i, reason: collision with root package name */
+    public final String f6628i;
+
+    /* JADX INFO: renamed from: j, reason: collision with root package name */
+    public final boolean f6629j;
+
+    /* JADX INFO: renamed from: k, reason: collision with root package name */
+    public final c f6630k;
+
+    /* JADX INFO: renamed from: l, reason: collision with root package name */
+    public final c f6631l;
+
+    /* JADX INFO: renamed from: m, reason: collision with root package name */
+    public final Integer f6632m;
+
+    /* JADX INFO: compiled from: AdaptKitDeviceMode.kt */
+    public static final class a implements Parcelable.Creator<e> {
+        @Override // android.os.Parcelable.Creator
+        public final e createFromParcel(Parcel parcel) {
+            p4.h.j(parcel, "parcel");
+            String string = parcel.readString();
+            String string2 = parcel.readString();
+            boolean z10 = parcel.readInt() != 0;
+            Parcelable.Creator<c> creator = c.CREATOR;
+            return new e(string, string2, z10, creator.createFromParcel(parcel), creator.createFromParcel(parcel), parcel.readInt() == 0 ? null : Integer.valueOf(parcel.readInt()));
+        }
+
+        @Override // android.os.Parcelable.Creator
+        public final e[] newArray(int i10) {
+            return new e[i10];
+        }
+    }
+
+    public e(String str, String str2, boolean z10, c cVar, c cVar2, Integer num) {
+        p4.h.j(str, "id");
+        p4.h.j(str2, "name");
+        p4.h.j(cVar, "leftAttributes");
+        p4.h.j(cVar2, "rightAttributes");
+        this.f6627h = str;
+        this.f6628i = str2;
+        this.f6629j = z10;
+        this.f6630k = cVar;
+        this.f6631l = cVar2;
+        this.f6632m = num;
+    }
+
+    public static e a(e eVar, String str, Integer num, int i10) {
+        String str2 = (i10 & 1) != 0 ? eVar.f6627h : null;
+        if ((i10 & 2) != 0) {
+            str = eVar.f6628i;
+        }
+        String str3 = str;
+        boolean z10 = (i10 & 4) != 0 ? eVar.f6629j : false;
+        c cVar = (i10 & 8) != 0 ? eVar.f6630k : null;
+        c cVar2 = (i10 & 16) != 0 ? eVar.f6631l : null;
+        if ((i10 & 32) != 0) {
+            num = eVar.f6632m;
+        }
+        Objects.requireNonNull(eVar);
+        p4.h.j(str2, "id");
+        p4.h.j(str3, "name");
+        p4.h.j(cVar, "leftAttributes");
+        p4.h.j(cVar2, "rightAttributes");
+        return new e(str2, str3, z10, cVar, cVar2, num);
+    }
+
+    public final String b() {
+        String str = this.f6627h;
+        String str2 = this.f6628i;
+        String strA = this.f6630k.a();
+        String strA2 = this.f6631l.a();
+        Integer num = this.f6632m;
+        StringBuilder sbA = k1.a.a("DeviceMode[id: ", str, " name: ", str2, " left: ");
+        a1.d.g(sbA, strA, " right: ", strA2, " displayOrder: ");
+        sbA.append(num);
+        sbA.append("]");
+        return sbA.toString();
+    }
+
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof e)) {
+            return false;
+        }
+        e eVar = (e) obj;
+        return p4.h.c(this.f6627h, eVar.f6627h) && p4.h.c(this.f6628i, eVar.f6628i) && this.f6629j == eVar.f6629j && p4.h.c(this.f6630k, eVar.f6630k) && p4.h.c(this.f6631l, eVar.f6631l) && p4.h.c(this.f6632m, eVar.f6632m);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v4, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v11 */
+    /* JADX WARN: Type inference failed for: r1v12 */
+    /* JADX WARN: Type inference failed for: r1v2, types: [int] */
+    public final int hashCode() {
+        int iC = a1.f.c(this.f6628i, this.f6627h.hashCode() * 31, 31);
+        boolean z10 = this.f6629j;
+        ?? r10 = z10;
+        if (z10) {
+            r10 = 1;
+        }
+        int iHashCode = (this.f6631l.hashCode() + ((this.f6630k.hashCode() + ((iC + r10) * 31)) * 31)) * 31;
+        Integer num = this.f6632m;
+        return iHashCode + (num == null ? 0 : num.hashCode());
+    }
+
+    public final String toString() {
+        String str = this.f6627h;
+        String str2 = this.f6628i;
+        boolean z10 = this.f6629j;
+        c cVar = this.f6630k;
+        c cVar2 = this.f6631l;
+        Integer num = this.f6632m;
+        StringBuilder sbA = k1.a.a("AdaptKitDeviceMode(id=", str, ", name=", str2, ", autoGenerated=");
+        sbA.append(z10);
+        sbA.append(", leftAttributes=");
+        sbA.append(cVar);
+        sbA.append(", rightAttributes=");
+        sbA.append(cVar2);
+        sbA.append(", displayOrder=");
+        sbA.append(num);
+        sbA.append(")");
+        return sbA.toString();
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int iIntValue;
+        p4.h.j(parcel, "out");
+        parcel.writeString(this.f6627h);
+        parcel.writeString(this.f6628i);
+        parcel.writeInt(this.f6629j ? 1 : 0);
+        this.f6630k.writeToParcel(parcel, i10);
+        this.f6631l.writeToParcel(parcel, i10);
+        Integer num = this.f6632m;
+        if (num == null) {
+            iIntValue = 0;
+        } else {
+            parcel.writeInt(1);
+            iIntValue = num.intValue();
+        }
+        parcel.writeInt(iIntValue);
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    public e(UUID uuid, String str, boolean z10, c cVar, c cVar2, Integer num) {
+        p4.h.j(uuid, "id");
+        p4.h.j(str, "name");
+        String string = uuid.toString();
+        p4.h.i(string, "id.toString()");
+        this(string, str, z10, cVar, cVar2, num);
+    }
+}

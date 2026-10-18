@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/ring_view" android:layout_width="@dimen/light_pack_color_chit_ring_width" android:layout_height="@dimen/light_pack_color_chit_ring_width" android:src="@drawable/light_pack_color_chit_ring" android:scaleType="fitCenter" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <com.nike.adapt.ui.view.DuoColorView android:id="@id/duo_color_view" android:layout_width="@dimen/light_pack_color_chit_duo_color_width" android:layout_height="@dimen/light_pack_color_chit_duo_color_width" android:scaleType="fitCenter" app:duoColorType="DUO_COLOR_TYPE_HOME" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

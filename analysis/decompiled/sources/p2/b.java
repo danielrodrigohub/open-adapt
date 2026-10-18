@@ -1,0 +1,8 @@
+package p2;
+
+/* JADX INFO: compiled from: DecodeFormat.java */
+/* JADX INFO: loaded from: classes.dex */
+public enum b {
+    PREFER_ARGB_8888,
+    PREFER_RGB_565
+}

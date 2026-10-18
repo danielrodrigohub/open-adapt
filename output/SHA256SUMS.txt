@@ -1,0 +1,2 @@
+86366a781de87cae2b672a15ee48d163335e101975e33be0ef8d69da7e688172  com.nike.adapt_1.29.3-2017062198_minAPI24(nodpi)_apkmirror.com.apk
+43891dcd60ede6fa55d765f4a1fd831e1d0f89a01d28df1b67e46f73dcb1beb8  OpenAdapt-1.29.3-experimental.apk

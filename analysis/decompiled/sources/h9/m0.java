@@ -1,0 +1,26 @@
+package h9;
+
+import com.nike.adapt.R;
+import com.nike.adapt.ui.settings.SettingsSupportActivity;
+
+/* JADX INFO: compiled from: ActivityDoNavigate.kt */
+/* JADX INFO: loaded from: classes.dex */
+public final class m0 extends a<SettingsSupportActivity> {
+
+    /* JADX INFO: renamed from: c, reason: collision with root package name */
+    public static final m0 f8342c = new m0();
+
+    public m0() {
+        super(SettingsSupportActivity.class);
+    }
+
+    @Override // f8.b
+    public final int b() {
+        return R.anim.enter_top_right_to_left;
+    }
+
+    @Override // f8.b
+    public final int c() {
+        return R.anim.exit_bottom_parallax_right_to_left;
+    }
+}

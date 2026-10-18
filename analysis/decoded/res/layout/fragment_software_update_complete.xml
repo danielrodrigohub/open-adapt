@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/software_update_complete" android:paddingLeft="24.0dp" android:paddingRight="24.0dp" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Space android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="20.0" />
+    <TextView android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/firmware_update_complete_title" style="@style/BigfootH1" />
+    <Space android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="12.0" />
+    <Space android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="52.0" />
+    <com.airbnb.lottie.LottieAnimationView android:layout_gravity="center" android:id="@id/check_icon" android:layout_width="90.0dp" android:layout_height="90.0dp" app:lottie_autoPlay="true" app:lottie_enableMergePathsForKitKatAndAbove="true" app:lottie_fileName="lottie_ic_check.json" app:lottie_imageAssetsFolder="assets/" app:lottie_loop="false" />
+    <Space android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="220.0" />
+    <Button android:textColor="@color/white" android:layout_gravity="bottom" android:id="@id/btn_got_it" android:background="@drawable/background_dark_pill_button" android:layout_width="match_parent" android:layout_height="50.0dp" android:text="@string/adapt_got_it_cta_button" style="@style/BigfootButtonTextAppearance" />
+    <Space android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="24.0" />
+</LinearLayout>

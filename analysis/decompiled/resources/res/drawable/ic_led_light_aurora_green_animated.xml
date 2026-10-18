@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android" android:drawable="@drawable/ic_led_light_aurora_green">
+    <target
+        android:name="ic_1"
+        android:animation="@anim/translate"/>
+    <target
+        android:name="ring1"
+        android:animation="@anim/change_alpha"/>
+    <target
+        android:name="ring2"
+        android:animation="@anim/change_alpha_platter"/>
+</animated-vector>

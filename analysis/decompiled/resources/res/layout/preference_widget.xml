@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:textSize="40sp"
+        android:textColor="@color/battery_background_white_flash"
+        android:ellipsize="end"
+        android:gravity="end|center_vertical"
+        android:id="@+id/widgetText"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:maxLines="1"
+        style="@style/BigfootSettingsText"/>
+</merge>

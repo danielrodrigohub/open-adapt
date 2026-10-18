@@ -1,0 +1,15 @@
+package androidx.appcompat.view.menu;
+
+/* JADX INFO: compiled from: MenuView.java */
+/* JADX INFO: loaded from: classes.dex */
+public interface j {
+
+    /* JADX INFO: compiled from: MenuView.java */
+    public interface a {
+        void d(g gVar);
+
+        g getItemData();
+    }
+
+    void b(e eVar);
+}

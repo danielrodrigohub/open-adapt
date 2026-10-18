@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="start"
+    android:orientation="horizontal"
+    android:id="@+id/left_show_indicator_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <View
+        android:layout_gravity="center_vertical"
+        android:id="@+id/view_indicator"
+        android:layout_width="10dp"
+        android:layout_height="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:textSize="12sp"
+        android:textColor="@color/indicator_active"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/view_indicator_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:paddingStart="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view_indicator"
+        app:layout_constraintTop_toTopOf="parent"/>
+</LinearLayout>

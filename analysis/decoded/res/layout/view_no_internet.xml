@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:padding="16.0dp" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/adapt_network_error_title" android:fontFamily="@font/helvetica_neue_bold" style="@style/BigfootH1" />
+    <Space android:layout_width="match_parent" android:layout_height="20.0dp" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/adapt_network_error_body" android:fontFamily="@font/helvetica_neue_medium" style="@style/BigfootBody" />
+    <Space android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="1.0" />
+    <ProgressBar android:layout_gravity="center" android:id="@id/view_no_internet_progress_bar" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <Space android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="1.0" />
+    <Button android:textColor="@color/white" android:id="@id/view_no_internet_try_again" android:background="@drawable/background_dark_pill_button" android:layout_width="match_parent" android:text="@string/adapt_try_again_button_title" style="@style/BlackButton" />
+</LinearLayout>

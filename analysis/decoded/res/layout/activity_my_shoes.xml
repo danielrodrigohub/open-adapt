@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#fff2f2f2" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/view_toolbar" layout="@layout/view_toolbar" />
+    <FrameLayout android:id="@id/activity_my_shoes_container" android:layout_width="match_parent" android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/activity_my_shoes_recycle_view" android:layout_width="match_parent" android:layout_height="match_parent" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton android:layout_gravity="end|bottom" android:id="@id/activity_my_shoes_add" android:background="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="16.0dp" android:src="@drawable/ic_add" android:contentDescription="@string/adapt_accessibility_add_new_shoes" app:backgroundTint="@android:color/white" />
+    </FrameLayout>
+</LinearLayout>

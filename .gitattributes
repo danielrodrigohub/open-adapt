@@ -1,0 +1,12 @@
+* text=auto
+analysis/decompiled/** linguist-generated=true linguist-vendored=true
+analysis/decompiled/resources/** -text
+analysis/decoded/** -text linguist-generated=true linguist-vendored=true
+analysis/offline-originals/** -text linguist-generated=true
+analysis/motion-originals/** -text linguist-generated=true
+*.png binary
+*.jpg binary
+*.webp binary
+*.mp4 binary
+*.dex binary
+*.arsc binary

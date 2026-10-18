@@ -1,0 +1,21 @@
+.class public final Ly6/b;
+.super Ljava/lang/Object;
+.source "CryptoFormat.java"
+
+
+# static fields
+.field public static final a:[B
+
+
+# direct methods
+.method public static constructor <clinit>()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    new-array v0, v0, [B
+
+    sput-object v0, Ly6/b;->a:[B
+
+    return-void
+.end method

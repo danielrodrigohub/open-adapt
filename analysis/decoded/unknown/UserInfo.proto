@@ -1,0 +1,53 @@
+syntax = "proto2";
+option java_package = "com.nike.corerf.adaptive";
+option java_outer_classname = "userinfo";
+
+message UserInfo {
+
+    enum Gender {
+        Male   = 0;
+        Female = 1;
+    }
+
+    required uint32 heartRateThresholdMinimum   = 1 [default = 120];
+    required uint32 heartRateThresholdMaximum   = 2 [default = 200];
+    required uint32 wattsThresholdMinimum       = 3 [default = 100];
+    required uint32 wattsThresholdMaximum       = 4 [default = 1000];
+
+    /// Height (cm)
+    required uint32 heightCM = 5;
+
+    /// Weight (g)
+    required uint32 weightGrams = 6;
+
+    /// Age in years
+    required uint32 age = 7;
+
+    /// `true` if a user identifies as female; `false` otherwise.
+    required Gender gender = 8;
+
+    /// Resting heart rate (bpm)
+    required uint32 restingHeartRate = 9;
+
+
+    /// The user's watts threshold for unknown activities, or default
+    required uint32 wattsThresholdNone = 10;
+
+    /// The user's watts threshold for Cardio activities, or default
+    required uint32 wattsThresholdCardio = 11;
+
+    /// The user's watts threshold for Mobility activities, or default
+    required uint32 wattsThresholdMobility = 12;
+
+    /// The user's watts threshold for Strength activities, or default
+    required uint32 wattsThresholdStrength = 13;
+
+    /// The user's heart rate threshold for all activities, or default
+    required uint32 heartRateThreshold = 14;
+
+    // The default Threshold watts for all activity types
+    required uint32 DefaultWattsThreshold = 15 [default = 300];
+
+
+
+}

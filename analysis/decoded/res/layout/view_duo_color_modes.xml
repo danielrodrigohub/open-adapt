@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="14.0dp" android:layout_height="14.0dp" android:layout_weight="1.0" android:rotation="45.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="0.5">
+        <ImageView android:id="@id/duo_color_left" android:layout_width="14.0dp" android:layout_height="match_parent" android:src="@drawable/ic_mode_color_circle" />
+    </FrameLayout>
+    <FrameLayout android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="0.5">
+        <ImageView android:id="@id/duo_color_right" android:layout_width="14.0dp" android:layout_height="match_parent" android:src="@drawable/ic_mode_color_circle" android:translationX="-7.0dp" />
+    </FrameLayout>
+</LinearLayout>

@@ -1,0 +1,157 @@
+syntax = "proto3";
+option java_package = "com.nike.corerf.adaptive";
+option java_outer_classname = "firmware";
+
+// These are just here for reference, they live in the product header file shared between all clients.
+/*
+enum FirmwareCommands
+{
+    // Request sent by client to announce new firmware is available
+    FIRMWARE_AVAILABLE
+
+    // Request sent by device to begin large file transfer process of firmware
+    FIRMWARE_PULL_DATA
+
+    // Request sent by client to device to respond with current firmware download status
+    FIRMWARE_DOWNLOAD_STATUS_GET
+
+    // Event sent by device to notify client that firmware download is complete
+    FIRMWARE_DOWNLOAD_COMPLETE
+
+    // Request sent by client to device to start firmware upgrade process
+    FIRMWARE_UPGRADE
+
+    // Event sent by client to transmit segment of firmware to device
+    FIRMWARE_TRANSMIT_SEGMENT
+
+    // Event sent by device to client to retransmit a segment of firmware
+    FIRMWARE_RETRANSMIT_SEGMENT
+
+    // Event sent by device or client to stop the current firmware transfer
+    FIRMWARE_STOP_TRANSFER
+
+    // Request sent by host to to request logs from the device
+    GET_DEVICE_LOGS
+}
+*/
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+// FIRMWARE
+// Firmware transfer is specified in the Large File Transfer process detailed in
+// CoreRF/docs/FirmwareDownloadSpecification.md
+
+//Used as the header payload for the Firmware Archive
+message FirmwareArchiveHeader
+{
+    repeated FirmwareImageMetadata images = 1;
+}
+
+//Used to describe an individual firmware image inside of a Firmware Archive file
+message FirmwareImageMetadata
+{
+    enum Type
+    {
+        MCU = 0;
+        BLE_RADIO = 1;
+        CAP_SENSE = 2;
+        // Trillium and Bigfoot 1.4.0+ types
+        MCU_GOLD = 3;
+        BLE_GOLD = 4;
+        ANIMATION_1 = 5;
+        ANIMATION_2 = 6;
+        ANIMATION_3 = 7;
+        ANIMATION_4 = 8;
+        DEBUG = 9;
+        SENSOR_DATA = 10;
+    }
+
+    Type type = 1;
+    string versionString = 2;
+    fixed32 byteOffset = 3;
+    uint32 size = 4;
+    uint32 crc = 5;
+}
+
+// Used by FIRMWARE_AVAILABLE (REQUEST)
+message NewFirmwareAvailable
+{
+    uint32 firmwareFileID = 1;
+    FirmwareArchiveHeader header = 2;
+}
+
+// Used by FIRMWARE_PULL (REQUEST)
+message PullFirmware
+{
+    uint32 firmwareFileID = 1;
+    uint32 byteOffset = 2;
+    uint32 size = 3;
+}
+
+// Used by FIRMWARE_DOWNLOAD_STATUS_GET (ACK)
+message GetFirmwareDownloadStatus
+{
+    enum FirmwareDownloadStatus
+    {
+        DOWNLOADING               = 0;
+        NOT_DOWNLOADING           = 1;
+        DOWNLOAD_COMPLETE         = 2;
+        DOWNLOAD_FAILED_TIMEOUT   = 3;
+        DOWNLOAD_FAILED_CRC       = 4;
+        DOWNLOAD_FAILED_SIGNATURE = 5;
+    }
+
+    FirmwareDownloadStatus status = 1;
+}
+
+// Used by FIRMWARE_DOWNLOAD_COMPLETE (EVENT)
+message FirmwareDownloadComplete
+{
+    enum Reason
+    {
+        SUCCESS = 0;
+        FAILED_TIMEOUT = 1;
+        FAILED_CRC = 2;
+    }
+
+    uint32 firmwareFileID = 1;
+    Reason downloadSuccess  = 2;
+}
+
+// Used by FIRMWARE_UPGRADE (NAK)
+message FirmwareUpdateError
+{
+    enum Reason {
+        INVALID_IMAGE = 0;
+        NOT_READY = 1;
+    }
+
+    Reason reason = 1;
+}
+
+// Used by FIRMWARE_STOP_TRANSFER (EVENT)
+message StopTransfer
+{
+    enum Reason
+    {
+        SUCCESS = 0;
+        UNKNOWN = 1;
+        FILE_ERROR = 2;
+        TIMEOUT = 3;
+        DATA_CHANGED = 4;
+        POWERING_DOWN = 5;
+    }
+    Reason reason = 1;
+}
+
+// Used by FIRMWARE_RETRANSMIT_SEGMENT (EVENT)
+message RetransmitMessage
+{
+    int32 index = 1;
+}
+
+// Used by FIRMWARE_TRANSMIT_SEGMENT (from peripheral to central)
+message TransmitSegment
+{
+    bytes data = 1;
+}
+

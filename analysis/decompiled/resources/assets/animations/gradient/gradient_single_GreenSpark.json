@@ -1,0 +1,1928 @@
+{
+  "resumable": true,
+  "frames": [
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 1,
+          "green": 1,
+          "blue": 1
+        },
+        {
+          "red": 1,
+          "green": 1,
+          "blue": 1
+        },
+        {
+          "red": 1,
+          "green": 1,
+          "blue": 1
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 8,
+          "green": 88,
+          "blue": 1
+        },
+        {
+          "red": 2,
+          "green": 4,
+          "blue": 1
+        },
+        {
+          "red": 2,
+          "green": 9,
+          "blue": 1
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 14,
+          "green": 165,
+          "blue": 2
+        },
+        {
+          "red": 0,
+          "green": 7,
+          "blue": 0
+        },
+        {
+          "red": 1,
+          "green": 18,
+          "blue": 2
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 18,
+          "green": 205,
+          "blue": 2
+        },
+        {
+          "red": 1,
+          "green": 11,
+          "blue": 0
+        },
+        {
+          "red": 2,
+          "green": 21,
+          "blue": 1
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 19,
+          "green": 226,
+          "blue": 0
+        },
+        {
+          "red": 2,
+          "green": 14,
+          "blue": 0
+        },
+        {
+          "red": 3,
+          "green": 22,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 21,
+          "green": 238,
+          "blue": 1
+        },
+        {
+          "red": 2,
+          "green": 19,
+          "blue": 0
+        },
+        {
+          "red": 3,
+          "green": 22,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.2916666567325592,
+      "ledColors": [
+        {
+          "red": 19,
+          "green": 240,
+          "blue": 2
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 20,
+          "green": 232,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 4,
+          "green": 33,
+          "blue": 2
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 18,
+          "green": 222,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 4,
+          "green": 43,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 19,
+          "green": 213,
+          "blue": 2
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 5,
+          "green": 52,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 16,
+          "green": 203,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 6,
+          "green": 60,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 17,
+          "green": 194,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 6,
+          "green": 68,
+          "blue": 1
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 16,
+          "green": 186,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 7,
+          "green": 78,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 14,
+          "green": 176,
+          "blue": 2
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 7,
+          "green": 87,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 15,
+          "green": 168,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 9,
+          "green": 96,
+          "blue": 1
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 13,
+          "green": 159,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 8,
+          "green": 105,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 13,
+          "green": 150,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 9,
+          "green": 113,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 11,
+          "green": 142,
+          "blue": 2
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 10,
+          "green": 124,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 12,
+          "green": 131,
+          "blue": 1
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 12,
+          "green": 131,
+          "blue": 1
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 10,
+          "green": 124,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 11,
+          "green": 142,
+          "blue": 2
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 9,
+          "green": 113,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 13,
+          "green": 150,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 8,
+          "green": 105,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 13,
+          "green": 159,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 9,
+          "green": 96,
+          "blue": 1
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 15,
+          "green": 168,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 7,
+          "green": 87,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 14,
+          "green": 176,
+          "blue": 2
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 7,
+          "green": 78,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 16,
+          "green": 186,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 6,
+          "green": 68,
+          "blue": 1
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 17,
+          "green": 194,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 6,
+          "green": 60,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 16,
+          "green": 203,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 5,
+          "green": 52,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 19,
+          "green": 213,
+          "blue": 2
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 4,
+          "green": 43,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 18,
+          "green": 222,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 4,
+          "green": 33,
+          "blue": 2
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 20,
+          "green": 232,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.2916666567325592,
+      "ledColors": [
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 19,
+          "green": 240,
+          "blue": 2
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 4,
+          "green": 33,
+          "blue": 2
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 20,
+          "green": 232,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 4,
+          "green": 43,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 18,
+          "green": 222,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 5,
+          "green": 52,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 19,
+          "green": 213,
+          "blue": 2
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 6,
+          "green": 60,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 16,
+          "green": 203,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 6,
+          "green": 68,
+          "blue": 1
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 17,
+          "green": 194,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 7,
+          "green": 78,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 16,
+          "green": 186,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 7,
+          "green": 87,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 14,
+          "green": 176,
+          "blue": 2
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 9,
+          "green": 96,
+          "blue": 1
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 15,
+          "green": 168,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 8,
+          "green": 105,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 13,
+          "green": 159,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 9,
+          "green": 113,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 13,
+          "green": 150,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 10,
+          "green": 124,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 11,
+          "green": 142,
+          "blue": 2
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 12,
+          "green": 131,
+          "blue": 1
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 12,
+          "green": 131,
+          "blue": 1
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 11,
+          "green": 142,
+          "blue": 2
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 10,
+          "green": 124,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 13,
+          "green": 150,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 9,
+          "green": 113,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 13,
+          "green": 159,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 8,
+          "green": 105,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 15,
+          "green": 168,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 9,
+          "green": 96,
+          "blue": 1
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 14,
+          "green": 176,
+          "blue": 2
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 7,
+          "green": 87,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 16,
+          "green": 186,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 7,
+          "green": 78,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 17,
+          "green": 194,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 6,
+          "green": 68,
+          "blue": 1
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 16,
+          "green": 203,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 6,
+          "green": 60,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 19,
+          "green": 213,
+          "blue": 2
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 5,
+          "green": 52,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 18,
+          "green": 222,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 4,
+          "green": 43,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 20,
+          "green": 232,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 4,
+          "green": 33,
+          "blue": 2
+        }
+      ]
+    },
+    {
+      "duration": 0.2916666567325592,
+      "ledColors": [
+        {
+          "red": 19,
+          "green": 240,
+          "blue": 2
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 20,
+          "green": 232,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 4,
+          "green": 33,
+          "blue": 2
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 18,
+          "green": 222,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 4,
+          "green": 43,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 19,
+          "green": 213,
+          "blue": 2
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 5,
+          "green": 52,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 16,
+          "green": 203,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 6,
+          "green": 60,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 17,
+          "green": 194,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 6,
+          "green": 68,
+          "blue": 1
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 16,
+          "green": 186,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 7,
+          "green": 78,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 14,
+          "green": 176,
+          "blue": 2
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 7,
+          "green": 87,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 15,
+          "green": 168,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 9,
+          "green": 96,
+          "blue": 1
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 13,
+          "green": 159,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 8,
+          "green": 105,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 13,
+          "green": 150,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 9,
+          "green": 113,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 11,
+          "green": 142,
+          "blue": 2
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 10,
+          "green": 124,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 12,
+          "green": 131,
+          "blue": 1
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 12,
+          "green": 131,
+          "blue": 1
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 10,
+          "green": 124,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 11,
+          "green": 142,
+          "blue": 2
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 9,
+          "green": 113,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 13,
+          "green": 150,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 8,
+          "green": 105,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 13,
+          "green": 159,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 9,
+          "green": 96,
+          "blue": 1
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 15,
+          "green": 168,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 7,
+          "green": 87,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 14,
+          "green": 176,
+          "blue": 2
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 7,
+          "green": 78,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 16,
+          "green": 186,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 6,
+          "green": 68,
+          "blue": 1
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 17,
+          "green": 194,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 6,
+          "green": 60,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 16,
+          "green": 203,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 5,
+          "green": 52,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 19,
+          "green": 213,
+          "blue": 2
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 4,
+          "green": 43,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 18,
+          "green": 222,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 4,
+          "green": 33,
+          "blue": 2
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 20,
+          "green": 232,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.2916666567325592,
+      "ledColors": [
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 19,
+          "green": 240,
+          "blue": 2
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 0,
+          "green": 24,
+          "blue": 0
+        },
+        {
+          "red": 3,
+          "green": 22,
+          "blue": 0
+        },
+        {
+          "red": 21,
+          "green": 238,
+          "blue": 1
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 3,
+          "green": 22,
+          "blue": 0
+        },
+        {
+          "red": 2,
+          "green": 21,
+          "blue": 1
+        },
+        {
+          "red": 17,
+          "green": 228,
+          "blue": 1
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 2,
+          "green": 21,
+          "blue": 1
+        },
+        {
+          "red": 2,
+          "green": 19,
+          "blue": 0
+        },
+        {
+          "red": 19,
+          "green": 209,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 1,
+          "green": 18,
+          "blue": 0
+        },
+        {
+          "red": 2,
+          "green": 19,
+          "blue": 0
+        },
+        {
+          "red": 17,
+          "green": 180,
+          "blue": 1
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 2,
+          "green": 14,
+          "blue": 0
+        },
+        {
+          "red": 1,
+          "green": 18,
+          "blue": 2
+        },
+        {
+          "red": 11,
+          "green": 144,
+          "blue": 1
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 1,
+          "green": 11,
+          "blue": 0
+        },
+        {
+          "red": 2,
+          "green": 14,
+          "blue": 0
+        },
+        {
+          "red": 8,
+          "green": 112,
+          "blue": 1
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 2,
+          "green": 9,
+          "blue": 1
+        },
+        {
+          "red": 2,
+          "green": 14,
+          "blue": 0
+        },
+        {
+          "red": 7,
+          "green": 85,
+          "blue": 1
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 0,
+          "green": 7,
+          "blue": 0
+        },
+        {
+          "red": 1,
+          "green": 13,
+          "blue": 1
+        },
+        {
+          "red": 4,
+          "green": 64,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 2,
+          "green": 4,
+          "blue": 1
+        },
+        {
+          "red": 1,
+          "green": 11,
+          "blue": 0
+        },
+        {
+          "red": 4,
+          "green": 47,
+          "blue": 1
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 1,
+          "green": 3,
+          "blue": 0
+        },
+        {
+          "red": 1,
+          "green": 11,
+          "blue": 0
+        },
+        {
+          "red": 2,
+          "green": 36,
+          "blue": 1
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 1,
+          "green": 3,
+          "blue": 0
+        },
+        {
+          "red": 0,
+          "green": 10,
+          "blue": 1
+        },
+        {
+          "red": 2,
+          "green": 26,
+          "blue": 2
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 1,
+          "green": 1,
+          "blue": 1
+        },
+        {
+          "red": 2,
+          "green": 9,
+          "blue": 1
+        },
+        {
+          "red": 1,
+          "green": 18,
+          "blue": 2
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 1,
+          "green": 1,
+          "blue": 1
+        },
+        {
+          "red": 0,
+          "green": 7,
+          "blue": 0
+        },
+        {
+          "red": 1,
+          "green": 11,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 1,
+          "green": 1,
+          "blue": 1
+        },
+        {
+          "red": 2,
+          "green": 4,
+          "blue": 1
+        },
+        {
+          "red": 0,
+          "green": 7,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 1,
+          "green": 1,
+          "blue": 1
+        },
+        {
+          "red": 2,
+          "green": 4,
+          "blue": 1
+        },
+        {
+          "red": 1,
+          "green": 3,
+          "blue": 0
+        }
+      ]
+    },
+    {
+      "duration": 0.0416666679084301,
+      "ledColors": [
+        {
+          "red": 1,
+          "green": 1,
+          "blue": 1
+        },
+        {
+          "red": 1,
+          "green": 3,
+          "blue": 0
+        },
+        {
+          "red": 1,
+          "green": 1,
+          "blue": 1
+        }
+      ]
+    },
+    {
+      "duration": 1.333333134651184,
+      "ledColors": [
+        {
+          "red": 1,
+          "green": 1,
+          "blue": 1
+        },
+        {
+          "red": 1,
+          "green": 1,
+          "blue": 1
+        },
+        {
+          "red": 1,
+          "green": 1,
+          "blue": 1
+        }
+      ]
+    }
+  ],
+  "interruptable": true,
+  "type": 0,
+  "repeatCount": 555
+}
