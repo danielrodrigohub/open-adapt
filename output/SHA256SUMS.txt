@@ -1,1 +1,1 @@
-f3253cb137f66de862f49cd3d80286ba66aa2cce0c074953ace0f20c8655ce4f  OpenAdapt-1.29.3-experimental.apk
+315dbfbb9d7976f1d042c9988780b46a5979269aab126aa9d7627f9ad950a7f0  OpenAdapt-1.29.3-experimental.apk

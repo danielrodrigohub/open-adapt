@@ -2,6 +2,16 @@
 
 Fecha: 18 de octubre de 2026. APK base Nike Adapt 1.29.3, Android mínimo 7.0 (API 24), destino API 33. Nuevo paquete com.openadapt.experimental; firma local distinta de Nike.
 
+## Actualización v0.4.0: ajuste, aviso de batería y correcciones de luces/conexión
+
+- 95 aserciones del controlador manual: selección por lado, secuencia de ambas, límites, respuestas tardías o inválidas, fallos de lectura/movimiento, parada y pérdida de condiciones.
+- 21 aserciones de batería, incluidos 14 % bloqueado, 15 % permitido y rechazo de datos ausentes, antiguos o futuros. Las protecciones del motor mantienen 0–40 °C y fuera del cargador.
+- Corregido el camino que solo guardaba el color sin enviar una animación con modo continuo desactivado. Selección y aplicación explícitas envían el comando; no se reproduce una prueba al abrir la pantalla.
+- Los errores transitorios de conexión/versión no activan el bloqueo reservado para eventos de batería o temperatura del calzado. Estado por lado y diagnóstico incluyen resultado del envío.
+- Conectar ejecuta la reconexión inmediatamente para un par guardado. El retorno tras primer emparejamiento solo ocurre desde el controlador original en primer plano con ambos lados autenticados.
+- Emulador Android 17: instalación sobre la app existente, navegación de cinco pestañas, envío de prueba de color sin conexión (muestra el motivo real), persistencia de color/modo continuo, controles de ajuste bloqueados sin conexión, diagnóstico, parada del servicio y fuente al 130 %. Sin excepciones AndroidRuntime. Evidencia: dashboard-emulator-summary.json.
+- Se conserva la firma, el paquete y los datos locales. No hay teléfono físico conectado al equipo: la corrección de código no demuestra encendido físico ni emparejamiento real.
+
 ## Actualización v0.3.1: interfaz nativa y descarga de respaldo
 
 - Panel con cuatro pestañas: Inicio, Luces, Movimiento y Sistema.
@@ -51,8 +61,12 @@ La pantalla antigua de perfil y algunos enlaces Nike pueden seguir requiriendo s
 - analysis/build_openadapt.py: recompilación con las herramientas guardadas en el espacio de trabajo y el SDK Android ya instalado.
 - analysis/patch_offline.py y analysis/patch_motion.py: cambios reproducibles. Los originales de los archivos modificados quedan en analysis/offline-originals y analysis/motion-originals.
 
-SHA-256 del APK v0.3.1 entregado:
+SHA-256 del APK v0.4.0 entregado:
 
 ```
-f3253cb137f66de862f49cd3d80286ba66aa2cce0c074953ace0f20c8655ce4f
+315dbfbb9d7976f1d042c9988780b46a5979269aab126aa9d7627f9ad950a7f0
 ```
+
+## Alcance de la prueba del actualizador
+
+En una versión interna previa instalada en el emulador se descargó y verificó el APK público v0.3.1 y se abrió la autorización de Android para instalar desde esta app (actualizacion-permiso.png). No se completó esa instalación mediante el diálogo; la instalación v0.4.0 del emulador se hizo con las herramientas Android. No equivale a una actualización completa comprobada desde un teléfono físico.

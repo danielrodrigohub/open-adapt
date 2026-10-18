@@ -19,15 +19,22 @@ public final class ControlActivity extends Activity {
     final Handler handler=new Handler(Looper.getMainLooper());
     final int[] palette={0x25c7ff,0xff4d5e,0x6aee9e,0xe6b7ff,0xffb347,0xffffff};
     final String[] colorNames={"Azul hielo","Coral","Verde","Lila","Ámbar","Blanco"};
-    final LinearLayout[] pages=new LinearLayout[4];
-    final ScrollView[] scrolls=new ScrollView[4];
-    final TextView[] navLabels=new TextView[4],batteryValues=new TextView[2],batteryHints=new TextView[2];
+    final LinearLayout[] pages=new LinearLayout[5];
+    final ScrollView[] scrolls=new ScrollView[5];
+    final TextView[] navLabels=new TextView[5],batteryValues=new TextView[2],batteryHints=new TextView[2];
     final ProgressBar[] batteryBars=new ProgressBar[2];
     final FrameLayout[] swatches=new FrameLayout[6];
     final TextView[] modeTitles=new TextView[3];
     final LinearLayout[] modeCards=new LinearLayout[3];
-    final NavIcon[] navIcons=new NavIcon[4];
-    TextView state,connection,pairName,colorLabel;
+    final NavIcon[] navIcons=new NavIcon[5];
+    TextView state,connection,pairName,colorLabel,batteryAlert,laceStatus,laceChange,lightStatus;
+    final TextView[] laceValues=new TextView[2],laceHints=new TextView[2],lacePreviews=new TextView[2];
+    final LaceArtwork[] laceArts=new LaceArtwork[2];
+    final Button[] laceSelectors=new Button[3];
+    Button lacePlus,laceMinus,laceApply,laceStop;
+    SeekBar laceSlider;
+    int laceMask=3,laceDelta;
+    boolean laceDialog;
     Switch continuous,motor;
     Button applyButton,checkUpdates,installUpdate;
     TextView updateStatus,updateBanner;
@@ -49,13 +56,14 @@ public final class ControlActivity extends Activity {
         TextView brand=text("OPEN ADAPT",17,true,INK); brand.setLetterSpacing(.09f); top.addView(brand,new LinearLayout.LayoutParams(0,-2,1));
         TextView badge=text("EXPERIMENTAL",10,true,ACCENT); badge.setLetterSpacing(.07f); badge.setPadding(dp(10),dp(7),dp(10),dp(7)); badge.setBackground(shape(0xffe0f2ed,20,0)); top.addView(badge); shell.addView(top);
         updateBanner=text("",13,true,ACCENT); updateBanner.setGravity(Gravity.CENTER); updateBanner.setPadding(dp(16),dp(10),dp(16),dp(10)); updateBanner.setBackgroundColor(0xffe1f3ef); updateBanner.setVisibility(View.GONE); updateBanner.setOnClickListener(v->showPage(3)); shell.addView(updateBanner);
+        batteryAlert=text("",12,true,0xffa0332d);batteryAlert.setPadding(dp(20),dp(10),dp(20),dp(10));batteryAlert.setBackgroundColor(0xffffe7df);batteryAlert.setVisibility(View.GONE);shell.addView(batteryAlert);
         FrameLayout content=new FrameLayout(this); shell.addView(content,new LinearLayout.LayoutParams(-1,0,1));
-        for(int i=0;i<4;i++) {
+        for(int i=0;i<pages.length;i++) {
             scrolls[i]=new ScrollView(this); scrolls[i].setFillViewport(true); scrolls[i].setClipToPadding(false);
             pages[i]=column(); pages[i].setFocusableInTouchMode(true); pages[i].setPadding(dp(20),dp(8),dp(20),dp(24));
             scrolls[i].addView(pages[i],new ScrollView.LayoutParams(-1,-2)); content.addView(scrolls[i]);
         }
-        buildHome(); buildLights(); buildMotion(); buildSystem();
+        buildHome(); buildLights(); buildMotion(); buildSystem(); buildLaces();
         continuous.setChecked(saved==null?prefs.getBoolean("continuous",false):saved.getBoolean("continuous"));
         motor.setOnCheckedChangeListener((button,checked)->{
             if(!ready) return;
@@ -69,18 +77,18 @@ public final class ControlActivity extends Activity {
             } else apply();
         });
         LinearLayout actions=row(); actions.setPadding(dp(20),dp(12),dp(20),dp(10)); actions.setBackgroundColor(Color.WHITE);
-        applyButton=styledButton("Iniciar control",true,v->apply()); actions.addView(applyButton,new LinearLayout.LayoutParams(0,dp(52),1));
+        applyButton=styledButton("Iniciar control",true,v->{if(page==4)command("LACE_READ");else apply(page==1);}); actions.addView(applyButton,new LinearLayout.LayoutParams(0,dp(52),1));
         Button stop=styledButton("Detener",false,v->stopControl()); stop.setTextColor(0xffaf3342); LinearLayout.LayoutParams stopParams=new LinearLayout.LayoutParams(dp(104),dp(52)); stopParams.leftMargin=dp(10); actions.addView(stop,stopParams); shell.addView(actions);
         LinearLayout nav=row(); nav.setBackgroundColor(Color.WHITE); nav.setPadding(dp(8),0,dp(8),dp(8));
-        String[] titles={"Inicio","Luces","Movimiento","Sistema"};
-        for(int i=0;i<4;i++) {
+        String[] titles={"Inicio","Luces","Movimiento","Sistema","Ajuste"};
+        for(int i=0;i<pages.length;i++) {
             final int index=i; LinearLayout tab=column(); tab.setGravity(Gravity.CENTER); tab.setPadding(0,dp(5),0,dp(5));
             navIcons[i]=new NavIcon(i); tab.addView(navIcons[i],new LinearLayout.LayoutParams(dp(22),dp(22)));
             navLabels[i]=text(titles[i],11,true,MUTED); navLabels[i].setGravity(Gravity.CENTER); navLabels[i].setPadding(0,dp(4),0,0); tab.addView(navLabels[i]);
-            tab.setContentDescription(titles[i]); tab.setFocusable(true); tab.setOnClickListener(v->showPage(index)); nav.addView(tab,new LinearLayout.LayoutParams(0,dp(58+24*Math.max(0,getResources().getConfiguration().fontScale-1)),1));
+            tab.setContentDescription(titles[i]); tab.setFocusable(true); tab.setOnClickListener(v->showPage(index)); nav.addView(tab,new LinearLayout.LayoutParams(0,dp(60+40*Math.max(0,getResources().getConfiguration().fontScale-1)),1));
         }
         shell.addView(nav); setContentView(shell); ready=true;
-        selectColor(colorIndex); selectMode(modeIndex); showPage(saved==null?0:clamp(saved.getInt("page"),4));
+        ready=false; selectColor(colorIndex); ready=true; selectMode(modeIndex); showPage(saved==null?0:clamp(saved.getInt("page"),pages.length));
         if(hasPermissions()) apply(); else permissions();
         updater=new AppUpdater(this,(message,offer,downloaded,busy)->{
             updateText(updateStatus,message); checkUpdates.setEnabled(!busy); installUpdate.setEnabled(!busy);
@@ -113,6 +121,7 @@ public final class ControlActivity extends Activity {
         }
         root.addView(batteries); space(root,14);
         button(root,"Conectar / emparejar mi par",false,v->openPairing());
+        button(root,"Ajustar o aflojar cordones",false,v->showPage(4));
         label(root,"El primer emparejamiento se realiza con tus zapatillas. Después se reutilizan las claves guardadas.",12,false,MUTED);
         space(root,16); LinearLayout note=card(root,Color.WHITE);
         label(note,"Diseñado para seguirte",17,true,INK);
@@ -125,15 +134,16 @@ public final class ControlActivity extends Activity {
         for(int i=0;i<6;i++) {
             final int index=i; FrameLayout hit=new FrameLayout(this); hit.setContentDescription(colorNames[i]); hit.setFocusable(true);
             View dot=new View(this); dot.setBackground(shape(0xff000000|palette[i],30,palette[i]==0xffffff?LINE:0)); FrameLayout.LayoutParams d=new FrameLayout.LayoutParams(dp(30),dp(30),Gravity.CENTER); hit.addView(dot,d);
-            hit.setOnClickListener(v->selectColor(index)); swatches[i]=hit; choices.addView(hit,new LinearLayout.LayoutParams(0,dp(52),1));
+            hit.setOnClickListener(v->{selectColor(index);if(ready)apply(true);}); swatches[i]=hit; choices.addView(hit,new LinearLayout.LayoutParams(0,dp(52),1));
         }
         c.addView(choices); space(c,10); colorLabel=label(c,"Azul hielo · ambas zapatillas",15,true,INK);
-        label(c,"Pulsa Aplicar opciones para enviar tu selección.",12,false,MUTED);
+        label(c,"Elige un color para enviarlo a ambas. Aplicar opciones repite la prueba sin mover los cordones.",12,false,MUTED);
         space(root,14); LinearLayout steady=card(root,Color.WHITE); continuous=toggle(steady,"Luces continuas");
         label(steady,"Mantén un color fijo mientras el control esté activo y el par conectado.",14,false,MUTED);
         label(steady,"Se renuevan cada 45 segundos. La protección por batería y temperatura del calzado sigue activa.",12,false,MUTED);
-        space(root,20); section(root,"Prueba tu par","Las pruebas respetan las opciones aplicadas de luces y motor.");
-        LinearLayout tests=row(); Button left=styledButton("Probar izquierda",false,v->command("TEST_LEFT")); Button right=styledButton("Probar derecha",false,v->command("TEST_RIGHT"));
+        space(root,12);lightStatus=label(root,"Conecta tu par para probar las luces.",13,true,MUTED);
+        space(root,20); section(root,"Prueba tu par","Pruebas de luz independientes; no mueven los cordones.");
+        LinearLayout tests=row(); Button left=styledButton("Probar izquierda",false,v->applyLightTest("LIGHT_LEFT")); Button right=styledButton("Probar derecha",false,v->applyLightTest("LIGHT_RIGHT"));
         LinearLayout.LayoutParams l=new LinearLayout.LayoutParams(0,dp(56),1); l.rightMargin=dp(5); tests.addView(left,l); LinearLayout.LayoutParams r=new LinearLayout.LayoutParams(0,dp(56),1); r.leftMargin=dp(5); tests.addView(right,r); root.addView(tests);
         space(root,10); button(root,"Reactivar luces",false,v->new AlertDialog.Builder(this).setTitle("¿Revisaste el calzado?").setMessage("Comprueba batería y temperatura antes de reactivar las luces.").setPositiveButton("Reactivar",(d,w)->command("RESET_LIGHTS")).setNegativeButton("Cancelar",null).show());
         label(root,"Las animaciones requieren firmware compatible; el mínimo declarado es 2.1.7. La respuesta real de tus zapatillas sigue pendiente de validación.",12,false,MUTED);
@@ -171,14 +181,72 @@ public final class ControlActivity extends Activity {
         space(root,16); label(root,"Open Adapt · "+BuildInfo.VERSION+" experimental",13,true,INK);
         label(root,"Proyecto independiente, sin afiliación con Nike. Conexión Bluetooth, luces, batería y motor pendientes de validación con zapatillas físicas.",12,false,MUTED);
     }
+    void buildLaces() {
+        LinearLayout root=pages[4];section(root,"A tu medida.","Elige tu lado. Ajusta poco a poco.");space(root,16);
+        LinearLayout selection=row();String[] names={"Ambas","Izq.","Der."};int[] masks={3,1,2};
+        for(int i=0;i<3;i++){final int mask=masks[i];Button b=styledButton(names[i],false,v->chooseLaceSides(mask));b.setTextSize(13);laceSelectors[i]=b;LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(0,dp(46),1);if(i>0)lp.leftMargin=dp(7);selection.addView(b,lp);}root.addView(selection);space(root,14);
+        LinearLayout visual=card(root,Color.WHITE);label(visual,"AJUSTE CONFIRMADO POR CADA ZAPATILLA",10,true,MUTED).setLetterSpacing(.04f);LinearLayout pair=row();pair.setGravity(Gravity.TOP);
+        for(int side=0;side<2;side++){final int chosen=side;LinearLayout shoe=column();shoe.setGravity(Gravity.CENTER);laceArts[side]=new LaceArtwork(this,side);laceArts[side].setOnClickListener(v->chooseLaceSides(1<<chosen));shoe.addView(laceArts[side],new LinearLayout.LayoutParams(-1,dp(120)));label(shoe,side==0?"IZQUIERDA":"DERECHA",10,true,MUTED).setGravity(Gravity.CENTER);laceValues[side]=label(shoe,"—",28,true,INK);laceValues[side].setGravity(Gravity.CENTER);lacePreviews[side]=label(shoe,"Objetivo —",12,true,ACCENT);lacePreviews[side].setGravity(Gravity.CENTER);laceHints[side]=label(shoe,"Sin lectura",11,false,MUTED);laceHints[side].setGravity(Gravity.CENTER);pair.addView(shoe,new LinearLayout.LayoutParams(0,-2,1));}
+        visual.addView(pair);label(visual,"0 % más flojo · 100 % más firme. El esquema muestra una vista previa; los números grandes solo cambian con una lectura del calzado.",11,false,MUTED);space(root,14);
+        LinearLayout change=card(root,Color.WHITE);label(change,"TU SIGUIENTE AJUSTE",10,true,MUTED).setLetterSpacing(.08f);laceChange=label(change,"Desliza para elegir un cambio",18,true,INK);
+        laceSlider=new SeekBar(this);laceSlider.setMax(10);laceSlider.setProgress(5);laceSlider.setProgressTintList(ColorStateList.valueOf(ACCENT));laceSlider.setThumbTintList(ColorStateList.valueOf(ACCENT));laceSlider.setContentDescription("Cambio de ajuste, de menos cinco a más cinco puntos");change.addView(laceSlider,new LinearLayout.LayoutParams(-1,dp(48)));
+        LinearLayout limits=row();TextView loose=text("−5 · Aflojar",11,false,MUTED),tight=text("Ajustar · +5",11,false,MUTED);limits.addView(loose,new LinearLayout.LayoutParams(0,-2,1));tight.setGravity(Gravity.END);limits.addView(tight,new LinearLayout.LayoutParams(0,-2,1));change.addView(limits);
+        laceSlider.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){public void onProgressChanged(SeekBar bar,int value,boolean user){laceDelta=value-5;refreshLacesUI();}public void onStartTrackingTouch(SeekBar bar){bar.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP);}public void onStopTrackingTouch(SeekBar bar){}});
+        space(change,12);LinearLayout quick=row();laceMinus=styledButton("Aflojar −1",false,v->requestLaces(-1));lacePlus=styledButton("Ajustar +1",false,v->requestLaces(1));LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(0,dp(52),1);lp.rightMargin=dp(5);quick.addView(laceMinus,lp);LinearLayout.LayoutParams rp=new LinearLayout.LayoutParams(0,dp(52),1);rp.leftMargin=dp(5);quick.addView(lacePlus,rp);change.addView(quick);
+        laceApply=button(change,"Aplicar cambio",true,v->requestLaces(laceDelta));laceStatus=label(change,"Conecta tu par y espera las lecturas.",13,false,MUTED);
+        laceStop=button(root,"Detener cordones",false,v->command("LACE_STOP"));laceStop.setTextColor(0xffaf3342);
+        label(root,"Cada acción cambia hasta 5 puntos, con un segundo entre acciones. Requiere al menos 15 % de batería, temperatura válida y estar fuera del cargador. El efecto automático de cordones se pausa al entrar aquí.",12,false,MUTED);
+        label(root,"Control experimental: realiza la primera prueba con las zapatillas fuera de los pies. Ante un error se detiene y no se reintenta solo.",12,false,MUTED);chooseLaceSides(3);
+    }
+    void chooseLaceSides(int mask){laceMask=mask;if(laceSlider!=null)laceSlider.performHapticFeedback(HapticFeedbackConstants.KEYBOARD_TAP);refreshLacesUI();}
+    void requestLaces(int delta){
+        if(delta==0)return;
+        MotionService service=MotionService.instance;long now=SystemClock.elapsedRealtime();
+        if(service==null){notice("Inicia el control y espera la conexión.");return;}
+        for(int side=0;side<2;side++)if((laceMask&(1<<side))!=0){String reason=service.laceBlock(side,now);if(reason!=null){notice((side==0?"Izquierda: ":"Derecha: ")+reason);return;}}
+        final int mask=laceMask;
+        Runnable send=()->{Intent intent=new Intent(this,MotionService.class).setAction("LACE_ADJUST").putExtra("sides",mask).putExtra("delta",delta);if(Build.VERSION.SDK_INT>=26)startForegroundService(intent);else startService(intent);laceSlider.setProgress(5);};
+        if(!getSharedPreferences("openadapt_controls",0).getBoolean("manual_lace_acknowledged",false)){
+            if(laceDialog)return;laceDialog=true;
+            dialog().setTitle("Primera prueba de ajuste").setMessage("Haz la primera prueba fuera de los pies. Cada acción mueve hasta cinco puntos; Detener cordones interrumpe el movimiento. La respuesta física de tus Auto Max todavía no está validada.").setPositiveButton("Entendido, ajustar",(d,w)->{laceDialog=false;getSharedPreferences("openadapt_controls",0).edit().putBoolean("manual_lace_acknowledged",true).apply();send.run();}).setNegativeButton("Cancelar",(d,w)->laceDialog=false).setOnCancelListener(d->laceDialog=false).show();
+        }else send.run();
+    }
+    void refreshLacesUI(){
+        if(laceApply==null||page!=4)return;MotionService service=MotionService.instance;long now=SystemClock.elapsedRealtime();
+        if(page==4&&resumed&&service!=null)service.lacePanelUntil=now+5000;
+        boolean busy=service!=null&&service.laces.busy();String block=null;
+        for(int i=0;i<3;i++){boolean selected=laceMask==(i==0?3:i==1?1:2);if(laceSelectors[i].isSelected()!=selected){laceSelectors[i].setBackground(shape(selected?0xffd9f0e8:Color.WHITE,14,selected?ACCENT:LINE));laceSelectors[i].setSelected(selected);}laceSelectors[i].setEnabled(!busy);laceSelectors[i].setTextColor(selected?ACCENT:MUTED);}
+        for(int side=0;side<2;side++){
+            boolean selected=(laceMask&(1<<side))!=0,connected=service!=null&&service.bridge.connected(side);
+            int actual=connected&&service.lacePositionAt[side]>0?service.lacePosition[side]:-1;
+            String reason=service==null?"Sin conexión":service.laceBlock(side,now);
+            if(selected&&reason!=null&&block==null)block=(side==0?"Izquierda: ":"Derecha: ")+reason;
+            int preview=actual<0?-1:Math.max(0,Math.min(100,actual+(selected?laceDelta:0)));
+            if(busy&&side==service.laces.side&&service.laces.phase==2)preview=service.laces.target;
+            laceArts[side].state(actual,preview,selected,busy&&side==service.laces.side,reason!=null&&!busy);laceArts[side].setEnabled(!busy);
+            updateText(laceValues[side],actual<0?"—":actual+" %");updateText(lacePreviews[side],preview<0?"Objetivo —":"Objetivo "+preview+" %");
+            updateText(laceHints[side],reason==null?"Lectura confirmada":reason);laceHints[side].setTextColor(connected&&BatteryStatus.low(true,service.battery[side],service.batteryAt[side],now)?0xffaf3342:MUTED);
+        }
+        boolean allowed=block==null&&!busy;lacePlus.setEnabled(allowed);laceMinus.setEnabled(allowed);laceSlider.setEnabled(allowed);laceApply.setEnabled(allowed&&laceDelta!=0);laceStop.setEnabled(service!=null);
+        updateText(laceChange,laceDelta==0?"Desliza para elegir un cambio":(laceDelta>0?"Ajustar +":"Aflojar ")+laceDelta+" puntos");
+        updateText(laceApply,laceDelta==0?"Aplicar cambio":(laceDelta>0?"Aplicar +":"Aplicar ")+laceDelta+" a "+(laceMask==3?"ambas":laceMask==1?"izquierda":"derecha"));
+        String progress=service==null?"Conecta tu par y espera las lecturas.":service.laces.message;
+        updateText(laceStatus,busy?progress:block!=null?block:progress);
+    }
     void openPairing() {
-        try { startActivity(new Intent().setClassName(getPackageName(),"com.nike.adapt.SplashScreenActivity").putExtra("PARAM_SPLASH_SCREEN_SHOW",false)); }
+        if(!hasPermissions()){permissions();return;}
+        try {
+            Bridge bridge=MotionService.instance==null?new Bridge():MotionService.instance.bridge;
+            if(bridge.bind()){command("CONNECT");showPage(0);notice(bridge.connected(0)&&bridge.connected(1)?"Tu par ya está conectado.":"Comprobando y reconectando tu par guardado…");return;}
+            command("CONNECT");PairingReturn.arm(getApplication());
+            startActivity(new Intent().setClassName(getPackageName(),"com.nike.adapt.SplashScreenActivity").putExtra("PARAM_SPLASH_SCREEN_SHOW",false)); }
         catch(Exception e) { notice("No se pudo abrir el emparejamiento."); }
     }
     void showPage(int selected) {
         page=selected;
-        for(int i=0;i<4;i++) { scrolls[i].setVisibility(i==page?View.VISIBLE:View.GONE); navLabels[i].setTextColor(i==page?ACCENT:MUTED); navIcons[i].selected=i==page; navIcons[i].invalidate(); ((View)navLabels[i].getParent()).setSelected(i==page); }
-        applyButton.setText(page==0?"Iniciar control":"Aplicar opciones");
+        for(int i=0;i<pages.length;i++) { scrolls[i].setVisibility(i==page?View.VISIBLE:View.GONE); navLabels[i].setTextColor(i==page?ACCENT:MUTED); navIcons[i].selected=i==page; navIcons[i].invalidate(); ((View)navLabels[i].getParent()).setSelected(i==page); }
+        applyButton.setText(page==0?"Iniciar control":page==4?"Leer ajuste":"Aplicar opciones");
+        if(selected==4&&ready)command("LACE_READ");
         pages[selected].requestFocus(); scrolls[selected].post(()->scrolls[selected].scrollTo(0,0));
     }
     void selectColor(int selected) {
@@ -230,28 +298,35 @@ public final class ControlActivity extends Activity {
         if(!hasPermissions()) { permissions(); return; }
         Intent i=new Intent(this,MotionService.class).setAction(action); if(Build.VERSION.SDK_INT>=26) startForegroundService(i); else startService(i);
     }
-    void apply() {
+    void applyLightTest(String action){apply();command(action);}
+    void apply(){apply(false);}
+    void apply(boolean preview) {
         if(!hasPermissions()) { permissions(); return; }
         if(pendingMotorDialog) return;
         getSharedPreferences("openadapt_controls",0).edit().putBoolean("continuous",continuous.isChecked()).putInt("color",colorIndex).putInt("mode",modeIndex).apply();
-        Intent i=new Intent(this,MotionService.class).setAction("SETTINGS").putExtra("continuous",continuous.isChecked()).putExtra("mode",modeIndex==0?1:modeIndex==1?2:0).putExtra("color",palette[colorIndex]).putExtra("motor",motor.isChecked());
+        Intent i=new Intent(this,MotionService.class).setAction("SETTINGS").putExtra("continuous",continuous.isChecked()).putExtra("mode",modeIndex==0?1:modeIndex==1?2:0).putExtra("color",palette[colorIndex]).putExtra("motor",motor.isChecked()).putExtra("preview",preview);
         if(Build.VERSION.SDK_INT>=26) startForegroundService(i); else startService(i);
     }
     void notice(String message) { Toast.makeText(this,message,Toast.LENGTH_LONG).show(); }
     void updateText(TextView view,String value) { if(!value.contentEquals(view.getText())) view.setText(value); }
     void refreshBatteries() {
-        String[] parts=MotionService.batterySummary.split("\n");
+        String[] parts=MotionService.batterySummary.split("\n");MotionService service=MotionService.instance;long now=SystemClock.elapsedRealtime();StringBuilder warning=new StringBuilder();
         for(int side=0;side<2;side++) {
-            String value=parts.length>side?parts[side].replaceFirst("^[^:]+: ",""):"sin conexión";
-            boolean numeric=value.matches("\\d+ %");
-            updateText(batteryValues[side],numeric?value:"—"); updateText(batteryHints[side],numeric?"Lectura del calzado":value.substring(0,1).toUpperCase(Locale.ROOT)+value.substring(1));
-            batteryBars[side].setProgress(numeric?Integer.parseInt(value.replace(" %","")):0);
+            String value=parts.length>side?parts[side].replaceFirst("^[^:]+: ",""):"sin conexión";boolean numeric=value.matches("\\d+ %");
+            boolean low=service!=null&&BatteryStatus.low(service.bridge.connected(side),service.battery[side],service.batteryAt[side],now);
+            updateText(batteryValues[side],numeric?value:"—");batteryValues[side].setTextColor(low?0xffaf3342:INK);
+            updateText(batteryHints[side],low?"Batería baja · motor bloqueado":numeric?"Lectura del calzado":value.substring(0,1).toUpperCase(Locale.ROOT)+value.substring(1));batteryHints[side].setTextColor(low?0xffaf3342:MUTED);
+            batteryBars[side].setProgress(numeric?Integer.parseInt(value.replace(" %","")):0);batteryBars[side].setProgressTintList(ColorStateList.valueOf(low?0xffaf3342:ACCENT));
+            if(low){if(warning.length()>0)warning.append("\n");warning.append(side==0?"Izquierda":"Derecha").append(" · ").append(service.battery[side]).append(" %: ajuste y movimiento de cordones bloqueados.");}
         }
+        if(warning.length()>0)warning.append("\nRecarga el lado indicado para volver a mover los cordones.");
+        updateText(batteryAlert,warning.toString());int visibility=warning.length()==0?View.GONE:View.VISIBLE;if(batteryAlert.getVisibility()!=visibility)batteryAlert.setVisibility(visibility);
     }
     final Runnable refresh=new Runnable() { public void run() {
         if(!MotionService.summary.contentEquals(state.getText())) state.setText(MotionService.summary);
-        refreshBatteries();
+        refreshBatteries();refreshLacesUI();
         MotionService service=MotionService.instance;
+        updateText(lightStatus,service==null?"Conecta tu par para probar las luces.":"Izquierda: "+service.lightStatus[0]+"\nDerecha: "+service.lightStatus[1]);
         boolean connected=service!=null&&service.bridge.connected(0)&&service.bridge.connected(1);
         updateText(connection,connected?"Par conectado":service!=null?"Buscando tu par…":"Sin conexión");
         int connectionColor=connected?ACCENT:MUTED; if(connection.getCurrentTextColor()!=connectionColor) connection.setTextColor(connectionColor);
@@ -280,6 +355,7 @@ public final class ControlActivity extends Activity {
             if(icon==1) { canvas.drawCircle(12,10,5,p);canvas.drawLine(9,17,15,17,p);canvas.drawLine(10,21,14,21,p);canvas.drawLine(12,1,12,2,p);canvas.drawLine(3,7,5,8,p);canvas.drawLine(19,8,21,7,p); }
             if(icon==2) { path.moveTo(2,13);path.lineTo(6,13);path.lineTo(9,5);path.lineTo(14,20);path.lineTo(17,10);path.lineTo(20,13);path.lineTo(23,13);canvas.drawPath(path,p); }
             if(icon==3) { canvas.drawRoundRect(3,4,21,20,3,3,p);canvas.drawLine(7,8,17,8,p);canvas.drawLine(7,12,13,12,p);canvas.drawCircle(17,16,1,p); }
+            if(icon==4){canvas.drawLine(6,3,6,21,p);canvas.drawLine(18,3,18,21,p);for(int y=4;y<19;y+=5){canvas.drawLine(6,y,18,y+4,p);canvas.drawLine(18,y,6,y+4,p);}}
             canvas.restore();
         }
     }

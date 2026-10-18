@@ -21,9 +21,16 @@ public final class MotionService extends Service implements SensorEventListener 
     final JSONObject[] readings={new JSONObject(),new JSONObject()};
     final long[] lastStep={0,0},lastLight={0,0},batteryAt={0,0},batteryQuery={0,0};
     final int[] battery={-1,-1},charger={-1,-1},pendingImage={-1,-1};
+    final int[] lacePosition={-1,-1};
+    final long[] lacePositionAt={0,0},positionQueryAt={0,0},positionQuarantine={0,0};
+    final boolean[] positionPending={false,false};
+    long lacePanelUntil;
     final double[] temperature={Double.NaN,Double.NaN};
     final long[] imageAt={0,0};
     final boolean[] lightBlocked={false,false};
+    final String[] lightStatus={"sin prueba enviada","sin prueba enviada"};
+    final long[] lightPending={0,0};
+    final int[] lightGeneration={0,0};
     Object localBus;
     SensorManager sensors;
     PowerManager.WakeLock wakeLock;
@@ -36,11 +43,55 @@ public final class MotionService extends Service implements SensorEventListener 
     long motorStarted;
     String lastError="",lastMotion="Sin movimiento detectado";
 
+    final LaceController laces=new LaceController(new LaceController.Port() {
+        public boolean ready(int side,long now){return !closing&&motorStage==0&&now>=positionQuarantine[side]&&bridge.connected(side)&&motorConditions(side,now);}
+        public void read(int side)throws Exception{positionPending[side]=true;positionQueryAt[side]=SystemClock.elapsedRealtime();bridge.read(side,4,0);}
+        public void move(int side,int target)throws Exception{bridge.position(side,target,error->{});}
+        public void stop(int side)throws Exception{positionPending[side]=false;positionQuarantine[side]=SystemClock.elapsedRealtime()+3000;bridge.stopMotor(side);}
+    });
+    final Runnable laceMonitor=new Runnable(){public void run(){if(closing)return;laces.tick(SystemClock.elapsedRealtime());if(laces.busy())handler.postDelayed(this,100);}};
+    void prepareLaces(){
+        long now=SystemClock.elapsedRealtime();lacePanelUntil=now+5000;motorEnabled=false;
+        if(motorStage!=0){abortMotor("Efecto automático pausado para ajuste manual");for(int s=0;s<2;s++)positionQuarantine[s]=now+3000;}
+        for(int s=0;s<2;s++)if(!positionPending[s]&&now-positionQueryAt[s]>=1000)positionQueryAt[s]=0;
+        readLaces(now);
+    }
+    void readLaces(long now){
+        if(closing||laces.busy()||motorStage!=0)return;
+        for(int s=0;s<2;s++)if(bridge.connected(s)&&!positionPending[s]&&now>=positionQuarantine[s]&&(positionQueryAt[s]==0||now-positionQueryAt[s]>=10000)){
+            try{positionPending[s]=true;positionQueryAt[s]=now;bridge.read(s,4,0);}catch(Exception e){positionPending[s]=false;positionQuarantine[s]=now+3000;}
+        }
+    }
+    String laceBlock(int side,long now){
+        if(!bridge.connected(side))return "Sin conexión autenticada";
+        if(BatteryStatus.low(true,battery[side],batteryAt[side],now))return "Bloqueada: batería bajo 15 %. Recarga esta zapatilla.";
+        if(batteryAt[side]<=0||now<batteryAt[side]||now-batteryAt[side]>30000)return "Esperando una lectura reciente de batería";
+        if(charger[side]!=1)return "Retira la zapatilla del cargador";
+        if(!Double.isFinite(temperature[side])||temperature[side]<0||temperature[side]>40)return "Temperatura no disponible o fuera de 0–40 °C";
+        if(now<positionQuarantine[side]||positionPending[side])return "Esperando confirmación de posición";
+        if(lacePositionAt[side]<=0||now<lacePositionAt[side]||now-lacePositionAt[side]>20000)return "Esperando lectura del ajuste";
+        if(laces.busy()||motorStage!=0)return "Movimiento en curso";
+        if(laces.lastStart>=0&&(now<laces.lastStart||now-laces.lastStart<1000))return "Espera un segundo entre ajustes";
+        return null;
+    }
+    void manualLaces(int mask,int delta){
+        long now=SystemClock.elapsedRealtime();
+        if(mask<1||mask>3||delta==0||delta< -5||delta>5)return;
+        if(laces.busy()){lastError="Espera a que termine el ajuste actual.";return;}
+        for(int side=0;side<2;side++)if((mask&(1<<side))!=0){String reason=laceBlock(side,now);if(reason!=null){laces.message=(side==0?"Izquierda: ":"Derecha: ")+reason;return;}}
+        motorEnabled=false;
+        if(laces.start(mask,delta,now)){lastError="";handler.removeCallbacks(laceMonitor);handler.post(laceMonitor);}
+    }
+    void stopLaces(){
+        laces.cancel("Ajuste detenido.");abortMotor("Movimiento de cordones detenido");motorEnabled=false;
+        for(int side=0;side<2;side++)try{bridge.stopMotor(side);}catch(Exception ignored){}
+    }
     final BroadcastReceiver receiver=new BroadcastReceiver() {
         @Override public void onReceive(Context context,Intent intent) {
             if(closing) return;
             try { receive(intent); } catch(Exception e) {
                 if(motorStage!=0) abortMotor("Respuesta inválida; movimiento detenido");
+                if(laces.busy()) laces.cancel("Respuesta inválida; ajuste detenido.");
                 fail("No se pudo interpretar la respuesta",e);
             }
         }
@@ -84,14 +135,22 @@ public final class MotionService extends Service implements SensorEventListener 
                 mode=intent.getIntExtra("mode",1); color=intent.getIntExtra("color",0x25c7ff);
                 boolean enable=intent.getBooleanExtra("motor",false);
                 if(!enable && motorStage!=0) abortMotor("Movimiento de cordones detenido");
-                motorEnabled=enable;
+                motorEnabled=enable&&!laces.busy();
                 if(hadContinuous&&!continuous) try { bridge.stopLights(); } catch(Exception e) { fail("No se pudieron apagar las luces",e); }
                 for(int s=0;s<2;s++) lastLight[s]=0;
+                if(intent.getBooleanExtra("preview",false))for(int s=0;s<2;s++)try{light(s,continuous);}catch(Exception e){lightStatus[s]="no se pudo enviar";fail("No se pudo enviar el color",e);}
             }
+            if("CONNECT".equals(action)){
+                try{lastConnect=SystemClock.elapsedRealtime();bridge.connect();lastError="";}catch(Exception e){fail("No se pudo reconectar",e);}
+            }
+            if("LIGHT_LEFT".equals(action)||"LIGHT_RIGHT".equals(action)){int side="LIGHT_LEFT".equals(action)?0:1;try{light(side,continuous);}catch(Exception e){lightStatus[side]="no se pudo enviar";fail("No se pudo probar la luz",e);}}
+            if("LACE_READ".equals(action))prepareLaces();
+            if("LACE_ADJUST".equals(action))manualLaces(intent.getIntExtra("sides",0),intent.getIntExtra("delta",0));
+            if("LACE_STOP".equals(action))stopLaces();
             if("CHECK".equals(action)) checkFirmware();
             if("TEST_LEFT".equals(action)) motion(0,"Prueba izquierda");
             if("TEST_RIGHT".equals(action)) motion(1,"Prueba derecha");
-            if("RESET_LIGHTS".equals(action)) { lightBlocked[0]=lightBlocked[1]=false; lastLight[0]=lastLight[1]=0; }
+            if("RESET_LIGHTS".equals(action)) { lightBlocked[0]=lightBlocked[1]=false; lastLight[0]=lastLight[1]=0; for(int side=0;side<2;side++)try{light(side,continuous);}catch(Exception e){fail("No se pudo reactivar la luz",e);} }
         }
         // A killed process never resumes motor movements without the user's explicit action.
         return START_NOT_STICKY;
@@ -113,8 +172,11 @@ public final class MotionService extends Service implements SensorEventListener 
                     if(!bridge.connected(0)||!bridge.connected(1)) bridge.connect();
                 }
                 for(int s=0;s<2;s++) {
+                    if(lightPending[s]>0&&now-lightPending[s]>10000){lightPending[s]=0;lightGeneration[s]++;lightStatus[s]="sin confirmación del calzado; vuelve a probar";}
+                    if(positionPending[s]&&now-positionQueryAt[s]>=1500){positionPending[s]=false;positionQuarantine[s]=now+3000;}
                     if(!bridge.connected(s)) {
-                        battery[s]=-1; batteryAt[s]=0; batteryQuery[s]=0;
+                        if(lightPending[s]>0){lightStatus[s]="se perdió la conexión";lightPending[s]=0;lightGeneration[s]++;}
+                        battery[s]=-1; batteryAt[s]=0; batteryQuery[s]=0;lacePosition[s]=-1;lacePositionAt[s]=0;positionPending[s]=false;
                         if(motorSide==s&&motorStage!=0) abortMotor("Se perdió la conexión durante el movimiento");
                         continue;
                     }
@@ -125,6 +187,8 @@ public final class MotionService extends Service implements SensorEventListener 
                     }
                     if(continuous&&!lightBlocked[s]&&(lastLight[s]==0||now-lastLight[s]>45000)) light(s,true);
                 }
+                if(now<lacePanelUntil)readLaces(now);
+                laces.tick(now);
             } catch(Exception e) { fail("Esperando conexión",e); }
             // Refresh the bounded wake lock periodically; release it as soon as the session ends.
             if(wakeLock!=null&&(!wakeLock.isHeld()||now-lastWake>300000)) {
@@ -153,12 +217,22 @@ public final class MotionService extends Service implements SensorEventListener 
         return "desconectada";
     }
     void light(final int side,boolean steady) throws Exception {
-        if(!bridge.connected(side)||lightBlocked[side]) return;
+        if(!bridge.connected(side)){lightStatus[side]="sin conexión autenticada";return;}
+        if(lightBlocked[side]){lightStatus[side]="suspendida por batería o temperatura; revisa el calzado";return;}
+        long now=SystemClock.elapsedRealtime();
+        if(lightPending[side]>0&&now-lightPending[side]<1000)return;
+        final int generation=++lightGeneration[side];
+        lightPending[side]=now;lightStatus[side]="enviando color; esperando al calzado…";
         bridge.animation(side,color,steady,error->handler.post(()->{
-            lightBlocked[side]=true;
-            lastError="No se pudo activar la luz "+(side==0?"izquierda":"derecha")+". Revisa conexión, batería y firmware.";
+            if(closing||generation!=lightGeneration[side])return;
+            lightPending[side]=0;
+            // A lost connection or a firmware-version check is not a thermal/battery lock.
+            String detail="conexión no disponible; vuelve a conectar";
+            try{if(error.getClass().getName().equals("v9.p"))detail="firmware "+Bridge.field(error,"k")+"; requiere "+Bridge.field(error,"l");}catch(Exception ignored){}
+            lightStatus[side]=detail;
+            lastError="Luz "+(side==0?"izquierda: ":"derecha: ")+detail;
         }));
-        lastLight[side]=SystemClock.elapsedRealtime();
+        lastLight[side]=now;
     }
     void motion(int side,String source) {
         if(closing||side<0||side>1) return;
@@ -192,11 +266,14 @@ public final class MotionService extends Service implements SensorEventListener 
         if(msg==null) return;
         int op=((Number)Bridge.field(msg,"a")).byteValue()&255;
         String type=((Enum<?>)Bridge.field(msg,"b")).name();
-        if(op!=214&&op!=81&&op!=19&&op!=4&&op!=3&&op!=0&&op!=5&&op!=235&&op!=238) return;
+        if(op!=214&&op!=81&&op!=19&&op!=4&&op!=3&&op!=0&&op!=5&&op!=234&&op!=236&&op!=237&&op!=235&&op!=238) return;
         long now=SystemClock.elapsedRealtime();
         if(motorStage!=0&&now-motorStarted>=4000) abortMotor("Confirmación del motor fuera de plazo");
         if(type.equals("NAK")) {
+            if(op==234||op==236){lightPending[side]=0;lightGeneration[side]++;lightStatus[side]="el calzado rechazó la animación ("+op+")";lastError=lightStatus[side];}
             if(motorStage!=0&&motorSide==side&&(op==3||op==4||op==0)) abortMotor("El calzado rechazó el movimiento");
+            if((op==3||op==4||op==0)&&laces.busy()&&laces.side==side)laces.cancel("El calzado rechazó el ajuste.");
+            if(op==4){positionPending[side]=false;positionQuarantine[side]=now+3000;}
             if(op==19) { pendingImage[side]=-1; lastError="La lectura de esa imagen de firmware no está disponible."; }
             return;
         }
@@ -204,6 +281,7 @@ public final class MotionService extends Service implements SensorEventListener 
         if(payload==null) payload=new byte[0];
         Map<Integer,Long> n=FirmwareCheck.numbers(payload);
         if(type.equals("ACK")) {
+            if(op==236&&lightPending[side]>0){lightPending[side]=0;lightGeneration[side]++;lightStatus[side]="inicio de luz aceptado por el calzado";}
             if(op==214) readings[side].put("firmwareVersion",FirmwareCheck.version(payload)).put("versionReadAt",System.currentTimeMillis());
             if(op==81) {
                 long percent=FirmwareCheck.unsigned32(payload,4),charge=FirmwareCheck.unsigned32(payload,1);
@@ -211,14 +289,20 @@ public final class MotionService extends Service implements SensorEventListener 
                 battery[side]=(int)percent; charger[side]=(int)charge;
                 temperature[side]=n.containsKey(3)?FirmwareCheck.fixedDouble(payload,3):Double.NaN; batteryAt[side]=now;
                 readings[side].put("battery",new JSONObject(FirmwareCheck.battery(payload)));
-                updateBatterySummary(now);
-                if((battery[side]<15||!Double.isFinite(temperature[side])||temperature[side]>40)&&motorSide==side&&motorStage!=0) abortMotor("Motor detenido por batería o temperatura");
+                updateBatterySummary(now);laces.tick(now);
+                if(!motorConditions(side,now)&&motorSide==side&&motorStage!=0) abortMotor("Motor detenido por batería o temperatura");
             }
             if(op==19 && pendingImage[side]>=0 && now-imageAt[side]<4000) {
                 JSONObject images=readings[side].optJSONObject("images");
                 if(images==null) { images=new JSONObject(); readings[side].put("images",images); }
                 images.put(String.valueOf(pendingImage[side]),new JSONObject(FirmwareCheck.image(payload,pendingImage[side])));
                 pendingImage[side]=-1;
+            }
+            if(op==4){
+                long position=FirmwareCheck.unsigned32(payload,1);positionPending[side]=false;
+                if(position>100){if(laces.busy())laces.cancel("Posición inválida del calzado.");throw new IllegalArgumentException("Invalid lace position");}
+                lacePosition[side]=(int)position;lacePositionAt[side]=now;
+                laces.position(side,position,now);
             }
             if(op==4&&motorSide==side&&motorStage==1&&now-motorStarted<1500) {
                 long baseline=FirmwareCheck.unsigned32(payload,1);
@@ -230,6 +314,12 @@ public final class MotionService extends Service implements SensorEventListener 
                     if(!closing&&generation==motorGeneration&&motorStage!=0) abortMotor("El calzado rechazó el ajuste");
                 }));
             }
+        }
+        if(type.equals("EVENT")&&op==5){
+            long status=FirmwareCheck.unsigned32(payload,1),position=FirmwareCheck.unsigned32(payload,2);
+            if(position>100){if(laces.busy())laces.cancel("Posición inválida del calzado.");throw new IllegalArgumentException("Invalid lace position");}
+            lacePosition[side]=status==0?(int)position:-1;lacePositionAt[side]=status==0?now:0;
+            laces.moved(side,status,position,now);
         }
         if(type.equals("EVENT")&&op==5&&motorSide==side&&motorStage>=2) {
             long status=FirmwareCheck.unsigned32(payload,1),position=FirmwareCheck.unsigned32(payload,2);
@@ -260,14 +350,14 @@ public final class MotionService extends Service implements SensorEventListener 
         if(type.equals("EVENT")&&(op==235||op==238)) {
             long reason=FirmwareCheck.unsigned32(payload,4);
             if(reason==3||reason==4) {
-                lightBlocked[side]=true;
+                lightBlocked[side]=true;lightPending[side]=0;lightGeneration[side]++;lightStatus[side]="suspendida por batería o temperatura";
                 lastError="Luces suspendidas por temperatura o batería. Revisa el calzado antes de reactivarlas.";
             }
         }
     }
     void startMotor(int side) throws Exception {
         long now=SystemClock.elapsedRealtime();
-        if(closing||!motorEnabled||motorStage!=0||!bridge.connected(side)) return;
+        if(closing||!motorEnabled||motorStage!=0||laces.busy()||!bridge.connected(side)) return;
         if(!motorConditions(side,now)) {
             lastError="Motor en espera: requiere batería reciente, temperatura válida y calzado fuera del cargador."; return;
         }
@@ -310,12 +400,14 @@ public final class MotionService extends Service implements SensorEventListener 
             obj.put("app","Open Adapt experimental").put("capturedAt",System.currentTimeMillis());
             obj.put("binaryFirmwareBackup",false).put("fullIntegrityVerified",false);
             obj.put("note","Lectura de versiones y estados; no contiene una copia binaria ni prueba criptográfica del firmware.");
+            for(int side=0;side<2;side++)readings[side].put("connection",bridge.state(side)).put("lightingStatus",lightStatus[side]).put("lightingHardwareBlocked",lightBlocked[side]);
             obj.put("left",new JSONObject(readings[0].toString())).put("right",new JSONObject(readings[1].toString()));
             return obj.toString(2);
         } catch(Exception e) { return "No se pudo generar el diagnóstico."; }
     }
     @Override public void onDestroy() {
         closing=true; active=false; handler.removeCallbacksAndMessages(null);
+        laces.cancel("Ajuste detenido.");
         abortMotor("Detenido");
         try { bridge.stopLights(); } catch(Exception ignored) {}
         try { if(localBus!=null) Bridge.call(localBus,"e",receiver); } catch(Exception ignored) {}

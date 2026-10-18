@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "version": "0.3.1",
-  "versionCode": 2017062202,
+  "version": "0.4.0",
+  "versionCode": 2017062203,
   "packageName": "com.openadapt.experimental",
   "minSdk": 24,
   "apk": "OpenAdapt-1.29.3-experimental.apk",
-  "size": 73479840,
-  "sha256": "f3253cb137f66de862f49cd3d80286ba66aa2cce0c074953ace0f20c8655ce4f",
+  "size": 73504416,
+  "sha256": "315dbfbb9d7976f1d042c9988780b46a5979269aab126aa9d7627f9ad950a7f0",
   "signerSha256": "a042954c3a6ae31a9c9c427e9f4568d63693cd0e875048d9a87b8c9306f0b387"
 }

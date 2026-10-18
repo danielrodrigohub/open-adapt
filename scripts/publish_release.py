@@ -35,4 +35,7 @@ for release in releases:
 tag='v'+data['version']+'-experimental'
 if args.dry_run:
     print('Ready to publish',tag,'with matching APK, update metadata and signing identity.');raise SystemExit(0)
-subprocess.run([gh,'release','create',tag,str(apk),str(meta),str(checks),'--repo',repo,'--target',head,'--prerelease','--title','Nike Adapt Max Revive again — '+data['version'],'--notes-file',str(args.notes_file)],cwd=root,check=True)
+# Publish the notes immediately; the already-deployed Pages mirror is downloadable.
+# The updater requires both APK and metadata assets and ignores an incomplete upload.
+subprocess.run([gh,'release','create',tag,'--repo',repo,'--target',head,'--prerelease','--title','Nike Adapt Max Revive again — '+data['version'],'--notes-file',str(args.notes_file)],cwd=root,check=True)
+subprocess.run([gh,'release','upload',tag,str(apk),str(meta),str(checks),'--repo',repo],cwd=root,check=True)

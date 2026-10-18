@@ -43,5 +43,19 @@
     "en",
     "es"
   ],
-  "physical_shoes_tested": false
+  "physical_shoes_tested": false,
+  "current_page_checks": [
+    {
+      "url": "https://danielrodrigohub.github.io/open-adapt/",
+      "status": 200,
+      "current_download": "0.3.1"
+    },
+    {
+      "url": "https://danielrodrigohub.github.io/open-adapt/es/",
+      "status": 200,
+      "current_download": "0.3.1"
+    }
+  ],
+  "public_apk_url": "https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.3.1.apk",
+  "apk_range_request_status": 206
 }

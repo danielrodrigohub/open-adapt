@@ -1,19 +1,20 @@
 {
-  "install": "existing APK hash verified",
+  "install": "Success",
   "home_battery_cards_visible": true,
   "lights_page_visible": true,
+  "color_selection_attempts_light_on_both_without_fake_success": true,
   "color_and_continuous_settings_survive_restart": true,
   "movement_page_visible": true,
   "motor_confirmation_cancelled_without_enabling": true,
+  "manual_fit_page_visible_and_disconnected_controls_disabled": true,
   "system_page_visible": true,
   "diagnostic_dialog_opens": true,
   "diagnostic_export_picker_opens": true,
   "persistent_stop_action_stops_service": true,
   "navigation_at_font_scale_1_3": true,
   "android_release": "17",
-  "apk_sha256": "092cb3aba6d9e4d891ffce964f8e0b3e806d2cdea63a410fc40ac0ff6e9e1772",
+  "apk_sha256": "315dbfbb9d7976f1d042c9988780b46a5979269aab126aa9d7627f9ad950a7f0",
   "android_runtime_exceptions_recorded": false,
   "physical_shoes_tested": false,
-  "project_version": "0.2.9 internal updater baseline",
-  "purpose": "Shared v0.3 dashboard tested before the in-app upgrade; this SHA belongs to the internal baseline, not the published v0.3 APK."
+  "project_version": "0.4.0"
 }

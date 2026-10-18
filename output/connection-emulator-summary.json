@@ -1,0 +1,9 @@
+{
+  "project_version": "0.4.0",
+  "apk_sha256": "315dbfbb9d7976f1d042c9988780b46a5979269aab126aa9d7627f9ad950a7f0",
+  "no_saved_pair_opens_physical_onboarding": true,
+  "does_not_claim_authenticated_without_pair": true,
+  "saved_pair_fast_path": "source-reviewed; requires real shoe validation",
+  "return_after_first_pair": "source-reviewed; requires physical onboarding completion",
+  "physical_shoes_tested": false
+}

@@ -42,7 +42,13 @@ run([bt/'d8','--min-api','24','--lib',android,'--output',dex,jar])
 unsigned=build/'rebuilt.apk'
 # Recompile the manifest even when only apktool.yml versionInfo changed.
 # Apktool otherwise may reuse a cached manifest with an older version.
-(base/'decoded/AndroidManifest.xml').touch()
+cached_version=False
+if unsigned.is_file():
+    try:
+        cached=subprocess.check_output([str(bt/'aapt'),'dump','badging',str(unsigned)],text=True).splitlines()[0]
+        cached_version=("versionCode='"+str(version['versionCode'])+"'" in cached and "versionName='"+version['versionName']+"'" in cached)
+    except (subprocess.SubprocessError,IndexError):pass
+if not cached_version:(base/'decoded/AndroidManifest.xml').touch()
 # Apktool's patched aapt2 supports the original compiler-generated "$" resource names.
 run([java,'-jar',base/'tools/apktool_3.0.3.jar','b',base/'decoded','-o',unsigned])
 combined=build/'with-controls.apk'

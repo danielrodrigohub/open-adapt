@@ -1,28 +1,18 @@
-# Nike Adapt Max Revive again — experimental v0.3.1
+# Nike Adapt Max Revive again — experimental v0.4.0
 
 > Why nike discontinued this?...
 
-Public Android download: https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.3.1.apk
+Download for Android: https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.4.0.apk
 
-This patch adds a verified project-website download fallback when GitHub’s release file server is unavailable. SHA-256, package, version and installed signing-certificate checks are still required.
+- New interactive **Ajuste** tab: choose both shoes or one side, preview a relative change of 1–5 points, view confirmed positions, tighten/loosen and stop.
+- Below **15%**, show which shoe is blocked and prevent lace movement. Battery and temperature readings must be recent; firmware protections remain active.
+- **Fix:** choosing a color or applying light options sends an actual preview command to both connected shoes, even with continuous mode off. Light tests do not trigger the lace motor.
+- Show per-shoe light delivery status, including missing connection, firmware rejection, timeout and accepted start. A transient connection failure no longer becomes a persistent battery/thermal lock.
+- **Connect** immediately checks and reconnects a saved pair within OpenAdapt. First-time physical pairing returns after both shoes authenticate and the original controller is foreground.
+- Preserve package, signing identity, pairing data and preferences when installing over the existing app.
 
-A new native interface for Open Adapt, inspired by a clean sports-product experience with an independent visual design.
+Validated with JVM tests, signed APK verification and an Android emulator. Physical LED, motor, first pairing and reconnection behavior still require testing with real Auto Max shoes. An accepted command is not proof of visible illumination.
 
-- Four tabs: Inicio, Luces, Movimiento and Sistema.
-- Light background, rounded cards, clear typography and an Auto Max product image generated with AI from the user-provided gray, teal and orange reference.
-- Individual left/right battery cards; missing or stale data is never presented as a live percentage.
-- Visual color swatches with a preview, continuous-light controls and side-specific tests.
-- Separate motion choices and a confirmation before optional experimental lace movement.
-- Apply/start and stop actions stay accessible above the navigation bar.
-- GitHub update checks on launch (six-hour interval) or manually, with in-app APK download and Android installation confirmation.
-- Updates require a newer version, matching package, SHA-256 and the same signing certificate. Pairing preferences are never cleared.
-- Control effects stop before installation; reopening reconnects using stored local keys.
-- Existing local pairing and firmware diagnostic export remain available.
+Full firmware backup/cloning and activation of shoe foot-strike streaming remain unavailable. The illuminated Swoosh in project artwork is conceptual.
 
-The Bluetooth, lighting, firmware and motor command implementations are unchanged. The added updater updates the Android app only. This release does not add foot-strike streaming activation, firmware cloning or a full firmware backup. Physical shoe behavior remains unverified.
-
-The package is `com.openadapt.experimental`, using the same local signing key as earlier experimental releases so this APK can update that installation. It can coexist with the original Nike app. Real first-time pairing is required.
-
-Start with motor movement off; follow the Spanish installation guide before hardware tests. Firmware diagnostics only read versions, states and checksums.
-
-Support the project: [Donate via PayPal](https://www.paypal.com/donate/?hosted_button_id=TKRBGQY4PJLP6).
+Support: [Donate via PayPal](https://www.paypal.com/donate/?hosted_button_id=TKRBGQY4PJLP6).

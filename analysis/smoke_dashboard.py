@@ -15,7 +15,10 @@ def call(*args,binary=False,timeout=120):
     return subprocess.check_output([str(adb),'-s',serial,*map(str,args)],text=not binary,stderr=subprocess.STDOUT,timeout=timeout)
 def tree():
     for attempt in range(3):
-        call('shell','uiautomator','dump','/sdcard/openadapt-ui.xml')
+        call('shell','rm','-f','/sdcard/openadapt-ui.xml')
+        dump=call('shell','uiautomator','dump','/sdcard/openadapt-ui.xml')
+        if 'UI hier' not in dump:
+            time.sleep(1);continue
         xml=call('shell','cat','/sdcard/openadapt-ui.xml');result=ET.fromstring(xml)
         if not any("System UI isn't responding" in n.get('text','') for n in result.iter('node')):return result
         close=next(n for n in result.iter('node') if n.get('resource-id')=='android:id/aerr_close')
@@ -23,7 +26,7 @@ def tree():
         call('shell','input','tap',(a[0]+a[2])//2,(a[1]+a[3])//2)
         records['system_ui_anr_dismissals']=records.get('system_ui_anr_dismissals',0)+1
         print('Restarted unresponsive emulator System UI',flush=True)
-    raise AssertionError('Emulator System UI remained unresponsive')
+    raise AssertionError('A fresh UI hierarchy could not be captured')
 def norm(value):
     return re.sub(r"\s+"," ",value.replace(chr(92)+"n"," ")).casefold()
 def match(t,label):
@@ -73,7 +76,7 @@ call('shell','am','start','-W','-n',pkg+'/com.openadapt.ControlActivity');time.s
 tap('Inicio');has('Tu par.\nA tu manera.');has('IZQUIERDA');has('DERECHA')
 record('home_battery_cards_visible');screenshot('interfaz-inicio.png')
 tap('Luces');has('Dale luz.');screenshot('interfaz-luces.png');record('lights_page_visible')
-tap('Lila');has('Lila · ambas zapatillas')
+tap('Lila');has('Lila · ambas zapatillas');time.sleep(2);has('Izquierda: sin conexión autenticada\nDerecha: sin conexión autenticada');record('color_selection_attempts_light_on_both_without_fake_success')
 if match(tree(),'Luces continuas').get('checked')!='true':tap('Luces continuas')
 tap('Aplicar opciones');time.sleep(3)
 call('shell','am','force-stop',pkg);call('shell','am','start','-W','-n',pkg+'/com.openadapt.ControlActivity');time.sleep(2)
@@ -86,6 +89,9 @@ tap('Movimiento de cordones',search=True);has('Activar prueba');tap('Cancelar');
 record('motor_confirmation_cancelled_without_enabling')
 for _ in range(2):call('shell','input','swipe',width//2,int(height*.3),width//2,int(height*.7),350)
 tap('Giros del teléfono');tap('Aplicar opciones')
+tap('Ajuste');has('A tu medida.');has('Ambas');has('Sin conexión autenticada');screenshot('interfaz-ajuste.png');record('manual_fit_page_visible_and_disconnected_controls_disabled')
+assert match(tree(),'Ajustar +1').get('enabled')=='false'
+assert match(tree(),'Aflojar −1').get('enabled')=='false'
 tap('Sistema');has('Conoce tu par.');screenshot('interfaz-sistema.png');record('system_page_visible')
 tap('Ver diagnóstico',search=True);has('Diagnóstico de las zapatillas');tap('Cerrar');record('diagnostic_dialog_opens')
 tap('Guardar diagnóstico…',search=True)

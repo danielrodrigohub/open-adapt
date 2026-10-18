@@ -1,11 +1,11 @@
 {
   "apk": "OpenAdapt-1.29.3-experimental.apk",
-  "sha256": "f3253cb137f66de862f49cd3d80286ba66aa2cce0c074953ace0f20c8655ce4f",
+  "sha256": "315dbfbb9d7976f1d042c9988780b46a5979269aab126aa9d7627f9ad950a7f0",
   "source_apk_sha256": "86366a781de87cae2b672a15ee48d163335e101975e33be0ef8d69da7e688172",
   "tested_on_physical_shoes": false,
   "signature": "local experimental key; different from Nike",
   "package": "com.openadapt.experimental",
-  "project_version": "0.3.1",
-  "version_code": 2017062202,
+  "project_version": "0.4.0",
+  "version_code": 2017062203,
   "signer_sha256": "a042954c3a6ae31a9c9c427e9f4568d63693cd0e875048d9a87b8c9306f0b387"
 }

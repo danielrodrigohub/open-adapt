@@ -1,11 +1,11 @@
 # Open Adapt experimental
 
-Descarga pública actual: https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.3.1.apk
+Descarga pública actual: https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.4.0.apk
 
 
 Versión modificada del APK Nike Adapt 1.29.3 para investigar el control local de unas Nike Adapt Auto Max. Se instala con el paquete `com.openadapt.experimental` y firma local propia, junto a la app original. No desinstales la original para probar esta versión.
 
-## Nuevo panel 0.3.1
+## Nuevo panel 0.4.0
 
 - **Inicio:** imagen de Auto Max generada con IA a partir de la referencia aportada, conexión y batería independiente de cada zapatilla.
 - **Luces:** selección visual del color, luces continuas y pruebas izquierda/derecha.
@@ -55,3 +55,13 @@ Los detalles de compilación y pruebas están en `VALIDACION.md`. Ninguna prueba
 Fuentes locales: `analysis/offline-findings.md`, `analysis/findings-firmware-motion.md`, fuentes nuevas en `analysis/openadapt/src/com/openadapt/`, scripts `analysis/patch_offline.py`, `analysis/patch_motion.py` y `analysis/build_openadapt.py`.
 
 El servicio sigue el mecanismo de conexión en segundo plano descrito por [Android Developers](https://developer.android.com/develop/connectivity/bluetooth/ble/background) y mantiene la CPU activa durante la sesión con un bloqueo parcial acotado y renovable. El sistema o la configuración de batería del fabricante aún pueden finalizar una sesión.
+
+## Nuevo en v0.4.0
+
+- **Ajuste**: elige ambas, izquierda o derecha. Consulta el ajuste real, usa Ajustar +1 / Aflojar −1 o previsualiza hasta cinco puntos con el deslizador y pulsa Aplicar cambio. Detener cordones interrumpe la operación.
+- Con batería menor al 15 %, aparece un aviso por lado y se bloquean los movimientos de cordones. Se exigen lecturas recientes de batería, temperatura y posición; tampoco se mueve sobre el cargador.
+- En **Luces**, elegir color lo envía a ambas zapatillas; Aplicar opciones lo repite. Las pruebas de luz no mueven los cordones. El estado por lado informa si falta conexión, firmware, confirmación o si el calzado aceptó el inicio.
+- **Conectar** reconecta el par guardado dentro de OpenAdapt. El primer emparejamiento real sigue siendo necesario y vuelve al panel al finalizar con ambos lados autenticados.
+- Instala encima de la versión anterior; no desinstales ni borres almacenamiento si quieres conservar las claves locales.
+
+Las correcciones se han revisado en código y emulador. El funcionamiento físico de las luces y el motor debe comprobarse con las zapatillas reales.
