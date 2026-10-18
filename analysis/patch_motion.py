@@ -1,6 +1,7 @@
 """Reproducible additions for the exact decoded Nike Adapt 1.29.3 APK."""
 from pathlib import Path
 import re
+import shutil
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parent
@@ -49,7 +50,7 @@ for tag in ['uses-permission','permission']:
 for service in app.findall('service'):
     if service.get(A+'name')=='com.nike.authcomponent.oidc.internal.store.OIDCAuthenticationService':
         service.set(A+'enabled','false')
-for permission in ['android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE']:
+for permission in ['android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE','android.permission.REQUEST_INSTALL_PACKAGES']:
     if not any(e.get(A+'name')==permission for e in root.findall('uses-permission')):
         ET.SubElement(root,'uses-permission',{A+'name':permission})
 app.set(A+'label','Open Adapt · experimental')
@@ -70,7 +71,16 @@ for control in app.findall('activity'):
         control.set(A+'taskAffinity','com.openadapt.experimental.controls')
 if not any(e.get(A+'name')=='com.openadapt.MotionService' for e in app.findall('service')):
     ET.SubElement(app,'service',{A+'name':'com.openadapt.MotionService',A+'exported':'false',A+'foregroundServiceType':'connectedDevice',A+'stopWithTask':'false'})
+if not any(e.get(A+'name')=='com.openadapt.UpdateApkProvider' for e in app.findall('provider')):
+    ET.SubElement(app,'provider',{A+'name':'com.openadapt.UpdateApkProvider',A+'authorities':'com.openadapt.experimental.updates',A+'exported':'false',A+'grantUriPermissions':'true'})
 serialized=ET.tostring(root,encoding='utf-8',xml_declaration=True)
 if manifest.read_bytes()!=serialized:
     manifest.write_bytes(serialized)
 print('Motion hooks and manifest prepared.')
+
+# Package the project-owned hero asset; no network fetch is needed at runtime.
+asset_root = ROOT / "openadapt" / "assets"
+for asset in sorted(asset_root.rglob("*.png")):
+    target = decoded / "assets" / asset.relative_to(asset_root)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(asset, target)

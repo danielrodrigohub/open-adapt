@@ -38,6 +38,6 @@
  <text x="60" y="566" fill="#8c9cb5" font-size="13" letter-spacing="0">Why nike discontinued this?...</text>
  <rect x="919" y="513" width="301" height="49" rx="24.5" fill="#1d2540" stroke="#465070"/>
  <circle cx="943" cy="538" r="4" fill="#bca1ff"/>
- <text x="961" y="543" fill="#ddceff" font-size="13" letter-spacing="1.5">EXPERIMENTAL · v0.2.0</text>
+ <text x="961" y="543" fill="#ddceff" font-size="13" letter-spacing="1.5">EXPERIMENTAL · v0.3.0</text>
 </g>
 </svg>

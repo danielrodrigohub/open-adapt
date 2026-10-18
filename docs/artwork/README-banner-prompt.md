@@ -1,0 +1,9 @@
+# README and website artwork
+
+Mode: built-in image generation, reference-based edit. Output: `site/assets/revive-banner.png`.
+
+References: user-provided gray/teal/orange Auto Max photo and the previously generated transparent product cutout. The glowing Swoosh is artistic concept lighting; it does not document a hardware feature.
+
+## Final prompt
+
+Create a premium editorial banner for the independent OPEN ADAPT community project. Wide landscape 2:1 aspect ratio. Dark near-black petroleum background, absolutely no white frame. On the RIGHT half: a precise low-cut Nike Adapt Auto Max shoe side silhouette based on the provided reference, toe pointing LEFT, thick orange heel cage and orange sole, visible Air heel window and two circular lace-control buttons near forefoot. Preserve its distinctive long low profile, rounded ankle and tall orange heel support; do not turn it into a high-top basketball shoe. Render as an elegant dark charcoal dimensional silhouette with thin icy teal rim lighting, an unmistakable illuminated bright teal side Swoosh and small cyan sole control lights, subtle orange heel highlights. A little atmospheric teal light behind it, restrained and polished. On the LEFT: beautifully typeset bold clean sans serif 'OPEN' in white above 'ADAPT' in vivid teal, below in smaller white 'Revive again.', and tiny subtitle 'YOUR SHOES. A SECOND LIFE.' Strong professional layout, generous margins. At top left a small teal dot and 'INDEPENDENT COMMUNITY PROJECT'. At bottom a very small 'NIKE ADAPT AUTO MAX' and 'EXPERIMENTAL'. No version number, no invented UI, no extra logos. The illuminated Swoosh is a concept art treatment. Use the photo for shoe identity, the cutout for precise form. High-end athletic technology editorial design, beautiful legible typography, crisp silhouette.

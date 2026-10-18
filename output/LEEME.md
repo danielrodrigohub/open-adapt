@@ -2,6 +2,22 @@
 
 Versión modificada del APK Nike Adapt 1.29.3 para investigar el control local de unas Nike Adapt Auto Max. Se instala con el paquete `com.openadapt.experimental` y firma local propia, junto a la app original. No desinstales la original para probar esta versión.
 
+## Nuevo panel 0.3.0
+
+- **Inicio:** imagen de Auto Max generada con IA a partir de la referencia aportada, conexión y batería independiente de cada zapatilla.
+- **Luces:** selección visual del color, luces continuas y pruebas izquierda/derecha.
+- **Movimiento:** giros, eventos de pisada disponibles y opción experimental de cordones.
+- **Sistema:** estado de la sesión, consulta de versiones y exportación de diagnóstico.
+- **Iniciar control / Aplicar opciones** y **Detener** permanecen accesibles sobre la navegación inferior. Elige las opciones y pulsa Aplicar para enviarlas al servicio.
+
+## Actualizar sin volver a empezar
+
+En **Sistema → Actualizaciones de la app**, usa **Buscar actualizaciones** y después **Descargar e instalar**. La búsqueda automática consulta al abrir, como máximo una vez cada seis horas. Android pedirá confirmar la instalación y puede pedir autorización para instalar desde Open Adapt. La app comprueba paquete, versión, SHA-256 y la misma firma.
+
+Instala encima de la versión experimental existente: no desinstales ni borres datos. Se conservan los ajustes y las claves de emparejamiento guardadas. El control se detiene antes de instalar y, al abrir de nuevo, intenta reconectar con esas claves. El comportamiento con zapatillas físicas sigue pendiente de validación. Este proceso actualiza la app, no el firmware del calzado.
+
+Más detalles y publicación de nuevas versiones: [guía de actualizaciones](../docs/UPDATES.md).
+
 ## Opciones implementadas
 
 - Panel local sin registro o inicio de sesión Nike.
@@ -23,11 +39,11 @@ Versión modificada del APK Nike Adapt 1.29.3 para investigar el control local d
 
 1. Copia e instala `OpenAdapt-1.29.3-experimental.apk` en tu Android. La app original permanece instalada.
 2. Abre Open Adapt y concede los permisos de dispositivos cercanos. En Android antiguo puede requerir ubicación.
-3. Entra en **Controles Adapt / emparejar una vez** y completa el emparejamiento físico. Evita que la app original mantenga una conexión simultánea al mismo par.
+3. Entra en **Conectar / emparejar mi par** en Inicio y completa el emparejamiento físico. Evita que la app original mantenga una conexión simultánea al mismo par.
 4. Vuelve al panel mediante el icono de Open Adapt o su notificación, deja desactivado el motor y prueba primero cada luz y el modo continuo.
 5. Activa **Giros del teléfono**, inicia el control y comprueba el comportamiento con la pantalla bloqueada.
 6. Lee el firmware y guarda el diagnóstico. La lectura de todas las ranuras puede tardar unos treinta segundos.
-7. La prueba del motor requiere validación presencial; empieza con el calzado quieto y fuera de los pies. **Detener todo** también está disponible en la notificación.
+7. La prueba del motor requiere validación presencial; empieza con el calzado quieto y fuera de los pies. **Detener** también está disponible en la notificación.
 
 ## Evidencia y validación
 

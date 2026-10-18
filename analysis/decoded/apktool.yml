@@ -7,8 +7,8 @@ sdkInfo:
   minSdkVersion: 24
   targetSdkVersion: 33
 versionInfo:
-  versionCode: 2017062198
-  versionName: 1.29.3
+  versionCode: 2017062201
+  versionName: 0.3.0-openadapt
 resourcesInfo:
   packageId: 127
 doNotCompress:

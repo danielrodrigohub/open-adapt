@@ -1,6 +1,6 @@
 """Build a locally signed experimental APK without Gradle or global tool installs."""
 from pathlib import Path
-import subprocess, zipfile, os, secrets, hashlib, json, sys
+import subprocess, zipfile, os, secrets, hashlib, json, sys, re, shutil
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from runtime import java_home, android_sdk
@@ -16,6 +16,17 @@ if not android.is_file() or not bt.is_dir():
     raise SystemExit('Install Android SDK Platform 36 and Build Tools 36.0.0 before building.')
 if not (base/'tools/apktool_3.0.3.jar').is_file():
     raise SystemExit('Run python3 scripts/setup_tools.py before building.')
+
+version=json.loads((work/'version.json').read_text())
+assert re.fullmatch(r'[0-9]+\.[0-9]+\.[0-9]+',version['projectVersion'])
+assert 2017062198 < version['versionCode'] <= 2147483647
+assert version['versionName']==version['projectVersion']+'-openadapt'
+(work/'src/com/openadapt/BuildInfo.java').write_text('package com.openadapt;\n/** Generated from analysis/openadapt/version.json by the build script. */\npublic final class BuildInfo {\n    public static final String VERSION="'+version['projectVersion']+'";\n    private BuildInfo() {}\n}\n')
+yaml=base/'decoded/apktool.yml'
+config=yaml.read_text()
+config=re.sub(r'(?m)^  versionCode:.*$', '  versionCode: '+str(version['versionCode']),config)
+config=re.sub(r'(?m)^  versionName:.*$', '  versionName: '+version['versionName'],config)
+yaml.write_text(config)
 
 def run(args): subprocess.run([str(a) for a in args],check=True)
 run(['python3',base/'patch_offline.py'])
@@ -38,7 +49,14 @@ with zipfile.ZipFile(unsigned) as zin,zipfile.ZipFile(combined,'w') as zout:
     zout.writestr('classes3.dex',(dex/'classes.dex').read_bytes())
 aligned=build/'aligned.apk'
 run([bt/'zipalign','-f','-P','16','4',combined,aligned])
-keystore=build/'openadapt-local.p12'; password=build/'keypass.txt'
+signing=base.parent/'.signing'; signing.mkdir(mode=0o700,exist_ok=True)
+keystore=signing/'openadapt-local.p12'; password=signing/'keypass.txt'
+if not keystore.exists() and (build/'openadapt-local.p12').exists():
+    if not (build/'keypass.txt').exists(): raise SystemExit('Existing signing key has no password file; restore it before building.')
+    shutil.copy2(build/'openadapt-local.p12',keystore)
+    shutil.copy2(build/'keypass.txt',password)
+    keystore.chmod(0o600); password.chmod(0o600)
+if keystore.exists() and not password.exists(): raise SystemExit('Restore the signing password; do not generate a replacement signing key.')
 if not keystore.exists():
     password.write_text(secrets.token_urlsafe(24)); password.chmod(0o600)
     run([jhome/'bin/keytool','-genkeypair','-keystore',keystore,'-storepass:file',password,'-keypass:file',password,
@@ -48,9 +66,17 @@ apk=out/'OpenAdapt-1.29.3-experimental.apk'
 run([bt/'apksigner','sign','--ks',keystore,'--ks-key-alias','openadapt-local','--ks-pass','file:'+str(password),
     '--out',apk,aligned])
 run([bt/'apksigner','verify','--verbose',apk])
+verification=subprocess.check_output([str(bt/'apksigner'),'verify','--print-certs',str(apk)],text=True)
+certificate=re.search(r'Signer #1 certificate SHA-256 digest: ([0-9a-f]+)',verification).group(1)
 run([bt/'zipalign','-c','-P','16','4',apk])
 (out/'build-identity.json').write_text(json.dumps({'apk':apk.name,'sha256':hashlib.sha256(apk.read_bytes()).hexdigest(),
     'source_apk_sha256':'86366a781de87cae2b672a15ee48d163335e101975e33be0ef8d69da7e688172',
     'tested_on_physical_shoes':False,'signature':'local experimental key; different from Nike',
-    'package':'com.openadapt.experimental'},indent=2))
+    'package':'com.openadapt.experimental','project_version':version['projectVersion'],
+    'version_code':version['versionCode'],'signer_sha256':certificate},indent=2))
+sha=hashlib.sha256(apk.read_bytes()).hexdigest()
+(out/'openadapt-update.json').write_text(json.dumps({'schema':1,'version':version['projectVersion'],
+    'versionCode':version['versionCode'],'packageName':'com.openadapt.experimental','minSdk':24,
+    'apk':apk.name,'size':apk.stat().st_size,'sha256':sha,'signerSha256':certificate},indent=2)+'\n')
+(out/'SHA256SUMS.txt').write_text(sha+'  '+apk.name+'\n')
 print(apk)

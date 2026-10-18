@@ -2,6 +2,14 @@
 
 Fecha: 18 de octubre de 2026. APK base Nike Adapt 1.29.3, Android mínimo 7.0 (API 24), destino API 33. Nuevo paquete com.openadapt.experimental; firma local distinta de Nike.
 
+## Actualización v0.3.0: interfaz nativa
+
+- Panel con cuatro pestañas: Inicio, Luces, Movimiento y Sistema.
+- Tarjetas de batería por lado, selección de color visual e imagen de Auto Max generada con IA desde una referencia del usuario y cargada localmente.
+- Acciones de aplicar/iniciar y detener accesibles sobre la barra de navegación. Opciones del motor con confirmación conservada.
+- Compilación, alineación y firma APK v2/v3 verificadas; se conserva la clave local para actualizar las instalaciones experimentales anteriores.
+- El servicio de Bluetooth, luces, motor y diagnóstico no cambia. Las pruebas físicas siguen pendientes.
+
 ## Actualización v0.2.0: batería en porcentaje
 
 - Porcentaje de cada zapatilla en el panel principal, con consultas existentes cada 20 segundos aproximadamente.
@@ -42,8 +50,8 @@ La pantalla antigua de perfil y algunos enlaces Nike pueden seguir requiriendo s
 - analysis/build_openadapt.py: recompilación con las herramientas guardadas en el espacio de trabajo y el SDK Android ya instalado.
 - analysis/patch_offline.py y analysis/patch_motion.py: cambios reproducibles. Los originales de los archivos modificados quedan en analysis/offline-originals y analysis/motion-originals.
 
-SHA-256 del APK v0.2.0 entregado:
+SHA-256 del APK v0.3.0 entregado:
 
 ```
-3a09c441980fd16c757e7272a70017758ab6679859bbfa883f648aa354a34bd2
+3f0a91e05ca33e566d07d24db482610587563aa29f01fbdec12d1d880381b425
 ```

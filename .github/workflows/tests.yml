@@ -16,5 +16,5 @@ jobs:
         with:
           distribution: temurin
           java-version: '21'
-      - name: Run diagnostic, motor, turn and battery-display checks
+      - name: Run diagnostic, motor, turn, battery-display and update-policy checks
         run: python3 scripts/run_tests.py

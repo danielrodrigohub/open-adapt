@@ -1,4 +1,5 @@
 # Private signing material must never be published.
+/.signing/
 *.p12
 *.pfx
 *.jks
