@@ -13,6 +13,11 @@ public final class UpdatePolicyTest {
         check(UpdatePolicy.transport("https://api.github.com/repos/danielrodrigohub/open-adapt/releases"));
         check(UpdatePolicy.transport("https://release-assets.githubusercontent.com/file?token=example"));
         for(String url:new String[]{"http://github.com/a","https://evil.test/a","https://github.com.evil.test/a","https://github.com@evil.test/a","https://user@github.com/a","https://github.com:444/a","file:///data/private"})check(!UpdatePolicy.transport(url));
+        check(UpdatePolicy.transport(UpdatePolicy.mirror("0.3.1")));
+        check(UpdatePolicy.mirror("1.2.3").equals("https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v1.2.3.apk"));
+        for(String url:new String[]{"https://evil.github.io/open-adapt/downloads/OpenAdapt-v1.2.3.apk","https://danielrodrigohub.github.io/other/OpenAdapt-v1.2.3.apk","https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v1.2.3.apk?redirect=evil","https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v1.2.3.apk#fragment","https://danielrodrigohub.github.io/open-adapt/downloads/../private","http://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v1.2.3.apk"})check(!UpdatePolicy.transport(url));
+        reject(()->UpdatePolicy.mirror("../1.2.3"));
+        reject(()->UpdatePolicy.mirror("v1.2.3-experimental"));
         String future=(UpdatePolicy.version(BuildInfo.VERSION)[0]+1)+".0.0";
         String tag="v"+future+"-experimental",good="https://github.com/"+UpdatePolicy.REPOSITORY+"/releases/download/"+tag+"/"+UpdatePolicy.APK;
         check(UpdatePolicy.asset(good,tag,UpdatePolicy.APK));

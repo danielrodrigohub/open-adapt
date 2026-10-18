@@ -40,6 +40,9 @@ with zipfile.ZipFile(jar,'w') as z:
 dex=build/'dex'; dex.mkdir(exist_ok=True)
 run([bt/'d8','--min-api','24','--lib',android,'--output',dex,jar])
 unsigned=build/'rebuilt.apk'
+# Recompile the manifest even when only apktool.yml versionInfo changed.
+# Apktool otherwise may reuse a cached manifest with an older version.
+(base/'decoded/AndroidManifest.xml').touch()
 # Apktool's patched aapt2 supports the original compiler-generated "$" resource names.
 run([java,'-jar',base/'tools/apktool_3.0.3.jar','b',base/'decoded','-o',unsigned])
 combined=build/'with-controls.apk'
@@ -69,6 +72,9 @@ run([bt/'apksigner','verify','--verbose',apk])
 verification=subprocess.check_output([str(bt/'apksigner'),'verify','--print-certs',str(apk)],text=True)
 certificate=re.search(r'Signer #1 certificate SHA-256 digest: ([0-9a-f]+)',verification).group(1)
 run([bt/'zipalign','-c','-P','16','4',apk])
+badging=subprocess.check_output([str(bt/'aapt'),'dump','badging',str(apk)],text=True).splitlines()[0]
+if "versionCode='"+str(version['versionCode'])+"'" not in badging or "versionName='"+version['versionName']+"'" not in badging:
+    raise SystemExit('Packaged APK version differs from version.json; no release metadata was written.')
 (out/'build-identity.json').write_text(json.dumps({'apk':apk.name,'sha256':hashlib.sha256(apk.read_bytes()).hexdigest(),
     'source_apk_sha256':'86366a781de87cae2b672a15ee48d163335e101975e33be0ef8d69da7e688172',
     'tested_on_physical_shoes':False,'signature':'local experimental key; different from Nike',

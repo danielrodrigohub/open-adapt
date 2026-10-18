@@ -15,7 +15,7 @@ python3 -m http.server 4173 --directory site
 
 Open http://localhost:4173/ and http://localhost:4173/es/. Commit the regenerated HTML alongside the builder changes. A push to main affecting the website triggers `.github/workflows/pages.yml`, validates generated pages and publishes the `site/` directory through GitHub Pages.
 
-When publishing a new app version, update the release URL and SoftwareApplication version in `scripts/build_site.py`, then regenerate. Screenshots must correspond to real app captures; missing shoe readings must not be replaced by invented battery percentages.
+When publishing a new app version, copy the verified APK to the matching versioned path under `site/downloads/`, update the download URL and SoftwareApplication version in `scripts/build_site.py`, then regenerate. Screenshots must correspond to real app captures; missing shoe readings must not be replaced by invented battery percentages.
 
 ## Search and sharing
 

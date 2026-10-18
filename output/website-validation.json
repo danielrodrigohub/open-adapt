@@ -1,0 +1,47 @@
+{
+  "checked_at": "2026-10-18",
+  "hosting": "GitHub Pages",
+  "public_http_checks": [
+    {
+      "url": "https://danielrodrigohub.github.io/open-adapt/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://danielrodrigohub.github.io/open-adapt/es/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://danielrodrigohub.github.io/open-adapt/assets/revive-banner.png",
+      "status": 200,
+      "content_type": "image/png"
+    },
+    {
+      "url": "https://danielrodrigohub.github.io/open-adapt/assets/favicon.svg",
+      "status": 200,
+      "content_type": "image/svg+xml"
+    },
+    {
+      "url": "https://danielrodrigohub.github.io/open-adapt/assets/style.css",
+      "status": 200,
+      "content_type": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://danielrodrigohub.github.io/open-adapt/sitemap.xml",
+      "status": 200,
+      "content_type": "application/xml"
+    },
+    {
+      "url": "https://danielrodrigohub.github.io/open-adapt/robots.txt",
+      "status": 200,
+      "content_type": "text/plain; charset=utf-8"
+    }
+  ],
+  "local_html_checks_passed": true,
+  "languages": [
+    "en",
+    "es"
+  ],
+  "physical_shoes_tested": false
+}

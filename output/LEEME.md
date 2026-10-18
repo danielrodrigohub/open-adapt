@@ -1,8 +1,11 @@
 # Open Adapt experimental
 
+Descarga pública actual: https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.3.1.apk
+
+
 Versión modificada del APK Nike Adapt 1.29.3 para investigar el control local de unas Nike Adapt Auto Max. Se instala con el paquete `com.openadapt.experimental` y firma local propia, junto a la app original. No desinstales la original para probar esta versión.
 
-## Nuevo panel 0.3.0
+## Nuevo panel 0.3.1
 
 - **Inicio:** imagen de Auto Max generada con IA a partir de la referencia aportada, conexión y batería independiente de cada zapatilla.
 - **Luces:** selección visual del color, luces continuas y pruebas izquierda/derecha.

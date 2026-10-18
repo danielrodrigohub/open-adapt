@@ -48,3 +48,11 @@ El archivo `openadapt-update.json` se genera automáticamente al construir. No r
 Este actualizador es de la aplicación Android. No instala firmware en las zapatillas ni restaura las consultas obligatorias de Nike que se eliminaron del acceso local.
 
 Referencias de Android: [firma de aplicaciones](https://developer.android.com/studio/publish/app-signing) y [permiso de instalación por aplicación](https://developer.android.com/reference/android/content/pm/PackageManager#canRequestPackageInstalls()).
+
+El constructor verifica también el número y el nombre de versión realmente empaquetados. Fuerza la recompilación del manifiesto cuando cambia la versión, para evitar reutilizar una copia antigua en la caché de Apktool.
+
+## Descarga de respaldo
+
+Desde v0.3.1, si el servidor del archivo de GitHub falla al abrir la descarga, la app intenta la copia de la misma versión en `https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-vVERSION.apk`. Solo se admite ese propietario y ruta exactos. Se mantienen todas las comprobaciones de tamaño, SHA-256, paquete, versión y firma instalada; un archivo incorrecto no se instala.
+
+Al publicar, copia el APK final a `site/downloads/OpenAdapt-vVERSION.apk`, regenera la web y publica primero GitHub Pages. Después publica los mismos bytes y metadatos en Releases. La copia de Pages debe coincidir con `output/openadapt-update.json`. Las claves de firma siguen siendo privadas.

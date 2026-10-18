@@ -14,11 +14,11 @@ An independent project exploring a second life for Nike Adapt Auto Max.
 
 I own a pair of Adapt. Without the app, I lost access to the connected features I bought them for. Open Adapt began with a simple wish: to use my shoes again.
 
-<a href="https://github.com/danielrodrigohub/open-adapt/releases/tag/v0.3.0-experimental"><img src="docs/assets/download.svg" width="230" height="52" alt="Download the experimental Android APK" /></a>
+<a href="https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.3.1.apk"><img src="docs/assets/download.svg" width="230" height="52" alt="Download the experimental Android APK" /></a>
 <a href="output/LEEME.md"><img src="docs/assets/guide.svg" width="210" height="52" alt="Read the Spanish installation guide" /></a>
 <a href="https://www.paypal.com/donate/?hosted_button_id=TKRBGQY4PJLP6"><img src="docs/assets/donate.svg" width="230" height="52" alt="Support Open Adapt via PayPal" /></a>
 
-**Android 7.0+** &nbsp; / &nbsp; **v0.3.0 experimental** &nbsp; / &nbsp; **Local control**
+**Android 7.0+** &nbsp; / &nbsp; **v0.3.1 experimental** &nbsp; / &nbsp; **Local control**
 
 [Website · English](https://danielrodrigohub.github.io/open-adapt/) · [Sitio · Español](https://danielrodrigohub.github.io/open-adapt/es/)
 
@@ -40,7 +40,7 @@ I own a pair of Adapt. Without the app, I lost access to the connected features 
 | ✨ **New dashboard** | Four native tabs: Home, Lights, Motion and System. Reference-inspired Auto Max artwork, color swatches, individual battery cards and always-accessible apply/stop actions. |
 | 🔓 **Local access** | The new control panel works without Nike registration or login. Some legacy profile screens and Nike links may still depend on Nike services. |
 | 🔗 **Reconnection** | Reuses genuinely paired devices and their locally stored keys. A first physical pairing and Android permissions are still required. |
-| ⬇️ **GitHub app updates** | Checks public releases on launch (at most once per six hours) or manually. Downloads and verifies the APK in the app; Android confirms installation. Replaces the same signed package, preserving local settings and stored pairing data. See the [update guide](docs/UPDATES.md). |
+| ⬇️ **GitHub app updates** | Checks public releases on launch (at most once per six hours) or manually. Downloads and verifies the APK in the app, with a trusted project-website fallback; Android confirms installation. Replaces the same signed package, preserving local settings and stored pairing data. See the [update guide](docs/UPDATES.md). |
 | 📡 **Nike update checks** | The remote mandatory update check is removed from the local control path. Actual command compatibility checks remain. |
 | 🔋 **Battery percentages** | Displays separate left/right percentages from authenticated shoe readings, refreshed about every 20 seconds. Shows connection, waiting and stale-reading states instead of a guessed percentage. |
 | 💡 **Continuous lights** | Renews a 60-second solid-color animation every 45 seconds while connected. Custom animations require compatible shoe firmware; the declared minimum is 2.1.7. Hardware battery and thermal cutoffs remain active. |
@@ -68,7 +68,7 @@ A fresh native dashboard with reference-inspired artwork, separate battery cards
 
 ## 🚀 Get moving
 
-1. Download `OpenAdapt-1.29.3-experimental.apk` from [Releases](https://github.com/danielrodrigohub/open-adapt/releases/tag/v0.3.0-experimental).
+1. [Download OpenAdapt v0.3.1 for Android](https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.3.1.apk). The same signed APK and verification metadata are also listed in [Releases](https://github.com/danielrodrigohub/open-adapt/releases/tag/v0.3.1-experimental).
 2. Install it on Android 7.0 or newer. Its package is `com.openadapt.experimental`, so it can coexist with the original Nike Adapt app.
 3. Grant Nearby Devices permissions. On older Android versions, location permission and an enabled location service may also be required.
 4. Open **Conectar / emparejar mi par** on the Home tab and complete real physical pairing. The new app cannot read the original app's private pairing keys.
@@ -98,7 +98,7 @@ A responsive, bilingual GitHub Pages site with the personal story, feature detai
 | `analysis/*.proto`, `analysis/*findings*.md` | Packaged protocol definitions and investigation findings. |
 | `output/` | Installation guide, validation report, screenshots and published artifact identity. |
 
-APKs are distributed as release assets. Downloaded third-party tools, private signing keys, passwords, emulator dumps and temporary build outputs are excluded from Git.
+APKs are distributed as release assets, with an explicit public download mirror under `site/downloads/` for the current website version. Downloaded third-party tools, private signing keys, passwords, emulator dumps and temporary build outputs are excluded from Git.
 
 ## 🛠 For builders
 
@@ -139,7 +139,7 @@ The updater checks SHA-256 and requires the same package and signing certificate
 
 ## 🧪 Tested, with limits
 
-- 34 update-policy assertions cover version ordering, origin restrictions, malformed metadata and downgrade rejection.
+- 44 update-policy assertions cover version ordering, origin restrictions, malformed metadata and downgrade rejection.
 - 11 battery-display assertions cover 0–100%, missing readings, disconnected shoes and stale data.
 - 43 diagnostic-parser assertions and 32 motor-condition/rate-limit assertions passed, alongside turn-detection scenarios.
 - Dashboard navigation and GitHub updates are documented in the [validation report](output/VALIDACION.md); physical shoe reconnection remains unverified.

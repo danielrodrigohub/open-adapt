@@ -6,7 +6,7 @@ root=Path(__file__).resolve().parent.parent
 sys.path.insert(0,str(root/'scripts'))
 from runtime import android_sdk
 adb=android_sdk()/'platform-tools'/('adb.exe' if os.name=='nt' else 'adb')
-serial='emulator-5554';pkg='com.openadapt.experimental';out=root/'output'
+serial=os.environ.get('OPENADAPT_TEST_SERIAL','emulator-5554');pkg='com.openadapt.experimental';out=root/'output'
 parser=argparse.ArgumentParser();parser.add_argument('--skip-install',action='store_true');parser.add_argument('--apk',type=Path,default=out/'OpenAdapt-1.29.3-experimental.apk');options=parser.parse_args()
 apk=options.apk
 records={}
@@ -109,6 +109,6 @@ try:
 finally:
     call('shell','settings','put','system','font_scale','1.0');call('shell','am','force-stop',pkg)
 crashes=call('logcat','-d','-s','AndroidRuntime:E');assert 'FATAL EXCEPTION' not in crashes,crashes
-records.update({'android_release':call('shell','getprop','ro.build.version.release').strip(),'apk_sha256':tested_sha,'android_runtime_exceptions_recorded':False,'physical_shoes_tested':False})
+records.update({'android_release':call('shell','getprop','ro.build.version.release').strip(),'apk_sha256':tested_sha,'android_runtime_exceptions_recorded':False,'physical_shoes_tested':False,'project_version':json.loads((root/'analysis/openadapt/version.json').read_text())['projectVersion']})
 (out/'dashboard-emulator-summary.json').write_text(json.dumps(records,ensure_ascii=False,indent=2)+'\n')
 print('Dashboard smoke checks passed',flush=True)

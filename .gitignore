@@ -31,3 +31,8 @@ keypass.txt
 # Emulator dumps and machine-specific runtime state.
 /output/emulator-smoke.json
 /output/ui-*.xml
+
+# Explicit public APK mirror for the project website. Private keys remain excluded.
+!/site/downloads/*.apk
+
+/analysis/decoded/*.orig

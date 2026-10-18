@@ -1,6 +1,10 @@
-# Nike Adapt Max Revive again — experimental v0.3.0
+# Nike Adapt Max Revive again — experimental v0.3.1
 
 > Why nike discontinued this?...
+
+Public Android download: https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v0.3.1.apk
+
+This patch adds a verified project-website download fallback when GitHub’s release file server is unavailable. SHA-256, package, version and installed signing-certificate checks are still required.
 
 A new native interface for Open Adapt, inspired by a clean sports-product experience with an independent visual design.
 

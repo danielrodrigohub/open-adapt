@@ -2,7 +2,7 @@
 from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit,unquote
-import json,xml.etree.ElementTree as ET
+import json,hashlib,xml.etree.ElementTree as ET
 root=Path(__file__).resolve().parents[1]/'site'
 base='https://danielrodrigohub.github.io/open-adapt/'
 class Page(HTMLParser):
@@ -41,5 +41,10 @@ for lang,file,url in [('en',root/'index.html',base),('es',root/'es/index.html',b
             assert target.is_file(),(file,link)
     assert any(t=='a' and a.get('href')=='https://www.paypal.com/donate/?hosted_button_id=TKRBGQY4PJLP6' for t,a in page.tags)
     print(lang+': local assets, anchor links, language alternates, canonical, social metadata and schema OK')
+meta=json.loads((root.parent/'output/openadapt-update.json').read_text())
+mirror=root/'downloads'/('OpenAdapt-v'+meta['version']+'.apk')
+assert mirror.stat().st_size==meta['size']
+assert hashlib.sha256(mirror.read_bytes()).hexdigest()==meta['sha256']
+print('Public APK mirror matches the signed release metadata')
 ET.parse(root/'sitemap.xml')
 print('Sitemap XML OK')

@@ -26,8 +26,16 @@ public final class UpdatePolicy {
         try {
             URI u=new URI(value);String h=u.getHost();
             return "https".equals(u.getScheme())&&u.getRawUserInfo()==null&&(u.getPort()==-1||u.getPort()==443)
-                &&("github.com".equals(h)||"api.github.com".equals(h)||"release-assets.githubusercontent.com".equals(h)||"objects.githubusercontent.com".equals(h));
+                &&(mirrorUri(u)||"github.com".equals(h)||"api.github.com".equals(h)||"release-assets.githubusercontent.com".equals(h)||"objects.githubusercontent.com".equals(h));
         } catch(Exception e) { return false; }
+    }
+    static String mirror(String version) {
+        if(!version.matches("[0-9]{1,6}\\.[0-9]{1,6}\\.[0-9]{1,6}"))throw new IllegalArgumentException("Versión de respaldo no válida");
+        return "https://danielrodrigohub.github.io/open-adapt/downloads/OpenAdapt-v"+version+".apk";
+    }
+    static boolean mirrorUri(URI u) {
+        return "danielrodrigohub.github.io".equals(u.getHost())&&u.getRawQuery()==null&&u.getRawFragment()==null
+            &&u.getRawPath()!=null&&u.getRawPath().matches("/open-adapt/downloads/OpenAdapt-v[0-9]{1,6}\\.[0-9]{1,6}\\.[0-9]{1,6}\\.apk");
     }
     static boolean asset(String value,String tag,String filename) {
         try {

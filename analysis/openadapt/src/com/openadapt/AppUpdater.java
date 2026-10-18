@@ -78,7 +78,12 @@ final class AppUpdater {
             File apk=UpdateApkProvider.apk(context),part=new File(apk.getParentFile(),"download.part.apk");
             try {
                 if(!apk.getParentFile().isDirectory()&&!apk.getParentFile().mkdirs())throw new IOException("No hay espacio disponible");
-                HttpURLConnection connection=connect(update.url);
+                HttpURLConnection connection;
+                try { connection=connect(update.url); }
+                catch(IOException unavailable) {
+                    publish("Usando la descarga de respaldo del proyecto…",update,false,true);
+                    connection=connect(UpdatePolicy.mirror(update.version));
+                }
                 long total=0;int previous=-1;MessageDigest digest=MessageDigest.getInstance("SHA-256");
                 try(InputStream in=connection.getInputStream();OutputStream out=new FileOutputStream(part)) {
                     byte[] buffer=new byte[32768];int n;

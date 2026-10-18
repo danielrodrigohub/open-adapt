@@ -1,0 +1,10 @@
+{
+  "release": "https://github.com/danielrodrigohub/open-adapt/releases/tag/v0.3.0-experimental",
+  "draft": false,
+  "prerelease": true,
+  "published_at": "2026-10-18T19:55:56Z",
+  "apk_url": "https://github.com/danielrodrigohub/open-adapt/releases/download/v0.3.0-experimental/OpenAdapt-1.29.3-experimental.apk",
+  "apk_sha256": "3f0a91e05ca33e566d07d24db482610587563aa29f01fbdec12d1d880381b425",
+  "github_asset_digest_matches": true,
+  "size": 73479840
+}
